@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Qorvo",
+    "country": "美国",
+    "products": ["射频前端", "天线模块"],
+    "description": "全球领先的射频解决方案供应商"
+  },
+  {
+    "name": "Murata",
+    "country": "日本",
+    "products": ["片式天线", "射频器件"],
+    "description": "电子元器件龙头企业"
+  },
+  {
+    "name": "Skyworks",
+    "country": "美国",
+    "products": ["射频芯片", "天线开关"],
+    "description": "无线通信射频前端解决方案"
+  },
+  {
+    "name": "Infineon",
+    "country": "德国",
+    "products": ["射频器件", "天线控制器"],
+    "description": "半导体解决方案领导者"
+  },
+  {
+    "name": "中信科移动",
+    "country": "中国",
+    "products": ["基站天线", "室内分布天线"],
+    "description": "国内通信设备主力厂商"
+  },
+  {
+    "name": "盛路通信",
+    "country": "中国",
+    "products": ["微波天线", "基站天线"],
+    "description": "国内天线制造龙头企业"
+  },
+  {
+    "name": "亨鑫科技",
+    "country": "中国",
+    "products": ["通信天线", "射频器件"],
+    "description": "天线及射频器件制造商"
+  },
+  {
+    "name": "三维通信",
+    "country": "中国",
+    "products": ["基站天线", "微波天线"],
+    "description": "通信设备解决方案提供商"
+  },
+  {
+    "name": "国人通信",
+    "country": "中国",
+    "products": ["射频器件", "天线系统"],
+    "description": "射频技术及产品供应商"
+  },
+  {
+    "name": "中兴通讯",
+    "country": "中国",
+    "products": ["基站天线", "终端天线"],
+    "description": "全球通信设备巨头"
+  }
+]

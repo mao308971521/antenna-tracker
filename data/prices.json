@@ -1,0 +1,38 @@
+[
+  {
+    "name": "铜",
+    "unit": "元/吨",
+    "currentPrice": 78500,
+    "change": "+1.2%",
+    "trend": "上涨",
+    "date": "2026-04-18",
+    "impact": "天线导体材料主要成本"
+  },
+  {
+    "name": "铝",
+    "unit": "元/吨",
+    "currentPrice": 19800,
+    "change": "-0.5%",
+    "trend": "下跌",
+    "date": "2026-04-18",
+    "impact": "天线支架、外壳材料"
+  },
+  {
+    "name": "PCB基板",
+    "unit": "元/平米",
+    "currentPrice": 350,
+    "change": "+0.8%",
+    "trend": "上涨",
+    "date": "2026-04-18",
+    "impact": "片式天线基材"
+  },
+  {
+    "name": "塑料粒子(ABS)",
+    "unit": "元/吨",
+    "currentPrice": 12500,
+    "change": "0%",
+    "trend": "平稳",
+    "date": "2026-04-18",
+    "impact": "天线外壳材料"
+  }
+]

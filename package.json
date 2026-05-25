@@ -1,0 +1,27 @@
+{
+  "name": "antenna-industry-tracker",
+  "version": "1.0.0",
+  "description": "天线行业情报追踪系统",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "update-data": "node scripts/fetch-data.js"
+  },
+  "dependencies": {
+    "date-fns": "^3.0.0",
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^5.0.0"
+  }
+}

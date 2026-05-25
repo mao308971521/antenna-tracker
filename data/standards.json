@@ -1,0 +1,34 @@
+[
+  {
+    "name": "GB/T 9410-2008",
+    "title": "移动通信天线通用技术条件",
+    "status": "现行",
+    "publishDate": "2008",
+    "organization": "国家标准",
+    "description": "规定了移动通信天线的技术要求、试验方法"
+  },
+  {
+    "name": "YD/T 1059-2004",
+    "title": "移动通信系统基站天线技术条件",
+    "status": "现行",
+    "publishDate": "2004",
+    "organization": "通信行业标准",
+    "description": "基站天线的电气性能、机械性能要求"
+  },
+  {
+    "name": "3GPP TS 36.104",
+    "title": "LTE基站射频要求",
+    "status": "持续更新",
+    "publishDate": "持续修订",
+    "organization": "3GPP国际标准",
+    "description": "LTE基站射频性能标准，含天线相关要求"
+  },
+  {
+    "name": "3GPP TS 38.104",
+    "title": "5G NR基站射频要求",
+    "status": "持续更新",
+    "publishDate": "持续修订",
+    "organization": "3GPP国际标准",
+    "description": "5G新空口基站射频标准，含Massive MIMO天线要求"
+  }
+]
