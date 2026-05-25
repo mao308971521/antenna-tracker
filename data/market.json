@@ -38,11 +38,31 @@
       "cagr": "4.2%"
     }
   ],
-  "keyDrivers": [
+"keyDrivers": [
     "5G网络建设加速",
     "物联网应用普及",
     "汽车智能化趋势",
     "卫星通信发展",
     "军工通信需求"
+  ],
+  "trendData": [
+    { "year": "2020", "global": 256.8, "china": 42.3 },
+    { "year": "2021", "global": 274.5, "china": 46.8 },
+    { "year": "2022", "global": 290.2, "china": 50.5 },
+    { "year": "2023", "global": 305.7, "china": 53.9 },
+    { "year": "2024", "global": 320.5, "china": 57.7 },
+    { "year": "2025", "global": 342.8, "china": 62.4 },
+    { "year": "2026", "global": 368.2, "china": 68.1 },
+    { "year": "2027", "global": 395.6, "china": 74.2 },
+    { "year": "2028", "global": 425.8, "china": 80.9 },
+    { "year": "2029", "global": 454.2, "china": 87.2 },
+    { "year": "2030", "global": 484.3, "china": 94.1 }
+  ],
+  "segmentData": [
+    { "name": "定向天线", "value": 320.5, "color": "#0088FE" },
+    { "name": "5G天线", "value": 285.4, "color": "#00C49F" },
+    { "name": "汽车天线", "value": 100.4, "color": "#FFBB28" },
+    { "name": "船舶通信天线", "value": 68.2, "color": "#FF8042" },
+    { "name": "片式天线", "value": 15.2, "color": "#8884D8" }
   ]
 }
