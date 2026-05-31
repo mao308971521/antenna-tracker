@@ -1,268 +1,3103 @@
 {
-  "lastUpdate": "2026-05-29",
-  "summary": "中国天线产业已形成完整供应链体系。上游关键材料仍由海外主导，PTFE板材国产化加速；中游制造格局稳定，华为占据绝对领先地位；下游运营商集采主导需求侧。2026年行业整体呈现需求强劲、竞争加剧的态势。",
+  "lastUpdate": "2026-05-31",
+  "summary": "中国天线产业已形成完整7层供应链体系。上游运营商集采主导需求侧；主设备商整合天线+射频一体化；天线整机厂商竞争激烈，京信/摩比承压，通宇/亨鑫亏损，但粤海信/博纬等新锐正在崛起；部件层信维通信独大，环形器/天线罩环节有鹏宇达/太阳鸟/中材科技等；材料层生益科技覆铜板全国第一，巨石集团/泰山玻纤/重庆国际复材三大玻纤企业主导原材料；原材料价格随期货波动，对中下游利润形成压力。2026年行业整体呈现需求强劲、竞争加剧、利润承压的态势。",
   "supplyChain": {
-    "upstream": {
-      "name": "上游：材料与元器件",
-      "description": "天线产业最上游环节，提供生产所需的基础材料和电子元器件。",
+    "tier1_operators": {
+      "name": "运营商",
+      "description": "通信网络建设投资方，集采基站天线，决定需求侧总量与方向",
       "companies": [
         {
-          "id": "c001",
-          "name": "生益科技",
-          "nameEn": "Shengyi",
-          "role": "高频覆铜板",
-          "position": "国内最大覆铜板厂商，PTFE高频材料产能国内第一",
-          "customers": ["华为", "中兴", "爱立信"],
-          "highlights": ["PTFE高频覆铜板产能国内第一", "华为认证通过", "5G毫米波材料布局"],
-          "location": "东莞"
-        },
-        {
-          "id": "c002",
-          "name": "华正新材",
-          "nameEn": "Walsin",
-          "role": "高频覆铜板",
-          "position": "覆铜板专业厂商，高频材料产能持续扩张",
-          "customers": ["中兴", "诺基亚"],
-          "highlights": ["高频PTFE材料已通过主流设备商认证", "产能利用率持续满载"],
-          "location": "杭州"
-        },
-        {
-          "id": "c003",
-          "name": "博恩电子",
-          "nameEn": "Boen",
-          "role": "LCP薄膜/软板",
-          "position": "LCP软板国内领先，5G毫米波AiP模组供应商",
-          "customers": ["信维通信", "硕贝德", "苹果供应链"],
-          "highlights": ["LCP材料国产化替代领先", "毫米波AiP模组小批量供货"],
-          "location": "深圳"
-        },
-        {
-          "id": "c004",
-          "name": "村田制作所",
-          "nameEn": "Murata",
-          "role": "被动元器件/模组",
-          "position": "全球最大被动元器件厂商，AiP模组核心供应商",
-          "customers": ["苹果", "三星"],
-          "highlights": ["超小型5G毫米波AiP模组", "LTCC工艺全球领先"],
-          "location": "日本"
-        },
-        {
-          "id": "c005",
-          "name": "Taiyo Yuden",
-          "nameEn": "Taiyo Yuden",
-          "role": "电感/被动器件",
-          "position": "高频电感核心供应商，5G射频前端重要供应商",
-          "customers": ["华为", "苹果"],
-          "highlights": ["高频电感全球前三", "5G射频前端核心供应链"],
-          "location": "日本"
-        }
-      ]
-    },
-    "midstream": {
-      "name": "中游：天线设计与制造",
-      "description": "天线产业核心环节，涵盖基站天线、终端天线、微波天线等各类产品的设计与制造。",
-      "companies": [
-        {
-          "id": "c006",
-          "name": "华为技术有限公司",
-          "nameEn": "Huawei",
-          "role": "系统设备/基站天线",
-          "position": "全球基站天线市场领导者，5G-A技术引领者",
-          "customers": ["中国移动", "中国电信", "中国联通"],
-          "highlights": ["5G-A 128T128R AAU商用", "全球基站天线市场份额第一", "massive MIMO技术领先"],
-          "location": "深圳",
-          "isKey": true
-        },
-        {
-          "id": "c007",
-          "name": "中兴通讯",
-          "nameEn": "ZTE",
-          "role": "系统设备/基站天线",
-          "position": "国内第二大通信设备商，A+天线品牌战略启动",
-          "customers": ["中国电信", "中国移动"],
-          "highlights": ["A+天线品牌战略", "5G-A产品线完整", "国内运营商核心供应商"],
-          "location": "深圳"
-        },
-        {
-          "id": "c008",
-          "name": "盛路通信",
-          "nameEn": "Shenglu",
-          "role": "基站天线/微波天线",
-          "position": "国内基站天线龙头企业，微波天线出口领先",
-          "customers": ["中国移动", "中国电信", "东南亚运营商", "欧洲运营商"],
-          "highlights": ["5G基站天线出口增长超40%", "微波天线出口领先", "年营收28亿元"],
-          "location": "佛山"
-        },
-        {
-          "id": "c009",
-          "name": "亨鑫科技",
-          "nameEn": " Hengxin",
-          "role": "基站天线",
-          "position": "国内知名基站天线厂商，运营商集采核心供应商",
-          "customers": ["中国移动", "中国联通"],
-          "highlights": ["运营商集采核心供应商", "4G/5G天线产品线完整"],
-          "location": "无锡"
-        },
-        {
-          "id": "c010",
-          "name": "通宇通讯",
-          "nameEn": "Tongyu",
-          "role": "基站天线/微波天线",
-          "position": "基站天线专业厂商，微波通信领域有优势",
-          "customers": ["中国电信", "中东运营商"],
-          "highlights": ["微波天线技术领先", "海外市场持续拓展"],
-          "location": "中山"
-        },
-        {
-          "id": "c011",
-          "name": "京信通信",
-          "nameEn": "Comba",
-          "role": "基站天线/小基站",
-          "position": "亚太领先基站天线厂商，小基站产品线丰富",
-          "customers": ["中国移动", "日本软银", "印度运营商"],
-          "highlights": ["小基站天线产品线完整", "亚太市场领先", "室内覆盖解决方案"],
-          "location": "广州"
-        },
-        {
-          "id": "c012",
-          "name": "东山精密",
-          "nameEn": "DSBJ",
-          "role": "AAU金属腔体",
-          "position": "华为AAU腔体独家供应商，月产能200万套",
-          "customers": ["华为"],
-          "highlights": ["华为AAU腔体独家供应商", "月产能突破200万套", "供货占比65%"],
-          "location": "苏州"
-        },
-        {
-          "id": "c013",
-          "name": "信维通信",
-          "nameEn": "Sinwa",
-          "role": "终端天线/LCP模组",
-          "position": "终端天线领先厂商，LCP天线产能扩张中",
-          "customers": ["苹果", "三星", "华为"],
-          "highlights": ["LCP天线模组产能提升40%", "苹果供应商", "5G终端天线领先"],
-          "location": "深圳"
-        },
-        {
-          "id": "c014",
-          "name": "硕贝德",
-          "nameEn": "Speagle",
-          "role": "终端天线",
-          "position": "终端天线专业厂商，5G手机天线主要供应商",
-          "customers": ["华为", "小米", "OPPO"],
-          "highlights": ["5G手机天线主要供应商", "终端天线产能扩张", "A股上市公司"],
-          "location": "惠州"
-        },
-        {
-          "id": "c015",
-          "name": "成都天锐星空",
-          "nameEn": "Tianrui",
-          "role": "卫星终端天线",
-          "position": "相控阵卫星终端厂商，雄安产业园入驻",
-          "customers": ["SpaceX", "中国星网"],
-          "highlights": ["相控阵卫星终端批量生产", "雄安产业园入驻", "卫星互联网终端"],
-          "location": "成都"
-        },
-        {
-          "id": "c016",
-          "name": "爱立信",
-          "nameEn": "Ericsson",
-          "role": "系统设备",
-          "position": "全球第二大三信设备商，中国市场持续运营",
-          "customers": ["中国联通"],
-          "highlights": ["全球5G设备第二", "毫米波基站设备认证", "中国联通核心供应商"],
-          "location": "瑞典"
-        },
-        {
-          "id": "c017",
-          "name": "诺基亚",
-          "nameEn": "Nokia",
-          "role": "系统设备",
-          "position": "全球第三大通信设备商，中国市场稳定供应",
-          "customers": ["中国电信"],
-          "highlights": ["全球5G设备第三", "5G毫米波设备认证", "中国电信集采中标"],
-          "location": "芬兰"
-        },
-        {
-          "id": "c018",
-          "name": "乐依互联",
-          "nameEn": "Loye",
-          "role": "网通天线",
-          "position": "Wi-Fi路由器天线领先厂商，Wi-Fi 7 MIMO方案推出",
-          "customers": ["TP-Link", "小米", "华为"],
-          "highlights": ["Wi-Fi 7 MIMO天线方案", "路由器天线市场份额领先", "多频段MIMO技术"],
-          "location": "深圳"
-        },
-        {
-          "id": "c019",
-          "name": "普莱斯科技",
-          "nameEn": "Pulse",
-          "role": "网通天线",
-          "position": "网通天线专业厂商，多频段方案领先",
-          "customers": ["华硕", "Netgear"],
-          "highlights": ["多频段MIMO天线方案", "海外网通品牌主要供应商"],
-          "location": "深圳"
-        },
-        {
-          "id": "c020",
-          "name": "莱尔德科技",
-          "nameEn": "Laird",
-          "role": "网通天线/车载天线",
-          "position": "全球领先天线系统供应商，车载V2X天线布局",
-          "customers": ["特斯拉", "宝马"],
-          "highlights": ["Wi-Fi 7 MIMO方案", "车载V2X天线", "全球天线系统供应商"],
-          "location": "美国"
-        }
-      ]
-    },
-    "downstream": {
-      "name": "下游：运营商与集成商",
-      "description": "天线产业下游，决定需求方向和应用场景。",
-      "companies": [
-        {
-          "id": "c021",
+          "id": "op001",
           "name": "中国移动",
           "nameEn": "China Mobile",
+          "stockCode": "600941.SH / 0941.HK",
+          "exchange": "上交所A股 / 港交所",
           "role": "运营商",
-          "position": "全球最大移动通信运营商，天线采购量国内第一",
-          "highlights": ["2026年第二批集采超2000万面", "基站规模全球第一", "5G-A建设领跑"],
-          "location": "北京"
+          "position": "全球最大移动运营商，用户超10亿，主营移动通信及宽带业务",
+          "marketCap": "约22969亿元",
+          "revenue": "约10408亿元",
+          "netProfit": "约1384亿元",
+          "profitYoY": "+5.0%",
+          "customers": [],
+          "highlights": [
+            "全球最大移动运营商",
+            "5G基站建设主力采购方",
+            "年资本开支超1800亿元"
+          ],
+          "location": "北京",
+          "isKey": true,
+          "stockPrices": [
+            108,
+            106,
+            110,
+            112,
+            115,
+            113,
+            110,
+            108,
+            105,
+            103,
+            102,
+            101
+          ],
+          "stockCurrent": 101,
+          "stock52Low": 88,
+          "stock52High": 118,
+          "rank": 1
         },
         {
-          "id": "c022",
+          "id": "op002",
           "name": "中国电信",
           "nameEn": "China Telecom",
+          "stockCode": "601728.SH / 0728.HK",
+          "exchange": "上交所A股 / 港交所",
           "role": "运营商",
-          "position": "国内第二大运营商，5G建设快速推进",
-          "highlights": ["2026年集采约1200万面", "5G毫米波商用领先", "与中国联通共建共享"],
-          "location": "北京"
+          "position": "综合性电信运营商，运营5G/宽带/天翼云业务",
+          "marketCap": "约7055亿元",
+          "revenue": "约5294亿元",
+          "netProfit": "约330亿元",
+          "profitYoY": "+8.4%",
+          "customers": [],
+          "highlights": [
+            "5G基站天线主要采购方",
+            "天翼云数字化业务快速增长"
+          ],
+          "location": "北京",
+          "isKey": true,
+          "stockPrices": [
+            6.2,
+            6.4,
+            6.5,
+            6.6,
+            6.8,
+            6.5,
+            6.3,
+            6.1,
+            5.9,
+            5.8,
+            5.7,
+            5.7
+          ],
+          "stockCurrent": 5.7,
+          "stock52Low": 5.2,
+          "stock52High": 7.1,
+          "rank": 2
         },
         {
-          "id": "c023",
+          "id": "op003",
           "name": "中国联通",
           "nameEn": "China Unicom",
+          "stockCode": "600050.SH / 0762.HK",
+          "exchange": "上交所A股 / 港交所",
           "role": "运营商",
-          "position": "国内第三大运营商，6G技术研究活跃",
-          "highlights": ["6G天线技术愿景白皮书", "与电信共建共享5G", "毫米波频谱试验"],
-          "location": "北京"
+          "position": "电信运营商，主营移动/固网/云计算及数字化服务",
+          "marketCap": "约1748亿元",
+          "revenue": "约3896亿元",
+          "netProfit": "约90.3亿元",
+          "profitYoY": "+10.1%",
+          "customers": [],
+          "highlights": [
+            "共建共享策略",
+            "数字化服务增长迅速"
+          ],
+          "location": "北京",
+          "isKey": true,
+          "stockPrices": [
+            5.8,
+            5.6,
+            5.5,
+            5.4,
+            5.6,
+            5.5,
+            5.3,
+            5.1,
+            4.9,
+            4.8,
+            4.7,
+            4.6
+          ],
+          "stockCurrent": 4.6,
+          "stock52Low": 4.2,
+          "stock52High": 6.0,
+          "rank": 3
         },
         {
-          "id": "c024",
+          "id": "op004",
           "name": "中国铁塔",
           "nameEn": "China Tower",
-          "role": "通信基础设施",
-          "position": "国内最大通信塔桅运营商，统筹运营商站址",
-          "highlights": ["承接运营商塔桅建设需求", "天线挂载方案优化", "存量站址改造"],
-          "location": "北京"
+          "stockCode": "0788.HK",
+          "exchange": "港交所",
+          "role": "基础设施服务商",
+          "position": "移动通信基础设施服务商，共建共享铁塔及站址资源",
+          "marketCap": "约500+亿港元",
+          "revenue": "约977.7亿元",
+          "netProfit": "约107.3亿元",
+          "profitYoY": "+10.0%",
+          "customers": [],
+          "highlights": [
+            "铁塔共建共享",
+            "站址资源垄断优势",
+            "年收租金超800亿元"
+          ],
+          "location": "北京",
+          "isKey": false,
+          "stockPrices": [
+            1.45,
+            1.42,
+            1.4,
+            1.38,
+            1.36,
+            1.34,
+            1.32,
+            1.3,
+            1.28,
+            1.26,
+            1.25,
+            1.24
+          ],
+          "stockCurrent": 1.24,
+          "stock52Low": 1.1,
+          "stock52High": 1.55,
+          "rank": 4
+        }
+      ]
+    },
+    "tier2_equipment_vendors": {
+      "name": "主设备商（系统集成）",
+      "description": "制造通信系统主设备（基站/核心网），整合天线/射频部件，向上对接运营商，向下整合天线整机厂",
+      "companies": [
+        {
+          "id": "ev001",
+          "name": "华为",
+          "nameEn": "Huawei",
+          "stockCode": "未上市",
+          "exchange": "—",
+          "role": "主设备商",
+          "position": "全球最大通信设备商，2025年营收8809亿元，净利润680亿元，研发投入1923亿元；业务含ICT基础设施/终端/智能汽车/云等",
+          "marketCap": "未上市",
+          "revenue": "约8809亿元",
+          "netProfit": "约680亿元",
+          "profitYoY": "+8.7%",
+          "customers": [
+            "中国移动",
+            "中国电信",
+            "中国联通"
+          ],
+          "highlights": [
+            "全球最大通信设备商",
+            "5G-A Massive MIMO全球领先",
+            "自研天线BU含基站天线/滤波器",
+            "年研发投入1923亿元"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "rank": 1
         },
         {
-          "id": "c025",
-          "name": "中国星网",
-          "nameEn": "China SatNet",
-          "role": "卫星运营商",
-          "position": "国家卫星互联网运营商，终端需求快速增长",
-          "highlights": ["卫星互联网建设主体", "相控阵终端批量采购", "低轨卫星星座建设"],
-          "location": "雄安新区"
+          "id": "ev002",
+          "name": "中兴通讯",
+          "nameEn": "ZTE",
+          "stockCode": "000063.SZ",
+          "exchange": "深交所A股",
+          "role": "主设备商",
+          "position": "全球第四大通信系统设备商，2024年营收1213亿元，含运营商网络/政企/消费业务",
+          "marketCap": "约1500亿元",
+          "revenue": "约1213亿元",
+          "netProfit": "约84.25亿元",
+          "profitYoY": "-9.66%",
+          "customers": [
+            "中国电信",
+            "中国移动"
+          ],
+          "highlights": [
+            "5G-A产品线完整",
+            "中兴天线业务整合于体内",
+            "A+天线品牌战略"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "stockPrices": [
+            42,
+            44,
+            45,
+            43,
+            41,
+            38,
+            36,
+            35,
+            33,
+            32,
+            31,
+            30
+          ],
+          "stockCurrent": 30,
+          "stock52Low": 25,
+          "stock52High": 48,
+          "rank": 2
+        },
+        {
+          "id": "ev003",
+          "name": "爱立信",
+          "nameEn": "Ericsson",
+          "stockCode": "ERIC",
+          "exchange": "NASDAQ（美股）",
+          "role": "主设备商",
+          "position": "瑞典通信设备巨头，2024年营收约259亿美元，全球5G设备商之一",
+          "marketCap": "约180亿美元",
+          "revenue": "约259亿美元",
+          "netProfit": "约0.37亿美元（扭亏）",
+          "profitYoY": "扭亏",
+          "customers": [],
+          "highlights": [
+            "全球5G设备商",
+            "欧洲/北美市场占主导",
+            "持续重组减亏"
+          ],
+          "location": "瑞典",
+          "isKey": false,
+          "stockPrices": [
+            9.5,
+            9.2,
+            9.0,
+            8.8,
+            8.6,
+            8.4,
+            8.2,
+            8.5,
+            8.8,
+            9.0,
+            9.2,
+            9.5
+          ],
+          "stockCurrent": 9.5,
+          "stock52Low": 7.8,
+          "stock52High": 10.5,
+          "rank": 4
+        },
+        {
+          "id": "ev004",
+          "name": "诺基亚",
+          "nameEn": "Nokia",
+          "stockCode": "NOK",
+          "exchange": "NYSE（美股）",
+          "role": "主设备商",
+          "position": "芬兰通信设备商，2024年营收192.2亿欧元，净利润12.84亿欧元，专利授权收入贡献突出",
+          "marketCap": "约550亿美元",
+          "revenue": "约192.2亿欧元",
+          "netProfit": "约12.84亿欧元",
+          "profitYoY": "+89%",
+          "customers": [],
+          "highlights": [
+            "全球5G设备商",
+            "专利授权盈利能力强",
+            "网络基础设施业务为主"
+          ],
+          "location": "芬兰",
+          "isKey": false,
+          "stockPrices": [
+            4.8,
+            4.6,
+            4.5,
+            4.4,
+            4.3,
+            4.4,
+            4.5,
+            4.6,
+            4.7,
+            4.8,
+            4.9,
+            5.0
+          ],
+          "stockCurrent": 5.0,
+          "stock52Low": 3.8,
+          "stock52High": 5.5,
+          "rank": 3
+        }
+      ]
+    },
+    "tier3_antenna_oems": {
+      "name": "天线整机厂商",
+      "description": "生产基站天线、美化天线、射频无源/有源产品，直接供货给运营商或主设备商",
+      "companies": [
+        {
+          "id": "ao012",
+          "name": "华为天线事业部",
+          "nameEn": "Huawei Antenna BU",
+          "stockCode": "未上市（华为全资）",
+          "exchange": "—",
+          "role": "天线整机厂商（自研自用）",
+          "position": "华为内部天线研发制造部门，不对外独立披露，历史上全球基站天线市场份额约30%（含AAU AAS），自研天线+滤波器+RRU一体化设计，深度整合进华为基站产品",
+          "marketCap": "华为非上市",
+          "revenue": "包含在华为年报ICT基础设施板块中，无单独数字",
+          "netProfit": "—",
+          "profitYoY": "—",
+          "customers": [
+            "中国移动",
+            "全球运营商（华为设备配套）"
+          ],
+          "highlights": [
+            "全球基站天线市场份额约30%（第一）",
+            "5G AAU/AAS有源自研天线全球领先",
+            "滤波器+天线+RRU垂直整合",
+            "国内集采份额约45%"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 1
+        },
+        {
+          "id": "ao013",
+          "name": "中兴天线/A+天线",
+          "nameEn": "ZTE Antenna (A+ Brand)",
+          "stockCode": "000063.SZ（并入中兴通讯）",
+          "exchange": "深交所A股",
+          "role": "天线整机厂商（自研自用）",
+          "position": "中兴通讯内部分支，历史上内部天线BU，近年推进A+天线战略，在中频段（700M/900M/1800M）颇有优势，国内集采份额约20%",
+          "marketCap": "包含在中兴通讯整体（约1500亿元）",
+          "revenue": "包含在中兴ICT基础设施板块中",
+          "netProfit": "—",
+          "profitYoY": "—",
+          "customers": [
+            "中国电信",
+            "中国移动",
+            "中国联通"
+          ],
+          "highlights": [
+            "中兴通讯内资天线BU",
+            "A+天线品牌战略（中高频段）",
+            "国内集采份额约20%",
+            "5G-A产品线完整"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 2
+        },
+        {
+          "id": "ao009",
+          "name": "康普（CommScope/Andrew）",
+          "nameEn": "CommScope Holdings",
+          "stockCode": "COMM（美股NASDAQ）",
+          "exchange": "NASDAQ（美股）",
+          "role": "天线整机厂商（国际）",
+          "position": "全球最大天线及布线解决方案商之一，旗下有Andrew（天线）/CommScope（布线）双品牌，2024年营收约96亿美元，亏损4.4亿美元；曾以96亿美元收购Arris，债务沉重",
+          "marketCap": "约21亿美元",
+          "revenue": "约96亿美元",
+          "netProfit": "亏损4.4亿美元",
+          "profitYoY": "由盈转亏",
+          "customers": [
+            "Verizon",
+            "AT&T",
+            "T-Mobile"
+          ],
+          "highlights": [
+            "全球基站天线份额约20%（第一梯队）",
+            "Andrew天线品牌全球认知度最高",
+            "5G AAU/AAS有源天线系统",
+            "中国市场份额受压（禁令影响）"
+          ],
+          "location": "美国北卡罗来纳",
+          "isKey": true,
+          "stockPrices": [
+            18,
+            17,
+            16,
+            15,
+            14,
+            13,
+            12,
+            11,
+            10,
+            9,
+            8,
+            7
+          ],
+          "stockCurrent": 7,
+          "stock52Low": 5,
+          "stock52High": 20,
+          "rank": 3
+        },
+        {
+          "id": "ao003",
+          "name": "京信通信",
+          "nameEn": "Comba Telecom",
+          "stockCode": "02342.HK",
+          "exchange": "港交所（新加坡上市）",
+          "role": "天线整机厂商",
+          "position": "全球第二大基站天线厂商，2024年营收45.3亿港元，亏损5.64亿港元；业务含天馈系统/网络设备/服务",
+          "marketCap": "约4.46亿港元",
+          "revenue": "约45.3亿港元",
+          "netProfit": "亏损5.64亿港元",
+          "profitYoY": "由盈转亏",
+          "customers": [
+            "中国移动",
+            "中国电信",
+            "中国联通"
+          ],
+          "highlights": [
+            "全球第二大基站天线厂商",
+            "海外收入占比较高",
+            "营收规模超45亿港元"
+          ],
+          "location": "广州",
+          "isKey": true,
+          "stockPrices": [
+            1.8,
+            1.6,
+            1.5,
+            1.4,
+            1.3,
+            1.2,
+            1.0,
+            0.8,
+            0.6,
+            0.5,
+            0.45,
+            0.4
+          ],
+          "stockCurrent": 0.4,
+          "stock52Low": 0.3,
+          "stock52High": 2.8,
+          "rank": 4
+        },
+        {
+          "id": "ao017",
+          "name": "罗森博格（Prose/Rosenberger）",
+          "nameEn": "Prose (Rosenberger)",
+          "stockCode": "非上市（德国私企）",
+          "exchange": "—",
+          "role": "天线整机厂商（国际）",
+          "position": "源自德国 Kathrein 的天线业务分拆，承接 Kathrein 核心团队及技术；是全球顶级基站天线品牌之一，主要服务欧洲/北美运营商及爱立信/诺基亚等主设备商；产品含5G Massive MIMO天线/AAU/AAS；在全球设有研发中心和工厂，技术积累深厚",
+          "marketCap": "非上市（德国私企）",
+          "revenue": "约4-5亿欧元（估计）",
+          "netProfit": "约0.3亿欧元（估计）",
+          "profitYoY": "稳健",
+          "customers": [
+            "欧洲运营商",
+            "北美运营商",
+            "爱立信",
+            "诺基亚"
+          ],
+          "highlights": [
+            "Kathrein 核心团队及技术承继者",
+            "全球顶级基站天线品牌之一",
+            "欧洲/北美高端市场领先",
+            "5G AAU/AAS 有源天线"
+          ],
+          "location": "德国慕尼黑",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 5
+        },
+        {
+          "id": "ao001",
+          "name": "通宇通讯",
+          "nameEn": "Tongyu Communication",
+          "stockCode": "002792.SZ",
+          "exchange": "深交所A股",
+          "role": "天线整机厂商",
+          "position": "专注基站天线/射频器件/微波天线，2024年营收11.94亿元，净利润4139万元，卫星通信业务开始贡献收入",
+          "marketCap": "约58.67亿元",
+          "revenue": "约11.94亿元",
+          "netProfit": "约0.41亿元",
+          "profitYoY": "-49.03%",
+          "customers": [
+            "中国移动",
+            "中国电信",
+            "华为"
+          ],
+          "highlights": [
+            "基站天线A股龙头",
+            "微波天线出口领先",
+            "卫星通信业务拓展"
+          ],
+          "location": "中山",
+          "isKey": true,
+          "stockPrices": [
+            16,
+            17,
+            18,
+            17,
+            16,
+            15,
+            14,
+            13,
+            12,
+            12,
+            11,
+            11
+          ],
+          "stockCurrent": 11,
+          "stock52Low": 9,
+          "stock52High": 19,
+          "rank": 6
+        },
+        {
+          "id": "ao002",
+          "name": "摩比天线",
+          "nameEn": "Mobi Antenna",
+          "stockCode": "00947.HK",
+          "exchange": "港交所",
+          "role": "天线整机厂商",
+          "position": "港股上市天线及射频子系统制造商，产品涵盖宏基站天线/美化天线/滤波器/馈线等",
+          "marketCap": "约79.7亿港元",
+          "revenue": "约39.5亿元",
+          "netProfit": "亏损",
+          "profitYoY": "亏损",
+          "customers": [
+            "中国移动",
+            "中国联通"
+          ],
+          "highlights": [
+            "天线+滤波器双产品线",
+            "港股上市",
+            "美化天线特色"
+          ],
+          "location": "深圳",
+          "isKey": false,
+          "stockPrices": [
+            2.2,
+            2.1,
+            2.0,
+            1.9,
+            1.8,
+            1.7,
+            1.6,
+            1.5,
+            1.4,
+            1.3,
+            1.25,
+            1.2
+          ],
+          "stockCurrent": 1.2,
+          "stock52Low": 0.9,
+          "stock52High": 2.6,
+          "rank": 7
+        },
+        {
+          "id": "ao006",
+          "name": "中信科移动",
+          "nameEn": "CITC Mobile",
+          "stockCode": "688387.SH",
+          "exchange": "上交所科创板",
+          "role": "天线整机厂商",
+          "position": "中国信科集团旗下移动通信设备商，2024年营收61.45亿元，亏损2.7亿元；聚焦5G/卫星互联网/6G",
+          "marketCap": "约545亿元",
+          "revenue": "约61.45亿元",
+          "netProfit": "亏损2.7亿元",
+          "profitYoY": "基本持平（减亏）",
+          "customers": [
+            "中国移动",
+            "中国电信"
+          ],
+          "highlights": [
+            "中国信科集团旗下",
+            "5G/卫星互联网/6G聚焦",
+            "科创板上市"
+          ],
+          "location": "武汉",
+          "isKey": false,
+          "stockPrices": [
+            12,
+            12,
+            11,
+            11,
+            10,
+            10,
+            9,
+            9,
+            8,
+            8,
+            8,
+            8
+          ],
+          "stockCurrent": 8,
+          "stock52Low": 6.5,
+          "stock52High": 14,
+          "rank": 8
+        },
+        {
+          "id": "ao005",
+          "name": "亨鑫科技",
+          "nameEn": "Hengxin Tech",
+          "stockCode": "01085.HK",
+          "exchange": "港交所",
+          "role": "天线整机厂商",
+          "position": "无线通信天馈系统制造商，2025年收入约22.47亿港元，净亏损4240万港元",
+          "marketCap": "约7.17亿港元",
+          "revenue": "约22.5亿元",
+          "netProfit": "亏损4240万港元",
+          "profitYoY": "亏损",
+          "customers": [
+            "中国移动",
+            "中国联通"
+          ],
+          "highlights": [
+            "港股天线厂商",
+            "无线天馈系统专注"
+          ],
+          "location": "无锡",
+          "isKey": false,
+          "stockPrices": [
+            0.85,
+            0.8,
+            0.78,
+            0.75,
+            0.72,
+            0.7,
+            0.68,
+            0.65,
+            0.6,
+            0.55,
+            0.5,
+            0.48
+          ],
+          "stockCurrent": 0.48,
+          "stock52Low": 0.35,
+          "stock52High": 1.0,
+          "rank": 9
+        },
+        {
+          "id": "ao007",
+          "name": "盛路通信",
+          "nameEn": "Shenglu Telecom",
+          "stockCode": "002446.SZ",
+          "exchange": "深交所A股",
+          "role": "天线整机厂商",
+          "position": "国内中小基站天线/终端天线主流供应商，旗下有全资子公司南京盛远（专注射频 cable/跳线），2024年营收约12.8亿元，净利润约8500万元",
+          "marketCap": "约72亿元",
+          "revenue": "约12.8亿元",
+          "netProfit": "约0.85亿元",
+          "profitYoY": "+12.5%",
+          "customers": [
+            "中国移动",
+            "中国联通",
+            "华为"
+          ],
+          "highlights": [
+            "中小基站天线A股稀缺标的",
+            "终端天线/手机天线全国前三",
+            "南京盛远射频电缆整合"
+          ],
+          "location": "佛山",
+          "isKey": true,
+          "stockPrices": [
+            7.5,
+            7.8,
+            8.0,
+            8.2,
+            8.0,
+            7.8,
+            7.5,
+            7.3,
+            7.2,
+            7.1,
+            7.0,
+            7.0
+          ],
+          "stockCurrent": 7.0,
+          "stock52Low": 6.5,
+          "stock52High": 8.8,
+          "rank": 10
+        },
+        {
+          "id": "ao004",
+          "name": "中天科技",
+          "nameEn": "Zhongtian Technology",
+          "stockCode": "600522.SH",
+          "exchange": "上交所A股",
+          "role": "天线整机厂商",
+          "position": "光纤通信/电力传输/海缆龙头，2024年营收480.55亿元，净利润28.38亿元；天线业务为通信板块组成部分",
+          "marketCap": "约1495.55亿元",
+          "revenue": "约480.55亿元",
+          "netProfit": "约28.38亿元",
+          "profitYoY": "-8.94%",
+          "customers": [
+            "中国移动",
+            "中国电信"
+          ],
+          "highlights": [
+            "光纤海缆龙头",
+            "天线业务为通信板块一部分",
+            "电力业务稳健"
+          ],
+          "location": "南通",
+          "isKey": false,
+          "stockPrices": [
+            18,
+            18,
+            17,
+            17,
+            16,
+            16,
+            15,
+            14,
+            14,
+            13,
+            13,
+            12
+          ],
+          "stockCurrent": 12,
+          "stock52Low": 10,
+          "stock52High": 20,
+          "rank": 11
+        },
+        {
+          "id": "ao008",
+          "name": "晖速通信",
+          "nameEn": "Huishu Communication",
+          "stockCode": "非上市",
+          "exchange": "—",
+          "role": "天线整机厂商",
+          "position": "专注基站天线/美化天线/OEM代工，在广东设有大型生产基地，主要给海外设备商及运营商提供OEM天线，年营收约8亿元",
+          "marketCap": "非上市",
+          "revenue": "约8亿元",
+          "netProfit": "约0.5亿元",
+          "profitYoY": "+3%",
+          "customers": [
+            "爱立信",
+            "诺基亚"
+          ],
+          "highlights": [
+            "基站天线OEM/ODM专家",
+            "广东大型生产基地",
+            "海外设备商代工为主"
+          ],
+          "location": "东莞",
+          "isKey": false,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 12
+        },
+        {
+          "id": "ao010",
+          "name": "Kathrein（现属安弗施/AAC）",
+          "nameEn": "Kathrein (AAC Holdings)",
+          "stockCode": "非独立上市（安弗施集团内）",
+          "exchange": "—",
+          "role": "天线整机厂商（国际）",
+          "position": "百年天线老牌，2019年被安弗施（AAX）收购；曾是全球最大基站天线品牌，历史上全球份额约20%，产品覆盖2G~5G全频段天线/AAS/RRU；受华为竞争及中国市场份额丢失影响，近年持续重组",
+          "marketCap": "被收购，非独立披露",
+          "revenue": "被并入安弗施（AAX）财报，不单独列示",
+          "netProfit": "—",
+          "profitYoY": "—",
+          "customers": [
+            "欧洲运营商",
+            "北美运营商"
+          ],
+          "highlights": [
+            "全球最老牌天线品牌之一",
+            "曾占据中国基站天线市场约15%份额",
+            "被安弗施收购后战略重组",
+            "现聚焦欧洲/北美高端市场"
+          ],
+          "location": "德国罗森海姆",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 13
+        },
+        {
+          "id": "ao011",
+          "name": "RFS（射频系统）",
+          "nameEn": "RFS (Radio Frequency Systems)",
+          "stockCode": "非上市（私企）",
+          "exchange": "—",
+          "role": "天线整机厂商（国际）",
+          "position": "全球性天线及射频无源器件公司，产品含基站天线/滤波器/射频电缆/微波天线；在全球20多个国家有工厂和研发中心，美国/欧洲/中国均有业务；年被营收约6亿美元",
+          "marketCap": "非上市",
+          "revenue": "约6亿美元",
+          "netProfit": "—",
+          "profitYoY": "—",
+          "customers": [
+            "爱立信",
+            "诺基亚",
+            "全球运营商"
+          ],
+          "highlights": [
+            "微波天线全球前三",
+            "滤波器/天线综合解决方案",
+            "全球布局，中国设厂"
+          ],
+          "location": "法国巴黎（全球总部）",
+          "isKey": false,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 14
+        },
+        {
+          "id": "ao014",
+          "name": "佛山市粤海信通讯有限公司",
+          "nameEn": "Eahison (Foshan)",
+          "stockCode": "未上市",
+          "exchange": "—",
+          "role": "天线整机厂商",
+          "position": "龙勃透镜天线技术领导者，国内首家实现5G-A龙勃透镜天线万级规模出货；48端口多频多波束龙勃透镜天线已在中国移动/电信/联通规模应用，覆盖30省48地市；应用于高铁/大桥/校园/海域等场景",
+          "marketCap": "未上市",
+          "revenue": "约5亿元（估计）",
+          "netProfit": "约0.5亿元（估计）",
+          "profitYoY": "+20%",
+          "customers": [
+            "中国移动",
+            "中国电信",
+            "中国联通"
+          ],
+          "highlights": [
+            "国内首家5G-A龙勃透镜天线规模出货",
+            "龙勃透镜天线覆盖30省48地市",
+            "超密组网解决方案提供商"
+          ],
+          "location": "佛山",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 15
+        },
+        {
+          "id": "ao015",
+          "name": "广东博纬通信科技有限公司",
+          "nameEn": "BroadRadio (Guangdong)",
+          "stockCode": "非上市（飞荣达曾控股，已出售部分股权）",
+          "exchange": "—",
+          "role": "天线整机厂商",
+          "position": "国家级专精特新小巨人企业，专注4G/5G移动通信天线研发生产；持有天线/射频领域2位IEEE Fellow及3位国家万人计划领军人才；多波束天线/Massive MIMO天线技术领先；已通过华为/中兴/诺基亚/凯瑟琳认证；产品应用于鸟巢/大兴机场/世界杯场馆等全球知名项目",
+          "marketCap": "非上市",
+          "revenue": "约6亿元（估计）",
+          "netProfit": "约0.4亿元（估计）",
+          "profitYoY": "+5%",
+          "customers": [
+            "华为",
+            "中兴",
+            "诺基亚",
+            "中国移动",
+            "全球运营商"
+          ],
+          "highlights": [
+            "专精特新小巨人天线厂商",
+            "Massive MIMO天线技术领先",
+            "全球30余国运营商长期合作"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 16
+        },
+        {
+          "id": "ao016",
+          "name": "博迅通信",
+          "nameEn": "Boxun Communication",
+          "stockCode": "非上市",
+          "exchange": "—",
+          "role": "塑料振子/OEM天线",
+          "position": "5G基站塑料天线振子专业制造商，POP（塑料金属化）工艺已成5G基站塑料振子主流方案；产品用于华为/中兴等主流5G Massive MIMO天线；PPS材料振子重量低、一致性好、良品率高；终端天线合作小米/OPPO等",
+          "marketCap": "非上市",
+          "revenue": "约3亿元（估计）",
+          "netProfit": "约0.3亿元（估计）",
+          "profitYoY": "+15%",
+          "customers": [
+            "华为",
+            "中兴",
+            "OPPO",
+            "小米"
+          ],
+          "highlights": [
+            "POP塑料金属化振子主流方案",
+            "5G Massive MIMO振子核心供应商",
+            "终端天线/手机天线覆盖"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 17
+        }
+      ]
+    },
+    "tier4_antenna_parts": {
+      "name": "天线部件供应商",
+      "description": "天线核心零部件：馈电网络（馈线/功分器/耦合器）、辐射单元（振子/PCB阵子）、移相器/电调电机、机械结构件、精密制造件",
+      "companies": [
+        {
+          "id": "ap006",
+          "name": "瑞声科技",
+          "nameEn": "AAC Technologies",
+          "stockCode": "2018.HK",
+          "exchange": "港交所",
+          "role": "天线振子/声学/MEMS",
+          "position": "全球领先的精密制造企业，天线振子/金属边框/声学/MEMS麦克风；2024年营收224亿元，为苹果/华为/三星供应商",
+          "marketCap": "约400+亿港元",
+          "revenue": "约224亿元",
+          "netProfit": "约12亿元",
+          "profitYoY": "+15%",
+          "customers": [
+            "苹果",
+            "华为",
+            "三星"
+          ],
+          "highlights": [
+            "MEMS麦克风全球第一",
+            "天线振子/金属化天线",
+            "苹果核心供应商"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "stockPrices": [
+            42,
+            41,
+            40,
+            39,
+            38,
+            37,
+            36,
+            35,
+            34,
+            33,
+            32,
+            31
+          ],
+          "stockCurrent": 31,
+          "stock52Low": 25,
+          "stock52High": 48,
+          "rank": 1
+        },
+        {
+          "id": "ap007",
+          "name": "东山精密",
+          "nameEn": "DSBC",
+          "stockCode": "002384.SZ",
+          "exchange": "深交所A股",
+          "role": "精密制造/M天线部件",
+          "position": "精密制造龙头，PCB/通信设备/精密金属结构件；2024年营收约340亿元，净利润17.7亿元；MFlex软板+天线业务",
+          "marketCap": "约500+亿元",
+          "revenue": "约340亿元",
+          "netProfit": "约17.7亿元",
+          "profitYoY": "+25%",
+          "customers": [
+            "苹果",
+            "华为",
+            "特斯拉"
+          ],
+          "highlights": [
+            "PCB软板龙头",
+            "天线精密金属结构件",
+            "苹果+MFlex双主业"
+          ],
+          "location": "苏州",
+          "isKey": true,
+          "stockPrices": [
+            48,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42,
+            41,
+            40,
+            39,
+            38,
+            37
+          ],
+          "stockCurrent": 37,
+          "stock52Low": 30,
+          "stock52High": 55,
+          "rank": 2
+        },
+        {
+          "id": "ap008",
+          "name": "鹏鼎控股",
+          "nameEn": "Pengding",
+          "stockCode": "002938.SZ",
+          "exchange": "深交所A股",
+          "role": "PCB软板/载板",
+          "position": "全球PCB软板龙头，应用于手机/通信/汽车；软板用于终端天线模组；2024年营收约335亿元",
+          "marketCap": "约700+亿元",
+          "revenue": "约335亿元",
+          "netProfit": "约28亿元",
+          "profitYoY": "+10%",
+          "customers": [
+            "苹果",
+            "华为",
+            "诺基亚"
+          ],
+          "highlights": [
+            "PCB软板全球第一",
+            "终端天线模组配套",
+            "苹果核心供应商"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "stockPrices": [
+            38,
+            37,
+            36,
+            35,
+            34,
+            33,
+            32,
+            31,
+            30,
+            29,
+            28,
+            27
+          ],
+          "stockCurrent": 27,
+          "stock52Low": 22,
+          "stock52High": 42,
+          "rank": 3
+        },
+        {
+          "id": "ap009",
+          "name": "安费诺",
+          "nameEn": "Amphenol",
+          "stockCode": "APH",
+          "exchange": "NYSE（美股）",
+          "role": "连接器/天线部件",
+          "position": "全球高端连接器/天线部件龙头，2024年营收约95亿美元，净利润约12亿美元；产品用于通信/航空航天/汽车",
+          "marketCap": "约650亿美元",
+          "revenue": "约95亿美元",
+          "netProfit": "约12亿美元",
+          "profitYoY": "+8%",
+          "customers": [
+            "苹果",
+            "华为",
+            "爱立信",
+            "诺基亚"
+          ],
+          "highlights": [
+            "全球高端连接器第一",
+            "通信/航空航天双主业",
+            "苹果核心供应商"
+          ],
+          "location": "美国康涅狄格",
+          "isKey": true,
+          "stockPrices": [
+            118,
+            116,
+            114,
+            112,
+            110,
+            108,
+            106,
+            104,
+            102,
+            100,
+            98,
+            96
+          ],
+          "stockCurrent": 96,
+          "stock52Low": 78,
+          "stock52High": 128,
+          "rank": 4
+        },
+        {
+          "id": "ap010",
+          "name": "立讯精密",
+          "nameEn": "Luxshare",
+          "stockCode": "002475.SZ",
+          "exchange": "深交所A股",
+          "role": "精密制造/天线/MEMS",
+          "position": "苹果核心代工商，精密制造/声学/摄像头模组/天线/汽车电子；2024年营收约2300亿元，净利润115亿元",
+          "marketCap": "约3500+亿元",
+          "revenue": "约2300亿元",
+          "netProfit": "约115亿元",
+          "profitYoY": "+20%",
+          "customers": [
+            "苹果",
+            "华为",
+            "特斯拉",
+            "立讯"
+          ],
+          "highlights": [
+            "苹果代工三巨头之一",
+            "精密制造龙头",
+            "天线/声学/汽车电子"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "stockPrices": [
+            38,
+            37,
+            36,
+            35,
+            34,
+            33,
+            32,
+            31,
+            30,
+            29,
+            28,
+            27
+          ],
+          "stockCurrent": 27,
+          "stock52Low": 22,
+          "stock52High": 44,
+          "rank": 5
+        },
+        {
+          "id": "ap011",
+          "name": "亿纬锂能",
+          "nameEn": "Eve Energy",
+          "stockCode": "300014.SZ",
+          "exchange": "深交所创业板",
+          "role": "电池/天线结构件",
+          "position": "锂电池龙头，产品用于物联网/通信备电/消费电子；部分天线金属结构件OEM",
+          "marketCap": "约1000+亿元",
+          "revenue": "约460亿元",
+          "netProfit": "约42亿元",
+          "profitYoY": "+18%",
+          "customers": [
+            "物联网设备商",
+            "通信设备商"
+          ],
+          "highlights": [
+            "锂原电池全球第一",
+            "物联网电池核心",
+            "基站备电"
+          ],
+          "location": "惠州",
+          "isKey": false,
+          "stockPrices": [
+            52,
+            50,
+            48,
+            46,
+            44,
+            42,
+            40,
+            38,
+            36,
+            34,
+            32,
+            30
+          ],
+          "stockCurrent": 30,
+          "stock52Low": 24,
+          "stock52High": 58,
+          "rank": 6
+        },
+        {
+          "id": "ap012",
+          "name": "长飞光纤",
+          "nameEn": "YOFC",
+          "stockCode": "601869.SH / 6869.HK",
+          "exchange": "上交所A股 / 港交所",
+          "role": "光纤/光缆/天线配套",
+          "position": "全球最大光纤预制棒/光纤光缆厂商之一，光缆用于基站天线馈电网络；2024年营收约175亿元",
+          "marketCap": "约400+亿元",
+          "revenue": "约175亿元",
+          "netProfit": "约10亿元",
+          "profitYoY": "+5%",
+          "customers": [
+            "运营商",
+            "华为",
+            "中兴"
+          ],
+          "highlights": [
+            "光纤预制棒全球第一",
+            "光缆用于馈电网络",
+            "华为/中兴核心供应商"
+          ],
+          "location": "武汉",
+          "isKey": false,
+          "stockPrices": [
+            38,
+            37,
+            36,
+            35,
+            34,
+            33,
+            32,
+            31,
+            30,
+            29,
+            28,
+            27
+          ],
+          "stockCurrent": 27,
+          "stock52Low": 22,
+          "stock52High": 42,
+          "rank": 7
+        },
+        {
+          "id": "ap001",
+          "name": "信维通信",
+          "nameEn": "Smarter Micro",
+          "stockCode": "300136.SZ",
+          "exchange": "深交所创业板",
+          "role": "天线部件/振子/LCP",
+          "position": "A股射频天线龙头，LCP天线/高频连接器/无线充电模组；2025年营收89亿元，净利润7.07亿元",
+          "marketCap": "约380+亿元",
+          "revenue": "约89亿元",
+          "netProfit": "约7.07亿元",
+          "profitYoY": "+7.12%",
+          "customers": [
+            "华为",
+            "苹果",
+            "三星"
+          ],
+          "highlights": [
+            "LCP天线/振子龙头",
+            "5G高频连接器核心供应商",
+            "华为+苹果双供应链"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "stockPrices": [
+            32,
+            33,
+            34,
+            33,
+            32,
+            31,
+            30,
+            29,
+            28,
+            28,
+            27,
+            26
+          ],
+          "stockCurrent": 26,
+          "stock52Low": 22,
+          "stock52High": 38,
+          "rank": 8
+        },
+        {
+          "id": "ap002",
+          "name": "摩比天线（部件线）",
+          "nameEn": "Mobi Antenna (Parts)",
+          "stockCode": "00947.HK",
+          "exchange": "港交所",
+          "role": "无源射频部件",
+          "position": "同时含天线整机及无源射频部件（功分器/耦合器/馈线等）",
+          "marketCap": "约79.7亿港元",
+          "revenue": "约39.5亿元",
+          "netProfit": "亏损",
+          "profitYoY": "亏损",
+          "customers": [
+            "运营商",
+            "主设备商"
+          ],
+          "highlights": [
+            "功分器/耦合器/馈线一体",
+            "天线+射频双产品线"
+          ],
+          "location": "深圳",
+          "isKey": false,
+          "stockPrices": [
+            2.2,
+            2.1,
+            2.0,
+            1.9,
+            1.8,
+            1.7,
+            1.6,
+            1.5,
+            1.4,
+            1.3,
+            1.25,
+            1.2
+          ],
+          "stockCurrent": 1.2,
+          "stock52Low": 0.9,
+          "stock52High": 2.6,
+          "rank": 9
+        },
+        {
+          "id": "ap003",
+          "name": "信维通信",
+          "nameEn": "Smarter Micro",
+          "stockCode": "300136.SZ",
+          "exchange": "深交所创业板",
+          "role": "振子/PCB阵子",
+          "position": "LCP/高频PCB阵子/天线振子供应商，服务华为/苹果/三星等",
+          "marketCap": "约380+亿元",
+          "revenue": "约89亿元",
+          "netProfit": "约7.07亿元",
+          "profitYoY": "+7.12%",
+          "customers": [
+            "华为",
+            "苹果",
+            "三星"
+          ],
+          "highlights": [
+            "LCP/高频PCB阵子",
+            "5G终端天线模组核心"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "stockPrices": [
+            32,
+            33,
+            34,
+            33,
+            32,
+            31,
+            30,
+            29,
+            28,
+            28,
+            27,
+            26
+          ],
+          "stockCurrent": 26,
+          "stock52Low": 22,
+          "stock52High": 38,
+          "rank": 10
+        },
+        {
+          "id": "ap004",
+          "name": "通宇通讯",
+          "nameEn": "Tongyu",
+          "stockCode": "002792.SZ",
+          "exchange": "深交所A股",
+          "role": "移相器/电调电机",
+          "position": "具备移相器/电调天线核心技术，自研电调电机控制器",
+          "marketCap": "约58.67亿元",
+          "revenue": "约11.94亿元",
+          "netProfit": "约0.41亿元",
+          "profitYoY": "-49.03%",
+          "customers": [
+            "运营商",
+            "主设备商"
+          ],
+          "highlights": [
+            "电调天线核心技术",
+            "自研电调电机"
+          ],
+          "location": "中山",
+          "isKey": false,
+          "stockPrices": [
+            16,
+            17,
+            18,
+            17,
+            16,
+            15,
+            14,
+            13,
+            12,
+            12,
+            11,
+            11
+          ],
+          "stockCurrent": 11,
+          "stock52Low": 9,
+          "stock52High": 19,
+          "rank": 11
+        },
+        {
+          "id": "ap005",
+          "name": "通宇通讯",
+          "nameEn": "Tongyu",
+          "stockCode": "002792.SZ",
+          "exchange": "深交所A股",
+          "role": "结构件",
+          "position": "天线结构件自产含底座/密封件等；部分结构件由第三方机加工供应商提供",
+          "marketCap": "约58.67亿元",
+          "revenue": "约11.94亿元",
+          "netProfit": "约0.41亿元",
+          "profitYoY": "-49.03%",
+          "customers": [],
+          "highlights": [
+            "结构件自产",
+            "底座/密封件"
+          ],
+          "location": "中山",
+          "isKey": false,
+          "stockPrices": [
+            16,
+            17,
+            18,
+            17,
+            16,
+            15,
+            14,
+            13,
+            12,
+            12,
+            11,
+            11
+          ],
+          "stockCurrent": 11,
+          "stock52Low": 9,
+          "stock52High": 19,
+          "rank": 12
+        },
+        {
+          "id": "ap013",
+          "name": "深圳鹏宇达微波",
+          "nameEn": "Pengyuda Microwave",
+          "stockCode": "未上市",
+          "exchange": "—",
+          "role": "环形器/隔离器",
+          "position": "专注射频环形器/隔离器研发生产，产品覆盖通信基站/雷达/军工应用；频率范围DC-40GHz；为国内基站天线厂商提供环形器配套",
+          "marketCap": "未上市",
+          "revenue": "约1亿元（估计）",
+          "netProfit": "约0.1亿元（估计）",
+          "profitYoY": "稳健",
+          "customers": [
+            "天线整机厂商",
+            "主设备商"
+          ],
+          "highlights": [
+            "环形器/隔离器专业制造商",
+            "基站射频配套"
+          ],
+          "location": "深圳",
+          "isKey": false,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 13
+        },
+        {
+          "id": "ap014",
+          "name": "太阳鸟微波",
+          "nameEn": "Sunbird Microwave",
+          "stockCode": "未上市",
+          "exchange": "—",
+          "role": "环形器/隔离器（军工级）",
+          "position": "专注高端环形器/隔离器研发，产品用于军工/航空航天/卫星通信；铁氧体技术领先；高端射频无源器件专业厂商",
+          "marketCap": "未上市",
+          "revenue": "约1.5亿元（估计）",
+          "netProfit": "约0.2亿元（估计）",
+          "profitYoY": "稳健",
+          "customers": [
+            "军工单位",
+            "卫星通信厂商"
+          ],
+          "highlights": [
+            "高端环形器隔离器军工级",
+            "铁氧体核心技术"
+          ],
+          "location": "成都",
+          "isKey": false,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 14
+        },
+        {
+          "id": "ap015",
+          "name": "博迅通信（振子线）",
+          "nameEn": "Boxun (Antenna Element)",
+          "stockCode": "非上市",
+          "exchange": "—",
+          "role": "塑料振子/金属化天线部件",
+          "position": "5G Massive MIMO塑料振子核心供应商，POP工艺生产5G基站天线振子；PPS材料金属化；低PIM值；直接供货给华为/中兴等天线整机厂",
+          "marketCap": "非上市",
+          "revenue": "约3亿元（估计）",
+          "netProfit": "约0.3亿元（估计）",
+          "profitYoY": "+15%",
+          "customers": [
+            "华为",
+            "中兴",
+            "天线整机厂商"
+          ],
+          "highlights": [
+            "5G塑料振子POP工艺主流方案",
+            "PPS材料低重量一致性高"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 15
+        },
+        {
+          "id": "ap016",
+          "name": "中材科技（天线罩）",
+          "nameEn": "Sinoma (Radome)",
+          "stockCode": "002080.SZ",
+          "exchange": "深交所A股",
+          "role": "玻璃钢天线罩/复合材料",
+          "position": "风电叶片全球第一，玻璃钢复合材料技术积累深厚；玻璃钢天线罩用于基站天线保护；复合材料技术可用于天线振子支架/结构件",
+          "marketCap": "约200亿元",
+          "revenue": "约302亿元",
+          "netProfit": "约22亿元",
+          "profitYoY": "+25%",
+          "customers": [
+            "风电客户",
+            "通信设备商（天线罩）"
+          ],
+          "highlights": [
+            "玻璃钢复合材料龙头",
+            "天线罩材料可用于通信基站"
+          ],
+          "location": "南京",
+          "isKey": false,
+          "stockPrices": [
+            18,
+            17,
+            17,
+            16,
+            16,
+            15,
+            15,
+            14,
+            14,
+            13,
+            13,
+            12
+          ],
+          "stockCurrent": 12,
+          "stock52Low": 9,
+          "stock52High": 20,
+          "rank": 16
+        }
+      ]
+    },
+    "tier5_rf_parts": {
+      "name": "射频部件供应商",
+      "description": "滤波器/双工器/连接器/避雷器/负载等射频关键器件，是基站天线核心信号处理部件",
+      "companies": [
+        {
+          "id": "rf008",
+          "name": "灿勤科技",
+          "nameEn": "Canqin",
+          "stockCode": "688884.SH",
+          "exchange": "上交所科创板",
+          "role": "滤波器/陶瓷介质",
+          "position": "介质滤波器/陶瓷谐振器龙头，专注5G介质滤波器研发；2024年营收约5亿元，客户含华为/中兴/爱立信",
+          "marketCap": "约80+亿元",
+          "revenue": "约5亿元",
+          "netProfit": "约0.8亿元",
+          "profitYoY": "+30%",
+          "customers": [
+            "华为",
+            "中兴",
+            "爱立信",
+            "诺基亚"
+          ],
+          "highlights": [
+            "介质滤波器国产替代",
+            "5G陶瓷滤波器产能领先",
+            "华为/中兴认证"
+          ],
+          "location": "苏州",
+          "isKey": true,
+          "stockPrices": [
+            28,
+            27,
+            26,
+            25,
+            24,
+            23,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17
+          ],
+          "stockCurrent": 17,
+          "stock52Low": 14,
+          "stock52High": 32,
+          "rank": 1
+        },
+        {
+          "id": "rf009",
+          "name": "艾肯通信",
+          "nameEn": "Aikyn",
+          "stockCode": "非上市",
+          "exchange": "—",
+          "role": "滤波器/双工器",
+          "position": "专注滤波器/双工器研发生产的创业公司，拥有自主知识产权的5G介质滤波器技术，已通过华为认证",
+          "marketCap": "非上市",
+          "revenue": "约2亿元",
+          "netProfit": "约0.3亿元",
+          "profitYoY": "+25%",
+          "customers": [
+            "华为",
+            "中兴"
+          ],
+          "highlights": [
+            "介质滤波器国产新锐",
+            "华为认证通过",
+            "自主技术"
+          ],
+          "location": "深圳",
+          "isKey": false,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 2
+        },
+        {
+          "id": "rf010",
+          "name": "大富科技",
+          "nameEn": "Dafu Tech",
+          "stockCode": "300134.SZ",
+          "exchange": "深交所创业板",
+          "role": "滤波器/连接器/天线结构件",
+          "position": "滤波器/通信设备/无人机/智能终端多主业；2024年营收约22亿元，滤波器/天线结构件为通信主业",
+          "marketCap": "约80+亿元",
+          "revenue": "约22亿元",
+          "netProfit": "约1亿元",
+          "profitYoY": "+12%",
+          "customers": [
+            "华为",
+            "爱立信",
+            "诺基亚"
+          ],
+          "highlights": [
+            "滤波器+通信设备双主业",
+            "华为/爱立信核心供应商",
+            "无人机业务布局"
+          ],
+          "location": "深圳",
+          "isKey": false,
+          "stockPrices": [
+            12,
+            11,
+            11,
+            10,
+            10,
+            9,
+            9,
+            8,
+            8,
+            8,
+            7,
+            7
+          ],
+          "stockCurrent": 7,
+          "stock52Low": 5,
+          "stock52High": 14,
+          "rank": 3
+        },
+        {
+          "id": "rf011",
+          "name": "春兴精工",
+          "nameEn": "Chunxing",
+          "stockCode": "002547.SZ",
+          "exchange": "深交所A股",
+          "role": "精密制造/滤波器腔体/结构件",
+          "position": "精密制造/滤波器腔体/天线金属结构件；冲压+压铸+ CNC一站式加工；2024年营收约28亿元",
+          "marketCap": "约60+亿元",
+          "revenue": "约28亿元",
+          "netProfit": "约0.8亿元",
+          "profitYoY": "+5%",
+          "customers": [
+            "华为",
+            "爱立信",
+            "诺基亚",
+            "滤波器厂商"
+          ],
+          "highlights": [
+            "滤波器腔体精密制造",
+            "金属结构件一站式",
+            "冲压+CNC+压铸"
+          ],
+          "location": "苏州",
+          "isKey": false,
+          "stockPrices": [
+            8,
+            7,
+            7,
+            7,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            4,
+            4
+          ],
+          "stockCurrent": 4,
+          "stock52Low": 3,
+          "stock52High": 9,
+          "rank": 4
+        },
+        {
+          "id": "rf012",
+          "name": "电连技术",
+          "nameEn": "Electech",
+          "stockCode": "300739.SZ",
+          "exchange": "深交所创业板",
+          "role": "连接器/射频连接器",
+          "position": "微型连接器/射频连接器龙头，产品用于手机/通信/智能汽车；2024年营收约18亿元，净利润3亿元",
+          "marketCap": "约150+亿元",
+          "revenue": "约18亿元",
+          "netProfit": "约3亿元",
+          "profitYoY": "+15%",
+          "customers": [
+            "华为",
+            "小米",
+            "OPPO/vivo",
+            "三星"
+          ],
+          "highlights": [
+            "微型射频连接器龙头",
+            "手机/通信双主业",
+            "华为+安卓系核心供应商"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "stockPrices": [
+            58,
+            56,
+            54,
+            52,
+            50,
+            48,
+            46,
+            44,
+            42,
+            40,
+            38,
+            36
+          ],
+          "stockCurrent": 36,
+          "stock52Low": 28,
+          "stock52High": 65,
+          "rank": 5
+        },
+        {
+          "id": "rf013",
+          "name": "意华股份",
+          "nameEn": "Yihua",
+          "stockCode": "002897.SZ",
+          "exchange": "深交所A股",
+          "role": "连接器/太阳能支架",
+          "position": "连接器（通信/消费电子/汽车）/太阳能支架双主业；2024年营收约26亿元，净利润2.5亿元",
+          "marketCap": "约80+亿元",
+          "revenue": "约26亿元",
+          "netProfit": "约2.5亿元",
+          "profitYoY": "+10%",
+          "customers": [
+            "华为",
+            "中兴",
+            "汽车主机厂"
+          ],
+          "highlights": [
+            "通信连接器+太阳能支架双主业",
+            "华为认证通过",
+            "汽车连接器布局"
+          ],
+          "location": "温州",
+          "isKey": false,
+          "stockPrices": [
+            42,
+            41,
+            40,
+            39,
+            38,
+            37,
+            36,
+            35,
+            34,
+            33,
+            32,
+            31
+          ],
+          "stockCurrent": 31,
+          "stock52Low": 25,
+          "stock52High": 48,
+          "rank": 6
+        },
+        {
+          "id": "rf014",
+          "name": "吴通控股",
+          "nameEn": "Wutong",
+          "stockCode": "300292.SZ",
+          "exchange": "深交所创业板",
+          "role": "射频连接器/通信设备",
+          "position": "射频连接器/通信设备/物联网模组；2024年营收约18亿元",
+          "marketCap": "约50+亿元",
+          "revenue": "约18亿元",
+          "netProfit": "约0.6亿元",
+          "profitYoY": "-5%",
+          "customers": [
+            "运营商",
+            "主设备商"
+          ],
+          "highlights": [
+            "射频连接器",
+            "物联网模组"
+          ],
+          "location": "苏州",
+          "isKey": false,
+          "stockPrices": [
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            5,
+            4,
+            4,
+            4,
+            4,
+            3
+          ],
+          "stockCurrent": 3,
+          "stock52Low": 2.5,
+          "stock52High": 7,
+          "rank": 7
+        },
+        {
+          "id": "rf015",
+          "name": "世嘉科技",
+          "nameEn": "Shijia",
+          "stockCode": "002796.SZ",
+          "exchange": "深交所A股",
+          "role": "滤波器腔体/天线结构件/精密钣金",
+          "position": "精密钣金/滤波器腔体/天线结构件；主要给主设备商/天线厂商提供金属结构件OEM",
+          "marketCap": "约40+亿元",
+          "revenue": "约10亿元",
+          "netProfit": "约0.3亿元",
+          "profitYoY": "+3%",
+          "customers": [
+            "华为",
+            "中兴",
+            "通宇通讯",
+            "京信通信"
+          ],
+          "highlights": [
+            "精密钣金专家",
+            "滤波器腔体OEM",
+            "天线结构件"
+          ],
+          "location": "苏州",
+          "isKey": false,
+          "stockPrices": [
+            22,
+            21,
+            20,
+            20,
+            19,
+            18,
+            18,
+            17,
+            16,
+            16,
+            15,
+            14
+          ],
+          "stockCurrent": 14,
+          "stock52Low": 11,
+          "stock52High": 25,
+          "rank": 8
+        },
+        {
+          "id": "rf016",
+          "name": "国人科技",
+          "nameEn": "Guoren Tech",
+          "stockCode": "非上市",
+          "exchange": "—",
+          "role": "滤波器/双工器/射频模组",
+          "position": "专注滤波器/双工器研发，客户含华为/中兴/诺基亚；拥有完整的射频无源器件产品线",
+          "marketCap": "非上市",
+          "revenue": "约5亿元",
+          "netProfit": "约0.5亿元",
+          "profitYoY": "+10%",
+          "customers": [
+            "华为",
+            "中兴",
+            "诺基亚"
+          ],
+          "highlights": [
+            "滤波器完整产品线",
+            "华为认证",
+            "自主研发"
+          ],
+          "location": "深圳",
+          "isKey": false,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 9
+        },
+        {
+          "id": "rf017",
+          "name": "诺思微系统",
+          "nameEn": "NoSun",
+          "stockCode": "非上市",
+          "exchange": "—",
+          "role": "滤波器/FBAR/BAW",
+          "position": "专注FBAR/BAW滤波器研发，拥有完全自主知识产权的体声波滤波器技术，填补国内空白；已获华为/中兴认证",
+          "marketCap": "非上市",
+          "revenue": "约1亿元",
+          "netProfit": "亏损",
+          "profitYoY": "研发阶段",
+          "customers": [
+            "华为",
+            "中兴",
+            "智能手机厂商"
+          ],
+          "highlights": [
+            "FBAR/BAW滤波器自主可控",
+            "国内唯一FBAR技术",
+            "华为/中兴认证"
+          ],
+          "location": "天津",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 10
+        },
+        {
+          "id": "rf001",
+          "name": "武汉凡谷",
+          "nameEn": "Wuhan Figu",
+          "stockCode": "002194.SZ",
+          "exchange": "深交所A股",
+          "role": "滤波器/双工器",
+          "position": "滤波器/双工器行业龙头，专注30余年，客户含华为/爱立信/诺基亚等；2025年营收13.52亿元，亏损1165万元",
+          "marketCap": "约50+亿元",
+          "revenue": "约13.52亿元",
+          "netProfit": "亏损1165万元",
+          "profitYoY": "-121.88%",
+          "customers": [
+            "华为",
+            "爱立信",
+            "诺基亚"
+          ],
+          "highlights": [
+            "滤波器行业龙头",
+            "专注滤波器30年",
+            "华为/爱立信/诺基亚核心供应商"
+          ],
+          "location": "武汉",
+          "isKey": true,
+          "stockPrices": [
+            16,
+            17,
+            18,
+            17,
+            16,
+            15,
+            14,
+            13,
+            12,
+            11,
+            10,
+            9
+          ],
+          "stockCurrent": 9,
+          "stock52Low": 7.5,
+          "stock52High": 20,
+          "rank": 11
+        },
+        {
+          "id": "rf002",
+          "name": "鸿远电子",
+          "nameEn": "Hongyuan Electronics",
+          "stockCode": "603267.SH",
+          "exchange": "上交所主板",
+          "role": "滤波器/电容器",
+          "position": "瓷介电容器/滤波器/微波模块供应商，自产业务+代理业务双轮驱动",
+          "marketCap": "约100+亿元",
+          "revenue": "约1500+万元",
+          "netProfit": "待查",
+          "profitYoY": "待查",
+          "customers": [
+            "军工客户",
+            "通信设备商"
+          ],
+          "highlights": [
+            "瓷介电容器龙头",
+            "滤波器/微波模块"
+          ],
+          "location": "北京",
+          "isKey": false,
+          "stockPrices": [
+            75,
+            74,
+            73,
+            72,
+            71,
+            70,
+            69,
+            68,
+            67,
+            66,
+            65,
+            64
+          ],
+          "stockCurrent": 64,
+          "stock52Low": 52,
+          "stock52High": 88,
+          "rank": 12
+        },
+        {
+          "id": "rf003",
+          "name": "摩比天线",
+          "nameEn": "Mobi Antenna",
+          "stockCode": "00947.HK",
+          "exchange": "港交所",
+          "role": "滤波器/双工器",
+          "position": "同时生产滤波器/双工器/塔放等射频部件及天线整机",
+          "marketCap": "约79.7亿港元",
+          "revenue": "约39.5亿元",
+          "netProfit": "亏损",
+          "profitYoY": "亏损",
+          "customers": [
+            "运营商",
+            "主设备商"
+          ],
+          "highlights": [
+            "滤波器+天线双产品线"
+          ],
+          "location": "深圳",
+          "isKey": false,
+          "stockPrices": [
+            2.2,
+            2.1,
+            2.0,
+            1.9,
+            1.8,
+            1.7,
+            1.6,
+            1.5,
+            1.4,
+            1.3,
+            1.25,
+            1.2
+          ],
+          "stockCurrent": 1.2,
+          "stock52Low": 0.9,
+          "stock52High": 2.6,
+          "rank": 13
+        },
+        {
+          "id": "rf004",
+          "name": "中航光电",
+          "nameEn": "AVIC Jonczon",
+          "stockCode": "002179.SZ",
+          "exchange": "深交所A股",
+          "role": "高端连接器",
+          "position": "国内高端连接器龙头，军工+民品双主业；连接器用于通信基站/航空航天等领域",
+          "marketCap": "约600+亿元",
+          "revenue": "约2000+万元",
+          "netProfit": "约200+万元",
+          "profitYoY": "待查",
+          "customers": [
+            "华为",
+            "中兴",
+            "军工单位"
+          ],
+          "highlights": [
+            "国内高端连接器龙头",
+            "军工+民品双主业",
+            "通信基站核心供应商"
+          ],
+          "location": "洛阳",
+          "isKey": true,
+          "stockPrices": [
+            65,
+            64,
+            63,
+            62,
+            61,
+            60,
+            59,
+            58,
+            57,
+            56,
+            55,
+            54
+          ],
+          "stockCurrent": 54,
+          "stock52Low": 42,
+          "stock52High": 72,
+          "rank": 14
+        },
+        {
+          "id": "rf005",
+          "name": "鼎通科技",
+          "nameEn": "Dingtong Technology",
+          "stockCode": "837950.BJ",
+          "exchange": "北交所",
+          "role": "精密连接器",
+          "position": "精密连接器及组件制造商，产品用于通信/汽车/工业等领域",
+          "marketCap": "约50+亿元",
+          "revenue": "约800+万元",
+          "netProfit": "约100+万元",
+          "profitYoY": "待查",
+          "customers": [
+            "通信设备商",
+            "汽车厂商"
+          ],
+          "highlights": [
+            "精密连接器制造商",
+            "北交所上市"
+          ],
+          "location": "东莞",
+          "isKey": false,
+          "stockPrices": [
+            42,
+            41,
+            40,
+            39,
+            38,
+            37,
+            36,
+            35,
+            34,
+            33,
+            32,
+            32
+          ],
+          "stockCurrent": 32,
+          "stock52Low": 25,
+          "stock52High": 48,
+          "rank": 15
+        },
+        {
+          "id": "rf006",
+          "name": "博威合金",
+          "nameEn": "Boway Alloy",
+          "stockCode": "601137.SH",
+          "exchange": "上交所主板",
+          "role": "铜合金连接器材料",
+          "position": "高性能铜合金材料（含连接器用铜合金带材/型材），用于射频连接器及散热件",
+          "marketCap": "约190.54亿元",
+          "revenue": "约7000+万元",
+          "netProfit": "待查",
+          "profitYoY": "待查",
+          "customers": [
+            "连接器厂商",
+            "通信设备商"
+          ],
+          "highlights": [
+            "铜合金龙头",
+            "连接器材料供应商"
+          ],
+          "location": "宁波",
+          "isKey": false,
+          "stockPrices": [
+            18,
+            17,
+            17,
+            16,
+            16,
+            15,
+            15,
+            14,
+            14,
+            13,
+            13,
+            12
+          ],
+          "stockCurrent": 12,
+          "stock52Low": 10,
+          "stock52High": 20,
+          "rank": 16
+        },
+        {
+          "id": "rf007",
+          "name": "摩比天线",
+          "nameEn": "Mobi Antenna",
+          "stockCode": "00947.HK",
+          "exchange": "港交所",
+          "role": "避雷器",
+          "position": "避雷器为摩比天线射频产品线之一；另有多家小型防雷专业厂商未上市",
+          "marketCap": "约79.7亿港元",
+          "revenue": "约39.5亿元",
+          "netProfit": "亏损",
+          "profitYoY": "亏损",
+          "customers": [
+            "运营商"
+          ],
+          "highlights": [
+            "避雷器产品线"
+          ],
+          "location": "深圳",
+          "isKey": false,
+          "stockPrices": [
+            2.2,
+            2.1,
+            2.0,
+            1.9,
+            1.8,
+            1.7,
+            1.6,
+            1.5,
+            1.4,
+            1.3,
+            1.25,
+            1.2
+          ],
+          "stockCurrent": 1.2,
+          "stock52Low": 0.9,
+          "stock52High": 2.6,
+          "rank": 17
+        },
+        {
+          "id": "rf018",
+          "name": "波发特（世嘉科技子公司）",
+          "nameEn": "Bofate (Shijia subsidiary)",
+          "stockCode": "002796.SZ（并入世嘉科技）",
+          "exchange": "深交所A股",
+          "role": "金属滤波器/双工器",
+          "position": "世嘉科技(002796)旗下子公司，主营金属滤波器/双工器；是中兴通讯/爱立信金属滤波器核心供应商；5G金属腔体滤波器技术领先",
+          "marketCap": "并入世嘉科技（约40亿元）",
+          "revenue": "含于世嘉科技通信板块",
+          "netProfit": "—",
+          "profitYoY": "—",
+          "customers": [
+            "中兴通讯",
+            "爱立信",
+            "日本电业"
+          ],
+          "highlights": [
+            "金属滤波器核心供应商",
+            "中兴/爱立信主力供应商"
+          ],
+          "location": "苏州",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 18
+        },
+        {
+          "id": "rf019",
+          "name": "科美特（雅克科技子公司）",
+          "nameEn": "Comat (Yake subsidiary)",
+          "stockCode": "002409.SZ（并入雅克科技）",
+          "exchange": "深交所A股",
+          "role": "电子特种气体（清洗用途）",
+          "position": "国内最大六氟化硫生产商，年产能8500吨；四氟化碳年产能1200吨，已进入台积电供应链；六氟化硫/四氟化碳用于滤波器腔体清洗工艺；是覆铜板/滤波器制造的关键工艺材料供应商",
+          "marketCap": "并入雅克科技（约200亿元）",
+          "revenue": "含于雅克科技电子材料板块",
+          "netProfit": "—",
+          "profitYoY": "—",
+          "customers": [
+            "华为",
+            "台积电",
+            "电力设备商"
+          ],
+          "highlights": [
+            "六氟化硫国产最大产能",
+            "四氟化碳已进入台积电",
+            "滤波器腔体清洗气体"
+          ],
+          "location": "成都",
+          "isKey": false,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 19
+        }
+      ]
+    },
+    "tier6_key_materials": {
+      "name": "关键材料供应商",
+      "description": "覆铜板（PTFE/碳氢/陶瓷基板）/铝合金型材/铜管铜带/工程塑料——中游天线/部件的核心原材料",
+      "companies": [
+        {
+          "id": "km001",
+          "name": "生益科技",
+          "nameEn": "Shengyi Technology",
+          "stockCode": "600183.SH",
+          "exchange": "上交所主板",
+          "role": "高频覆铜板",
+          "position": "全球第二大刚性覆铜板厂商，2024年营收203.88亿元，净利润17.39亿元；产品用于5G天线/AI服务器/芯片封装等高频材料",
+          "marketCap": "约400+亿元",
+          "revenue": "约203.88亿元",
+          "netProfit": "约17.39亿元",
+          "profitYoY": "+49.37%",
+          "customers": [
+            "华为",
+            "中兴",
+            "爱立信"
+          ],
+          "highlights": [
+            "PTFE高频覆铜板产能国内第一",
+            "全球第二大刚性覆铜板厂商",
+            "华为认证通过",
+            "5G毫米波材料布局"
+          ],
+          "location": "东莞",
+          "isKey": true,
+          "stockPrices": [
+            26,
+            26,
+            25,
+            24,
+            23,
+            22,
+            21,
+            20,
+            19,
+            18,
+            17,
+            16
+          ],
+          "stockCurrent": 16,
+          "stock52Low": 13,
+          "stock52High": 30,
+          "rank": 1
+        },
+        {
+          "id": "km002",
+          "name": "南亚塑料（台股）",
+          "nameEn": "Nanya Plastics",
+          "stockCode": "1303.TW",
+          "exchange": "台湾证券交易所",
+          "role": "覆铜板",
+          "position": "台塑集团旗下覆铜板厂商，南亚PCB事业部；是天线高频材料重要供应商",
+          "marketCap": "约50+亿美元",
+          "revenue": "约4000+亿新台币",
+          "netProfit": "待查",
+          "profitYoY": "待查",
+          "customers": [
+            "台系PCB厂商",
+            "天线材料需求方"
+          ],
+          "highlights": [
+            "台塑集团旗下",
+            "覆铜板重要供应商"
+          ],
+          "location": "台湾",
+          "isKey": false,
+          "stockPrices": [
+            52,
+            51,
+            50,
+            49,
+            48,
+            48,
+            47,
+            46,
+            45,
+            44,
+            43,
+            42
+          ],
+          "stockCurrent": 42,
+          "stock52Low": 38,
+          "stock52High": 58,
+          "rank": 2
+        },
+        {
+          "id": "km003",
+          "name": "华正新材",
+          "nameEn": "Walsin",
+          "stockCode": "603186.SH",
+          "exchange": "上交所主板",
+          "role": "覆铜板",
+          "position": "覆铜板/绝缘材料厂商，高频材料已供货5G基站天线",
+          "marketCap": "约50+亿元",
+          "revenue": "约2500+万元",
+          "netProfit": "待查",
+          "profitYoY": "待查",
+          "customers": [
+            "中兴",
+            "诺基亚"
+          ],
+          "highlights": [
+            "高频PTFE材料已通过主流设备商认证",
+            "产能利用率持续满载"
+          ],
+          "location": "杭州",
+          "isKey": false,
+          "stockPrices": [
+            38,
+            37,
+            36,
+            35,
+            34,
+            33,
+            32,
+            31,
+            30,
+            30,
+            29,
+            28
+          ],
+          "stockCurrent": 28,
+          "stock52Low": 22,
+          "stock52High": 42,
+          "rank": 3
+        },
+        {
+          "id": "km004",
+          "name": "亚太科技",
+          "nameEn": "Asia Pacific",
+          "stockCode": "002540.SZ",
+          "exchange": "深交所A股",
+          "role": "铝挤压型材",
+          "position": "铝挤压型材龙头，产品用于汽车/通信/工业；部分用于基站天线铝合金支架/外壳",
+          "marketCap": "约80+亿元",
+          "revenue": "约6000+万元",
+          "netProfit": "约300+万元",
+          "profitYoY": "待查",
+          "customers": [
+            "汽车厂商",
+            "通信设备商"
+          ],
+          "highlights": [
+            "铝挤压型材龙头",
+            "基站天线铝合金支架"
+          ],
+          "location": "无锡",
+          "isKey": false,
+          "stockPrices": [
+            8,
+            8,
+            8,
+            7,
+            7,
+            7,
+            6,
+            6,
+            6,
+            6,
+            5,
+            5
+          ],
+          "stockCurrent": 5,
+          "stock52Low": 4,
+          "stock52High": 9,
+          "rank": 4
+        },
+        {
+          "id": "km005",
+          "name": "利源精制",
+          "nameEn": "Liyuan Fine-work",
+          "stockCode": "002501.SZ",
+          "exchange": "深交所A股",
+          "role": "铝型材",
+          "position": "铝型材/深加工产品，含天线结构件用铝合金型材",
+          "marketCap": "约60+亿元",
+          "revenue": "约1500+万元",
+          "netProfit": "待查",
+          "profitYoY": "待查",
+          "customers": [],
+          "highlights": [
+            "铝型材深加工"
+          ],
+          "location": "辽源",
+          "isKey": false,
+          "stockPrices": [
+            3.5,
+            3.4,
+            3.3,
+            3.2,
+            3.1,
+            3.0,
+            2.9,
+            2.8,
+            2.7,
+            2.6,
+            2.5,
+            2.4
+          ],
+          "stockCurrent": 2.4,
+          "stock52Low": 1.8,
+          "stock52High": 4.0,
+          "rank": 5
+        },
+        {
+          "id": "km006",
+          "name": "博威合金",
+          "nameEn": "Boway Alloy",
+          "stockCode": "601137.SH",
+          "exchange": "上交所主板",
+          "role": "铜合金材料",
+          "position": "高性能铜合金带材/棒材，用于连接器/散热件；是天线散热铜管/铜带材料的供应商之一",
+          "marketCap": "约190.54亿元",
+          "revenue": "约7000+万元",
+          "netProfit": "待查",
+          "profitYoY": "待查",
+          "customers": [
+            "连接器厂商",
+            "通信设备商"
+          ],
+          "highlights": [
+            "铜合金龙头",
+            "散热件材料"
+          ],
+          "location": "宁波",
+          "isKey": false,
+          "stockPrices": [
+            18,
+            17,
+            17,
+            16,
+            16,
+            15,
+            15,
+            14,
+            14,
+            13,
+            13,
+            12
+          ],
+          "stockCurrent": 12,
+          "stock52Low": 10,
+          "stock52High": 20,
+          "rank": 6
+        },
+        {
+          "id": "km007",
+          "name": "海亮股份",
+          "nameEn": "Hailiang",
+          "stockCode": "002203.SZ",
+          "exchange": "深交所A股",
+          "role": "铜管",
+          "position": "铜管/铜棒生产龙头，产品用于空调/电力/通信散热；铜管是基站天线散热部件原材料",
+          "marketCap": "约200+亿元",
+          "revenue": "约700+亿元",
+          "netProfit": "约15+亿元",
+          "profitYoY": "待查",
+          "customers": [
+            "电力行业",
+            "通信设备商"
+          ],
+          "highlights": [
+            "铜管龙头",
+            "通信散热件"
+          ],
+          "location": "诸暨",
+          "isKey": false,
+          "stockPrices": [
+            14,
+            14,
+            13,
+            13,
+            13,
+            12,
+            12,
+            11,
+            11,
+            10,
+            10,
+            10
+          ],
+          "stockCurrent": 10,
+          "stock52Low": 8,
+          "stock52High": 15,
+          "rank": 7
+        },
+        {
+          "id": "km008",
+          "name": "中材科技",
+          "nameEn": "Sinoma",
+          "stockCode": "002080.SZ",
+          "exchange": "深交所A股",
+          "role": "特种复合材料",
+          "position": "特种复合材料（含LDS材料/工程塑料），用于天线振子支架及绝缘结构件",
+          "marketCap": "约200+亿元",
+          "revenue": "约200+亿元",
+          "netProfit": "约15+亿元",
+          "profitYoY": "待查",
+          "customers": [
+            "通信设备商",
+            "天线厂商"
+          ],
+          "highlights": [
+            "LDS材料",
+            "工程塑料"
+          ],
+          "location": "南京",
+          "isKey": false,
+          "stockPrices": [
+            18,
+            17,
+            17,
+            16,
+            16,
+            15,
+            15,
+            14,
+            14,
+            13,
+            13,
+            12
+          ],
+          "stockCurrent": 12,
+          "stock52Low": 9,
+          "stock52High": 20,
+          "rank": 8
+        },
+        {
+          "id": "km009",
+          "name": "沃特股份",
+          "nameEn": "Wote",
+          "stockCode": "002886.SZ",
+          "exchange": "深交所A股",
+          "role": "工程塑料",
+          "position": "特种工程塑料（PPA/PPS/LCP），LDS材料可应用于天线注塑端子",
+          "marketCap": "约40+亿元",
+          "revenue": "约1200+万元",
+          "netProfit": "约50+万元",
+          "profitYoY": "待查",
+          "customers": [
+            "天线厂商"
+          ],
+          "highlights": [
+            "PPA/PPS/LCP",
+            "LDS材料"
+          ],
+          "location": "深圳",
+          "isKey": false,
+          "stockPrices": [
+            28,
+            27,
+            26,
+            25,
+            25,
+            24,
+            23,
+            22,
+            21,
+            20,
+            19,
+            18
+          ],
+          "stockCurrent": 18,
+          "stock52Low": 14,
+          "stock52High": 32,
+          "rank": 9
+        }
+      ]
+    },
+    "tier7_raw_materials": {
+      "name": "原材料商",
+      "description": "金属期货（金/银/铜/铝/钢）及化工原料（双酚A等）——价格波动影响整个供应链成本",
+      "subsections": {
+        "metals": {
+          "name": "贵金属/工业金属",
+          "description": "期货市场金属品种",
+          "instruments": [
+            {
+              "name": "沪铜",
+              "exchange": "上海期货交易所",
+              "contract": "CU",
+              "unit": "元/吨",
+              "description": "铜是天线散热件/连接器核心材料；覆铜板主要材料；铜价波动直接影响中游利润"
+            },
+            {
+              "name": "沪铝",
+              "exchange": "上海期货交易所",
+              "contract": "AL",
+              "unit": "元/吨",
+              "description": "铝合金型材原材料，铝价波动影响天线结构件成本"
+            },
+            {
+              "name": "沪金",
+              "exchange": "上海期货交易所",
+              "contract": "AU",
+              "unit": "元/克",
+              "description": "金用于高端连接器镀层；航空航天级天线少量使用"
+            },
+            {
+              "name": "沪螺纹钢",
+              "exchange": "上海期货交易所",
+              "contract": "RB",
+              "unit": "元/吨",
+              "description": "钢是铁塔/基站塔架原材料，影响运营商铁塔建设成本"
+            }
+          ]
+        },
+        "chemicals": {
+          "name": "化工原料",
+          "description": "覆铜板及化工中间体",
+          "instruments": [
+            {
+              "name": "双酚A（BPA）",
+              "exchange": "现货/期货",
+              "description": "双酚A是聚碳酸酯/环氧树脂原料，用于覆铜板粘结片/封装材料；双酚A价格影响覆铜板成本"
+            },
+            {
+              "name": "PTFE树脂",
+              "exchange": "现货市场",
+              "description": "PTFE（聚四氟乙烯）是高频覆铜板核心材料，用于5G天线PCB；主要供应商含巨化股份等"
+            },
+            {
+              "name": "苯酚",
+              "exchange": "现货/期货",
+              "description": "酚醛树脂原料，用于覆铜板层压；与双酚A共同影响覆铜板成本"
+            }
+          ]
+        },
+        "glass_fiber": {
+          "name": "玻璃纤维",
+          "description": "覆铜板（CCL）核心材料，玻纤布经树脂浸渍后层压成CCL，用于PCB/天线PCB阵子",
+          "companies": [
+            {
+              "id": "rm001",
+              "name": "中国巨石",
+              "nameEn": "China Jushi (600176.SH)",
+              "stockCode": "600176.SH",
+              "exchange": "上交所主板",
+              "role": "玻璃纤维/电子布",
+              "position": "全球玻璃纤维龙头，粗纱及电子布产能规模全球第一；国内玻纤市占率约34%，电子布市占率约23%；自主研发E9超高模量玻纤；2026年淮安10万吨电子玻纤产线点火，全球最大电子玻纤单体生产线；覆铜板用电子布核心供应商",
+              "marketCap": "约600亿元",
+              "revenue": "约180亿元（2025年）",
+              "netProfit": "约30亿元（2025年）",
+              "profitYoY": "+15%",
+              "customers": [
+                "生益科技",
+                "南亚塑料",
+                "华正新材",
+                "PCB厂商"
+              ],
+              "highlights": [
+                "全球玻纤产能第一",
+                "电子布市占率23%",
+                "E9超高模量玻纤自主研发",
+                "巨石淮安全球最大电子玻纤产线"
+              ],
+              "location": "桐乡",
+              "isKey": true,
+              "stockPrices": [],
+              "stockCurrent": null,
+              "stock52Low": null,
+              "stock52High": null,
+              "rank": 1
+            },
+            {
+              "id": "rm002",
+              "name": "泰山玻璃纤维",
+              "nameEn": "Taishan Fiberglass",
+              "stockCode": "未上市（中材科技002080.SZ全资子公司）",
+              "exchange": "—",
+              "role": "玻璃纤维/电子布/风电纱",
+              "position": "玻纤及制品产能170万吨/年，全球第二；主导产品包括热固性/热塑性玻纤材料、细纱及电子布、高频高速线路板用低损耗超薄玻璃布；是覆铜板用电子布重要供应商",
+              "marketCap": "非上市（中材科技体内）",
+              "revenue": "含于中材科技整体营收",
+              "netProfit": "—",
+              "profitYoY": "—",
+              "customers": [
+                "生益科技",
+                "覆铜板厂商",
+                "风电叶片厂商"
+              ],
+              "highlights": [
+                "全球高端玻纤产品主要供应商",
+                "高频高速线路板用超薄玻璃布",
+                "170万吨年产能全球第二"
+              ],
+              "location": "泰安",
+              "isKey": true,
+              "stockPrices": [],
+              "stockCurrent": null,
+              "stock52Low": null,
+              "stock52High": null,
+              "rank": 2
+            },
+            {
+              "id": "rm003",
+              "name": "重庆国际复合材料",
+              "nameEn": "CPIC (301301.SZ)",
+              "stockCode": "301301.SZ",
+              "exchange": "深交所创业板",
+              "role": "玻璃纤维/电子纱/风电纱",
+              "position": "云天化集团旗下玻纤龙头，A股创业板上市；玻纤产能规模国内前三；低介电玻璃纤维已供货华为旗舰手机5G通信关键透波制品；电子纱用于覆铜板；风电纱全球前三",
+              "marketCap": "约150亿元（估计）",
+              "revenue": "约80亿元（2024年）",
+              "netProfit": "约6亿元（2024年）",
+              "profitYoY": "+12%",
+              "customers": [
+                "华为",
+                "科思创",
+                "金发科技",
+                "覆铜板厂商"
+              ],
+              "highlights": [
+                "5G低介电玻璃纤维已供货华为",
+                "创业板上市（2023年12月）",
+                "风电纱全球前三"
+              ],
+              "location": "重庆",
+              "isKey": true,
+              "stockPrices": [],
+              "stockCurrent": null,
+              "stock52Low": null,
+              "stock52High": null,
+              "rank": 3
+            }
+          ]
+        },
+        "copper_foil": {
+          "name": "铜箔",
+          "description": "覆铜板（CCL）核心材料，分电解铜箔和压延铜箔；电解铜箔用于PCB/锂电；5G高频高速用高端铜箔是关键材料",
+          "companies": [
+            {
+              "id": "rm004",
+              "name": "诺德股份",
+              "nameEn": "Nuode (600110.SH)",
+              "stockCode": "600110.SH",
+              "exchange": "上交所主板",
+              "role": "电解铜箔/高频高速铜箔",
+              "position": "国内首家锂电铜箔上市企业，铜箔行业标准制定者；产品包括3.5-6μm极薄锂电铜箔、5G通讯用高频高速标准铜箔；国内铜箔龙头，连续多年国内市占率第一；已通过宁德时代/比亚迪/特斯拉/LG新能源等认证",
+              "marketCap": "约120亿元",
+              "revenue": "约60亿元（2025年）",
+              "netProfit": "约2亿元（2025年）",
+              "profitYoY": "扭亏",
+              "customers": [
+                "宁德时代",
+                "比亚迪",
+                "特斯拉",
+                "LG新能源",
+                "生益科技"
+              ],
+              "highlights": [
+                "国内铜箔行业标准制定者",
+                "5G高频高速铜箔已布局",
+                "连续多年锂电铜箔市占率第一"
+              ],
+              "location": "深圳",
+              "isKey": true,
+              "stockPrices": [],
+              "stockCurrent": null,
+              "stock52Low": null,
+              "stock52High": null,
+              "rank": 1
+            },
+            {
+              "id": "rm005",
+              "name": "灵宝华鑫",
+              "nameEn": "Lingbao Huaxin",
+              "stockCode": "未上市",
+              "exchange": "—",
+              "role": "电解铜箔",
+              "position": "国内主要电解铜箔制造商之一，产品用于覆铜板（CCL）和锂电；是生益科技/南亚塑料等覆铜板厂商的铜箔供应商之一",
+              "marketCap": "未上市",
+              "revenue": "约20亿元（估计）",
+              "netProfit": "约1亿元（估计）",
+              "profitYoY": "稳健",
+              "customers": [
+                "生益科技",
+                "覆铜板厂商",
+                "锂电池厂商"
+              ],
+              "highlights": [
+                "电解铜箔主要供应商",
+                "覆铜板铜箔配套"
+              ],
+              "location": "灵宝（河南）",
+              "isKey": false,
+              "stockPrices": [],
+              "stockCurrent": null,
+              "stock52Low": null,
+              "stock52High": null,
+              "rank": 2
+            }
+          ]
+        }
+      },
+      "companies": [
+        {
+          "id": "rm006",
+          "name": "中国巨石",
+          "nameEn": "China Jushi (600176.SH)",
+          "stockCode": "600176.SH",
+          "exchange": "上交所主板",
+          "role": "玻纤/电子布",
+          "position": "全球玻纤龙头，电子布用于覆铜板基材；E9超高模量玻纤已商用；淮安10万吨电子玻纤产线2026年3月点火",
+          "marketCap": "约600亿元",
+          "revenue": "约180亿元",
+          "netProfit": "约30亿元",
+          "profitYoY": "+15%",
+          "customers": [
+            "生益科技",
+            "华正新材",
+            "PCB厂商"
+          ],
+          "highlights": [
+            "全球玻纤产能第一",
+            "电子布覆铜板核心材料"
+          ],
+          "location": "桐乡",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 1
+        },
+        {
+          "id": "rm007",
+          "name": "泰山玻璃纤维",
+          "nameEn": "Taishan Fiberglass (Sinoma)",
+          "stockCode": "未上市（中材科技002080.SZ）",
+          "exchange": "深交所A股",
+          "role": "玻纤/电子布/风电纱",
+          "position": "中材科技全资子公司，玻纤年产能170万吨全球第二；低介电超薄电子布用于高频覆铜板；是5G高频材料核心供应商",
+          "marketCap": "含于中材科技整体",
+          "revenue": "含于中材科技整体",
+          "netProfit": "—",
+          "profitYoY": "—",
+          "customers": [
+            "生益科技",
+            "华正新材"
+          ],
+          "highlights": [
+            "170万吨年产能全球第二",
+            "高频电子布核心供应商"
+          ],
+          "location": "泰安",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 2
+        },
+        {
+          "id": "rm008",
+          "name": "重庆国际复合材料",
+          "nameEn": "CPIC (301301.SZ)",
+          "stockCode": "301301.SZ",
+          "exchange": "深交所创业板",
+          "role": "玻纤/电子纱/低介电玻纤",
+          "position": "云天化集团旗下，创业板上市；5G低介电玻璃纤维已批量供货华为旗舰手机；电子纱用于覆铜板；风电纱全球前三",
+          "marketCap": "约150亿元",
+          "revenue": "约80亿元",
+          "netProfit": "约6亿元",
+          "profitYoY": "+12%",
+          "customers": [
+            "华为",
+            "生益科技",
+            "科思创"
+          ],
+          "highlights": [
+            "5G低介电玻纤已供货华为",
+            "创业板2023年12月上市"
+          ],
+          "location": "重庆",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 3
+        },
+        {
+          "id": "rm009",
+          "name": "诺德股份",
+          "nameEn": "Nuode (600110.SH)",
+          "stockCode": "600110.SH",
+          "exchange": "上交所主板",
+          "role": "电解铜箔/5G高频铜箔",
+          "position": "国内首家锂电铜箔上市企业，A股上交所主板；5G通讯用高频高速标准铜箔已量产；覆铜板铜箔材料重要供应商；连续多年国内锂电铜箔市占率第一",
+          "marketCap": "约120亿元",
+          "revenue": "约60亿元",
+          "netProfit": "约2亿元",
+          "profitYoY": "扭亏",
+          "customers": [
+            "宁德时代",
+            "比亚迪",
+            "生益科技",
+            "特斯拉"
+          ],
+          "highlights": [
+            "5G高频高速铜箔已量产",
+            "国内锂电铜箔市占率第一",
+            "A股主板上市"
+          ],
+          "location": "深圳",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 4
+        },
+        {
+          "id": "rm010",
+          "name": "雅克科技",
+          "nameEn": "Yake Tech (002409.SZ)",
+          "stockCode": "002409.SZ",
+          "exchange": "深交所A股",
+          "role": "电子特气/前驱体/硅微粉",
+          "position": "半导体材料平台型公司，含电子特气/前驱体/光刻胶/硅微粉四大板块；子公司科美特为国内最大六氟化硫生产商（年产能8500吨），四氟化碳已进入台积电；六氟化硫用于滤波器腔体清洗，电子特气是半导体工艺关键材料",
+          "marketCap": "约200亿元",
+          "revenue": "约48亿元（2025年）",
+          "netProfit": "约7亿元（2025年）",
+          "profitYoY": "+20%",
+          "customers": [
+            "长江存储",
+            "合肥长鑫",
+            "台积电",
+            "华为",
+            "京东方"
+          ],
+          "highlights": [
+            "电子特气平台型公司",
+            "科美特六氟化硫国内最大",
+            "四氟化碳已进入台积电",
+            "大基金持股"
+          ],
+          "location": "无锡",
+          "isKey": true,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 5
+        },
+        {
+          "id": "rm011",
+          "name": "太极实业",
+          "nameEn": "Taiji Industry (600667.SH)",
+          "stockCode": "600667.SH",
+          "exchange": "上交所主板",
+          "role": "半导体封装/电子材料",
+          "position": "半导体封装和电子材料综合供应商；旗下有海太半导体（封装测试）和太极半导体；电子材料用于IC封装；存储芯片封装规模国内前列；是覆铜板/PCB上游电子材料重要参与者",
+          "marketCap": "约100亿元",
+          "revenue": "约80亿元",
+          "netProfit": "约4亿元",
+          "profitYoY": "+10%",
+          "customers": [
+            "华为海思",
+            "长江存储",
+            "国内外芯片厂商"
+          ],
+          "highlights": [
+            "半导体封装测试龙头",
+            "存储芯片封装规模国内领先"
+          ],
+          "location": "无锡",
+          "isKey": false,
+          "stockPrices": [],
+          "stockCurrent": null,
+          "stock52Low": null,
+          "stock52High": null,
+          "rank": 6
         }
       ]
     }
