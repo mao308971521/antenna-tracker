@@ -3,15 +3,17 @@ import { useState } from 'react'
 import newsData from '../../data/news.json'
 
 export default function NewsPage() {
-  const [activeFilter, setActiveFilter] = useState('全部')
-  const [showTimeline, setShowTimeline] = useState(false)
+  // 将 news.json (object) 转换为数组
+const newsArray = Object.values(newsData)
+const [activeFilter, setActiveFilter] = useState('全部')
+const [showTimeline, setShowTimeline] = useState(false)
 
-  // 从新闻数据提取所有来源
-  const sources = ['全部', ...Array.from(new Set(newsData.map(n => n.source)))]
+// 从新闻数据提取所有来源
+const sources = ['全部', ...Array.from(new Set(newsArray.map(n => n.source)))]
 
-  const filtered = activeFilter === '全部'
-    ? newsData
-    : newsData.filter(n => n.source === activeFilter)
+const filtered = activeFilter === '全部'
+  ? newsArray
+  : newsArray.filter(n => n.source === activeFilter)
 
   const sourceTypeColors: Record<string, string> = {
     '腾讯网': '#e53935',
