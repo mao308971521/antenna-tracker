@@ -1,0 +1,60 @@
+name: Auto Update Data
+
+on:
+  schedule:
+    # 每天早上 8:00 (Asia/Shanghai) 运行
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    # 支持手动触发
+
+env:
+  NODE_VERSION: '18'
+  FETCH_TIMEOUT: '300'
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Configure git
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run fetch-data script with timeout
+        run: timeout ${{ env.FETCH_TIMEOUT }} node scripts/fetch-data.js || exit 0
+        shell: bash
+
+      - name: Check for changes
+        id: git-status
+        run: |
+          if git diff --stat | grep -q ' [0-9]'; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.git-status.outputs.has_changes == 'true'
+        run: |
+          BRANCH_NAME="data-update"
+          git checkout -b $BRANCH_NAME || git checkout $BRANCH_NAME
+          git add -A
+          TIMESTAMP=$(date +'%Y-%m-%d %H:%M')
+          git commit -m "data: auto update $TIMESTAMP"
+          git push -u origin $BRANCH_NAME --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

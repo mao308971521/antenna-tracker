@@ -291,3 +291,325 @@ body {
   background: #667eea;
   color: white;
 }
+
+/* 导航栏搜索按钮 */
+.navbar-search {
+  margin-left: auto;
+}
+
+.search-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #666;
+  font-size: 14px;
+}
+
+.search-trigger:hover {
+  background: #eee;
+  border-color: #ccc;
+}
+
+.search-icon-svg {
+  width: 16px;
+  height: 16px;
+}
+
+.search-trigger-text {
+  color: #666;
+}
+
+.search-kbd {
+  font-size: 11px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: #999;
+}
+
+/* 移动端导航 - 汉堡菜单 */
+.mobile-nav-wrapper {
+  display: none;
+  position: relative;
+}
+
+.mobile-nav-trigger {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  list-style: none;
+}
+
+.mobile-nav-trigger::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-nav-trigger:hover {
+  background: #f5f5f5;
+}
+
+.hamburger-icon {
+  width: 24px;
+  height: 24px;
+  color: #666;
+}
+
+.mobile-nav-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  min-width: 160px;
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 10px 16px;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.mobile-nav-link:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* 响应式调整 - 平板和移动端 */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  .header {
+    padding: 24px 16px;
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 12px 0;
+  }
+
+  .stat-item {
+    padding: 12px;
+  }
+
+  .stat-value {
+    font-size: 1.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  /* 导航栏移动端适配 */
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav-wrapper {
+    display: block;
+  }
+
+  .search-trigger-text {
+    display: none;
+  }
+
+  .search-trigger {
+    padding: 8px;
+  }
+
+  .navbar-search {
+    margin-left: auto;
+    margin-right: 8px;
+  }
+
+  .navbar-brand {
+    margin-right: auto;
+  }
+
+  /* 表格移动端滚动 */
+  .price-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .price-table th,
+  .price-table td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  /* 网格布局移动端适配 */
+  .segment-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .company-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* 新闻列表移动端 */
+  .news-item {
+    padding: 12px 0;
+  }
+
+  .news-title {
+    font-size: 1rem;
+  }
+
+  .news-summary {
+    font-size: 0.85rem;
+  }
+
+  /* 标准列表移动端 */
+  .standard-item {
+    padding: 12px 0;
+  }
+
+  .standard-title {
+    font-size: 0.95rem;
+  }
+
+  /* 标签移动端适配 */
+  .tag {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+  }
+
+  /* 图表容器移动端高度 */
+  .recharts-wrapper {
+    max-width: 100%;
+  }
+
+  /* 页脚移动端 */
+  .footer {
+    padding: 20px;
+    font-size: 0.8rem;
+  }
+
+  /* 标准详情页移动端 */
+  .standard-item > div:first-child {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .standard-item > div:first-child > div:first-child {
+    min-width: auto;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+  }
+
+  .header {
+    padding: 16px 12px;
+  }
+
+  .header h1 {
+    font-size: 1.3rem;
+  }
+
+  .card {
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item {
+    padding: 10px;
+  }
+
+  .stat-value {
+    font-size: 1.2rem;
+  }
+
+  .segment-card {
+    padding: 12px;
+  }
+
+  .segment-name {
+    font-size: 1rem;
+  }
+
+  .company-card {
+    padding: 12px;
+  }
+
+  .company-name {
+    font-size: 1rem;
+  }
+
+  .news-title {
+    font-size: 0.95rem;
+  }
+
+  .news-summary {
+    font-size: 0.8rem;
+  }
+
+  .news-date {
+    font-size: 0.75rem;
+  }
+
+  .price-table th,
+  .price-table td {
+    padding: 6px 4px;
+    font-size: 0.75rem;
+  }
+
+  .standard-name {
+    font-size: 0.9rem;
+  }
+
+  .standard-title {
+    font-size: 0.85rem;
+  }
+
+  .standard-meta {
+    font-size: 0.75rem;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+  }
+}

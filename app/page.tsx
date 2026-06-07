@@ -73,6 +73,7 @@ export default function Home() {
           placeholder="🔍 搜索新闻、企业、产品..."
           value={searchKeyword}
           onChange={(e) => setSearchKeyword(e.target.value)}
+          className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg outline-none"
           style={{
             width: '100%',
             padding: '12px 16px',
@@ -98,14 +99,19 @@ export default function Home() {
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
+            className={`px-3 sm:px-4 py-2 rounded-md text-sm sm:text-base transition-colors ${
+              activeTab === tab.key
+                ? 'bg-indigo-500 text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
             style={{
-              padding: '8px 16px',
+              padding: activeTab === tab.key ? '8px 16px' : '8px 16px',
               border: 'none',
               borderRadius: '6px',
               background: activeTab === tab.key ? '#667eea' : '#f0f0f0',
               color: activeTab === tab.key ? 'white' : '#666',
               cursor: 'pointer',
-              fontSize: '0.9rem'
+              fontSize: '0.85rem'
             }}
           >
             {tab.label}
@@ -117,7 +123,7 @@ export default function Home() {
       {activeTab === 'overview' && (
         <>
           <section className="card">
-            <h2>📊 市场概览</h2>
+            <h2 className="text-lg sm:text-xl font-semibold mb-4">📊 市场概览</h2>
             <div className="stats-grid">
               <div className="stat-item">
                 <div className="stat-value">{marketData.summary.globalMarketSize2024}</div>
@@ -136,7 +142,7 @@ export default function Home() {
                 <div className="stat-label">年复合增长率</div>
               </div>
             </div>
-            <h3 style={{ marginTop: '24px' }}>🚀 增长驱动因素</h3>
+            <h3 style={{ marginTop: '24px' }} className="text-base sm:text-lg font-semibold">🚀 增长驱动因素</h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {marketData.keyDrivers.map((driver, i) => (
                 <span key={i} className="tag">{driver}</span>
@@ -145,12 +151,12 @@ export default function Home() {
           </section>
 
           <section className="card">
-            <h2>📈 市场规模趋势 (2020-2030)</h2>
+            <h2 className="text-lg sm:text-xl font-semibold mb-4">📈 市场规模趋势 (2020-2030)</h2>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={marketData.trendData}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="year" />
-                <YAxis />
+                <XAxis dataKey="year" tick={{ fontSize: 11 }} />
+                <YAxis tick={{ fontSize: 11 }} />
                 <Tooltip formatter={(value) => `${value}亿元`} />
                 <Legend />
                 <Line type="monotone" dataKey="global" name="全球市场" stroke="#0088FE" strokeWidth={2} />
@@ -165,12 +171,12 @@ export default function Home() {
       {activeTab === 'market' && (
         <>
           <section className="card">
-            <h2>📈 市场规模趋势 (2020-2030)</h2>
-            <ResponsiveContainer width="100%" height={350}>
+            <h2 className="text-lg sm:text-xl font-semibold mb-4">📈 市场规模趋势 (2020-2030)</h2>
+            <ResponsiveContainer width="100%" height={280} className="sm:h-80">
               <LineChart data={marketData.trendData}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="year" />
-                <YAxis />
+                <XAxis dataKey="year" tick={{ fontSize: 11 }} />
+                <YAxis tick={{ fontSize: 11 }} />
                 <Tooltip formatter={(value) => `${value}亿元`} />
                 <Legend />
                 <Line type="monotone" dataKey="global" name="全球市场" stroke="#0088FE" strokeWidth={2} dot={{ r: 4 }} />
@@ -180,14 +186,14 @@ export default function Home() {
           </section>
 
           <section className="card">
-            <h2>🥧 细分市场占比</h2>
-            <ResponsiveContainer width="100%" height={350}>
+            <h2 className="text-lg sm:text-xl font-semibold mb-4">🥧 细分市场占比</h2>
+            <ResponsiveContainer width="100%" height={280} className="sm:h-80">
               <PieChart>
                 <Pie
                   data={marketData.segmentData}
                   cx="50%"
                   cy="50%"
-                  outerRadius={120}
+                  outerRadius={100}
                   dataKey="value"
                   label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
                 >
@@ -201,7 +207,7 @@ export default function Home() {
           </section>
 
           <section className="card">
-            <h2>📋 细分市场详情</h2>
+            <h2 className="text-lg sm:text-xl font-semibold mb-4">📋 细分市场详情</h2>
             <div className="segment-grid">
               {marketData.segments.map((seg, i) => (
                 <div key={i} className="segment-card">
@@ -285,7 +291,7 @@ export default function Home() {
       {/* Companies Tab */}
       {activeTab === 'companies' && (
         <section className="card">
-          <h2>🏭 重点企业 <span style={{ fontSize: '0.9rem', color: '#999' }}>({filteredCompanies.length}家)</span></h2>
+          <h2 className="text-lg sm:text-xl font-semibold mb-4">🏭 重点企业 <span style={{ fontSize: '0.9rem', color: '#999' }}>({filteredCompanies.length}家)</span></h2>
           {filteredCompanies.length === 0 ? (
             <p style={{ color: '#999', textAlign: 'center', padding: '40px' }}>暂无匹配结果</p>
           ) : (
@@ -312,40 +318,42 @@ export default function Home() {
       {/* Prices Tab */}
       {activeTab === 'prices' && (
         <section className="card">
-          <h2>💰 原材料价格 <span style={{ fontSize: '0.9rem', color: '#999' }}>({filteredPrices.length}种)</span></h2>
-          <table className="price-table">
-            <thead>
-              <tr>
-                <th>材料</th>
-                <th>当前价格</th>
-                <th>涨跌</th>
-                <th>趋势</th>
-                <th>影响</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredPrices.map((price: any, i: number) => (
-                <tr key={i}>
-                  <td style={{ fontWeight: 600 }}>{price.name}</td>
-                  <td>{price.currentPrice.toLocaleString()} {price.unit}</td>
-                  <td className={price.trend === '上涨' ? 'price-up' : price.trend === '下跌' ? 'price-down' : 'price-stable'}>
-                    {price.change}
-                  </td>
-                  <td className={price.trend === '上涨' ? 'price-up' : price.trend === '下跌' ? 'price-down' : 'price-stable'}>
-                    {price.trend}
-                  </td>
-                  <td style={{ fontSize: '12px', color: '#999' }}>{price.impact}</td>
+          <h2 className="text-lg sm:text-xl font-semibold mb-4">💰 原材料价格 <span style={{ fontSize: '0.9rem', color: '#999' }}>({filteredPrices.length}种)</span></h2>
+          <div className="overflow-x-auto">
+            <table className="price-table">
+              <thead>
+                <tr>
+                  <th>材料</th>
+                  <th>当前价格</th>
+                  <th>涨跌</th>
+                  <th>趋势</th>
+                  <th>影响</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {filteredPrices.map((price: any, i: number) => (
+                  <tr key={i}>
+                    <td style={{ fontWeight: 600 }}>{price.name}</td>
+                    <td>{price.currentPrice.toLocaleString()} {price.unit}</td>
+                    <td className={price.trend === '上涨' ? 'price-up' : price.trend === '下跌' ? 'price-down' : 'price-stable'}>
+                      {price.change}
+                    </td>
+                    <td className={price.trend === '上涨' ? 'price-up' : price.trend === '下跌' ? 'price-down' : 'price-stable'}>
+                      {price.trend}
+                    </td>
+                    <td style={{ fontSize: '12px', color: '#999' }}>{price.impact}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </section>
       )}
 
       {/* Standards Tab */}
       {activeTab === 'standards' && (
         <section className="card">
-          <h2>📋 行业标准 <span style={{ fontSize: '0.9rem', color: '#999' }}>({filteredStandards.length}条)</span></h2>
+          <h2 className="text-lg sm:text-xl font-semibold mb-4">📋 行业标准 <span style={{ fontSize: '0.9rem', color: '#999' }}>({filteredStandards.length}条)</span></h2>
           <ul className="standards-list">
             {filteredStandards.map((std: any, i: number) => (
               <li key={i} className="standard-item">
@@ -366,7 +374,7 @@ export default function Home() {
       {/* Technology Tab */}
       {activeTab === 'technology' && (
         <section className="card">
-          <h2>🔬 技术概览</h2>
+          <h2 className="text-lg sm:text-xl font-semibold mb-4">🔬 技术概览</h2>
           <p style={{ color: '#666', marginBottom: '20px' }}>
             天线行业技术成熟度曲线及详细分析，请访问技术页面查看完整内容。
           </p>

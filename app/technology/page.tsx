@@ -70,18 +70,19 @@ export default function TechnologyPage() {
 
       {/* 行业技术趋势概述 */}
       <section className="card">
-        <h2>📝 行业技术趋势综述</h2>
-        <p style={{ color: '#555', lineHeight: 1.8, fontSize: '0.95rem' }}>{techData.industryOverview}</p>
+        <h2 className="text-lg sm:text-xl font-semibold mb-4">📝 行业技术趋势综述</h2>
+        <p style={{ color: '#555', lineHeight: 1.8, fontSize: '0.9rem' }}>{techData.industryOverview}</p>
       </section>
 
       {/* Gartner 曲线气泡图 */}
       <section className="card">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-          <h2>📊 Gartner 技术成熟度曲线（Hype Cycle）</h2>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '12px' }}>
+          <h2 className="text-lg sm:text-xl font-semibold">📊 Gartner 技术成熟度曲线（Hype Cycle）</h2>
           <button
             onClick={() => setShowHypeCycle(!showHypeCycle)}
+            className="px-3 py-1.5 rounded-md text-xs sm:text-sm transition-colors"
             style={{
-              padding: '6px 16px', borderRadius: '6px', border: '1px solid #e0e0e0',
+              padding: '6px 14px', borderRadius: '6px', border: '1px solid #e0e0e0',
               background: showHypeCycle ? '#667eea' : 'white',
               color: showHypeCycle ? 'white' : '#666', cursor: 'pointer', fontSize: '0.85rem'
             }}
@@ -91,38 +92,38 @@ export default function TechnologyPage() {
         </div>
 
         {/* 阶段图例 */}
-        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '20px' }}>
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '16px' }}>
           {PHASE_ORDER.map(phase => (
             <div key={phase} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: PHASE_COLORS[phase] }} />
-              <span style={{ fontSize: '0.8rem', color: '#666' }}>{PHASE_NAMES[phase]}</span>
+              <span style={{ fontSize: '0.75rem', color: '#666' }}>{PHASE_NAMES[phase]}</span>
             </div>
           ))}
         </div>
 
         {showHypeCycle && (
           <>
-            <p style={{ fontSize: '0.85rem', color: '#999', marginBottom: '16px' }}>
+            <p style={{ fontSize: '0.85rem', color: '#999', marginBottom: '12px' }}>
               💡 气泡大小表示技术重要度（仅供参考），点击气泡查看技术详情 ↓
             </p>
 
             {/* Gartner 参考曲线 + 气泡 */}
-            <ResponsiveContainer width="100%" height={360}>
-              <ScatterChart margin={{ top: 10, right: 20, left: 0, bottom: 40 }}>
+            <ResponsiveContainer width="100%" height={320} className="sm:h-96">
+              <ScatterChart margin={{ top: 10, right: 10, left: 0, bottom: 40 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
                 <XAxis
                   type="number" dataKey="year" name="年份"
-                  domain={[2013, 2036]} tick={{ fontSize: 11, fill: '#999' }}
+                  domain={[2013, 2036]} tick={{ fontSize: 10, fill: '#999' }}
                   tickLine={false} axisLine={{ stroke: '#e0e0e0' }}
-                  label={{ value: '年份', position: 'insideBottom', offset: -20, fontSize: 11, fill: '#999' }}
+                  label={{ value: '年份', position: 'insideBottom', offset: -20, fontSize: 10, fill: '#999' }}
                 />
                 <YAxis
                   type="number" dataKey="maturity" name="成熟度" domain={[0, 10]}
-                  tick={{ fontSize: 11, fill: '#999' }} tickLine={false}
+                  tick={{ fontSize: 10, fill: '#999' }} tickLine={false}
                   axisLine={{ stroke: '#e0e0e0' }}
                   tickFormatter={(v) => v === 1 ? '触发' : v === 5 ? '低谷' : v === 9 ? '成熟' : ''}
-                  width={50}
-                  label={{ value: '成熟度', angle: -90, position: 'insideLeft', offset: 15, fontSize: 11, fill: '#999' }}
+                  width={45}
+                  label={{ value: '成熟度', angle: -90, position: 'insideLeft', offset: 15, fontSize: 10, fill: '#999' }}
                 />
                 <ZAxis range={[40, 80]} />
                 <Tooltip
@@ -148,32 +149,33 @@ export default function TechnologyPage() {
                       const idx = techData.technologyDetail.findIndex(t => t.name === d.name || t.nameCn === d.nameCn)
                       if (idx >= 0) { setSelectedTech(idx); setShowHypeCycle(false) }
                     }}
-                    shape={(props: any) => <circle {...props} r={8} opacity={0.85} />}
+                    shape={(props: any) => <circle {...props} r={7} opacity={0.85} />}
                   />
                 ))}
               </ScatterChart>
             </ResponsiveContainer>
 
             {/* 技术列表 - 气泡颜色标识 */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '16px' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '12px' }}>
               {techData.hypeCycle.technologies.map((tech, i) => (
                 <div
                   key={i}
                   onClick={() => { setSelectedTech(i); setShowHypeCycle(false) }}
+                  className="px-2 py-1 rounded-full text-xs cursor-pointer transition-colors"
                   style={{
-                    padding: '6px 12px',
+                    padding: '4px 10px',
                     borderRadius: '16px',
                     border: `1.5px solid ${PHASE_COLORS[tech.phase]}`,
                     background: selectedTech === i ? PHASE_COLORS[tech.phase] + '25' : 'white',
                     cursor: 'pointer',
-                    fontSize: '0.8rem',
+                    fontSize: '0.75rem',
                     fontWeight: selectedTech === i ? 600 : 400,
                     color: selectedTech === i ? PHASE_COLORS[tech.phase] : '#555',
                   }}
                 >
                   <span style={{ color: PHASE_COLORS[tech.phase], marginRight: '4px' }}>●</span>
                   {tech.nameCn}
-                  <span style={{ fontSize: '0.7rem', color: '#999', marginLeft: '4px' }}>
+                  <span style={{ fontSize: '0.65rem', color: '#999', marginLeft: '4px' }}>
                     {tech.yearEmerging}→{tech.yearPlateau}
                   </span>
                 </div>
@@ -185,13 +187,14 @@ export default function TechnologyPage() {
 
       {/* 技术详情 */}
       <section className="card">
-        <h2>🔍 技术深度解析</h2>
+        <h2 className="text-lg sm:text-xl font-semibold mb-4">🔍 技术深度解析</h2>
         {/* 技术选择Tab */}
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '24px' }}>
           {techData.technologyDetail.map((tech, i) => (
             <button
               key={i}
               onClick={() => setSelectedTech(i)}
+              className="px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-colors"
               style={{
                 padding: '6px 14px',
                 borderRadius: '20px',
@@ -199,7 +202,7 @@ export default function TechnologyPage() {
                 background: selectedTech === i ? '#eef2ff' : 'white',
                 color: selectedTech === i ? '#667eea' : '#666',
                 cursor: 'pointer',
-                fontSize: '0.85rem',
+                fontSize: '0.8rem',
                 fontWeight: selectedTech === i ? 600 : 400,
               }}
             >
@@ -211,75 +214,75 @@ export default function TechnologyPage() {
         {currentTech && (
           <>
             <div style={{
-              padding: '20px', background: '#f8f9fa', borderRadius: '12px',
-              borderLeft: '4px solid #667eea', marginBottom: '24px'
+              padding: '16px', background: '#f8f9fa', borderRadius: '12px',
+              borderLeft: '4px solid #667eea', marginBottom: '20px'
             }}>
               <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '12px' }}>
-                <h3 style={{ margin: 0, fontSize: '1.3rem', color: '#333' }}>{currentTech.nameCn}</h3>
+                <h3 style={{ margin: 0, fontSize: '1.1rem', color: '#333' }}>{currentTech.nameCn}</h3>
                 <span style={{
-                  padding: '4px 12px', background: '#e3f2fd', color: '#1976d2',
-                  borderRadius: '20px', fontSize: '0.8rem'
+                  padding: '4px 10px', background: '#e3f2fd', color: '#1976d2',
+                  borderRadius: '20px', fontSize: '0.75rem'
                 }}>{currentTech.category}</span>
                 <span style={{
-                  padding: '4px 12px', background: '#fff3e0', color: '#e65100',
-                  borderRadius: '20px', fontSize: '0.8rem'
+                  padding: '4px 10px', background: '#fff3e0', color: '#e65100',
+                  borderRadius: '20px', fontSize: '0.75rem'
                 }}>
                   成熟度 {currentTech.maturityLevel}/9
                 </span>
               </div>
-              <p style={{ color: '#555', lineHeight: 1.7, margin: 0 }}>{currentTech.currentStatus}</p>
+              <p style={{ color: '#555', lineHeight: 1.7, margin: 0, fontSize: '0.9rem' }}>{currentTech.currentStatus}</p>
             </div>
 
             {/* 主流技术路线 */}
-            <div style={{ marginBottom: '24px' }}>
-              <h4 style={{ fontSize: '1rem', color: '#333', marginBottom: '12px' }}>🔧 主流技术路线</h4>
+            <div style={{ marginBottom: '20px' }}>
+              <h4 style={{ fontSize: '0.95rem', color: '#333', marginBottom: '12px' }}>🔧 主流技术路线</h4>
               <div>
                 {currentTech.mainstreamRoutes.map((route, i) => (
                   <div key={i} style={{
-                    padding: '12px 16px',
+                    padding: '10px 14px',
                     background: i % 2 === 0 ? '#fafafa' : 'white',
-                    borderRadius: '8px', marginBottom: '8px',
-                    display: 'flex', gap: '12px', alignItems: 'flex-start'
+                    borderRadius: '8px', marginBottom: '6px',
+                    display: 'flex', gap: '10px', alignItems: 'flex-start'
                   }}>
                     <span style={{ fontWeight: 700, color: '#667eea', minWidth: '20px' }}>{i + 1}.</span>
-                    <span style={{ color: '#555', lineHeight: 1.6 }}>{route}</span>
+                    <span style={{ color: '#555', lineHeight: 1.6, fontSize: '0.9rem' }}>{route}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* 主要厂商分析 */}
-            <div style={{ marginBottom: '24px' }}>
-              <h4 style={{ fontSize: '1rem', color: '#333', marginBottom: '12px' }}>🏭 主要厂商技术路线对比</h4>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '12px' }}>
+            <div style={{ marginBottom: '20px' }}>
+              <h4 style={{ fontSize: '0.95rem', color: '#333', marginBottom: '12px' }}>🏭 主要厂商技术路线对比</h4>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '12px' }}>
                 {Object.entries(currentTech.vendorAnalysis).map(([vendor, analysis]) => (
                   <div key={vendor} style={{
-                    padding: '14px', background: '#f8f9fa', borderRadius: '8px',
+                    padding: '12px', background: '#f8f9fa', borderRadius: '8px',
                     borderTop: '2px solid #667eea'
                   }}>
-                    <div style={{ fontWeight: 700, color: '#333', marginBottom: '6px' }}>{vendor}</div>
-                    <div style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.6 }}>{analysis}</div>
+                    <div style={{ fontWeight: 700, color: '#333', marginBottom: '6px', fontSize: '0.9rem' }}>{vendor}</div>
+                    <div style={{ fontSize: '0.8rem', color: '#666', lineHeight: 1.6 }}>{analysis}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* 主流发展方向 */}
-            <div style={{ marginBottom: '24px' }}>
-              <h4 style={{ fontSize: '1rem', color: '#333', marginBottom: '12px' }}>🚀 主流发展方向</h4>
-              <div style={{ padding: '14px', background: '#e8f5e9', borderRadius: '8px' }}>
-                <p style={{ color: '#2e7d32', margin: 0, lineHeight: 1.7 }}>{currentTech.developmentDirection}</p>
+            <div style={{ marginBottom: '20px' }}>
+              <h4 style={{ fontSize: '0.95rem', color: '#333', marginBottom: '12px' }}>🚀 主流发展方向</h4>
+              <div style={{ padding: '12px', background: '#e8f5e9', borderRadius: '8px' }}>
+                <p style={{ color: '#2e7d32', margin: 0, lineHeight: 1.7, fontSize: '0.9rem' }}>{currentTech.developmentDirection}</p>
               </div>
             </div>
 
             {/* 技术难点 */}
-            <div style={{ marginBottom: '24px' }}>
-              <h4 style={{ fontSize: '1rem', color: '#333', marginBottom: '12px' }}>⚠️ 技术难点与挑战</h4>
+            <div style={{ marginBottom: '20px' }}>
+              <h4 style={{ fontSize: '0.95rem', color: '#333', marginBottom: '12px' }}>⚠️ 技术难点与挑战</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {currentTech.challenges.map((ch, i) => (
                   <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                     <span style={{ color: '#e53935', fontWeight: 700 }}>●</span>
-                    <span style={{ color: '#555', lineHeight: 1.6 }}>{ch}</span>
+                    <span style={{ color: '#555', lineHeight: 1.6, fontSize: '0.9rem' }}>{ch}</span>
                   </div>
                 ))}
               </div>
@@ -287,9 +290,9 @@ export default function TechnologyPage() {
 
             {/* 商用时间线 */}
             <div>
-              <h4 style={{ fontSize: '1rem', color: '#333', marginBottom: '12px' }}>⏰ 商用时间线预测</h4>
-              <div style={{ padding: '14px', background: '#e3f2fd', borderRadius: '8px' }}>
-                <p style={{ color: '#1565c0', margin: 0, fontWeight: 500 }}>{currentTech.timeline}</p>
+              <h4 style={{ fontSize: '0.95rem', color: '#333', marginBottom: '12px' }}>⏰ 商用时间线预测</h4>
+              <div style={{ padding: '12px', background: '#e3f2fd', borderRadius: '8px' }}>
+                <p style={{ color: '#1565c0', margin: 0, fontWeight: 500, fontSize: '0.9rem' }}>{currentTech.timeline}</p>
               </div>
             </div>
           </>
@@ -298,18 +301,18 @@ export default function TechnologyPage() {
 
       {/* 分类总览 */}
       <section className="card">
-        <h2>📋 技术分类总览</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '14px' }}>
+        <h2 className="text-lg sm:text-xl font-semibold mb-4">📋 技术分类总览</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '12px' }}>
           {techData.categorySummary.map((cat, i) => (
             <div key={i} style={{
-              padding: '16px', background: '#f8f9fa', borderRadius: '10px',
+              padding: '14px', background: '#f8f9fa', borderRadius: '10px',
               borderLeft: '3px solid #667eea'
             }}>
-              <div style={{ fontWeight: 700, color: '#333', marginBottom: '6px' }}>{cat.nameCn}</div>
+              <div style={{ fontWeight: 700, color: '#333', marginBottom: '6px', fontSize: '0.95rem' }}>{cat.nameCn}</div>
               <div style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.6, marginBottom: '8px' }}>
                 {cat.description}
               </div>
-              <div style={{ fontSize: '0.8rem', color: '#999' }}>
+              <div style={{ fontSize: '0.75rem', color: '#999' }}>
                 <span style={{ fontWeight: 600 }}>代表厂商：</span>{cat.keyPlayers}
               </div>
             </div>

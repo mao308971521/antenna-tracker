@@ -30,14 +30,15 @@ export default function StandardsPage() {
             <button
               key={i}
               onClick={() => setActiveCategory(i)}
+              className="px-4 py-2 rounded-lg text-sm sm:text-base font-semibold transition-colors"
               style={{
-                padding: '10px 20px',
+                padding: '8px 16px',
                 borderRadius: '8px',
                 border: activeCategory === i ? `2px solid ${categoryColors[cat.code]}` : '2px solid #e0e0e0',
                 background: activeCategory === i ? categoryColors[cat.code] : 'white',
                 color: activeCategory === i ? 'white' : '#333',
                 cursor: 'pointer',
-                fontSize: '0.95rem',
+                fontSize: '0.85rem',
                 fontWeight: 600,
               }}
             >
@@ -46,19 +47,19 @@ export default function StandardsPage() {
           ))}
         </div>
 
-        <p style={{ color: '#666', marginBottom: '20px', fontSize: '0.95rem' }}>
+        <p style={{ color: '#666', marginBottom: '20px', fontSize: '0.9rem' }}>
           {currentCategory.description}
         </p>
 
         {/* 标准列表 */}
         <div>
           {currentCategory.standards.map((std, i) => (
-            <div key={i} className="standard-item" style={{ padding: '20px 0', borderBottom: '1px solid #eee' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '8px' }}>
+            <div key={i} className="standard-item" style={{ padding: '16px 0', borderBottom: '1px solid #eee' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
                 <div style={{
-                  minWidth: '160px',
+                  minWidth: '140px',
                   fontWeight: 700,
-                  fontSize: '1rem',
+                  fontSize: '0.9rem',
                   color: categoryColors[currentCategory.code],
                   cursor: 'pointer'
                 }}
@@ -68,10 +69,10 @@ export default function StandardsPage() {
                   {std.name}
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: '1.05rem', fontWeight: 600, color: '#333', marginBottom: '6px' }}>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 600, color: '#333', marginBottom: '6px' }}>
                     {std.title}
                   </div>
-                  <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', fontSize: '0.85rem', color: '#999' }}>
+                  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', fontSize: '0.8rem', color: '#999' }}>
                     <span>🏛️ {std.organization}</span>
                     <span>📅 {std.publishDate}</span>
                     <span>📌 状态：
@@ -86,12 +87,12 @@ export default function StandardsPage() {
                 </div>
               </div>
 
-              <div style={{ marginBottom: '10px' }}>
-                <span style={{ fontSize: '0.8rem', color: '#999' }}>适用范围：</span>
-                <span style={{ fontSize: '0.9rem', color: '#666' }}>{std.scope}</span>
+              <div style={{ marginBottom: '8px' }}>
+                <span style={{ fontSize: '0.75rem', color: '#999' }}>适用范围：</span>
+                <span style={{ fontSize: '0.85rem', color: '#666' }}>{std.scope}</span>
               </div>
 
-              <div style={{ fontSize: '0.9rem', color: '#555', lineHeight: 1.6, marginBottom: '10px' }}>
+              <div style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.6, marginBottom: '8px' }}>
                 {std.description}
               </div>
 
@@ -102,15 +103,15 @@ export default function StandardsPage() {
                   rel="noopener noreferrer"
                   style={{
                     display: 'inline-flex', alignItems: 'center', gap: '6px',
-                    padding: '6px 14px', background: '#eef2ff', color: '#667eea',
-                    borderRadius: '6px', textDecoration: 'none', fontSize: '0.85rem',
+                    padding: '4px 12px', background: '#eef2ff', color: '#667eea',
+                    borderRadius: '6px', textDecoration: 'none', fontSize: '0.8rem',
                     fontWeight: 500
                   }}
                 >
                   🔗 访问官方标准页面 →
                 </a>
               ) : (
-                <span style={{ fontSize: '0.8rem', color: '#ccc' }}>暂无官方链接</span>
+                <span style={{ fontSize: '0.75rem', color: '#ccc' }}>暂无官方链接</span>
               )}
             </div>
           ))}

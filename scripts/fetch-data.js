@@ -1,12 +1,14 @@
 /**
- * 天线行业数据采集脚本 v2.0
+ * 天线行业数据采集脚本 v2.1
  * 支持：行业新闻爬取、市场数据补充、企业数据补充
+ * 新增数据源：工信部、3GPP、CCSA
  * 用法: node scripts/fetch-data.js
  */
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const http = require('http');
+const crypto = require('crypto');
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
 
@@ -56,7 +58,7 @@ function cleanHtml(text) {
 // ============================================================
 
 async function crawlC114() {
-  console.log('🔍 正在抓取 C114通信网...');
+ console.log('🔍 正在抓取 C114通信网...');
   try {
     const html = await fetchUrl('https://www.c114.com.cn/', 15000);
     // C114 首页新闻列表
@@ -116,7 +118,7 @@ async function crawlCWW() {
 }
 
 async function crawlFeixiang() {
-  console.log('🔍 正在抓取 飞象网...');
+ console.log('🔍 正在抓取 飞象网...');
   try {
     const html = await fetchUrl('https://www.51d西北.com/', 15000);
     const newsItems = [];
@@ -140,6 +142,225 @@ async function crawlFeixiang() {
     console.log(`  ⚠️ 飞象网 抓取失败: ${e.message}`);
     return [];
   }
+}
+
+// ============================================================
+// 新增数据源：工信部网站
+// ============================================================
+async function crawlMIIT() {
+  console.log('🔍 正在抓取 工信部网站...');
+  try {
+    const html = await fetchUrl('https://www.miit.gov.cn/', 20000);
+    const newsItems = [];
+    
+    // 工信部新闻列表 - 匹配新闻链接
+    const regex = /<a[^>]+href="(\/[^(http)]*\/[^"]+\.html)"[^>]*>\s*([^<]{10,150})\s*<\/a>/gi;
+    let match;
+    while ((match = regex.exec(html)) !== null && newsItems.length < 15) {
+      const title = cleanHtml(match[2]);
+      const href = match[1];
+      if (title.length > 10 && title.length < 150 && !title.includes('<img') && !title.includes('href="#')) {
+        newsItems.push({
+          id: Date.now() + Math.random() + 100,
+          date: new Date().toISOString().split('T')[0],
+          title,
+          source: '工信部',
+          summary: '工信部政策公告',
+          tags: ['政策', '公告', '行业数据'],
+          url: href.startsWith('http') ? href : 'https://www.miit.gov.cn' + href
+        });
+      }
+    }
+    
+    // 尝试获取政策文件列表
+    try {
+      const policyHtml = await fetchUrl('https://www.miit.gov.cn/search/search.html?w=5G&cat=',15000);
+      const policyRegex = /<a[^>]+href="(\/[^"]*\.html)"[^>]*>([^<]{10,150})<\/a>/gi;
+      let policyMatch;
+      while ((policyMatch = policyRegex.exec(policyHtml)) !== null && newsItems.length < 25) {
+        const title = cleanHtml(policyMatch[2]);
+        if (title.length > 10 && !newsItems.some(n => n.title.includes(title.substring(0, 30)))) {
+          newsItems.push({
+            id: Date.now() + Math.random() + 101,
+            date: new Date().toISOString().split('T')[0],
+            title,
+            source: '工信部',
+            summary: '工信部政策文件',
+            tags: ['政策文件', '5G', '公告'],
+            url: policyMatch[1].startsWith('http') ? policyMatch[1] : 'https://www.miit.gov.cn' + policyMatch[1]
+          });
+        }
+      }
+    } catch (policyErr) {
+      console.log(`  ⚠️ 工信部政策搜索抓取失败: ${policyErr.message}`);
+    }
+    
+    console.log(`  ✅ 获取 ${newsItems.length} 条 工信部 数据`);
+    return newsItems;
+  } catch (e) {
+    console.log(`  ⚠️ 工信部 抓取失败: ${e.message}`);
+    return [];
+  }
+}
+
+// ============================================================
+// 新增数据源：3GPP官网
+// ============================================================
+async function crawl3GPP() {
+ console.log('🔍 正在抓取 3GPP官网...');
+  try {
+    const html = await fetchUrl('https://www.3gpp.org/', 20000);
+    const newsItems = [];
+    
+    // 3GPP最新动态和Release信息
+    const regex = /<a[^>]+href="(\/[^"]+)"[^>]*>\s*([^<]{10,150})\s*<\/a>/gi;
+    let match;
+    while ((match = regex.exec(html)) !== null && newsItems.length < 20) {
+      const title = cleanHtml(match[2]);
+      const href = match[1];
+      if (title.length > 10 && title.length < 150 && !title.includes('<img') && !href.includes('javascript')) {
+        newsItems.push({
+          id: Date.now() + Math.random() + 200,
+          date: new Date().toISOString().split('T')[0],
+          title,
+          source: '3GPP',
+          summary: '3GPP标准更新',
+          tags: ['标准', 'Release', '技术规范'],
+          url: href.startsWith('http') ? href : 'https://www.3gpp.org' + href
+        });
+      }
+    }
+    
+    // 尝试获取Specifies页面
+    try {
+      const specsHtml = await fetchUrl('https://www.3gpp.org/specs/releases', 15000);
+      const specsRegex = /<a[^>]+href="(\/specs\/[^"]+)"[^>]*>([^<]{10,100})<\/a>/gi;
+      let specsMatch;
+      while ((specsMatch = specsRegex.exec(specsHtml)) !== null && newsItems.length < 30) {
+        const title = cleanHtml(specsMatch[2]);
+        if (title.length > 5 && !newsItems.some(n => n.title.includes(title.substring(0, 20)))) {
+          newsItems.push({
+            id: Date.now() + Math.random() + 201,
+            date: new Date().toISOString().split('T')[0],
+            title: `[Release] ${title}`,
+            source: '3GPP',
+            summary: '3GPP规范更新',
+            tags: ['规范', '标准更新'],
+            url: specsMatch[1].startsWith('http') ? specsMatch[1] : 'https://www.3gpp.org' + specsMatch[1]
+          });
+        }
+      }
+    } catch (specsErr) {
+      console.log(`  ⚠️ 3GPP规范页面抓取失败: ${specsErr.message}`);
+    }
+    
+    console.log(`  ✅ 获取 ${newsItems.length} 条 3GPP 数据`);
+    return newsItems;
+  } catch (e) {
+    console.log(`  ⚠️ 3GPP 抓取失败: ${e.message}`);
+    return [];
+  }
+}
+
+// ============================================================
+// 新增数据源：中国通信标准化协会
+// ============================================================
+async function crawlCCSA() {
+  console.log('🔍 正在抓取 中国通信标准化协会...');
+  try {
+    const html = await fetchUrl('http://www.ccsa.org.cn/', 20000);
+    const newsItems = [];
+    
+    // CCSA新闻和标准信息
+    const regex = /<a[^>]+href="(\/[a-z][^"]*\.html)"[^>]*>\s*([^<]{10,150})\s*<\/a>/gi;
+    let match;
+    while ((match = regex.exec(html)) !== null && newsItems.length < 20) {
+      const title = cleanHtml(match[2]);
+      const href = match[1];
+      if (title.length > 10 && title.length < 150 && !title.includes('<img') && !href.includes('javascript')) {
+        newsItems.push({
+          id: Date.now() + Math.random() + 300,
+          date: new Date().toISOString().split('T')[0],
+          title,
+          source: 'CCSA',
+          summary: '中国通信标准化协会标准信息',
+          tags: ['标准', '行业标准', '技术规范'],
+          url: href.startsWith('http') ? href : 'http://www.ccsa.org.cn' + href
+        });
+      }
+    }
+    
+    // 尝试获取标准工作动态
+    try {
+      const workHtml = await fetchUrl('http://www.ccsa.org.cn/standard/', 15000);
+      const workRegex = /<a[^>]+href="(\/[^"]*\.html)"[^>]*>([^<]{10,100})<\/a>/gi;
+      let workMatch;
+      while ((workMatch = workRegex.exec(workHtml)) !== null && newsItems.length < 35) {
+        const title = cleanHtml(workMatch[2]);
+        if (title.length > 5 && !newsItems.some(n => n.title.includes(title.substring(0, 20)))) {
+          newsItems.push({
+            id: Date.now() + Math.random() + 301,
+            date: new Date().toISOString().split('T')[0],
+            title: `[标准] ${title}`,
+            source: 'CCSA',
+            summary: 'CCSA标准工作动态',
+            tags: ['标准工作', '行业标准'],
+            url: workMatch[1].startsWith('http') ? workMatch[1] : 'http://www.ccsa.org.cn' + workMatch[1]
+          });
+        }
+      }
+    } catch (workErr) {
+      console.log(`  ⚠️ CCSA标准工作页面抓取失败: ${workErr.message}`);
+    }
+    
+    console.log(`  ✅ 获取 ${newsItems.length} 条 CCSA 数据`);
+    return newsItems;
+  } catch (e) {
+    console.log(`  ⚠️ CCSA 抓取失败: ${e.message}`);
+    return [];
+  }
+}
+
+// ============================================================
+// 标准数据采集（新增）
+// ============================================================
+async function updateStandards() {
+  console.log('\n📋正在更新标准数据...\n');
+  
+  const allStandards = [];
+  
+  // 并行爬取标准相关来源
+  const [miitStandards, g3ppStandards, ccsaStandards] = await Promise.allSettled([
+    crawlMIIT(),
+    crawl3GPP(),
+    crawlCCSA()
+  ]).then(results => [
+    results[0].status === 'fulfilled' ? results[0].value : [],
+    results[1].status === 'fulfilled' ? results[1].value : [],
+    results[2].status === 'fulfilled' ? results[2].value : []
+  ]);
+  
+  allStandards.push(...miitStandards, ...g3ppStandards, ...ccsaStandards);
+  
+  // 去重（按标题）
+  const seen = new Set();
+  const uniqueStandards = allStandards.filter(s => {
+    const key = s.title.substring(0, 50);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  
+  // 写入standards.json
+  const standardsFile = path.join(DATA_DIR, 'standards.json');
+  const existingStandards = fs.existsSync(standardsFile) ? JSON.parse(fs.readFileSync(standardsFile, 'utf8')) : [];
+  
+  // 合并新数据与已有数据，保留最新的50条
+  const merged = [...uniqueStandards, ...existingStandards].slice(0, 50);
+  fs.writeFileSync(standardsFile, JSON.stringify(merged, null, 2));
+  
+  console.log(`\n  ✅ 标准数据已写入，共 ${merged.length} 条（新增 ${uniqueStandards.length} 条）`);
+  return merged;
 }
 
 // 备用：生成基于真实行业事件的高质量模拟数据
@@ -292,7 +513,6 @@ function generateIndustryNews() {
 // ============================================================
 // 市场数据补充（增加缺失的细分市场）
 // ============================================================
-
 function enrichMarketData() {
   const marketFile = path.join(DATA_DIR, 'market.json');
   const data = JSON.parse(fs.readFileSync(marketFile, 'utf8'));
@@ -348,7 +568,6 @@ function enrichMarketData() {
 // ============================================================
 // 行业新闻数据合并写入
 // ============================================================
-
 async function updateNews() {
   console.log('\n📰 正在更新行业新闻...\n');
 
@@ -391,10 +610,9 @@ async function updateNews() {
 // ============================================================
 // 主函数
 // ============================================================
-
 async function main() {
   console.log('═══════════════════════════════════════');
-  console.log('  天线行业情报系统 · 数据更新脚本 v2.0');
+  console.log('  天线行业情报系统 · 数据更新脚本 v2.1');
   console.log('═══════════════════════════════════════\n');
   console.log(`📅 更新时间: ${new Date().toLocaleString('zh-CN')}\n`);
 
@@ -405,6 +623,9 @@ async function main() {
 
     // 2. 更新新闻数据
     await updateNews();
+
+    // 3. 更新标准数据（新增）
+    await updateStandards();
 
     console.log('\n═══════════════════════════════════════');
     console.log('  ✅ 所有数据更新完成！');

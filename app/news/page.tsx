@@ -40,6 +40,7 @@ const filtered = activeFilter === '全部'
               <button
                 key={src}
                 onClick={() => setActiveFilter(src)}
+                className="px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-colors"
                 style={{
                   padding: '6px 14px',
                   borderRadius: '20px',
@@ -47,7 +48,7 @@ const filtered = activeFilter === '全部'
                   background: activeFilter === src ? '#667eea' : 'white',
                   color: activeFilter === src ? 'white' : '#666',
                   cursor: 'pointer',
-                  fontSize: '0.85rem',
+                  fontSize: '0.8rem',
                   fontWeight: activeFilter === src ? 600 : 400,
                 }}
               >
@@ -57,6 +58,7 @@ const filtered = activeFilter === '全部'
           </div>
           <button
             onClick={() => setShowTimeline(!showTimeline)}
+            className="px-3 py-1.5 rounded-md text-xs sm:text-sm transition-colors"
             style={{
               padding: '6px 14px', borderRadius: '6px', border: '1px solid #e0e0e0',
               background: showTimeline ? '#667eea' : 'white',
@@ -77,13 +79,13 @@ const filtered = activeFilter === '全部'
           <ul className="news-list">
             {filtered.map((news) => (
               <li key={news.id} className="news-item">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '8px' }}>
                   <div className="news-date">
                     <span style={{
                       padding: '2px 8px', borderRadius: '4px',
                       background: (sourceTypeColors[news.source] || '#999') + '20',
                       color: sourceTypeColors[news.source] || '#666',
-                      fontWeight: 600, fontSize: '0.8rem'
+                      fontWeight: 600, fontSize: '0.75rem'
                     }}>
                       {news.source}
                     </span>
@@ -115,7 +117,7 @@ const filtered = activeFilter === '全部'
               .map((news, i) => (
                 <div key={news.id} style={{
                   position: 'relative',
-                  paddingBottom: '32px',
+                  paddingBottom: '24px',
                   paddingLeft: '20px',
                   borderLeft: '2px solid #e0e0e0',
                   marginLeft: '10px'
@@ -133,26 +135,26 @@ const filtered = activeFilter === '全部'
                     boxShadow: '0 0 0 2px #667eea'
                   }} />
 
-                  <div style={{ fontSize: '0.8rem', color: '#999', marginBottom: '6px' }}>{news.date}</div>
+                  <div style={{ fontSize: '0.75rem', color: '#999', marginBottom: '6px' }}>{news.date}</div>
                   <div style={{
-                    fontSize: '1rem', fontWeight: 600, marginBottom: '6px',
+                    fontSize: '0.95rem', fontWeight: 600, marginBottom: '6px',
                     color: '#333'
                   }}>
                     <a href={news.url} target="_blank" rel="noopener noreferrer" style={{ color: '#333', textDecoration: 'none' }}>
                       {news.title}
                     </a>
                   </div>
-                  <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '6px' }}>
+                  <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '6px', flexWrap: 'wrap' }}>
                     <span style={{
                       padding: '2px 8px', borderRadius: '4px',
                       background: (sourceTypeColors[news.source] || '#999') + '20',
                       color: sourceTypeColors[news.source] || '#666',
-                      fontSize: '0.75rem', fontWeight: 600
+                      fontSize: '0.7rem', fontWeight: 600
                     }}>
                       {news.source}
                     </span>
                   </div>
-                  <div style={{ fontSize: '0.9rem', color: '#666', lineHeight: 1.6 }}>{news.summary}</div>
+                  <div style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.6 }}>{news.summary}</div>
                   <div className="news-tags">
                     {news.tags?.map((tag, j) => (
                       <span key={j} className="tag" style={{ fontSize: '0.75rem' }}>{tag}</span>

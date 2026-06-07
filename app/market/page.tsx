@@ -19,7 +19,7 @@ export default function MarketPage() {
 
       {/* 市场总览卡片 */}
       <section className="card">
-        <h2>🌐 市场总览</h2>
+        <h2 className="text-lg sm:text-xl font-semibold mb-4">🌐 市场总览</h2>
         <div className="stats-grid">
           <div className="stat-item">
             <div className="stat-value">{marketData.summary.globalMarketSize2024}</div>
@@ -42,7 +42,7 @@ export default function MarketPage() {
 
       {/* 增长驱动因素 */}
       <section className="card">
-        <h2>🚀 增长驱动因素</h2>
+        <h2 className="text-lg sm:text-xl font-semibold mb-4">🚀 增长驱动因素</h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
           {marketData.keyDrivers.map((driver, i) => (
             <span key={i} className="tag">{driver}</span>
@@ -52,12 +52,12 @@ export default function MarketPage() {
 
       {/* 市场规模趋势图 */}
       <section className="card">
-        <h2>📈 市场规模趋势（2020-2030预测）</h2>
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={trendChartData} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
+        <h2 className="text-lg sm:text-xl font-semibold mb-4">📈 市场规模趋势（2020-2030预测）</h2>
+        <ResponsiveContainer width="100%" height={280} className="sm:h-80">
+          <LineChart data={trendChartData} margin={{ top: 5, right: 10, left: 0, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
             <XAxis dataKey="year" tick={{ fontSize: 11, fill: '#999' }} tickLine={false} axisLine={{ stroke: '#e0e0e0' }} />
-            <YAxis tick={{ fontSize: 11, fill: '#999' }} tickLine={false} axisLine={{ stroke: '#e0e0e0' }} tickFormatter={(v) => `${v}亿`} width={60} />
+            <YAxis tick={{ fontSize: 11, fill: '#999' }} tickLine={false} axisLine={{ stroke: '#e0e0e0' }} tickFormatter={(v) => `${v}亿`} width={50} />
             <Tooltip formatter={(value: number) => [`${value} 亿元`, '']} contentStyle={{ borderRadius: '8px', border: '1px solid #e0e0e0', fontSize: '0.85rem' }} />
             <Legend wrapperStyle={{ fontSize: '0.85rem' }} />
             <Line type="monotone" dataKey="全球" stroke="#667eea" strokeWidth={2} dot={false} activeDot={{ r: 4 }} />
@@ -68,7 +68,7 @@ export default function MarketPage() {
 
       {/* 细分市场 - 全部渲染 */}
       <section className="card">
-        <h2>📈 细分市场详情</h2>
+        <h2 className="text-lg sm:text-xl font-semibold mb-4">📈 细分市场详情</h2>
         <div className="segment-grid">
           {marketData.segments.map((seg, i) => (
             <div key={i} className="segment-card" style={{ borderTop: '3px solid #667eea' }}>
