@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import newsData from '../../public/data/news.json'
+import newsData from '@/app/_data/news.json'
 
 export default function NewsPage() {
   // 将 news.json (object) 转换为数组

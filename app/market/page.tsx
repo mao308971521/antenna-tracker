@@ -1,6 +1,6 @@
 'use client'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
-import marketData from '../../public/data/market.json'
+import marketData from '@/app/_data/market.json'
 
 export default function MarketPage() {
   const trendChartData = marketData.trendData.map(d => ({

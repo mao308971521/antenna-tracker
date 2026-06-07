@@ -1,10 +1,16 @@
 'use client'
 import { useState, useMemo } from 'react'
-import marketData from '../data/market.json'
-import newsData from '../data/news.json'
-import companiesData from '../data/companies.json'
-import pricesData from '../data/prices.json'
-import standardsData from '../data/standards.json'
+import marketDataRaw from '@/app/_data/market.json'
+import newsDataRaw from '@/app/_data/news.json'
+import companiesDataRaw from '@/app/_data/companies.json'
+import pricesDataRaw from '@/app/_data/prices.json'
+import standardsDataRaw from '@/app/_data/standards.json'
+
+const marketData: any = marketDataRaw
+const newsData: any = newsDataRaw
+const companiesData: any = companiesDataRaw
+const pricesData: any = pricesDataRaw
+const standardsData: any = standardsDataRaw
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell,
          XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 
@@ -15,20 +21,24 @@ export default function Home() {
   // 将 news.json (object) 转换为数组
   const newsArray = Object.values(newsData) as any[]
 
-  // companiesData 新结构：{ supplyChain: { upstream/midstream/downstream: { companies } } }
+  // companiesData 新结构：{ supplyChain: { tier1_operators/tier2_...: { companies } } }
   const allCompanies = useMemo(() => {
     const chain = (companiesData as any).supplyChain || {}
-    const sections = [chain.upstream, chain.midstream, chain.downstream].filter(Boolean)
-    return sections.flatMap((sec: any) => sec.companies || [])
+    const tierOrder = [
+      'tier1_operators', 'tier2_equipment_vendors', 'tier3_antenna_oems',
+      'tier4_antenna_parts', 'tier5_rf_parts', 'tier6_key_materials', 'tier7_raw_materials'
+    ]
+    return tierOrder.flatMap(tier => (chain[tier]?.companies || []) as any[])
   }, [])
 
   const filteredCompanies = useMemo(() => {
     if (!searchKeyword) return allCompanies
     const kw = searchKeyword.toLowerCase()
     return allCompanies.filter((c: any) =>
-      c.name.toLowerCase().includes(kw) ||
-      c.description.toLowerCase().includes(kw) ||
-      (c.products || []).some((p: string) => p.toLowerCase().includes(kw))
+      c.name?.toLowerCase().includes(kw) ||
+      c.position?.toLowerCase().includes(kw) ||
+      c.role?.toLowerCase().includes(kw) ||
+      (c.highlights || []).some((p: string) => p.toLowerCase().includes(kw))
     )
   }, [allCompanies, searchKeyword])
 
@@ -144,7 +154,7 @@ export default function Home() {
             </div>
             <h3 style={{ marginTop: '24px' }} className="text-base sm:text-lg font-semibold">🚀 增长驱动因素</h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-              {marketData.keyDrivers.map((driver, i) => (
+              {(marketData.keyDrivers as any[]).map((driver: any, i: any) => (
                 <span key={i} className="tag">{driver}</span>
               ))}
             </div>
@@ -197,7 +207,7 @@ export default function Home() {
                   dataKey="value"
                   label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
                 >
-                  {marketData.segmentData.map((entry, index) => (
+                  {marketData.segmentData.map((entry: any, index: any) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />
                   ))}
                 </Pie>
@@ -209,7 +219,7 @@ export default function Home() {
           <section className="card">
             <h2 className="text-lg sm:text-xl font-semibold mb-4">📋 细分市场详情</h2>
             <div className="segment-grid">
-              {marketData.segments.map((seg, i) => (
+              {marketData.segments.map((seg: any, i: any) => (
                 <div key={i} className="segment-card">
                   <div className="segment-name">{seg.name}</div>
                   {seg.globalSize && (
@@ -234,7 +244,7 @@ export default function Home() {
                     <div style={{ marginTop: '12px' }}>
                       <span style={{ fontSize: '12px', color: '#999' }}>驱动因素：</span>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginTop: '4px' }}>
-                        {seg.drivers.map((d, j) => (
+                        {seg.drivers.map((d: any, j: any) => (
                           <span key={j} className="tag" style={{ fontSize: '0.75rem' }}>{d}</span>
                         ))}
                       </div>
@@ -244,7 +254,7 @@ export default function Home() {
                     <div style={{ marginTop: '12px' }}>
                       <span style={{ fontSize: '12px', color: '#999' }}>主要类型：</span>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginTop: '4px' }}>
-                        {seg.types.map((t, j) => (
+                        {seg.types.map((t: any, j: any) => (
                           <span key={j} className="tag" style={{ fontSize: '0.75rem' }}>{t}</span>
                         ))}
                       </div>

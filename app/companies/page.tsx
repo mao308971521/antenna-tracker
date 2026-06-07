@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import companiesData from '@/public/data/companies.json'
+import companiesData from '@/app/_data/companies.json'
 
 type TierKey = 'tier1_operators' | 'tier2_equipment_vendors' | 'tier3_antenna_oems' | 'tier4_antenna_parts' | 'tier5_rf_parts' | 'tier6_key_materials' | 'tier7_raw_materials'
 

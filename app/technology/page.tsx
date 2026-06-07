@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ZAxis, Line, ComposedChart } from 'recharts'
-import techData from '../../public/data/technology.json'
+import techData from '@/app/_data/technology.json'
 
 // TRL 阶段颜色（从低到高）
 const TRL_COLORS = [

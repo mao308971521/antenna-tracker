@@ -1,7 +1,7 @@
 'use client'
 import { useState, useMemo } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import pricesData from '../../public/data/prices.json'
+import pricesData from '@/app/_data/prices.json'
 
 export default function PricesPage() {
   const [activeCategory, setActiveCategory] = useState(0)

@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import standardsData from '../../public/data/standards.json'
+import standardsData from '@/app/_data/standards.json'
 
 export default function StandardsPage() {
   const [activeCategory, setActiveCategory] = useState(0)

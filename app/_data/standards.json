@@ -1,0 +1,1475 @@
+{
+  "lastUpdate": "2026-05-31",
+  "categories": [
+    {
+      "name": "3GPP国际标准",
+      "code": "intl_3gpp",
+      "description": "3GPP（第三代合作伙伴计划）制定的蜂窝移动通信标准，涵盖4G LTE、5G NR及6G标准化进程",
+      "standards": [
+        {
+          "name": "3GPP Release 15",
+          "title": "5G NR Phase 1 (第一阶段5G标准)",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "2018年6月",
+          "organization": "3GPP",
+          "scope": "5G NR首个商用标准版本，定义NSA（非独立组网）和SA（独立组网）架构，支持6GHz以下频段（FR1）和毫米波频段（FR2），引入新型波形Numerology、LDPC信道编码、Polar码控制信...",
+          "description": "5G NR首个商用标准版本，定义NSA（非独立组网）和SA（独立组网）架构，支持6GHz以下频段（FR1）和毫米波频段（FR2），引入新型波形Numerology、LDPC信道编码、Polar码控制信道等关键技术",
+          "url": "https://www.3gpp.org/release-15"
+        },
+        {
+          "name": "3GPP Release 16",
+          "title": "5G NR Phase 2 / 5G-Advanced起点",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "2020年7月",
+          "organization": "3GPP",
+          "scope": "增强URLLC（超可靠低时延通信）、V2X（车联网）、工业IoT、定位增强、终端节能、IAB（集成接入回传）等技术；引入NR Unlicensed（NR-U，免授权频段）；MIMO进一步增强",
+          "description": "增强URLLC（超可靠低时延通信）、V2X（车联网）、工业IoT、定位增强、终端节能、IAB（集成接入回传）等技术；引入NR Unlicensed（NR-U，免授权频段）；MIMO进一步增强",
+          "url": "https://www.3gpp.org/release-16"
+        },
+        {
+          "name": "3GPP Release 17",
+          "title": "5G NR Phase 2 增强",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "2022年3月",
+          "organization": "3GPP",
+          "scope": "引入NR-Light（轻量化5G，替代eMTC/NB-IoT增强）、mmWave频段扩展（上行256QAM、更宽信道带宽）、MIMO OTA测试标准化（TS 38.551）、广播/多播增强、卫星接入N...",
+          "description": "引入NR-Light（轻量化5G，替代eMTC/NB-IoT增强）、mmWave频段扩展（上行256QAM、更宽信道带宽）、MIMO OTA测试标准化（TS 38.551）、广播/多播增强、卫星接入NR（NTN）、IIoT（工业物联网）进一步增强",
+          "url": "https://www.3gpp.org/release-17"
+        },
+        {
+          "name": "3GPP Release 18",
+          "title": "5G-Advanced (5.5G)",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "2024年3月",
+          "organization": "3GPP",
+          "scope": "AI驱动的空口（AI for NR）、XR（扩展现实）增强、上行增强（UL Tx切换、更多载波聚合）、覆盖增强、ELAA（超大孔径天线）概念引入、沉浸式通信（IC）、更高阶MIMO（256天线单元）、...",
+          "description": "AI驱动的空口（AI for NR）、XR（扩展现实）增强、上行增强（UL Tx切换、更多载波聚合）、覆盖增强、ELAA（超大孔径天线）概念引入、沉浸式通信（IC）、更高阶MIMO（256天线单元）、智能波束管理、RedCap进一步增强",
+          "url": "https://www.3gpp.org/release-18"
+        },
+        {
+          "name": "3GPP Release 19",
+          "title": "5G-Advanced 第二阶段",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "2025年（规划中）",
+          "organization": "3GPP",
+          "scope": "通感融合（ISAC）、AI/ML原生空口、XR持续增强、XL-6G（更高频段研究）、非地面网络（NTN）增强、轻量化IoT进一步演进",
+          "description": "通感融合（ISAC）、AI/ML原生空口、XR持续增强、XL-6G（更高频段研究）、非地面网络（NTN）增强、轻量化IoT进一步演进",
+          "url": "https://www.3gpp.org/release-19"
+        },
+        {
+          "name": "3GPP Release 20",
+          "title": "6G标准化起点（规划中）",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "预计2027年",
+          "organization": "3GPP",
+          "scope": "6G标准研究开始，预计引入智能通信、空天海地一体化、太赫兹（THz）通信等前沿技术",
+          "description": "6G标准研究开始，预计引入智能通信、空天海地一体化、太赫兹（THz）通信等前沿技术",
+          "url": "https://www.3gpp.org/release-20"
+        },
+        {
+          "name": "TS 38.101-1",
+          "title": "NR; User Equipment (UE) radio transmission and reception; Part 1: Range 1 Standalone",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V17.x (Release 17)",
+          "organization": "3GPP / ETSI",
+          "scope": "定义5G NR UE射频发射和接收要求（FR1，6GHz以下频段），包括发射功率、接收灵敏度、邻道选择性等RF指标",
+          "description": "定义5G NR UE射频发射和接收要求（FR1，6GHz以下频段），包括发射功率、接收灵敏度、邻道选择性等RF指标",
+          "url": "https://portal.3gpp.org/specspecific?id=3439"
+        },
+        {
+          "name": "TS 38.101-2",
+          "title": "NR; User Equipment (UE) radio transmission and reception; Part 2: Range 2 Standalone",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V17.x (Release 17)",
+          "organization": "3GPP / ETSI",
+          "scope": "定义5G NR UE射频发射和接收要求（FR2，毫米波频段），包括波束管理、射频功率、接收机性能等mmWave终端指标",
+          "description": "定义5G NR UE射频发射和接收要求（FR2，毫米波频段），包括波束管理、射频功率、接收机性能等mmWave终端指标",
+          "url": "https://portal.3gpp.org/specspecific?id=3440"
+        },
+        {
+          "name": "TS 38.101-4",
+          "title": "NR; User Equipment (UE) radio transmission and reception; Part 4: Performance requirements",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V16.x (Release 16)",
+          "organization": "3GPP / ETSI",
+          "scope": "定义5G NR UE性能要求，包括MIMO吞吐量、往返时延、解调性能等",
+          "description": "定义5G NR UE性能要求，包括MIMO吞吐量、往返时延、解调性能等",
+          "url": "https://portal.3gpp.org/specspecific?id=3442"
+        },
+        {
+          "name": "TS 38.104",
+          "title": "NR; Base Station (BS) radio transmission and reception",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V17.2.0 (Release 17, 2021年6月)",
+          "organization": "3GPP / ETSI",
+          "scope": "定义5G NR基站射频发射和接收要求，涵盖BS类型1-H（传导）、BS类型1-O（OTA）、BS类型2-O（毫米波OTA），包括发射功率、接收灵敏度、杂散发射等关键RF参数",
+          "description": "定义5G NR基站射频发射和接收要求，涵盖BS类型1-H（传导）、BS类型1-O（OTA）、BS类型2-O（毫米波OTA），包括发射功率、接收灵敏度、杂散发射等关键RF参数",
+          "url": "https://portal.3gpp.org/specspecific?id=3445"
+        },
+        {
+          "name": "TS 38.141-1",
+          "title": "NR; Base Station (BS) conformance testing; Part 1: Conducted conformance testing",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V18.x (Release 18)",
+          "organization": "3GPP / ETSI",
+          "scope": "5G NR基站传导一致性测试规范，涵盖发射机测试（功率、频谱模板、杂散）、接收机测试（灵敏度、邻道选择性）等",
+          "description": "5G NR基站传导一致性测试规范，涵盖发射机测试（功率、频谱模板、杂散）、接收机测试（灵敏度、邻道选择性）等",
+          "url": "https://portal.3gpp.org/specspecific?id=3521"
+        },
+        {
+          "name": "TS 38.141-2",
+          "title": "NR; Base Station (BS) conformance testing; Part 2: Radiated conformance testing",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V18.12.0 (Release 18, 2026年2月)",
+          "organization": "3GPP / ETSI",
+          "scope": "5G NR基站辐射一致性测试规范（OTA测试），涵盖Type 1-O和Type 2-O基站辐射发射和接收特性的测试方法、不确定度要求",
+          "description": "5G NR基站辐射一致性测试规范（OTA测试），涵盖Type 1-O和Type 2-O基站辐射发射和接收特性的测试方法、不确定度要求",
+          "url": "https://portal.3gpp.org/specspecific?id=3522"
+        },
+        {
+          "name": "TS 38.151",
+          "title": "NR; User Equipment (UE) Multiple Input Multiple Output (MIMO) Over-the-Air (OTA) performance requirements",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V17.x (Release 17)",
+          "organization": "3GPP / ETSI",
+          "scope": "定义5G NR UE MIMO OTA性能要求，包括总辐射功率（TRP）、总辐射灵敏度（TRS）、多天线总辐射灵敏度（TRMS）最低要求，适用于FR1和FR2",
+          "description": "定义5G NR UE MIMO OTA性能要求，包括总辐射功率（TRP）、总辐射灵敏度（TRS）、多天线总辐射灵敏度（TRMS）最低要求，适用于FR1和FR2",
+          "url": "https://portal.3gpp.org/specspecific?id=3527"
+        },
+        {
+          "name": "TS 38.551",
+          "title": "NR; User Equipment (UE) Multiple Input Multiple Output (MIMO) Over-the-Air (OTA) performance; Conformance testing",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V17.3.0 (Release 17, 2024年10月)",
+          "organization": "3GPP / ETSI",
+          "scope": "5G NR UE MIMO OTA一致性测试规范，定义FR1 MIMO OTA测试方法（TRMS）、测试配置、信道模型（UMi CDL-C、UMa CDL-C）、通过/失败判定规则",
+          "description": "5G NR UE MIMO OTA一致性测试规范，定义FR1 MIMO OTA测试方法（TRMS）、测试配置、信道模型（UMi CDL-C、UMa CDL-C）、通过/失败判定规则",
+          "url": "https://portal.3gpp.org/specspecific?id=3536"
+        },
+        {
+          "name": "TS 37.105",
+          "title": "Active Antenna System (AAS) Base Station (BS) transmission and reception",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V18.7.0 (Release 18, 2025年4月)",
+          "organization": "3GPP / ETSI",
+          "scope": "定义有源天线系统（AAS）基站传输和接收要求，涵盖混合AAS BS（传导+辐射接口）和纯OTA AAS BS的最低RF性能和OTA要求",
+          "description": "定义有源天线系统（AAS）基站传输和接收要求，涵盖混合AAS BS（传导+辐射接口）和纯OTA AAS BS的最低RF性能和OTA要求",
+          "url": "https://portal.3gpp.org/specspecific?id=3367"
+        },
+        {
+          "name": "TS 37.145-2",
+          "title": "Active Antenna System (AAS) Base Station (BS) conformance testing; Part 2: Radiated conformance testing",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V18.x (Release 18)",
+          "organization": "3GPP / ETSI",
+          "scope": "AAS基站辐射一致性测试规范，涵盖混合AAS BS和OTA AAS BS的辐射发射/接收测试",
+          "description": "AAS基站辐射一致性测试规范，涵盖混合AAS BS和OTA AAS BS的辐射发射/接收测试",
+          "url": "https://portal.3gpp.org/specspecific?id=3394"
+        },
+        {
+          "name": "TS 37.544",
+          "title": "User Equipment (UE) Over The Air (OTA) performance; Conformance testing",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V16.5.0 (Release 16, 2024年10月)",
+          "organization": "3GPP / ETSI",
+          "scope": "LTE/UTRA UE OTA性能一致性测试规范，定义总辐射功率（TRP）、总辐射灵敏度（TRS）、多天线总辐射灵敏度（TRMS）测试方法，涵盖暗室法、混响室法、多探头暗室法（MPAC）",
+          "description": "LTE/UTRA UE OTA性能一致性测试规范，定义总辐射功率（TRP）、总辐射灵敏度（TRS）、多天线总辐射灵敏度（TRMS）测试方法，涵盖暗室法、混响室法、多探头暗室法（MPAC）",
+          "url": "https://portal.3gpp.org/specspecific?id=3415"
+        },
+        {
+          "name": "TS 37.977",
+          "title": "Verification of radiated multi-antenna reception performance of User Equipment (UE)",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V17.x (Release 17)",
+          "organization": "3GPP / ETSI",
+          "scope": "UE多天线辐射接收性能验证技术报告，为MIMO OTA测试提供背景和验证方法",
+          "description": "UE多天线辐射接收性能验证技术报告，为MIMO OTA测试提供背景和验证方法",
+          "url": "https://portal.3gpp.org/specspecific?id=3422"
+        },
+        {
+          "name": "TR 37.941",
+          "title": "Radio Frequency (RF) conformance testing background for radiated Base Station (BS) requirements",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V18.2.0 (Release 18, 2025年1月)",
+          "organization": "3GPP / ETSI",
+          "scope": "辐射基站RF一致性测试背景技术报告，涵盖OTA测试方法背景、测量不确定性、测试容限值推导，为TS 37.145-2和TS 38.141-2提供理论支撑",
+          "description": "辐射基站RF一致性测试背景技术报告，涵盖OTA测试方法背景、测量不确定性、测试容限值推导，为TS 37.145-2和TS 38.141-2提供理论支撑",
+          "url": "https://portal.3gpp.org/specspecific?id=3391"
+        },
+        {
+          "name": "TR 38.900",
+          "title": "Study on channel model for frequency range 0.5 to 100 GHz",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V15.x (Release 15)",
+          "organization": "3GPP",
+          "scope": "3GPP信道模型研究，为6GHz至100GHz频段的5G系统提供空间信道模型（SCM）扩展，覆盖UMa、UMi、InH等多种场景",
+          "description": "3GPP信道模型研究，为6GHz至100GHz频段的5G系统提供空间信道模型（SCM）扩展，覆盖UMa、UMi、InH等多种场景",
+          "url": "https://portal.3gpp.org/specspecific?id=3054"
+        },
+        {
+          "name": "TR 38.901",
+          "title": "Study on channel model for frequencies from 0.5 to 100 GHz",
+          "category": "3GPP国际标准",
+          "status": "现行",
+          "publishDate": "V17.x (Release 17)",
+          "organization": "3GPP",
+          "scope": "3GPP统一信道模型（0.5~100GHz），基于TR 38.900的修正版，定义了3GPP 5G系统统一信道模型，被业界广泛引用用于系统仿真和测试",
+          "description": "3GPP统一信道模型（0.5~100GHz），基于TR 38.900的修正版，定义了3GPP 5G系统统一信道模型，被业界广泛引用用于系统仿真和测试",
+          "url": "https://portal.3gpp.org/specspecific?id=3055"
+        }
+      ]
+    },
+    {
+      "name": "IEEE标准",
+      "code": "intl_ieee",
+      "description": "IEEE制定的无线通信、局域网、城域网及天线RF相关标准",
+      "standards": [
+        {
+          "name": "IEEE 802.11ax-2021",
+          "title": "Wi-Fi 6 (High Efficiency WLAN)",
+          "category": "IEEE标准",
+          "status": "现行",
+          "publishDate": "2021年5月",
+          "organization": "IEEE",
+          "scope": "Wi-Fi 6标准，引入OFDMA、上行MU-MIMO（8x8）、BSS Coloring、1024-QAM调制、TWT（目标唤醒时间）等技术，支持2.4GHz和5GHz频段，峰值速率9.6Gbps，...",
+          "description": "Wi-Fi 6标准，引入OFDMA、上行MU-MIMO（8x8）、BSS Coloring、1024-QAM调制、TWT（目标唤醒时间）等技术，支持2.4GHz和5GHz频段，峰值速率9.6Gbps，显著提升多用户并发性能和能效",
+          "url": "https://standards.ieee.org/ieee/802.11ax-2021/10790/"
+        },
+        {
+          "name": "IEEE 802.11be",
+          "title": "Wi-Fi 7 (Extremely High Throughput, EHT)",
+          "category": "IEEE标准",
+          "status": "现行",
+          "publishDate": "草案阶段，预计2024年发布",
+          "organization": "IEEE",
+          "scope": "Wi-Fi 7标准，引入320MHz信道带宽、4096-QAM、Multi-Link Operation（MLO）、16x16 MIMO、增强MU-MIMO、多资源块（MRU）等技术，峰值速率可达30...",
+          "description": "Wi-Fi 7标准，引入320MHz信道带宽、4096-QAM、Multi-Link Operation（MLO）、16x16 MIMO、增强MU-MIMO、多资源块（MRU）等技术，峰值速率可达30Gbps，延迟降至1ms以下",
+          "url": "https://standards.ieee.org/ieee/802.11be/10905/"
+        },
+        {
+          "name": "IEEE 802.11ay",
+          "title": "Enhanced throughput for mmWave WLAN",
+          "category": "IEEE标准",
+          "status": "现行",
+          "publishDate": "2021年",
+          "organization": "IEEE",
+          "scope": "毫米波WLAN增强标准，基于802.11ad（60GHz）演进，支持高达100Gbps速率，引入信道绑定（4x 2.16GHz）、多AP协同、波束成形增强等技术，主要用于密集场景高速回传",
+          "description": "毫米波WLAN增强标准，基于802.11ad（60GHz）演进，支持高达100Gbps速率，引入信道绑定（4x 2.16GHz）、多AP协同、波束成形增强等技术，主要用于密集场景高速回传",
+          "url": "https://standards.ieee.org/ieee/802.11ay/10915/"
+        },
+        {
+          "name": "IEEE 802.15.3d",
+          "title": "Very High Data Rate Wireless Communications in 60 GHz band",
+          "category": "IEEE标准",
+          "status": "现行",
+          "publishDate": "2017年",
+          "organization": "IEEE",
+          "scope": "60GHz频段超高速无线通信标准，速率可达100+Gbps，用于短距离高速无线互联",
+          "description": "60GHz频段超高速无线通信标准，速率可达100+Gbps，用于短距离高速无线互联",
+          "url": "https://standards.ieee.org/ieee/802.15.3d/7804/"
+        },
+        {
+          "name": "IEEE 802.16",
+          "title": "WirelessMAN (全球微波接入互操作性)",
+          "category": "IEEE标准",
+          "status": "现行",
+          "publishDate": "802.16-2017 ( Wimax)",
+          "organization": "IEEE",
+          "scope": "城域网无线宽带标准，涵盖固定和移动WiMAX，支持2-66GHz频段，OFDMA技术，用于宽带接入和回传",
+          "description": "城域网无线宽带标准，涵盖固定和移动WiMAX，支持2-66GHz频段，OFDMA技术，用于宽带接入和回传",
+          "url": "https://standards.ieee.org/ieee/802.16/10460/"
+        },
+        {
+          "name": "IEEE C95.1-2019",
+          "title": "IEEE Standard for Safety Levels with Respect to Human Exposure to Electric, Magnetic, and Electromagnetic Fields",
+          "category": "IEEE标准",
+          "status": "现行",
+          "publishDate": "2019年",
+          "organization": "IEEE",
+          "scope": "人体暴露于电磁场的安全水平标准，定义RF电磁场的人体安全暴露限值（100kHz至300GHz），取代C95.1-2005，是基站天线EMC安全评估的重要参考",
+          "description": "人体暴露于电磁场的安全水平标准，定义RF电磁场的人体安全暴露限值（100kHz至300GHz），取代C95.1-2005，是基站天线EMC安全评估的重要参考",
+          "url": "https://standards.ieee.org/ieee/C95.1/10484/"
+        },
+        {
+          "name": "IEEE 149-1979 (R2008)",
+          "title": "IEEE Standard Test Procedures for Antennas",
+          "category": "IEEE标准",
+          "status": "现行",
+          "publishDate": "1979年（2008年 reaffirmed）",
+          "organization": "IEEE",
+          "scope": "天线测试标准程序，定义天线增益、方向图、效率、极化、阻抗等参数的测量方法和测试程序，被CTIA等组织引用为天线测量的基础方法",
+          "description": "天线测试标准程序，定义天线增益、方向图、效率、极化、阻抗等参数的测量方法和测试程序，被CTIA等组织引用为天线测量的基础方法",
+          "url": "https://standards.ieee.org/ieee/149/1072/"
+        }
+      ]
+    },
+    {
+      "name": "ITU标准",
+      "code": "intl_itu",
+      "description": "国际电信联盟（ITU）制定的频谱分配、IMT系统框架及无线电通信规范",
+      "standards": [
+        {
+          "name": "ITU-R M.2177",
+          "title": "Framework and overall objectives of the future development of IMT",
+          "category": "ITU标准",
+          "status": "现行",
+          "publishDate": "2010年",
+          "organization": "ITU-R",
+          "scope": "IMT-Advanced框架文件，开启4G（LTE-Advanced、WiMAX-Advanced）标准化进程",
+          "description": "IMT-Advanced框架文件，开启4G（LTE-Advanced、WiMAX-Advanced）标准化进程",
+          "url": "https://www.itu.int/pub/r-rec"
+        },
+        {
+          "name": "ITU-R M.2083",
+          "title": "IMT-2020 (5G) Vision",
+          "category": "ITU标准",
+          "status": "现行",
+          "publishDate": "2015年",
+          "organization": "ITU-R",
+          "scope": "IMT-2020（5G）愿景框架文件，定义5G三大应用场景（eMBB、uRLLC、mMTC）和关键能力指标（峰值速率20Gbps、用户面延迟1ms等）",
+          "description": "IMT-2020（5G）愿景框架文件，定义5G三大应用场景（eMBB、uRLLC、mMTC）和关键能力指标（峰值速率20Gbps、用户面延迟1ms等）",
+          "url": "https://www.itu.int/rec/R-REC-M.2083-0-201509-P/en"
+        },
+        {
+          "name": "ITU-R M.2410",
+          "title": "Minimum requirements related to technical performance for IMT-2020 radio interface(s)",
+          "category": "ITU标准",
+          "status": "现行",
+          "publishDate": "2017年",
+          "organization": "ITU-R",
+          "scope": "IMT-2020无线电接口最低技术性能要求，规定5G必须满足的13项关键性能指标",
+          "description": "IMT-2020无线电接口最低技术性能要求，规定5G必须满足的13项关键性能指标",
+          "url": "https://www.itu.int/dms_pub/itu-r/opb/rep/R-REP-M.2410-2017-PDF-E.pdf"
+        },
+        {
+          "name": "ITU-R M.2160",
+          "title": "Framework and overall objectives of the future development of IMT-2030",
+          "category": "ITU标准",
+          "status": "现行",
+          "publishDate": "2023年12月",
+          "organization": "ITU-R",
+          "scope": "IMT-2030（6G）框架建议，定义6G六大应用场景（沉浸式通信IC、超高可靠低时延通信HRLLC、大规模通信MC、泛在连接UC、AI与通信AIAC、通感融合ISAC）和核心设计原则（可持续性、安全...",
+          "description": "IMT-2030（6G）框架建议，定义6G六大应用场景（沉浸式通信IC、超高可靠低时延通信HRLLC、大规模通信MC、泛在连接UC、AI与通信AIAC、通感融合ISAC）和核心设计原则（可持续性、安全性、连接未连接者、泛在智能）",
+          "url": "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en"
+        },
+        {
+          "name": "ITU-R M.[IMT-2030.EVAL]",
+          "title": "Evaluation criteria and methodology for IMT-2030",
+          "category": "ITU标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ITU-R WP 5D",
+          "scope": "IMT-2030评估标准和方法论，用于评估6G无线电接口技术提案（RIT/SRIT）",
+          "description": "IMT-2030评估标准和方法论，用于评估6G无线电接口技术提案（RIT/SRIT）",
+          "url": "https://www.itu.int/en/ITU-R/study-groups/rsg5/rwp5d/imt-2030/Pages/submission-eval.aspx"
+        },
+        {
+          "name": "ITU-R M.[IMT-2030.TPR]",
+          "title": "Minimum requirements related to technical performance for IMT-2030 radio interface(s)",
+          "category": "ITU标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ITU-R WP 5D",
+          "scope": "IMT-2030最低技术性能要求，定义了20项技术性能要求（包括7项新增6G特有指标），涵盖峰值速率、频谱效率、时延、可靠性、连接密度、能效等",
+          "description": "IMT-2030最低技术性能要求，定义了20项技术性能要求（包括7项新增6G特有指标），涵盖峰值速率、频谱效率、时延、可靠性、连接密度、能效等",
+          "url": "https://www.itu.int/hub/2026/03/imt-2030-technical-requirements-for-the-6g-future/"
+        },
+        {
+          "name": "ITU-R M.1768",
+          "title": "Methodology for calculation of spectrum requirements for the terrestrial component of IMT",
+          "category": "ITU标准",
+          "status": "现行",
+          "publishDate": "M.1768-1",
+          "organization": "ITU-R",
+          "scope": "IMT地面组件频谱需求计算方法论，用于评估5G/6G频谱需求，是ITU频谱规划的重要技术依据",
+          "description": "IMT地面组件频谱需求计算方法论，用于评估5G/6G频谱需求，是ITU频谱规划的重要技术依据",
+          "url": "https://www.itu.int/rec/R-REC-M.1768/en"
+        },
+        {
+          "name": "ITU-R F.386",
+          "title": "Characteristics of point-to-point systems operating in the bands allocated to fixed service",
+          "category": "ITU标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ITU-R",
+          "scope": "点对点固定业务系统特性标准，规定微波中继通信系统的射频特性，用于基站回传和城域传输",
+          "description": "点对点固定业务系统特性标准，规定微波中继通信系统的射频特性，用于基站回传和城域传输",
+          "url": "https://www.itu.int/rec/R-REC-F.386/en"
+        },
+        {
+          "name": "ITU-R M.2101",
+          "title": "Modeling and simulation of IMT networks for assessment of RF interference",
+          "category": "ITU标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ITU-R",
+          "scope": "IMT网络建模与仿真标准，用于评估射频干扰，是频谱共存和EMC分析的重要工具",
+          "description": "IMT网络建模与仿真标准，用于评估射频干扰，是频谱共存和EMC分析的重要工具",
+          "url": "https://www.itu.int/dms_pubrec/itu-r/rec/m/R-REC-M.2101-0-201702-I!!PDF-E.pdf"
+        },
+        {
+          "name": "ITU-R M.819",
+          "title": "Fourth generation (4G) of IMT, towards global harmonization",
+          "category": "ITU标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ITU-R",
+          "scope": "IMT-Advanced（4G）全球协调框架，推动LTE-Advanced和WiMAX-Advanced的全球频谱协调",
+          "description": "IMT-Advanced（4G）全球协调框架，推动LTE-Advanced和WiMAX-Advanced的全球频谱协调",
+          "url": "https://www.itu.int/dms_pubrec/itu-r/rec/m/R-REC-M.819-2-199702-I!!PDF-E.pdf"
+        }
+      ]
+    },
+    {
+      "name": "ETSI标准",
+      "code": "intl_etsi",
+      "description": "欧洲电信标准协会发布的RF、EMC、电磁场相关标准",
+      "standards": [
+        {
+          "name": "ETSI EN 301 489",
+          "title": "ElectroMagnetic Compatibility (EMC) standard for radio equipment",
+          "category": "ETSI标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ETSI",
+          "scope": "无线电设备EMC测试标准系列（parts 1~50），规定无线电设备的传导和辐射发射、抗扰度测试要求，适用于各种移动通信设备，包括基站和终端",
+          "description": "无线电设备EMC测试标准系列（parts 1~50），规定无线电设备的传导和辐射发射、抗扰度测试要求，适用于各种移动通信设备，包括基站和终端",
+          "url": "https://www.etsi.org/deliver/etsi_en/301400_301499/30148913/02.01.01_60/en_30148913v020101p.pdf"
+        },
+        {
+          "name": "ETSI EN 302 217",
+          "title": "Fixed radio systems Point-to-Point equipment; Characteristics of P-P SDH systems, 2 to 2 GHz",
+          "category": "ETSI标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ETSI",
+          "scope": "点对点数字无线接力系统标准，规定微波回传设备的RF特性、调制方式、系统要求",
+          "description": "点对点数字无线接力系统标准，规定微波回传设备的RF特性、调制方式、系统要求",
+          "url": "https://www.etsi.org/deliver/etsi_en/302200_302299/30221701/03.04.01_60/en_30221701v030401p.pdf"
+        },
+        {
+          "name": "ETSI TS 138 113",
+          "title": "NR; Base Station (BS) EMC",
+          "category": "ETSI标准",
+          "status": "现行",
+          "publishDate": "V15.7.0 (2019年10月)",
+          "organization": "ETSI / 3GPP",
+          "scope": "5G NR基站EMC评估标准，规定基站及其辅助设备的电磁兼容性要求和测量方法",
+          "description": "5G NR基站EMC评估标准，规定基站及其辅助设备的电磁兼容性要求和测量方法",
+          "url": "https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=63463&curItemNr=64&totalNrItems=306&optDisplay=10&qSORT=HIGHVERSION&qETSI_ALL=&SearchPage=TRUE&qTB_ID=369%3B3GPP&qINCLUDE_SUB_TB=True&qACHIEVED_DAY=1&qACHIEVED_MONTH=6&qACHIEVED_YEAR=2021&qINCLUDE_MOVED_ON=&qMILESTONE=1&qSTOP_FLG=&qKEYWORD_BOOLEAN=&qCLUSTER_BOOLEAN=&qFREQUENCIES_BOOLEAN=&qSTOPPING_OUTDATED=&butSimple=Search&includeNonActiveTB=FALSE&includeSubProjectCode=&qREPORT_TYPE=SUMMARY"
+        }
+      ]
+    },
+    {
+      "name": "国家标准（GB）",
+      "code": "gb",
+      "description": "中国国家标准（GB/T），由国家标准化管理委员会批准",
+      "standards": [
+        {
+          "name": "GB/T 9410-2008",
+          "title": "移动通信天线通用技术规范",
+          "category": "国家标准（GB）",
+          "status": "现行",
+          "publishDate": "2008年",
+          "organization": "国家标准化管理委员会",
+          "scope": "移动通信天线通用技术要求，规定天线的电气性能、机械性能、环境适应性等技术条件，适用于各类基站天线，是5G Massive MIMO阵列天线产品标准的重要参考依据",
+          "description": "移动通信天线通用技术要求，规定天线的电气性能、机械性能、环境适应性等技术条件，适用于各类基站天线，是5G Massive MIMO阵列天线产品标准的重要参考依据",
+          "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=C159D42FA17403FE1276328633140CCA"
+        },
+        {
+          "name": "GB/T 27700.1-2023",
+          "title": "声表面波滤波器 第1部分：总规范",
+          "category": "国家标准（GB）",
+          "status": "现行",
+          "publishDate": "2023年",
+          "organization": "国家标准化管理委员会",
+          "scope": "等同采用IEC 60862-1:2015，规定声表面波滤波器（SAW）的通用技术要求，包括电气性能、环境适应性、可靠性等，建立从设计到成品检验的全流程质量评定体系，工作频率范围10MHz～3.5GHz...",
+          "description": "等同采用IEC 60862-1:2015，规定声表面波滤波器（SAW）的通用技术要求，包括电气性能、环境适应性、可靠性等，建立从设计到成品检验的全流程质量评定体系，工作频率范围10MHz～3.5GHz，相对带宽0.02%～50%",
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=027A6096AFF2643EE06397BE0A0A0867"
+        },
+        {
+          "name": "GB/T 27700.2-2025",
+          "title": "声表面波滤波器 第2部分：使用指南",
+          "category": "国家标准（GB）",
+          "status": "现行",
+          "publishDate": "2025年",
+          "organization": "国家标准化管理委员会",
+          "scope": "声表面波滤波器使用指南，对应IEC 60862-2，为滤波器选型、安装、维护提供技术依据，适用于5G基站、卫星导航终端、雷达系统等高频电子设备",
+          "description": "声表面波滤波器使用指南，对应IEC 60862-2，为滤波器选型、安装、维护提供技术依据，适用于5G基站、卫星导航终端、雷达系统等高频电子设备",
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=027A6096B0B2643EE06397BE0A0A0868"
+        },
+        {
+          "name": "GB 50689-2011",
+          "title": "通信局（站）防雷与接地工程设计规范",
+          "category": "国家标准（GB）",
+          "status": "现行",
+          "publishDate": "2011年4月（强条），实施日期2012年5月1日",
+          "organization": "住房和城乡建设部",
+          "scope": "通信局站防雷接地工程设计强制性国家标准，涵盖接地系统组成、接地线、移动通信基站防雷与接地、天馈线接地、GPS天馈线防雷、电源系统雷电过电压保护等，其中多条为强制性条文必须严格执行",
+          "description": "通信局站防雷接地工程设计强制性国家标准，涵盖接地系统组成、接地线、移动通信基站防雷与接地、天馈线接地、GPS天馈线防雷、电源系统雷电过电压保护等，其中多条为强制性条文必须严格执行",
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7FF46D3A7E05397BE0A0AB82A"
+        },
+        {
+          "name": "GB 41847-2022",
+          "title": "港口防雷与接地技术要求",
+          "category": "国家标准（GB）",
+          "status": "现行",
+          "publishDate": "2022年",
+          "organization": "国家标准化管理委员会",
+          "scope": "港口设施防雷接地技术标准，适用于通信基站等户外设施的防雷接地设计参考",
+          "description": "港口设施防雷接地技术标准，适用于通信基站等户外设施的防雷接地设计参考",
+          "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=470C26A97F08D4114A573063784B354C"
+        },
+        {
+          "name": "GB/T 5584.4-2020",
+          "title": "电工用铜、铝及其合金扁线 第4部分：铜带",
+          "category": "国家标准（GB）",
+          "status": "现行",
+          "publishDate": "2020年",
+          "organization": "国家标准化管理委员会",
+          "scope": "规定接地用铜带材料规格，用于通信基站接地系统",
+          "description": "规定接地用铜带材料规格，用于通信基站接地系统",
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=B691BB778725D126E05397BE0A0AF3B3"
+        },
+        {
+          "name": "GB 50057-2019",
+          "title": "建筑物防雷设计规范",
+          "category": "国家标准（GB）",
+          "status": "现行",
+          "publishDate": "2019年",
+          "organization": "住房和城乡建设部",
+          "scope": "建筑物防雷设计标准，为通信基站铁塔、天线系统的直击雷防护提供设计依据",
+          "description": "建筑物防雷设计标准，为通信基站铁塔、天线系统的直击雷防护提供设计依据",
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D7FF46D3A7E05397BE0A0AB82A"
+        }
+      ]
+    },
+    {
+      "name": "通信行业标准（YD/T）",
+      "code": "yd",
+      "description": "中华人民共和国通信行业标准（YD/T），由工业和信息化部发布，中国通信标准化协会（CCSA）归口",
+      "standards": [
+        {
+          "name": "YD/T 3625-2019",
+          "title": "5G数字蜂窝移动通信网 无源天线阵列技术要求（<6GHz）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "规定5G数字蜂窝移动通信网中非AAU设备的无源天线阵列技术要求，适用于工作频段2515MHz～2675MHz、3400MHz～3600MHz和4800MHz～5000MHz",
+          "description": "规定5G数字蜂窝移动通信网中非AAU设备的无源天线阵列技术要求，适用于工作频段2515MHz～2675MHz、3400MHz～3600MHz和4800MHz～5000MHz",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=9C15C74D7C5E1F82E05397BE0A0A600C"
+        },
+        {
+          "name": "YD/T 3626-2019",
+          "title": "5G数字蜂窝移动通信网 无源天线阵列测试方法（<6GHz）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "与YD/T 3625配套的测试方法标准，规定5G无源天线阵列的测试方法",
+          "description": "与YD/T 3625配套的测试方法标准，规定5G无源天线阵列的测试方法",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=9C15C74D7C5F1F82E05397BE0A0A600C"
+        },
+        {
+          "name": "YD/T 3929-2021",
+          "title": "5G数字蜂窝移动通信网 6GHz以下频段基站设备技术要求（第一阶段）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G NR基站设备（6GHz以下，第一阶段）技术要求，覆盖BBU、AAU、RRU等基站设备RF性能要求",
+          "description": "5G NR基站设备（6GHz以下，第一阶段）技术要求，覆盖BBU、AAU、RRU等基站设备RF性能要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=C5E3C0720B8ACF68E05397BE0A0AD951"
+        },
+        {
+          "name": "YD/T 3929-2024",
+          "title": "5G数字蜂窝移动通信网 6GHz以下频段基站设备技术要求（第一阶段）（修订版）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "2021版的第一阶段修订版，更新基站设备技术要求",
+          "description": "2021版的第一阶段修订版，更新基站设备技术要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=C5E3C0720B8ACF68E05397BE0A0AD951"
+        },
+        {
+          "name": "YD/T 4719-2024",
+          "title": "5G数字蜂窝移动通信网 6GHz以下频段基站设备技术要求（第二阶段）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G基站设备第二阶段技术要求，引入更多5G-Advanced特性",
+          "description": "5G基站设备第二阶段技术要求，引入更多5G-Advanced特性",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=2001448F0CCD32F5E06397BE0A0AAD9C"
+        },
+        {
+          "name": "YD/T 6537-2025",
+          "title": "5G数字蜂窝移动通信网 6GHz以下频段基站设备技术要求（第三阶段）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G基站设备第三阶段技术要求，进一步增强设备能力",
+          "description": "5G基站设备第三阶段技术要求，进一步增强设备能力",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=490534C38DACC1A3E06397BE0A0A0AB9"
+        },
+        {
+          "name": "YD/T 3930-2021",
+          "title": "5G数字蜂窝移动通信网 6GHz以下频段基站设备测试方法（第一阶段）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G基站设备第一阶段测试方法标准",
+          "description": "5G基站设备第一阶段测试方法标准",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=D7B85B63ED0549EBE05397BE0A0A316D"
+        },
+        {
+          "name": "YD/T 3930-2024",
+          "title": "5G数字蜂窝移动通信网 6GHz以下频段基站设备测试方法（第一阶段）（修订版）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "2021版测试方法修订版",
+          "description": "2021版测试方法修订版",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=8B1827F2481EBB19E05397BE0A0AB44A"
+        },
+        {
+          "name": "YD/T 4720-2024",
+          "title": "5G数字蜂窝移动通信网 6GHz以下频段基站设备测试方法（第二阶段）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G基站设备第二阶段测试方法标准",
+          "description": "5G基站设备第二阶段测试方法标准",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=2001448F0CCE32F5E06397BE0A0AAD9C"
+        },
+        {
+          "name": "YD/T 6577-2025",
+          "title": "5G数字蜂窝移动通信网 6GHz以下频段基站设备基于紧缩场OTA测试系统技术要求",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "规定5G基站紧缩场（CATR）OTA测试系统的技术要求，用于5G基站空中性能测试",
+          "description": "规定5G基站紧缩场（CATR）OTA测试系统的技术要求，用于5G基站空中性能测试",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=2001448F0CCE32F5E06397BE0A0AAD9C"
+        },
+        {
+          "name": "YD/T 2869.1-2021",
+          "title": "终端MIMO天线性能要求和测量方法 第1部分：LTE无线终端",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "LTE无线终端MIMO天线性能要求及测量方法",
+          "description": "LTE无线终端MIMO天线性能要求及测量方法",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=CEAAB374C5E79163E05397BE0A0A9C60"
+        },
+        {
+          "name": "YD/T 2869.2-2024",
+          "title": "终端MIMO天线性能要求和测量方法 第2部分：5G终端（6GHz以下频段）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G NR终端（Sub-6GHz）MIMO天线性能要求及测量方法",
+          "description": "5G NR终端（Sub-6GHz）MIMO天线性能要求及测量方法",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=2001448F0CDA32F5E06397BE0A0AAD9C"
+        },
+        {
+          "name": "YD/T 2869.3-2025",
+          "title": "终端MIMO天线性能要求和测量方法 第3部分：5G NR无线终端（mmWave）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G NR毫米波终端MIMO天线空间射频接收机性能测量方法，规定特定信道场景下的吞吐量性能测量方法和性能要求，适用于支持毫米波的5G NR无线终端设备空口（OTA）测试",
+          "description": "5G NR毫米波终端MIMO天线空间射频接收机性能测量方法，规定特定信道场景下的吞吐量性能测量方法和性能要求，适用于支持毫米波的5G NR无线终端设备空口（OTA）测试",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=CEAAB374C5E79163E05397BE0A0A9C60"
+        },
+        {
+          "name": "YD/T 1484.9-2023",
+          "title": "无线终端空间射频辐射功率和接收机性能测量方法 第9部分：5G NR无线终端（Sub-6GHz）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G NR无线终端（Sub-6GHz）空间射频辐射功率和接收机性能测量方法",
+          "description": "5G NR无线终端（Sub-6GHz）空间射频辐射功率和接收机性能测量方法",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=8B1827F247E0BB19E05397BE0A0AB44A"
+        },
+        {
+          "name": "YD/T 2867-2025",
+          "title": "移动通信系统多频段基站无源天线",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "规定工作频段703MHz～803MHz、806MHz~880MHz、880MHz~960MHz、1710MHz~1880MHz、1850MHz~1990MHz、1920MHz~2170MHz、2300...",
+          "description": "规定工作频段703MHz～803MHz、806MHz~880MHz、880MHz~960MHz、1710MHz~1880MHz、1850MHz~1990MHz、1920MHz~2170MHz、2300MHz~2500MHz、2500MHz~2700MHz、3400MHz~3600MHz的多频段基站无源天线分类、电性能、机械性能、环境条件、检验规则及测量方法；新增3400MHz~3600MHz频段电气性能要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=3833D6BFC05D38C0E06397BE0A0A2BA5"
+        },
+        {
+          "name": "YD/T 2866",
+          "title": "移动通信系统室内分布无源天线",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "室内分布系统用无源天线技术要求，与YD/T 2867、YD/T 2868、YD/T 3061共同构成移动通信系统无源天线标准体系",
+          "description": "室内分布系统用无源天线技术要求，与YD/T 2867、YD/T 2868、YD/T 3061共同构成移动通信系统无源天线标准体系",
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=14CAA7F49C6A5CA3E06397BE0A0A2E68"
+        },
+        {
+          "name": "YD/T 2868",
+          "title": "移动通信系统无源天线测量方法",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "移动通信系统无源天线测量方法标准",
+          "description": "移动通信系统无源天线测量方法标准",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=8B1827F25657BB19E05397BE0A0AB44A"
+        },
+        {
+          "name": "YD/T 3061-2024",
+          "title": "TD-LTE数字蜂窝移动通信网智能天线",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "TD-LTE智能天线技术要求和测试方法，适用于LTE TDD系统智能天线",
+          "description": "TD-LTE智能天线技术要求和测试方法，适用于LTE TDD系统智能天线",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=8B1827F2508ABB19E05397BE0A0AB44A"
+        },
+        {
+          "name": "YD/T 1710.1-2015",
+          "title": "2GHz TD-SCDMA数字蜂窝移动通信网智能天线 第1部分：天线阵列",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "TD-SCDMA系统智能天线阵列技术要求，是早期智能天线标准的延续",
+          "description": "TD-SCDMA系统智能天线阵列技术要求，是早期智能天线标准的延续",
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D75D84D3A7E05397BE0A0AB82A"
+        },
+        {
+          "name": "YD/T 3627-2024",
+          "title": "5G数字蜂窝移动通信网 增强移动宽带终端设备技术要求（第一阶段）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G eMBB终端设备技术要求（第一阶段），面向NSA和SA架构",
+          "description": "5G eMBB终端设备技术要求（第一阶段），面向NSA和SA架构",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=17C0C9DC10B3F07FE06397BE0A0AB070"
+        },
+        {
+          "name": "YD/T 4721-2024",
+          "title": "5G数字蜂窝移动通信网 增强移动宽带终端设备技术要求（第二阶段）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G eMBB终端设备第二阶段技术要求",
+          "description": "5G eMBB终端设备第二阶段技术要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=17C0C9DC10B3F07FE06397BE0A0AB070"
+        },
+        {
+          "name": "YD/T 6349-2025",
+          "title": "5G移动通信网支持时间敏感网络（TSN）技术要求（第二阶段）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G支持TSN第二阶段技术要求，推动5G在工业互联网中的应用",
+          "description": "5G支持TSN第二阶段技术要求，推动5G在工业互联网中的应用",
+          "url": "https://std.samr.gov.cn/search/orgOthers?q=%E4%B9%8B%E6%B1%9F%E5%AE%9E%E9%AA%8C%E5%AE%A4"
+        },
+        {
+          "name": "YD/T 6350-2025",
+          "title": "基于5G的远程遥控 操作技术要求",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G远程遥控操作技术要求",
+          "description": "5G远程遥控操作技术要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=3833D6BFC07838C0E06397BE0A0A2BA5"
+        },
+        {
+          "name": "YD/T 6548-2025",
+          "title": "5G轻量化通用模组技术要求（第一阶段）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G轻量化（RedCap）通用模组技术要求，适用于6GHz以下频段",
+          "description": "5G轻量化（RedCap）通用模组技术要求，适用于6GHz以下频段",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=ED2C648D2C0CDA60E05397BE0A0A0F70"
+        },
+        {
+          "name": "YD/T 4722-2024",
+          "title": "5G数字蜂窝移动通信网共享基站设备技术要求",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G共享基站设备的功能要求、性能要求和接口要求",
+          "description": "5G共享基站设备的功能要求、性能要求和接口要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=998D2858B4A498C7E05397BE0A0A95D8"
+        },
+        {
+          "name": "YD/T 4723-2024",
+          "title": "5G数字蜂窝移动通信网共享基站测试方法",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G共享基站设备测试方法标准",
+          "description": "5G共享基站设备测试方法标准",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=2001448F0CCE32F5E06397BE0A0AAD9C"
+        },
+        {
+          "name": "YD/T 4735-2024",
+          "title": "5G移动通信网定位系统 基站设备技术要求（第一阶段）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G定位系统基站设备技术要求",
+          "description": "5G定位系统基站设备技术要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=2001448F0D4132F5E06397BE0A0AAD9C"
+        },
+        {
+          "name": "YD/T 4724-2024",
+          "title": "5G数字蜂窝移动通信网 FDD直放站技术要求",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G FDD直放站技术要求",
+          "description": "5G FDD直放站技术要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=A75176EB37E5B551E05397BE0A0A545D"
+        },
+        {
+          "name": "YD/T 6104-2024",
+          "title": "5G数字蜂窝移动通信网 增强移动宽带终端设备测试方法（第二阶段）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G eMBB终端设备第二阶段测试方法",
+          "description": "5G eMBB终端设备第二阶段测试方法",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=2F7B4471A6C7F3B1E06397BE0A0A6557"
+        },
+        {
+          "name": "YD/T 4002-2024",
+          "title": "5G数字蜂窝移动通信网 增强移动宽带终端设备测试方法（第一阶段）",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G eMBB终端设备第一阶段测试方法（修订版）",
+          "description": "5G eMBB终端设备第一阶段测试方法（修订版）",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=8B1827F249A4BB19E05397BE0A0AB44A"
+        },
+        {
+          "name": "YD/T 2583.17-2025",
+          "title": "蜂窝式移动通信设备电磁兼容性要求和测量方法 第17部分：5G基站及其辅助设备",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G基站及其辅助设备的EMC要求和测量方法，规定基站设备、辅助射频放大器、中继器及其辅助设备的电磁兼容性测试要求",
+          "description": "5G基站及其辅助设备的EMC要求和测量方法，规定基站设备、辅助射频放大器、中继器及其辅助设备的电磁兼容性测试要求",
+          "url": "https://std.samr.gov.cn/hb/hbQuery?initnode=YD+%E9%80%9A%E4%BF%A1"
+        },
+        {
+          "name": "YD/T 2324-2011",
+          "title": "无线基站防雷技术要求和测试方法",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "无线基站防雷技术要求和测试方法，规定基站防雷接地、浪涌保护器测试、冲击电流测试等要求",
+          "description": "无线基站防雷技术要求和测试方法，规定基站防雷接地、浪涌保护器测试、冲击电流测试等要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=8B1827F2255BBB19E05397BE0A0AB44A"
+        },
+        {
+          "name": "YD/T 3005-2016",
+          "title": "基站供电变压器系统的防雷与接地技术要求",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "基站供电变压器系统的防雷与接地技术要求，包括基站供电变压器与基站地网连接要求、变压器及高低压浪涌保护器连接结构、变压器直击雷保护等",
+          "description": "基站供电变压器系统的防雷与接地技术要求，包括基站供电变压器与基站地网连接要求、变压器及高低压浪涌保护器连接结构、变压器直击雷保护等",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=8B1827F187FCBB19E05397BE0A0AB44A"
+        },
+        {
+          "name": "YD/T 3007-2016",
+          "title": "小型无线系统的防雷与接地技术要求",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "小型无线系统（如Small Cell、微基站等）的防雷与接地技术要求",
+          "description": "小型无线系统（如Small Cell、微基站等）的防雷与接地技术要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=8B1827F24C38BB19E05397BE0A0AB44A"
+        },
+        {
+          "name": "YD/T 4203-2023",
+          "title": "电信互联网数据中心基础设施的防雷与接地技术要求",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "数据中心基础设施防雷与接地技术要求",
+          "description": "数据中心基础设施防雷与接地技术要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=FE86C10A0CD13123E05397BE0A0A2FC5"
+        },
+        {
+          "name": "YD/T 1970.7-2015",
+          "title": "通信局（站）电源系统维护技术要求 第7部分：防雷接地系统",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "通信局站电源系统防雷接地系统维护技术要求",
+          "description": "通信局站电源系统防雷接地系统维护技术要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=8B1827F2181EBB19E05397BE0A0AB44A"
+        },
+        {
+          "name": "YD/T 3568.2-2020",
+          "title": "通信基站基础设施技术要求 第2部分：供电系统",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "通信基站基础设施供电系统技术要求",
+          "description": "通信基站基础设施供电系统技术要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=A75176EB3829B551E05397BE0A0A545D"
+        },
+        {
+          "name": "YD/T 1484.6-2021",
+          "title": "无线终端空间射频辐射功率和接收机性能测量方法 第6部分：LTE无线终端",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "LTE无线终端空间射频辐射功率和接收机性能测量方法",
+          "description": "LTE无线终端空间射频辐射功率和接收机性能测量方法",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=CEAAB374C5E89163E05397BE0A0A9C60"
+        },
+        {
+          "name": "YD/T 1484.10-2025",
+          "title": "无线终端空间射频辐射功率和接收机性能测量方法 第10部分：Cat1bis无线终端",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "Cat1bis无线终端空间射频辐射功率和接收机性能测量方法",
+          "description": "Cat1bis无线终端空间射频辐射功率和接收机性能测量方法",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=8B1827F25303BB19E05397BE0A0AB44A"
+        },
+        {
+          "name": "YD/T 1059-2004",
+          "title": "移动通信系统基站天线技术条件",
+          "category": "通信行业标准（YD/T）",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "移动通信系统基站天线技术条件标准，被5G天线产品标准参照引用",
+          "description": "移动通信系统基站天线技术条件标准，被5G天线产品标准参照引用",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=8B1827F251E7BB19E05397BE0A0AB44A"
+        }
+      ]
+    },
+    {
+      "name": "OTA测试标准",
+      "code": "ota",
+      "description": "天线OTA（Over-The-Air）测试标准，涵盖暗室测试、多探头法、紧缩场等测试方法",
+      "standards": [
+        {
+          "name": "CTIA Test Plan v3.8.2",
+          "title": "Test Plan for Wireless Device Over-the-Air Performance",
+          "category": "OTA测试标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "CTIA（美国无线通信与互联网协会）",
+          "scope": "无线设备OTA性能测试标准，定义辐射RF功率（TRP）和接收机性能（灵敏度）的测量方法；第5.14节规定多发射天线设备OTA测试程序；涵盖SISO、MIMO OTA测试",
+          "description": "无线设备OTA性能测试标准，定义辐射RF功率（TRP）和接收机性能（灵敏度）的测量方法；第5.14节规定多发射天线设备OTA测试程序；涵盖SISO、MIMO OTA测试",
+          "url": "https://api.ctia.org/wp-content/uploads/2019/04/CTIA_OTA_Test_Plan_3_8_2.pdf"
+        },
+        {
+          "name": "CTIA 01.40",
+          "title": "Test Methodology, MIMO, Static Channel Model, Multi-Probe Anechoic Chamber",
+          "category": "OTA测试标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "CTIA",
+          "scope": "MIMO OTA多探头暗室法测试方法标准，定义MPAC测试系统要求、SCME信道模型、波束赋形、SIR控制、MARSS指标等",
+          "description": "MIMO OTA多探头暗室法测试方法标准，定义MPAC测试系统要求、SCME信道模型、波束赋形、SIR控制、MARSS指标等",
+          "url": "https://ctiacertification.org/program/over-the-air-performance-testing/"
+        },
+        {
+          "name": "CTIA 01.01",
+          "title": "Test Scope, Requirements, and Applicability",
+          "category": "OTA测试标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "CTIA",
+          "scope": "CTIA OTA测试范围、要求和适用性定义文件",
+          "description": "CTIA OTA测试范围、要求和适用性定义文件",
+          "url": "https://ctiacertification.org/program/over-the-air-performance-testing/"
+        },
+        {
+          "name": "CTIA 01.20",
+          "title": "Test Methodology, SISO, Anechoic Chamber",
+          "category": "OTA测试标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "CTIA",
+          "scope": "SISO OTA暗室法测试方法标准",
+          "description": "SISO OTA暗室法测试方法标准",
+          "url": "https://ctiacertification.org/program/over-the-air-performance-testing/"
+        },
+        {
+          "name": "CTIA 01.70",
+          "title": "Measurement Uncertainty",
+          "category": "OTA测试标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "CTIA",
+          "scope": "OTA测量不确定性标准",
+          "description": "OTA测量不确定性标准",
+          "url": "https://ctiacertification.org/program/over-the-air-performance-testing/"
+        },
+        {
+          "name": "CTIA 01.73",
+          "title": "Supporting Procedures",
+          "category": "OTA测试标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "CTIA",
+          "scope": "OTA支持程序标准，包括功率测量程序",
+          "description": "OTA支持程序标准，包括功率测量程序",
+          "url": "https://ctiacertification.org/program/over-the-air-performance-testing/"
+        },
+        {
+          "name": "NGMN 5G Devices OTA Performance v1.0",
+          "title": "5G Devices Over the Air Performance",
+          "category": "OTA测试标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "NGMN（下一代移动网络联盟）",
+          "scope": "5G终端OTA性能要求指南，参考3GPP RAN4 NR OTA测试方法和性能要求、CTIA OTA工作组、CCSA TC9 WG1、GCF等组织的工作成果",
+          "description": "5G终端OTA性能要求指南，参考3GPP RAN4 NR OTA测试方法和性能要求、CTIA OTA工作组、CCSA TC9 WG1、GCF等组织的工作成果",
+          "url": "https://www.ngmn.org/publications/5g-devices-over-the-air-performance-v1-0.html"
+        },
+        {
+          "name": "R&S TS8991 OTA Test System",
+          "title": "OTA Performance Test System",
+          "category": "OTA测试标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "Rohde & Schwarz",
+          "scope": "罗德与施瓦茨公司的OTA性能测试系统，符合CTIA和3GPP规范的基站和终端OTA测试解决方案",
+          "description": "罗德与施瓦茨公司的OTA性能测试系统，符合CTIA和3GPP规范的基站和终端OTA测试解决方案",
+          "url": "https://www.rohde-schwarz.com/product/usb-vector-network-analyzers/rs-ts-8991-leistungsmesstechnik_63493.html"
+        },
+        {
+          "name": "YD/T 6577-2025",
+          "title": "5G数字蜂窝移动通信网 6GHz以下频段基站设备基于紧缩场OTA测试系统技术要求",
+          "category": "OTA测试标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G基站紧缩场（CATR）OTA测试系统技术要求",
+          "description": "5G基站紧缩场（CATR）OTA测试系统技术要求",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=8B1827F5C5E89163E05397BE0A0A9C60"
+        }
+      ]
+    },
+    {
+      "name": "天线测量标准",
+      "code": "antenna_meas",
+      "description": "天线参数测量标准和规范",
+      "standards": [
+        {
+          "name": "IEEE 149-1979",
+          "title": "IEEE Standard Test Procedures for Antennas",
+          "category": "天线测量标准",
+          "status": "现行",
+          "publishDate": "R2008",
+          "organization": "IEEE",
+          "scope": "天线测试标准程序，定义天线增益、方向图、效率、极化、阻抗、驻波比等参数的测量方法，是天线行业最基础的测试标准",
+          "description": "天线测试标准程序，定义天线增益、方向图、效率、极化、阻抗、驻波比等参数的测量方法，是天线行业最基础的测试标准",
+          "url": "https://ieeexplore.ieee.org/document/4210141"
+        },
+        {
+          "name": "IEC 61196",
+          "title": "Coaxial communication cables (同轴通信电缆系列标准)",
+          "category": "天线测量标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "IEC",
+          "scope": "同轴通信电缆标准系列，包括电缆电气性能测试方法，用于天线馈线系统的性能评估",
+          "description": "同轴通信电缆标准系列，包括电缆电气性能测试方法，用于天线馈线系统的性能评估",
+          "url": "https://webstore.iec.ch/en/publication/65572"
+        },
+        {
+          "name": "IEC 61169",
+          "title": "Radio-frequency connectors (射频连接器系列标准)",
+          "category": "天线测量标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "IEC",
+          "scope": "射频连接器标准系列，定义射频连接器的电气、机械、环境测试要求，用于天线系统连接器的质量评估",
+          "description": "射频连接器标准系列，定义射频连接器的电气、机械、环境测试要求，用于天线系统连接器的质量评估",
+          "url": "https://webstore.iec.ch/en/publication/65572"
+        },
+        {
+          "name": "IEC 60966",
+          "title": "Radio frequency and coaxial cable assemblies (射频和同轴电缆组件)",
+          "category": "天线测量标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "IEC",
+          "scope": "射频和同轴电缆组件标准，规定电缆组件的电气性能和测试方法",
+          "description": "射频和同轴电缆组件标准，规定电缆组件的电气性能和测试方法",
+          "url": "https://webstore.iec.ch/en/publication/64649"
+        }
+      ]
+    },
+    {
+      "name": "电磁兼容/安全标准",
+      "code": "emc_safety",
+      "description": "EMC电磁兼容、电磁场安全暴露、人体防护标准",
+      "standards": [
+        {
+          "name": "IEC CISPR 32",
+          "title": "Electromagnetic compatibility of multimedia equipment - Emission requirements",
+          "category": "电磁兼容/安全标准",
+          "status": "现行",
+          "publishDate": "2015+A1:2019",
+          "organization": "IEC CISPR",
+          "scope": "多媒体设备EMC发射要求标准，涵盖传导和辐射发射，适用于通信基站辅助设备",
+          "description": "多媒体设备EMC发射要求标准，涵盖传导和辐射发射，适用于通信基站辅助设备",
+          "url": "https://webstore.iec.ch/en/publication/22046"
+        },
+        {
+          "name": "IEC CISPR 16-1-4",
+          "title": "Specification for radio disturbance and immunity measuring apparatus and methods - Part 1-4: Antennas and test sites for radiated disturbance measurements",
+          "category": "电磁兼容/安全标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "IEC CISPR",
+          "scope": "EMC测量用天线和测试场地标准，规定EMC测试中天线校准和测试场地要求",
+          "description": "EMC测量用天线和测试场地标准，规定EMC测试中天线校准和测试场地要求",
+          "url": "https://webstore.iec.ch/en/publication/66118"
+        },
+        {
+          "name": "IEC CISPR 11",
+          "title": "Industrial, scientific and medical equipment - EMC requirements",
+          "category": "电磁兼容/安全标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "IEC CISPR",
+          "scope": "工业、科学、医疗设备EMC要求标准（ISM设备）",
+          "description": "工业、科学、医疗设备EMC要求标准（ISM设备）",
+          "url": "https://webstore.iec.ch/en/publication/66118"
+        },
+        {
+          "name": "ETSI EN 301 489-1",
+          "title": "EMC standard for radio equipment; Part 1: Common technical requirements",
+          "category": "电磁兼容/安全标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ETSI",
+          "scope": "无线电设备EMC通用技术要求标准",
+          "description": "无线电设备EMC通用技术要求标准",
+          "url": "https://www.etsi.org/deliver/etsi_en/301400_301499/30148901/02.02.03_60/en_30148901v020203p.pdf"
+        },
+        {
+          "name": "ITU-T K.114",
+          "title": "Special EMC test methods for 5G active antenna system (AAS) base station",
+          "category": "电磁兼容/安全标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ITU-T",
+          "scope": "5G有源天线系统（AAS）基站特殊EMC测试方法技术报告，提供AAS基站电磁兼容测试的特殊方法指导",
+          "description": "5G有源天线系统（AAS）基站特殊EMC测试方法技术报告，提供AAS基站电磁兼容测试的特殊方法指导",
+          "url": "https://www.itu.int/epublications/en/publication/itu-t-k-114-2022-08-electromagnetic-compatibility-requirements-and-measurement-methods-for-digital-cellular-mobile-communication-base-station-equipmen"
+        },
+        {
+          "name": "IEEE C95.1-2019",
+          "title": "Safety Levels with Respect to Human Exposure to Electric, Magnetic, and Electromagnetic Fields, 0 Hz to 300 GHz",
+          "category": "电磁兼容/安全标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "IEEE",
+          "scope": "人体暴露于0Hz~300GHz电磁场的安全水平标准，规定职业暴露和公众暴露的限值，是基站天线电磁场安全评估的核心标准",
+          "description": "人体暴露于0Hz~300GHz电磁场的安全水平标准，规定职业暴露和公众暴露的限值，是基站天线电磁场安全评估的核心标准",
+          "url": "https://standards.ieee.org/ieee/C95.1/10484/"
+        },
+        {
+          "name": "ICNIRP Guidelines",
+          "title": "Guidelines for limiting exposure to time-varying electric, magnetic and electromagnetic fields",
+          "category": "电磁兼容/安全标准",
+          "status": "现行",
+          "publishDate": "1998年（修订中）",
+          "organization": "ICNIRP（国际非电离辐射防护委员会）",
+          "scope": "时变电场、磁场和电磁场暴露限制指南，是全球公认的电磁场人体安全暴露准则，被多国法规采纳",
+          "description": "时变电场、磁场和电磁场暴露限制指南，是全球公认的电磁场人体安全暴露准则，被多国法规采纳",
+          "url": "https://www.icnirp.org/en/publication/article/rf-guidelines-2020.html"
+        },
+        {
+          "name": "YD/T 2583.17-2025",
+          "title": "蜂窝式移动通信设备电磁兼容性要求和测量方法 第17部分：5G基站及其辅助设备",
+          "category": "电磁兼容/安全标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "5G基站及辅助设备EMC要求和测量方法国家标准（行业标准）",
+          "description": "5G基站及辅助设备EMC要求和测量方法国家标准（行业标准）",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=4A7B8C9D0E1F2A3B05397BE0A0A2BA6"
+        }
+      ]
+    },
+    {
+      "name": "滤波器/RF元件标准",
+      "code": "rf_components",
+      "description": "射频滤波器、天线滤、RF无源元件相关标准",
+      "standards": [
+        {
+          "name": "IEC 61337-1",
+          "title": "Filters using waveguide type dielectric resonators - Part 1: Generic specification",
+          "category": "滤波器/RF元件标准",
+          "status": "现行",
+          "publishDate": "2018年",
+          "organization": "IEC",
+          "scope": "波导型介质谐振器滤波器第1部分：总规范，规定介质谐振器滤波器通用技术要求，用于微波应用（移动基站、无线连接设备等）",
+          "description": "波导型介质谐振器滤波器第1部分：总规范，规定介质谐振器滤波器通用技术要求，用于微波应用（移动基站、无线连接设备等）",
+          "url": "https://webstore.iec.ch/en/publication/19656"
+        },
+        {
+          "name": "IEC 61337-2",
+          "title": "Filters using waveguide type dielectric resonators - Part 2: Sectional specification - Guidance for use",
+          "category": "滤波器/RF元件标准",
+          "status": "现行",
+          "publishDate": "2018年",
+          "organization": "IEC",
+          "scope": "波导型介质谐振器滤波器第2部分：使用指南，为滤波器选型和应用提供指导",
+          "description": "波导型介质谐振器滤波器第2部分：使用指南，为滤波器选型和应用提供指导",
+          "url": "https://webstore.iec.ch/en/publication/19656"
+        },
+        {
+          "name": "GB/T 27700.1-2023",
+          "title": "声表面波滤波器 第1部分：总规范",
+          "category": "滤波器/RF元件标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "国家标准化管理委员会",
+          "scope": "等同采用IEC 60862-1:2015，声表面波滤波器通用技术要求和测试方法，工作频率10MHz～3.5GHz",
+          "description": "等同采用IEC 60862-1:2015，声表面波滤波器通用技术要求和测试方法，工作频率10MHz～3.5GHz",
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=027A6096AFF2643EE06397BE0A0A0867"
+        },
+        {
+          "name": "GB/T 27700.2-2025",
+          "title": "声表面波滤波器 第2部分：使用指南",
+          "category": "滤波器/RF元件标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "国家标准化管理委员会",
+          "scope": "声表面波滤波器使用指南，对应IEC 60862-2，提供产品选型、安装、维护指导",
+          "description": "声表面波滤波器使用指南，对应IEC 60862-2，提供产品选型、安装、维护指导",
+          "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=027A6096B0B2643EE06397BE0A0A0868"
+        },
+        {
+          "name": "3GPP TS 38.101-1/2",
+          "title": "NR UE RF transmission and reception (FR1/FR2)",
+          "category": "滤波器/RF元件标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "3GPP",
+          "scope": "5G NR终端射频收发要求，规定滤波器通带、阻带、插入损耗等RF前端指标，与终端射频前端滤波器设计直接相关",
+          "description": "5G NR终端射频收发要求，规定滤波器通带、阻带、插入损耗等RF前端指标，与终端射频前端滤波器设计直接相关",
+          "url": "https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=63463"
+        },
+        {
+          "name": "3GPP TS 38.104",
+          "title": "NR Base Station RF requirements",
+          "category": "滤波器/RF元件标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "3GPP",
+          "scope": "5G NR基站射频要求，包括发射机滤波器（杂散抑制、带外抑制）、接收机前端滤波器等要求",
+          "description": "5G NR基站射频要求，包括发射机滤波器（杂散抑制、带外抑制）、接收机前端滤波器等要求",
+          "url": "https://portal.etsi.org/webapp/WorkProgram/Report_WorkItem.asp?WKI_ID=63463"
+        },
+        {
+          "name": "YD/T 2867-2025",
+          "title": "移动通信系统多频段基站无源天线",
+          "category": "滤波器/RF元件标准",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "工业和信息化部 / CCSA",
+          "scope": "规定多频段基站天线的电性能要求，包括各频段无源互调、端口隔离度等RF性能指标",
+          "description": "规定多频段基站天线的电性能要求，包括各频段无源互调、端口隔离度等RF性能指标",
+          "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=3833D6BFC05D38C0E06397BE0A0A2BA5"
+        }
+      ]
+    },
+    {
+      "name": "企业标准/行业协议",
+      "code": "enterprise",
+      "description": "主设备商企业标准及行业协议/白皮书",
+      "standards": [
+        {
+          "name": "3GPP TSG-RAN WG1/WG4 内部研究",
+          "title": "3GPP RAN MIMO/AAS研究",
+          "category": "企业标准/行业协议",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "3GPP",
+          "scope": "3GPP RAN1（物理层）和RAN4（RF性能）工作组关于MIMO、AAS、OTA测试的内部研究和标准化输出，推动技术标准迭代更新",
+          "description": "3GPP RAN1（物理层）和RAN4（RF性能）工作组关于MIMO、AAS、OTA测试的内部研究和标准化输出，推动技术标准迭代更新",
+          "url": "https://www.3gpp.org/specifications-groups/ram"
+        }
+      ]
+    },
+    {
+      "name": "6G标准化演进",
+      "code": "6g",
+      "description": "6G标准化相关标准、研究报告和框架文件",
+      "standards": [
+        {
+          "name": "ITU-R M.2160",
+          "title": "Framework and overall objectives of the future development of IMT-2030",
+          "category": "6G标准化演进",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ITU-R",
+          "scope": "IMT-2030（6G）框架建议，定义6G六大应用场景和核心设计原则，正式启动6G标准化进程",
+          "description": "IMT-2030（6G）框架建议，定义6G六大应用场景和核心设计原则，正式启动6G标准化进程",
+          "url": "https://www.itu.int/rec/R-REC-M.2160-0-202311-I/en"
+        },
+        {
+          "name": "IMT-2030 TPR",
+          "title": "Minimum requirements related to technical performance for IMT-2030 radio interface(s)",
+          "category": "6G标准化演进",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ITU-R WP 5D",
+          "scope": "IMT-2030最低技术性能要求，定义20项技术性能指标（包括7项6G新增指标），用于评估6G RIT/SRIT候选技术方案",
+          "description": "IMT-2030最低技术性能要求，定义20项技术性能指标（包括7项6G新增指标），用于评估6G RIT/SRIT候选技术方案",
+          "url": "https://www.itu.int/hub/2026/03/imt-2030-technical-requirements-for-the-6g-future/"
+        },
+        {
+          "name": "IMT-2030 EVAL",
+          "title": "Evaluation criteria and methodology for IMT-2030",
+          "category": "6G标准化演进",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ITU-R WP 5D",
+          "scope": "IMT-2030评估标准和方法论",
+          "description": "IMT-2030评估标准和方法论",
+          "url": "https://www.itu.int/en/ITU-R/study-groups/rsg5/rwp5d/imt-2030/Pages/submission-eval.aspx"
+        },
+        {
+          "name": "IMT-2030 SUBMISSION",
+          "title": "Submission guidelines for IMT-2030",
+          "category": "6G标准化演进",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ITU-R WP 5D",
+          "scope": "IMT-2030提交和评估指南",
+          "description": "IMT-2030提交和评估指南",
+          "url": "https://www.itu.int/en/ITU-R/study-groups/rsg5/rwp5d/imt-2030/Pages/submission-eval.aspx"
+        },
+        {
+          "name": "3GPP Release 18",
+          "title": "5G-Advanced (5.5G)",
+          "category": "6G标准化演进",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "3GPP",
+          "scope": "5G-Advanced标准，引入AI/ML空口、XR增强等6G前期技术，是迈向6G的必要阶段",
+          "description": "5G-Advanced标准，引入AI/ML空口、XR增强等6G前期技术，是迈向6G的必要阶段",
+          "url": "https://www.3gpp.org/release-18"
+        },
+        {
+          "name": "3GPP Release 19",
+          "title": "5G-Advanced 第二阶段",
+          "category": "6G标准化演进",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "3GPP",
+          "scope": "通感融合（ISAC）、AI/ML原生空口、XR持续增强、XL-6G研究等",
+          "description": "通感融合（ISAC）、AI/ML原生空口、XR持续增强、XL-6G研究等",
+          "url": "https://www.3gpp.org/release-19"
+        },
+        {
+          "name": "3GPP Release 20",
+          "title": "6G标准化起点",
+          "category": "6G标准化演进",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "3GPP",
+          "scope": "预计2027年完成，引入智能通信、太赫兹、空天海地一体化等前沿技术",
+          "description": "预计2027年完成，引入智能通信、太赫兹、空天海地一体化等前沿技术",
+          "url": "https://www.3gpp.org/release-20"
+        },
+        {
+          "name": "3GPP Release 21",
+          "title": "6G Phase 2",
+          "category": "6G标准化演进",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "3GPP",
+          "scope": "6G第二阶段标准化，预计2030年完成",
+          "description": "6G第二阶段标准化，预计2030年完成",
+          "url": "https://www.3gpp.org/specification-numbering"
+        },
+        {
+          "name": "6G频谱规划研究",
+          "title": "WRC-23 6G频谱决议",
+          "category": "6G标准化演进",
+          "status": "现行",
+          "publishDate": "",
+          "organization": "ITU WRC-23",
+          "scope": "WRC-23确定用于6G的频段范围：24.25-27.5 GHz、37-43.5 GHz、45.5-47 GHz、47.2-48.2 GHz、66-71 GHz，为6G频谱规划奠定基础",
+          "description": "WRC-23确定用于6G的频段范围：24.25-27.5 GHz、37-43.5 GHz、45.5-47 GHz、47.2-48.2 GHz、66-71 GHz，为6G频谱规划奠定基础",
+          "url": "https://gxt.fujian.gov.cn/jdhy/zxzcfg/gjzcfg/202306/t20230628_6194431.htm"
+        }
+      ]
+    }
+  ]
+}
