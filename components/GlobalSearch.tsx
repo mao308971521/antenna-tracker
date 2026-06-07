@@ -305,6 +305,18 @@ export default function GlobalSearch() {
     setSelectedIndex(-1)
   }, [query, allItems])
 
+  // 监听自定义事件唤起搜索（来自 SearchTrigger 按钮）
+  useEffect(() => {
+    const handleOpenSearch = () => {
+      setIsOpen(true)
+      setQuery('')
+      setTimeout(() => inputRef.current?.focus(), 100)
+    }
+
+    document.addEventListener('openGlobalSearch', handleOpenSearch)
+    return () => document.removeEventListener('openGlobalSearch', handleOpenSearch)
+  }, [])
+
   // "/" 快捷键唤起搜索
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
