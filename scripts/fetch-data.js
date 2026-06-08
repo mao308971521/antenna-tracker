@@ -10,7 +10,7 @@ const https = require('https');
 const http = require('http');
 const crypto = require('crypto');
 
-const DATA_DIR = path.join(__dirname, '..', 'data');
+const DATA_DIR = path.join(__dirname, '..', 'public', 'data');
 
 // HTTP 请求封装
 function fetchUrl(url, timeout = 15000) {
@@ -322,13 +322,64 @@ async function crawlCCSA() {
 }
 
 // ============================================================
+// 工具：把 json 读成 array（兼容 array 和 object 两种结构）
+// ============================================================
+function loadAsArray(filePath) {
+  if (!fs.existsSync(filePath)) return [];
+  try {
+    const parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    if (Array.isArray(parsed)) return parsed;
+    if (parsed && typeof parsed === 'object') return Object.values(parsed);
+    return [];
+  } catch (e) {
+    console.log(`  ⚠️ 读取 ${path.basename(filePath)} 失败: ${e.message}，按空数据处理`);
+    return [];
+  }
+}
+
+// 把 array 写回 json：如果是 array 旧的写 array，对象结构的写回对象
+function saveAsArrayOrObject(filePath, items) {
+  // 探测现有结构
+  let existingIsObject = false;
+  let existingObj = null;
+  if (fs.existsSync(filePath)) {
+    try {
+      const parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+        existingIsObject = true;
+        existingObj = parsed;
+      }
+    } catch {}
+  }
+
+  if (!existingIsObject) {
+    // 旧结构：直接写 array
+    fs.writeFileSync(filePath, JSON.stringify(items, null, 2));
+    return;
+  }
+
+  // 新结构：写回对象。用 id 作为 key（如有），否则按 index。
+  const out = { ...existingObj };
+  out.lastUpdate = new Date().toISOString().split('T')[0];
+  // 移除旧的 list-like 字段（如果有），统一覆盖
+  delete out.items;
+  delete out.recent;
+  delete out.standards;
+  items.forEach((item, idx) => {
+    const key = (item && (item.id || item.code || item.name)) || `item_${Date.now()}_${idx}`;
+    out[key] = item;
+  });
+  fs.writeFileSync(filePath, JSON.stringify(out, null, 2));
+}
+
+// ============================================================
 // 标准数据采集（新增）
 // ============================================================
 async function updateStandards() {
   console.log('\n📋正在更新标准数据...\n');
-  
+
   const allStandards = [];
-  
+
   // 并行爬取标准相关来源
   const [miitStandards, g3ppStandards, ccsaStandards] = await Promise.allSettled([
     crawlMIIT(),
@@ -339,26 +390,27 @@ async function updateStandards() {
     results[1].status === 'fulfilled' ? results[1].value : [],
     results[2].status === 'fulfilled' ? results[2].value : []
   ]);
-  
+
   allStandards.push(...miitStandards, ...g3ppStandards, ...ccsaStandards);
-  
+
   // 去重（按标题）
   const seen = new Set();
   const uniqueStandards = allStandards.filter(s => {
+    if (!s || !s.title) return false;
     const key = s.title.substring(0, 50);
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
   });
-  
-  // 写入standards.json
+
+  // 读取已有数据（array 或 object 都吃）
   const standardsFile = path.join(DATA_DIR, 'standards.json');
-  const existingStandards = fs.existsSync(standardsFile) ? JSON.parse(fs.readFileSync(standardsFile, 'utf8')) : [];
-  
-  // 合并新数据与已有数据，保留最新的50条
-  const merged = [...uniqueStandards, ...existingStandards].slice(0, 50);
-  fs.writeFileSync(standardsFile, JSON.stringify(merged, null, 2));
-  
+  const existingArr = loadAsArray(standardsFile).filter(s => s && s.title);
+
+  // 合并 + 限 50
+  const merged = [...uniqueStandards, ...existingArr].slice(0, 50);
+  saveAsArrayOrObject(standardsFile, merged);
+
   console.log(`\n  ✅ 标准数据已写入，共 ${merged.length} 条（新增 ${uniqueStandards.length} 条）`);
   return merged;
 }
@@ -597,11 +649,11 @@ async function updateNews() {
     return true;
   });
 
-  // 写入news.json
+  // 写入news.json（兼容 array / object 两种结构）
   const newsFile = path.join(DATA_DIR, 'news.json');
-  const existingNews = fs.existsSync(newsFile) ? JSON.parse(fs.readFileSync(newsFile, 'utf8')) : [];
-  const merged = [...uniqueNews, ...existingNews].slice(0, 50);
-  fs.writeFileSync(newsFile, JSON.stringify(merged, null, 2));
+  const existingArr = loadAsArray(newsFile).filter(n => n && n.title);
+  const merged = [...uniqueNews, ...existingArr].slice(0, 50);
+  saveAsArrayOrObject(newsFile, merged);
 
   console.log(`\n  ✅ 新闻数据已写入，共 ${merged.length} 条（新增 ${uniqueNews.length} 条）`);
   return merged;
