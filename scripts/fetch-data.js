@@ -359,6 +359,8 @@ function saveAsArrayOrObject(filePath, items) {
   }
 
   // 新结构：写回对象。用 id 作为 key（如有），否则按 index。
+  // 注意：不要用 Date.now() 当 key —— 旧代码曾因此往 JSON 里塞了一堆
+  // `1780887984xxx` 数字字符串 key，污染了数据。
   const out = { ...existingObj };
   out.lastUpdate = new Date().toISOString().split('T')[0];
   // 移除旧的 list-like 字段（如果有），统一覆盖
@@ -366,10 +368,43 @@ function saveAsArrayOrObject(filePath, items) {
   delete out.recent;
   delete out.standards;
   items.forEach((item, idx) => {
-    const key = (item && (item.id || item.code || item.name)) || `item_${Date.now()}_${idx}`;
+    let key = null;
+    if (item && typeof item === 'object') {
+      key = item.id || item.code || item.name || null;
+    }
+    // key 必须是稳的：纯数字 id 或字符串；不接受 Date.now() 之类的时间戳字符串
+    if (key === null || (typeof key === 'string' && /^\d{10,}$/.test(key))) {
+      key = `item_${idx + 1}`;
+    }
     out[key] = item;
   });
+  // 写盘前清理掉之前累积的非业务 key（包括历史脏数据 + 老的 list-like 字段）
+  for (const k of Object.keys(out)) {
+    if (k === 'lastUpdate') continue;
+    if (k === 'items' || k === 'recent' || k === 'standards') { delete out[k]; continue; }
+    // 时间戳字符串 key（Date.now() 残留）：超过 9 位纯数字就当脏数据
+    if (typeof k === 'string' && /^1\d{12,}$/.test(k)) { delete out[k]; continue; }
+  }
   fs.writeFileSync(filePath, JSON.stringify(out, null, 2));
+}
+
+// 把 public/data/ 下的 json 同步到 app/_data/，让 build-time import 的 page 组件
+// 也能拿到最新数据。两边结构必须完全一致。
+function syncToAppData() {
+  const APP_DATA_DIR = path.join(__dirname, '..', 'app', '_data');
+  if (!fs.existsSync(APP_DATA_DIR)) {
+    console.log(`  ⚠️  ${APP_DATA_DIR} 不存在，跳过 app/_data 同步`);
+    return;
+  }
+  const syncNames = ['news', 'standards', 'companies', 'market', 'prices', 'technology'];
+  for (const name of syncNames) {
+    const src = path.join(DATA_DIR, name + '.json');
+    if (!fs.existsSync(src)) continue;
+    const dst = path.join(APP_DATA_DIR, name + '.json');
+    const data = fs.readFileSync(src, 'utf8');
+    fs.writeFileSync(dst, data);
+    console.log(`  🔁 同步 app/_data/${name}.json`);
+  }
 }
 
 // ============================================================
@@ -682,6 +717,11 @@ async function main() {
     console.log('\n═══════════════════════════════════════');
     console.log('  ✅ 所有数据更新完成！');
     console.log('═══════════════════════════════════════');
+
+    // 4. 同步到 app/_data/，让 build-time import 的页面也能拿到最新数据
+    console.log('\n🔁 同步到 app/_data/ ...');
+    syncToAppData();
+    console.log('  ✅ app/_data 同步完成');
   } catch (error) {
     console.error('\n❌ 数据更新失败:', error.message);
     // 即使部分失败也尝试写入已获取的数据
