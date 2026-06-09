@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-05-29",
+  "lastUpdate": "2026-06-08",
   "summary": {
     "globalMarketSize2024": "320.53亿元",
     "chinaMarketSize2024": "57.7亿元",
@@ -290,7 +290,7 @@
     },
     {
       "name": "网通天线",
-      "value": 150.0,
+      "value": 150,
       "color": "#9966FF"
     },
     {
@@ -300,7 +300,7 @@
     },
     {
       "name": "微波天线",
-      "value": 48.0,
+      "value": 48,
       "color": "#FF6699"
     },
     {
