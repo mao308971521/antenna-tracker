@@ -50,14 +50,17 @@ jobs:
             echo "has_changes=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit and push changes
+      - name: Commit and push changes to main
         if: steps.git-status.outputs.has_changes == 'true'
         run: |
-          BRANCH_NAME="data-update"
-          git checkout -b $BRANCH_NAME || git checkout $BRANCH_NAME
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           TIMESTAMP=$(date +'%Y-%m-%d %H:%M')
           git commit -m "data: auto update $TIMESTAMP"
-          git push -u origin $BRANCH_NAME --force
+          # 同步 main 后再 rebase，避免 push 失败（非 fast-forward）
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
