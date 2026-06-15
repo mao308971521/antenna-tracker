@@ -78,8 +78,13 @@ def log(level: str, msg: str) -> None:
     sys.stdout.flush()
 
 
-def fetch_url(url: str, timeout: int = HTTP_TIMEOUT, max_redirects: int = 5) -> str | None:
-    """带重定向跟随的简单 HTTP GET, 返回 utf-8 文本. 失败返回 None."""
+def fetch_url(url: str, timeout: int = HTTP_TIMEOUT, max_redirects: int = 5,
+              force_encoding: str | None = None) -> str | None:
+    """带重定向跟随的简单 HTTP GET, 返回文本. 失败返回 None.
+
+    force_encoding: 强制编码 (如 "gb18030"). 中文站点 c114 首页响应是 GBK,
+                    HTTP header 经常不声明或声明错, 必须显式指定.
+    """
     if max_redirects <= 0:
         return None
     req = urllib.request.Request(
@@ -93,12 +98,14 @@ def fetch_url(url: str, timeout: int = HTTP_TIMEOUT, max_redirects: int = 5) -> 
     )
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
-            charset = resp.headers.get_content_charset() or "utf-8"
             data = resp.read()
+            if force_encoding:
+                return data.decode(force_encoding, errors="replace")
+            charset = resp.headers.get_content_charset() or "utf-8"
             return data.decode(charset, errors="replace")
     except urllib.error.HTTPError as e:
         if e.code in (301, 302, 303, 307, 308) and e.headers.get("Location"):
-            return fetch_url(e.headers["Location"], timeout, max_redirects - 1)
+            return fetch_url(e.headers["Location"], timeout, max_redirects - 1, force_encoding)
         log("warn", f"HTTP {e.code} for {url}")
         return None
     except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
@@ -136,27 +143,33 @@ def write_json(path: str, data: Any) -> None:
     os.replace(tmp, path)
 
 
-def next_id_from_news(news: dict) -> int:
-    """从已有 news.json 中提取最大 id, 保证不冲突. 忽略非数字 key (如 'lastUpdate')."""
+def next_id_from_news(news: list | dict) -> int:
+    """从已有 news.json 中提取最大 id, 保证不冲突. 兼容 list 与 dict 两种 schema."""
     max_id = 10000
-    for k in news.keys():
-        if not isinstance(k, str):
+    items = news if isinstance(news, list) else (
+        [v for v in news.values() if isinstance(v, dict)] if isinstance(news, dict) else []
+    )
+    for it in items:
+        if not isinstance(it, dict):
             continue
         try:
-            n = int(k)
+            n = int(it.get("id", 0))
             if n > max_id:
                 max_id = n
-        except ValueError:
+        except (ValueError, TypeError):
             continue
     return max_id + 1
 
 
-def _existing_titles(news: dict) -> set[str]:
-    """返回 news.json 中所有 dict-value 的 title 集合 (跳过 lastUpdate 等元数据)."""
+def _existing_titles(news: list | dict) -> set[str]:
+    """返回 news.json 中所有 title 集合 (兼容 list/dict schema)."""
+    items = news if isinstance(news, list) else (
+        [v for v in news.values() if isinstance(v, dict)] if isinstance(news, dict) else []
+    )
     return {
-        v.get("title", "")
-        for v in news.values()
-        if isinstance(v, dict) and v.get("title")
+        it.get("title", "")
+        for it in items
+        if isinstance(it, dict) and it.get("title")
     }
 
 
@@ -207,24 +220,47 @@ TGPP_RE = re.compile(
 
 
 def crawl_c114() -> list[dict]:
-    log("info", "抓取 C114 通信网 ...")
-    html = fetch_url("https://www.c114.com.cn/")
-    if not html:
-        return []
+    """抓 C114 首页 + 各频道页. 首页响应是 GBK, 必须强制解码.
+
+    c114 真文章 URL 模式: https://www.c114.com.cn/{section}/{chan}/a{id}.html
+    出现在 /news/, /local/, /video/, /quantum/, /satellite/, /ai/, /swrh/ 等多个 section 下.
+    """
     items: list[dict] = []
-    for m in C114_RE.finditer(html):
-        title = strip_html(m.group(2))
-        href = m.group(1)
-        if not title or "<img" in title:
+    # 真文章 URL 正则: 完整 URL + section/chan/a{id}.html 三段路径
+    article_re = re.compile(
+        r'<a[^>]+href="(https?://(?:www\.)?c114\.com\.cn/[^/]+/[^/]+/a(\d+)\.html)"'
+        r'[^>]*>([^<]{10,150})</a>',
+        re.IGNORECASE,
+    )
+    pages = [
+        ("https://www.c114.com.cn/", "首页"),
+        ("https://www.c114.com.cn/news/50.html", "无线频道"),
+        ("https://www.c114.com.cn/news/550.html", "5G频道"),
+        ("https://www.c114.com.cn/news/52.html", "设备频道"),
+        ("https://www.c114.com.cn/news/548.html", "6G频道"),
+    ]
+    seen_aids: set[str] = set()
+    for url, label in pages:
+        html = fetch_url(url, force_encoding="gb18030")
+        if not html:
             continue
-        items.append(make_news_item(
-            title=title,
-            source="C114通信网",
-            summary="C114 通信网行业动态",
-            url=href if href.startswith("http") else "https://www.c114.com.cn" + href,
-            tags=["行业动态"],
-        ))
-    return items[:20]
+        for m in article_re.finditer(html):
+            full_url = m.group(1)
+            aid = m.group(2)
+            title = strip_html(m.group(3))
+            if not title or "<img" in title:
+                continue
+            if aid in seen_aids:
+                continue
+            seen_aids.add(aid)
+            items.append(make_news_item(
+                title=title,
+                source="C114通信网",
+                summary=f"C114 {label}",
+                url=full_url,
+                tags=["行业动态"],
+            ))
+    return items[:30]
 
 
 def crawl_cww() -> list[dict]:
@@ -356,7 +392,22 @@ def update_news(verbose: bool = False) -> int:
     """并发抓取所有新闻源, 合并去重写入 news.json. 返回新增条数."""
     log("section", "更新新闻数据")
     news_path = os.path.join(PUBLIC_DATA_DIR, NEWS_FILE)
-    news = read_json(news_path) or {}
+    raw = read_json(news_path)
+
+    # 归一化为 list schema (兼容 dict schema, 与 fetch-data.js 输出一致)
+    if isinstance(raw, list):
+        news = raw
+    elif isinstance(raw, dict):
+        news = [v for v in raw.values() if isinstance(v, dict)]
+    else:
+        news = []
+
+    # 铁律 (MEMORY.md 21:48): 新抓取条目 URL 必须 c114 真文章页 (a{id}.html),
+    # 不是栏目页 (/news/50.html) 也不是搜索结果页 (sogou/baidu/bing).
+    # c114 真文章页不仅在 /news/{chan}/ 下, 还有 /local/{chan}/, /video/{chan}/, /topic/{chan}/ 等.
+    c114_article_re = re.compile(
+        r"^https?://(?:www\.)?c114\.com\.cn/[^/]+/[^/]+/a\d+\.html$"
+    )
 
     all_items: list[dict] = []
     with ThreadPoolExecutor(max_workers=DEFAULT_WORKERS) as pool:
@@ -382,13 +433,14 @@ def update_news(verbose: bool = False) -> int:
         unique.append(it)
 
     if not unique:
-        log("warn", "本次未抓到任何新闻, 保持 news.json 原状")
+        log("warn", "本次未抓到任何新闻, news.json 保持原状")
         return 0
 
     next_id = next_id_from_news(news)
     existing = _existing_titles(news)
     added = 0
     skipped_irrelevant = 0
+    skipped_bad_url = 0
     for it in unique:
         if not it.get("title"):
             continue
@@ -397,13 +449,19 @@ def update_news(verbose: bool = False) -> int:
         if not is_antenna_related(it):
             skipped_irrelevant += 1
             continue
+        # 铁律: 新条目 URL 必须 c114 真文章 a{id}.html 格式, 否则跳过 (防御性)
+        if not c114_article_re.match(it.get("url", "")):
+            skipped_bad_url += 1
+            continue
         it["id"] = next_id
-        news[str(next_id)] = it
+        news.append(it)
         next_id += 1
         existing.add(it["title"])
         added += 1
     if skipped_irrelevant:
         log("ok", f"过滤掉非天线相关新闻 {skipped_irrelevant} 条 (白名单 is_antenna_related)")
+    if skipped_bad_url:
+        log("ok", f"过滤掉非 c114 URL 的抓取结果 {skipped_bad_url} 条 (铁律)")
 
     write_json(news_path, news)
     log("ok", f"news.json 新增 {added} 条 (总计 {len(news)} 条)")
