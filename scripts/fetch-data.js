@@ -484,12 +484,19 @@ async function updateStandards() {
 }
 
 // 备用：生成基于真实行业事件的高质量模拟数据
+// 链接恒等式：所有 url 统一指向 baidu.com 搜索（c114/cww/cctime/miit/unicom/zte 等站搜索页要么 403 要么 404 不可用）
 function generateIndustryNews() {
   const now = new Date();
-  const year = now.getFullYear();
+  const year = now.getFullCharacter ? null : null; // placeholder
+  const y = now.getFullYear();
   const month = String(now.getMonth() + 1).padStart(2, '0');
   const day = String(now.getDate()).padStart(2, '0');
-  const today = `${year}-${month}-${day}`;
+  const today = `${y}-${month}-${day}`;
+
+  // 工具：从标题构造 baidu 搜索 url（去标点，保留中英数字）
+  const baiduUrl = (title) => 'https://www.baidu.com/s?wd=' + encodeURIComponent(
+    title.replace(/[《》\(\)（）\[\]【】\/\\\.,，:：;；\"'\"「」、。？！]/g, '').trim()
+  );
 
   // id 用稳定的小数字 1001+i，避开 saveAsArrayOrObject 的脏数据清理正则
   // （之前用 Date.now()+N 会被 /^\d{13}$/ 当脏数据清掉，导致新新闻写不进 news.json）
@@ -501,7 +508,7 @@ function generateIndustryNews() {
       source: 'C114通信网',
       summary: '中国移动2026年第二批基站天线集采正式启动，本次集采产品涵盖4G和5G基站天线，预计规模超过2000万面，参与厂商包括华为、中兴、盛路通信、亨鑫科技等主流天线厂商。',
       tags: ['集采', '中国移动', '5G'],
-      url: 'https://www.c114.com.cn/search/?keyword=' + encodeURIComponent('中国移动启动2026年基站天线第二批集采')
+      url: baiduUrl('中国移动启动2026年基站天线第二批集采')
     },
     {
       id:1002,
@@ -510,7 +517,7 @@ function generateIndustryNews() {
       source: '工信部官网',
       summary: '工信部联合中国通信标准化协会发布的《5G基站天线技术发展白皮书》，指出massive MIMO持续演进、RIS智能超表面、AI赋形为三大关键技术方向，6G天线将在100GHz以上频段展开研究。',
       tags: ['政策', '6G', '技术白皮书'],
-      url: 'https://search.miit.gov.cn/search/info.html?keywords=' + encodeURIComponent('5G基站天线技术发展白皮书')
+      url: baiduUrl('5G基站天线技术发展白皮书 6G预研')
     },
     {
       id:1003,
@@ -519,7 +526,7 @@ function generateIndustryNews() {
       source: '通信世界网',
       summary: '中国电信2026年度5G基站天线集中采购结果公示，本次集采共三个标包，总采购量约1200万面，华为和中兴联合中标约65%份额，诺基亚和爱立信分食剩余份额。',
       tags: ['集采', '中国电信', '5G'],
-      url: 'https://www.cww.net.cn/search.html?wd=' + encodeURIComponent('中国电信5G天线集中采购')
+      url: baiduUrl('中国电信5G天线集中采购结果公示 华为 中兴 诺基亚')
     },
     {
       id:1004,
@@ -528,7 +535,7 @@ function generateIndustryNews() {
       source: 'C114通信网',
       summary: '华为在MWC2026期间发布全新5G-Advanced天线解决方案，主打128T128R超大规模天线阵列和AI波束赋形技术，同时展示RIS智能超表面外场测试结果，推动5G-A商用加速。',
       tags: ['华为', '5G-A', 'AAU'],
-      url: 'https://www.c114.com.cn/search/?keyword=' + encodeURIComponent('华为5G-A天线128T128R')
+      url: baiduUrl('华为5G-A新天线解决方案 128T128R AAU')
     },
     {
       id:1005,
@@ -537,7 +544,7 @@ function generateIndustryNews() {
       source: '飞象网',
       summary: 'SpaceX旗下Starlink宣布其新一代平板相控阵天线成本降至299美元，降幅超50%，标志着卫星宽带终端进入规模化普及阶段，国内厂商成都天锐星空、灵动等加速追赶。',
       tags: ['卫星通信', '相控阵', 'Starlink'],
-      url: 'https://www.cctime.com/search/?wd=' + encodeURIComponent('Starlink卫星终端相控阵天线')
+      url: baiduUrl('Starlink卫星终端相控阵天线成本299美元')
     },
     {
       id:1006,
@@ -546,7 +553,7 @@ function generateIndustryNews() {
       source: '中国联通官网',
       summary: '中国联通研究院发布6G天线技术愿景白皮书，描绘了6G时代天线技术从硬件定义向软件定义、感知一体化、AI原生化的演进路径，重点布局智能超表面和可重构电磁表面技术。',
       tags: ['6G', '联通', '白皮书'],
-      url: 'https://www.chinaunicom.com.cn/news/list.html?keyword=' + encodeURIComponent('中国联通6G天线愿景白皮书')
+      url: baiduUrl('中国联通研究院 6G天线技术愿景白皮书')
     },
     {
       id:1007,
@@ -555,7 +562,7 @@ function generateIndustryNews() {
       source: '行业研究',
       summary: '根据行业研究机构最新数据，2026年Q1全球基站天线市场规模约85亿元，华为以32%份额领跑，中兴、盛路通信、亨鑫科技等中国厂商合计份额突破55%，日韩系厂商份额持续萎缩。',
       tags: ['市场数据', '华为', '份额'],
-      url: 'https://www.baidu.com/s?wd=site%3Ac114.com.cn+' + encodeURIComponent('2026年Q1全球基站天线市场份额')
+      url: baiduUrl('2026年Q1全球基站天线市场 华为 55%')
     },
     {
       id:1008,
@@ -564,7 +571,7 @@ function generateIndustryNews() {
       source: '中兴官网',
       summary: '中兴通讯发布"A+天线"全新品牌战略，主打多频段融合天线、碳中和绿色基站天线和智能化波束管理三大产品线，计划2026年内在国内运营商集采中实现份额翻倍。',
       tags: ['中兴', '品牌', '绿色天线'],
-      url: 'https://www.zte.com.cn/china/about/news?keyword=' + encodeURIComponent('中兴A+天线品牌')
+      url: baiduUrl('中兴通讯 A+天线 品牌 多频融合 绿色节能')
     },
     {
       id:1009,
@@ -573,7 +580,7 @@ function generateIndustryNews() {
       source: '通信世界网',
       summary: '工信部正式向四大运营商分配5G毫米波（n258 26GHz和n260 28GHz）频谱，标志着国内5G毫米波商用进入倒计时阶段，华为、中兴、爱立信、诺基亚已提交毫米波基站设备商用认证申请。',
       tags: ['毫米波', '频谱', '5G'],
-      url: 'https://www.cww.net.cn/search.html?wd=' + encodeURIComponent('5G毫米波频谱分配n258')
+      url: baiduUrl('5G毫米波频谱分配 n258 n260 启用')
     },
     {
       id:1010,
@@ -582,7 +589,7 @@ function generateIndustryNews() {
       source: 'C114通信网',
       summary: '信维通信和世嘉科技分别宣布5G手机LCP天线模组扩产计划，月产能各提升40%，主要为了应对苹果iPhone17系列和三星Galaxy S26系列的毫米波AiP模组需求，LCP材料国产化率持续提升。',
       tags: ['LCP天线', '信维通信', '苹果供应链'],
-      url: 'https://www.c114.com.cn/search/?keyword=' + encodeURIComponent('信维通信LCP天线扩产')
+      url: baiduUrl('世嘉科技 信维通信 5G LCP天线 扩产 苹果')
     },
     {
       id:1011,
@@ -591,7 +598,7 @@ function generateIndustryNews() {
       source: 'C114通信网',
       summary: '中国移动、中国电信、中国联通三大运营商2026年度天线集采陆续启动，总规模预估超过6000万面（含4G/5G/5G-A基站天线），盛路通信、通宇通讯、京信通信等国内厂商积极参与，招标价格同比下降约8%。',
       tags: ['集采', '运营商', '5G'],
-      url: 'https://www.c114.com.cn/search/?keyword=' + encodeURIComponent('运营商2026年度天线集采')
+      url: baiduUrl('运营商 2026年度天线集采 6000万面')
     },
     {
       id:1012,
@@ -600,7 +607,7 @@ function generateIndustryNews() {
       source: '行业研究',
       summary: '村田制作所在2026年春季研讨会上发布新款超小型5G毫米波AiP封装模组，厚度仅1.2mm，支持n257/n260/n261全频段，已获得苹果下一代iPhone认证，LCP软板和LTCC工艺进一步升级。',
       tags: ['村田', '毫米波', 'AiP'],
-      url: 'https://www.baidu.com/s?wd=site%3Ac114.com.cn+' + encodeURIComponent('村田5G毫米波AiP模组')
+      url: baiduUrl('村田 5G毫米波 AiP模组 1.2mm')
     },
     {
       id:1013,
@@ -609,7 +616,7 @@ function generateIndustryNews() {
       source: '行业研究',
       summary: '由国内材料厂商和西安电子科技大学联合研发的高频PTFE覆铜板（介电常数2.1，损耗因子0.0005）正式通过华为5G基站天线认证，成为首款在华为AAU产品中批量应用的国产高频PCB基材，打破了Rogers/Taconic等海外厂商的垄断。',
       tags: ['PCB', '国产替代', '华为'],
-      url: 'https://www.baidu.com/s?wd=site%3Ac114.com.cn+' + encodeURIComponent('国产高频PTFE板材华为认证')
+      url: baiduUrl('高频PTFE板材 华为认证 国产替代')
     },
     {
       id:1014,
@@ -618,7 +625,7 @@ function generateIndustryNews() {
       source: 'C114通信网',
       summary: '受5G毫米波基站建设和卫星终端需求双轮驱动，PTFE高频PCB板材（用于5G基站AAU和卫星通信相控阵天线）价格持续上涨，国内市场年内涨幅已超12%，生益科技、华正新材等国产厂商产能利用率满载。',
       tags: ['PTFE', 'PCB', '价格'],
-      url: 'https://www.c114.com.cn/search/?keyword=' + encodeURIComponent('PTFE高频PCB价格上涨')
+      url: baiduUrl('PTFE高频PCB价格上涨 2026年')
     },
     {
       id:1015,
@@ -627,7 +634,7 @@ function generateIndustryNews() {
       source: '行业研究',
       summary: '华为与东南大学毫米波国家重点实验室联合完成RIS（可重构智能表面）外场测试，在杭州某地铁站场景中部署256单元RIS面板，5G信号覆盖盲区覆盖率提升约40%，验证了RIS在室内补盲场景的技术可行性。',
       tags: ['RIS', '华为', '东南大学'],
-      url: 'https://www.baidu.com/s?wd=site%3Ac114.com.cn+' + encodeURIComponent('华为东南大学RIS智能超表面')
+      url: baiduUrl('华为 东南大学 RIS智能超表面 外场测试')
     }
   ];
 }

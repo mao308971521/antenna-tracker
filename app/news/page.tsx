@@ -37,6 +37,61 @@ function isAntennaRelated(item: NewsItem): boolean {
   return ANTENNA_KEYWORDS.some(kw => text.includes(kw.toLowerCase()))
 }
 
+// ============================================================
+// 老大拍板（2026-06-15）：新闻链接不能跳首页，要跳到对应新闻页
+// 思路：news.json 是模拟数据，url 字段里大量填的是各网站首页。
+// 这里做两层兜底：
+//   1) 数据里 url 是首页格式（无 path）→ 自动用 source + title 拼成"该网站带关键词的搜索结果页"
+//   2) 数据里 url 是搜索/列表页（不含通配符的固定 path）→ 原样保留
+// source → 站内搜索 URL 模板 (新数据请优先用具体新闻 url，这里只做兜底)
+// ============================================================
+const SOURCE_SEARCH_URL: Record<string, string> = {
+  'C114通信网': 'https://www.c114.com.cn/search/?keyword={kw}',
+  '通信世界网': 'https://www.cww.net.cn/search.html?wd={kw}',
+  '飞象网': 'https://www.cctime.com/search/?wd={kw}',
+  '工信部官网': 'https://search.miit.gov.cn/search/info.html?keywords={kw}',
+  '工信部': 'https://search.miit.gov.cn/search/info.html?keywords={kw}',
+  '中国联通官网': 'https://www.chinaunicom.com.cn/news/list.html?keyword={kw}',
+  '中兴官网': 'https://www.zte.com.cn/china/about/news?keyword={kw}',
+  '盛路通信公告': 'https://www.shenglu.com/news?keyword={kw}',
+  // "行业研究" 是聚合源，泛指行业研究类资讯——兜底走百度站内搜索限定 C114
+  '行业研究': 'https://www.baidu.com/s?wd=site%3Ac114.com.cn+{kw}',
+}
+
+// 从 title 抽取 8-15 字关键词用作搜索 query
+function extractKeyword(title: string): string {
+  if (!title) return ''
+  // 优先匹配中文实体/专有名词
+  const m = title.match(/[一-鿿]{4,30}/)
+  if (m) {
+    const phrase = m[0]
+    return phrase.length > 15 ? phrase.slice(0, 15) : phrase
+  }
+  return title.replace(/[《》【】\[\]"']/g, '').slice(0, 15)
+}
+
+// 判断 url 是否是"首页"（没有具体 path，或 path 只有 /）
+function isHomepageUrl(url: string): boolean {
+  if (!url) return true
+  const trimmed = url.trim()
+  if (!trimmed) return true
+  // 形如 https://example.com 或 https://example.com/ 视为首页
+  return /^https?:\/\/[^/]+\/?(\?.*)?$/i.test(trimmed)
+}
+
+function resolveNewsUrl(item: NewsItem): string {
+  if (!isHomepageUrl(item.url)) return item.url // 已经是具体链接，原样
+  // 兜底：用 source 模板 + title 关键词拼搜索 URL
+  const tpl = SOURCE_SEARCH_URL[item.source]
+  if (!tpl) {
+    // 没匹配到 source 模板：退而求其次走百度搜索 + 标题
+    const kw = encodeURIComponent(extractKeyword(item.title) || item.source)
+    return `https://www.baidu.com/s?wd=${kw}`
+  }
+  const kw = encodeURIComponent(extractKeyword(item.title) || item.source)
+  return tpl.replace('{kw}', kw)
+}
+
 export default function NewsPage() {
   // 将 news.json (object) 转换为数组
   // 注意：newsData 里可能含非 object 值（比如 lastUpdate 字符串），
@@ -133,7 +188,7 @@ const filtered = activeFilter === '全部'
                   </div>
                 </div>
                 <div className="news-title">
-                  <a href={news.url} target="_blank" rel="noopener noreferrer">
+                  <a href={resolveNewsUrl(news)} target="_blank" rel="noopener noreferrer">
                     {news.title}
                   </a>
                 </div>
@@ -180,7 +235,7 @@ const filtered = activeFilter === '全部'
                     fontSize: '0.95rem', fontWeight: 600, marginBottom: '6px',
                     color: '#333'
                   }}>
-                    <a href={news.url} target="_blank" rel="noopener noreferrer" style={{ color: '#333', textDecoration: 'none' }}>
+                    <a href={resolveNewsUrl(news)} target="_blank" rel="noopener noreferrer" style={{ color: '#333', textDecoration: 'none' }}>
                       {news.title}
                     </a>
                   </div>
