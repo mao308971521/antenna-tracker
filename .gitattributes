@@ -1,0 +1,21 @@
+# 强制工作流文件用 LF 换行，避免 Windows 编辑器保存成 CRLF
+# 导致 GitHub Actions YAML parser 解析失败、出现 No jobs were run
+.github/workflows/*.yml text eol=lf
+.github/workflows/*.yaml text eol=lf
+
+# 数据 JSON 统一 LF
+*.json text eol=lf
+
+# Next.js / Node 源码统一 LF
+*.js text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
+
+# Markdown / 文档 LF
+*.md text eol=lf
+
+# shell / python 脚本 LF
+*.sh text eol=lf
+*.py text eol=lf

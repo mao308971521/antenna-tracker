@@ -46,11 +46,11 @@ jobs:
           # fetch-real-data.py 仅用标准库, 但保留以备将来扩展
           pip install requests || echo "requests not installed, continue with stdlib only"
 
-      - name: Run fetch-real-data.py (全量: 股价 + 新闻 + 价格 + 市场)
+      - name: Run fetch-real-data.py
         run: timeout ${{ env.FETCH_TIMEOUT }} python scripts/fetch-real-data.py || echo "fetch-real-data failed, continue"
         shell: bash
 
-      - name: Run bump_technology.py (technology.json lastUpdate + 行业概览)
+      - name: Run bump_technology.py
         run: python scripts/bump_technology.py || echo "bump_technology failed, continue"
         shell: bash
 
