@@ -117,7 +117,9 @@ export default function KnowledgeGraphPage() {
   const [hoveredEntity, setHoveredEntity] = useState<string | null>(null)
   const [filterType, setFilterType] = useState<string>('all')
   const [expandedNodeId, setExpandedNodeId] = useState<string | null>(null)
+  const [focusMode, setFocusMode] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
+  const [highlightedNodeId, setHighlightedNodeId] = useState<string | null>(null)
   const layoutRef = useRef<{ id: string; x: number; y: number }[]>([])
 
   const entities = kgData.entities
@@ -131,15 +133,21 @@ export default function KnowledgeGraphPage() {
 
   const layout = useMemo(() => simulateLayout(entities, allRelations), [entities, allRelations])
 
-  // Search filter
+  // Search filter + highlight
   const searchFilteredEntities = useMemo(() => {
     if (!searchQuery.trim()) return entities
+    setHighlightedNodeId(null)
     const q = searchQuery.toLowerCase().trim()
-    return entities.filter(e => 
+    const matched = entities.filter(e => 
       e.name.toLowerCase().includes(q) || 
-      e.description.toLowerCase().includes(q) ||
+      (e.description && e.description.toLowerCase().includes(q)) ||
       e.type.toLowerCase().includes(q)
     )
+    if (matched.length === 1) {
+      setHighlightedNodeId(matched[0].id)
+      setSelectedEntity(matched[0])
+    }
+    return matched
   }, [entities, searchQuery])
 
   // Type filter
@@ -153,17 +161,18 @@ export default function KnowledgeGraphPage() {
     return allRelations.filter(r => filteredEntityIds.has(r.source) && filteredEntityIds.has(r.target))
   }, [allRelations, filteredEntityIds])
 
-  // Connected entities for selected entity
+  // Connected entities for selected entity or focus mode
   const connectedEntityIds = useMemo(() => {
-    if (!selectedEntity) return new Set<string>()
+    const focusId = focusMode || (selectedEntity ? selectedEntity.id : null)
+    if (!focusId) return new Set<string>()
     const ids = new Set<string>()
-    ids.add(selectedEntity.id)
+    ids.add(focusId)
     allRelations.forEach(r => {
-      if (r.source === selectedEntity.id) ids.add(r.target)
-      if (r.target === selectedEntity.id) ids.add(r.source)
+      if (r.source === focusId) ids.add(r.target)
+      if (r.target === focusId) ids.add(r.source)
     })
     return ids
-  }, [selectedEntity, allRelations])
+  }, [focusMode, selectedEntity, allRelations])
 
   // Expanded subgraph nodes
   const expandedNodeIds = useMemo(() => {
@@ -358,24 +367,41 @@ export default function KnowledgeGraphPage() {
               {filteredRelations.map((rel, i) => {
                 const src = layoutNode(rel.source)
                 const tgt = layoutNode(rel.target)
-                const isHighlighted = expandedNodeId
-                  ? (expandedNodeIds.has(rel.source) && expandedNodeIds.has(rel.target))
-                  : hoveredEntity
-                    ? (rel.source === hoveredEntity || rel.target === hoveredEntity)
-                    : (!selectedEntity || (connectedEntityIds.has(rel.source) && connectedEntityIds.has(rel.target)))
-                const opacity = expandedNodeId || hoveredEntity || selectedEntity ? (isHighlighted ? 0.8 : 0.1) : 0.3
+                const isRelHighlighted = focusMode
+                  ? (connectedEntityIds.has(rel.source) && connectedEntityIds.has(rel.target))
+                  : expandedNodeId
+                    ? (expandedNodeIds.has(rel.source) && expandedNodeIds.has(rel.target))
+                    : hoveredEntity
+                      ? (rel.source === hoveredEntity || rel.target === hoveredEntity)
+                      : (!selectedEntity || (connectedEntityIds.has(rel.source) && connectedEntityIds.has(rel.target)))
+                const opacity = focusMode || expandedNodeId || hoveredEntity || selectedEntity ? (isRelHighlighted ? 0.8 : 0.08) : 0.3
+                const relPredicate = (rel as any).predicate || (rel as any).relation || ''
                 return (
-                  <line
-                    key={i}
-                    x1={src.x}
-                    y1={src.y + 20}
-                    x2={tgt.x}
-                    y2={tgt.y + 20}
-                    stroke={isHighlighted ? '#667eea' : '#ccc'}
-                    strokeWidth={isHighlighted ? 2 : 1}
-                    opacity={opacity}
-                    markerEnd="url(#arrowhead)"
-                  />
+                  <g key={i}>
+                    <line
+                      x1={src.x}
+                      y1={src.y + 20}
+                      x2={tgt.x}
+                      y2={tgt.y + 20}
+                      stroke={isRelHighlighted ? '#667eea' : '#ccc'}
+                      strokeWidth={isRelHighlighted ? 2 : 1}
+                      opacity={opacity}
+                      markerEnd="url(#arrowhead)"
+                    />
+                    {(isRelHighlighted || (!focusMode && !expandedNodeId && !selectedEntity && !hoveredEntity)) && relPredicate && (
+                      <text
+                        x={(src.x + tgt.x) / 2}
+                        y={(src.y + tgt.y) / 2 - 4}
+                        textAnchor="middle"
+                        fontSize="8"
+                        fill={isRelHighlighted ? '#667eea' : '#bbb'}
+                        opacity={opacity}
+                        pointerEvents="none"
+                      >
+                        {relPredicate}
+                      </text>
+                    )}
+                  </g>
                 )
               })}
 
@@ -392,7 +418,7 @@ export default function KnowledgeGraphPage() {
                 const isSelected = selectedEntity?.id === entity.id
                 const isHovered = hoveredEntity === entity.id
                 const isExpanded = expandedNodeId === entity.id
-                const isConnected = expandedNodeId ? expandedNodeIds.has(entity.id) : selectedEntity ? connectedEntityIds.has(entity.id) : true
+                const isConnected = expandedNodeId ? expandedNodeIds.has(entity.id) : focusMode ? connectedEntityIds.has(entity.id) : selectedEntity ? connectedEntityIds.has(entity.id) : true
                 const color = ENTITY_COLORS[entity.type] || '#999'
                 const radius = getNodeRadius(entity, isExpanded, isSelected, isHovered)
                 return (
@@ -404,7 +430,13 @@ export default function KnowledgeGraphPage() {
                       } else {
                         setExpandedNodeId(entity.id)
                       }
-                      setSelectedEntity(isSelected ? null : entity)
+                      if (isSelected) {
+                        setSelectedEntity(null)
+                        setFocusMode(null)
+                      } else {
+                        setSelectedEntity(entity)
+                        setFocusMode(entity.id)
+                      }
                     }}
                     onDoubleClick={() => {
                       if (expandedNodeId === entity.id) {
@@ -455,6 +487,13 @@ export default function KnowledgeGraphPage() {
           </div>
           <p style={{ fontSize: '0.75rem', color: '#aaa', marginTop: '8px' }}>
             💡 单击节点选中并查看详情，双击节点展开关联子图，再次双击收起
+            {focusMode && (
+              <span style={{ marginLeft: '12px', color: '#667eea', cursor: 'pointer', fontWeight: 600 }}
+                onClick={() => { setFocusMode(null); setSelectedEntity(null); }}
+              >
+                [退出聚焦]
+              </span>
+            )}
           </p>
         </div>
 
