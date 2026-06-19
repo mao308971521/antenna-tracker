@@ -21,18 +21,15 @@ const ENTITY_LABELS: Record<string, string> = {
   event: '事件',
 }
 
-function EntityIcon(type: string): string {
-  switch (type) {
-    case 'technology': return '🔬'
-    case 'company': return '🏢'
-    case 'standard': return '📜'
-    case 'material': return '🧪'
-    case 'event': return '⚡'
-    default: return '📌'
-  }
+const ENTITY_ICONS: Record<string, string> = {
+  technology: '🔬',
+  company: '🏢',
+  standard: '📜',
+  material: '🧪',
+  event: '⚡',
 }
 
-// Force-directed layout simulation (simple)
+// Force-directed layout simulation
 function simulateLayout(
   entities: Entity[],
   relations: Relation[],
@@ -62,7 +59,6 @@ function simulateLayout(
   for (let iter = 0; iter < iterations; iter++) {
     const alpha = 1 - iter / iterations
 
-    // Repulsion between all pairs
     for (let i = 0; i < nodeArr.length; i++) {
       for (let j = i + 1; j < nodeArr.length; j++) {
         const a = nodeArr[i]
@@ -80,7 +76,6 @@ function simulateLayout(
       }
     }
 
-    // Attraction along links
     for (const link of links) {
       const source = nodeMap.get(link.source)
       const target = nodeMap.get(link.target)
@@ -97,19 +92,16 @@ function simulateLayout(
       target.vy -= fy
     }
 
-    // Center gravity
     for (const node of nodeArr) {
       node.vx += (W / 2 - node.x) * 0.002 * alpha
       node.vy += (H / 2 - node.y) * 0.002 * alpha
     }
 
-    // Apply velocity
     for (const node of nodeArr) {
       node.vx *= 0.6
       node.vy *= 0.6
       node.x += node.vx
       node.y += node.vy
-      // Boundary
       node.x = Math.max(80, Math.min(W - 80, node.x))
       node.y = Math.max(60, Math.min(H - 20, node.y))
     }
@@ -122,26 +114,38 @@ export default function KnowledgeGraphPage() {
   const [selectedEntity, setSelectedEntity] = useState<Entity | null>(null)
   const [hoveredEntity, setHoveredEntity] = useState<string | null>(null)
   const [filterType, setFilterType] = useState<string>('all')
+  const [expandedNodeId, setExpandedNodeId] = useState<string | null>(null)
+  const [searchQuery, setSearchQuery] = useState('')
   const layoutRef = useRef<{ id: string; x: number; y: number }[]>([])
 
   const entities = kgData.entities
   const relations = kgData.relations
 
-  // Compute layout once
   const layout = useMemo(() => simulateLayout(entities, relations), [entities, relations])
 
-  // Filter by type
+  // Search filter
+  const searchFilteredEntities = useMemo(() => {
+    if (!searchQuery.trim()) return entities
+    const q = searchQuery.toLowerCase().trim()
+    return entities.filter(e => 
+      e.name.toLowerCase().includes(q) || 
+      e.description.toLowerCase().includes(q) ||
+      e.type.toLowerCase().includes(q)
+    )
+  }, [entities, searchQuery])
+
+  // Type filter
   const filteredEntities = useMemo(() => {
-    if (filterType === 'all') return entities
-    return entities.filter(e => e.type === filterType)
-  }, [entities, filterType])
+    if (filterType === 'all') return searchFilteredEntities
+    return searchFilteredEntities.filter(e => e.type === filterType)
+  }, [searchFilteredEntities, filterType])
 
   const filteredEntityIds = new Set(filteredEntities.map(e => e.id))
   const filteredRelations = useMemo(() => {
     return relations.filter(r => filteredEntityIds.has(r.source) && filteredEntityIds.has(r.target))
   }, [relations, filteredEntityIds])
 
-  // Get connected entities for selected entity
+  // Connected entities for selected entity
   const connectedEntityIds = useMemo(() => {
     if (!selectedEntity) return new Set<string>()
     const ids = new Set<string>()
@@ -153,12 +157,50 @@ export default function KnowledgeGraphPage() {
     return ids
   }, [selectedEntity, relations])
 
+  // Expanded subgraph nodes
+  const expandedNodeIds = useMemo(() => {
+    if (!expandedNodeId) return new Set<string>()
+    const ids = new Set<string>()
+    ids.add(expandedNodeId)
+    relations.forEach(r => {
+      if (r.source === expandedNodeId) ids.add(r.target)
+      if (r.target === expandedNodeId) ids.add(r.source)
+    })
+    return ids
+  }, [expandedNodeId, relations])
+
+  // Recommended entities based on selected entity's relationships
+  const recommendedEntities = useMemo(() => {
+    if (!selectedEntity) return []
+    const recs: Entity[] = []
+    relations.forEach(r => {
+      if (r.source === selectedEntity.id) {
+        const target = entities.find(e => e.id === r.target)
+        if (target && !recs.find(r => r.id === target!.id)) recs.push(target)
+      }
+      if (r.target === selectedEntity.id) {
+        const source = entities.find(e => e.id === r.source)
+        if (source && !recs.find(r => r.id === source!.id)) recs.push(source)
+      }
+    })
+    return recs.slice(0, 6)
+  }, [selectedEntity, relations, entities])
+
   const layoutNode = (id: string) => layout.find(n => n.id === id) || { x: 0, y: 0 }
 
   const typeCounts = useMemo(() => {
     const counts: Record<string, number> = { all: entities.length }
     entities.forEach(e => { counts[e.type] = (counts[e.type] || 0) + 1 })
     return counts
+  }, [entities])
+
+  const groupedEntities = useMemo(() => {
+    const groups: Record<string, Entity[]> = {}
+    entities.forEach(e => {
+      if (!groups[e.type]) groups[e.type] = []
+      groups[e.type].push(e)
+    })
+    return groups
   }, [entities])
 
   return (
@@ -169,6 +211,29 @@ export default function KnowledgeGraphPage() {
         <p className="update-info">数据更新：{kgData.lastUpdate} · {entities.length} 个实体 · {relations.length} 条关系</p>
       </header>
 
+      {/* 搜索框 */}
+      <section className="card" style={{ marginBottom: '24px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <input
+            type="text"
+            placeholder="搜索实体名称、描述或类型..."
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+            style={{
+              flex: 1,
+              padding: '10px 16px',
+              borderRadius: '8px',
+              border: '1px solid #e0e0e0',
+              fontSize: '0.95rem',
+              outline: 'none',
+            }}
+          />
+          <span style={{ fontSize: '0.85rem', color: '#999' }}>
+            找到 {searchFilteredEntities.length} 个实体
+          </span>
+        </div>
+      </section>
+
       {/* 类型筛选 */}
       <section className="card" style={{ marginBottom: '24px' }}>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
@@ -177,7 +242,7 @@ export default function KnowledgeGraphPage() {
             style={{
               padding: '8px 18px',
               borderRadius: '20px',
-              border: filterType === 'all' ? '2px solid #667eea' : '2px solid #e0e00e0',
+              border: filterType === 'all' ? '2px solid #667eea' : '2px solid #e0e0e0',
               background: filterType === 'all' ? '#667eea' : 'white',
               color: filterType === 'all' ? 'white' : '#333',
               cursor: 'pointer',
@@ -202,8 +267,62 @@ export default function KnowledgeGraphPage() {
                 fontWeight: 600,
               }}
             >
-              {EntityIcon(key)} {label} ({typeCounts[key] || 0})
+              {ENTITY_ICONS[key]} {label} ({typeCounts[key] || 0})
             </button>
+          ))}
+        </div>
+      </section>
+
+      {/* 实体总览卡片网格 */}
+      <section className="card" style={{ marginBottom: '24px' }}>
+        <h3 style={{ marginBottom: '16px' }}>📋 实体总览</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
+          {Object.entries(groupedEntities).map(([type, ents]) => (
+            <div key={type} style={{ gridColumn: '1 / -1', marginBottom: '8px' }}>
+              <h4 style={{ 
+                fontSize: '0.95rem', 
+                color: ENTITY_COLORS[type], 
+                marginBottom: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}>
+                {ENTITY_ICONS[type]} {ENTITY_LABELS[type]} ({ents.length})
+              </h4>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '12px' }}>
+                {ents.map(entity => (
+                  <div
+                    key={entity.id}
+                    onClick={() => setSelectedEntity(entity)}
+                    onMouseEnter={() => setHoveredEntity(entity.id)}
+                    onMouseLeave={() => setHoveredEntity(null)}
+                    style={{
+                      padding: '12px',
+                      borderRadius: '8px',
+                      border: `1px solid ${ENTITY_COLORS[type]}30`,
+                      background: `${ENTITY_COLORS[type]}08`,
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                      <span style={{ fontSize: '1.1rem' }}>{ENTITY_ICONS[entity.type]}</span>
+                      <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{entity.name}</span>
+                    </div>
+                    <p style={{ 
+                      fontSize: '0.8rem', 
+                      color: '#666', 
+                      margin: 0,
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      whiteSpace: 'nowrap'
+                    }}>
+                      {entity.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -221,10 +340,12 @@ export default function KnowledgeGraphPage() {
               {filteredRelations.map((rel, i) => {
                 const src = layoutNode(rel.source)
                 const tgt = layoutNode(rel.target)
-                const isHighlighted = hoveredEntity
-                  ? (rel.source === hoveredEntity || rel.target === hoveredEntity)
-                  : (!selectedEntity || connectedEntityIds.has(rel.source) && connectedEntityIds.has(rel.target))
-                const opacity = hoveredEntity || selectedEntity ? (isHighlighted ? 0.8 : 0.1) : 0.3
+                const isHighlighted = expandedNodeId
+                  ? (expandedNodeIds.has(rel.source) && expandedNodeIds.has(rel.target))
+                  : hoveredEntity
+                    ? (rel.source === hoveredEntity || rel.target === hoveredEntity)
+                    : (!selectedEntity || (connectedEntityIds.has(rel.source) && connectedEntityIds.has(rel.target)))
+                const opacity = expandedNodeId || hoveredEntity || selectedEntity ? (isHighlighted ? 0.8 : 0.1) : 0.3
                 return (
                   <line
                     key={i}
@@ -252,13 +373,28 @@ export default function KnowledgeGraphPage() {
                 const pos = layoutNode(entity.id)
                 const isSelected = selectedEntity?.id === entity.id
                 const isHovered = hoveredEntity === entity.id
-                const isConnected = selectedEntity ? connectedEntityIds.has(entity.id) : true
+                const isExpanded = expandedNodeId === entity.id
+                const isConnected = expandedNodeId ? expandedNodeIds.has(entity.id) : selectedEntity ? connectedEntityIds.has(entity.id) : true
                 const color = ENTITY_COLORS[entity.type] || '#999'
-                const radius = isSelected ? 28 : (isHovered ? 26 : 22)
+                const radius = isExpanded ? 32 : isSelected ? 28 : (isHovered ? 26 : 22)
                 return (
                   <g
                     key={entity.id}
-                    onClick={() => setSelectedEntity(isSelected ? null : entity)}
+                    onClick={(e) => {
+                      if (expandedNodeId === entity.id) {
+                        setExpandedNodeId(null)
+                      } else {
+                        setExpandedNodeId(entity.id)
+                      }
+                      setSelectedEntity(isSelected ? null : entity)
+                    }}
+                    onDoubleClick={() => {
+                      if (expandedNodeId === entity.id) {
+                        setExpandedNodeId(null)
+                      } else {
+                        setExpandedNodeId(entity.id)
+                      }
+                    }}
                     onMouseEnter={() => setHoveredEntity(entity.id)}
                     onMouseLeave={() => setHoveredEntity(null)}
                     style={{ cursor: 'pointer' }}
@@ -269,8 +405,8 @@ export default function KnowledgeGraphPage() {
                       r={radius}
                       fill={color}
                       fillOpacity={isConnected ? 0.85 : 0.15}
-                      stroke={isSelected ? '#333' : 'white'}
-                      strokeWidth={isSelected ? 3 : 2}
+                      stroke={isExpanded ? '#333' : isSelected ? '#333' : 'white'}
+                      strokeWidth={isExpanded || isSelected ? 3 : 2}
                       style={{ transition: 'all 0.3s ease' }}
                     />
                     <text
@@ -281,7 +417,7 @@ export default function KnowledgeGraphPage() {
                       fontSize="14"
                       pointerEvents="none"
                     >
-                      {EntityIcon(entity.type)}
+                      {ENTITY_ICONS[entity.type]}
                     </text>
                     <text
                       x={pos.x}
@@ -289,7 +425,7 @@ export default function KnowledgeGraphPage() {
                       textAnchor="middle"
                       fontSize="11"
                       fill={isConnected ? '#333' : '#ccc'}
-                      fontWeight={isSelected ? 700 : 400}
+                      fontWeight={isExpanded || isSelected ? 700 : 400}
                       pointerEvents="none"
                     >
                       {entity.name.length > 8 ? entity.name.slice(0, 8) + '…' : entity.name}
@@ -300,7 +436,7 @@ export default function KnowledgeGraphPage() {
             </svg>
           </div>
           <p style={{ fontSize: '0.75rem', color: '#aaa', marginTop: '8px' }}>
-            💡 点击节点查看详情，悬浮高亮关联关系，使用上方筛选器按类型过滤
+            💡 单击节点选中并查看详情，双击节点展开关联子图，再次双击收起
           </p>
         </div>
 
@@ -313,7 +449,7 @@ export default function KnowledgeGraphPage() {
                 display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px',
                 padding: '12px', background: `${ENTITY_COLORS[selectedEntity.type]}15`, borderRadius: '8px'
               }}>
-                <span style={{ fontSize: '2rem' }}>{EntityIcon(selectedEntity.type)}</span>
+                <span style={{ fontSize: '2rem' }}>{ENTITY_ICONS[selectedEntity.type]}</span>
                 <div>
                   <div style={{ fontSize: '1.2rem', fontWeight: 700, color: '#333' }}>{selectedEntity.name}</div>
                   <span className="tag" style={{ background: ENTITY_COLORS[selectedEntity.type], color: 'white' }}>
@@ -367,7 +503,7 @@ export default function KnowledgeGraphPage() {
                         onMouseLeave={() => setHoveredEntity(null)}
                       >
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                          <span>{EntityIcon(otherEntity.type)}</span>
+                          <span>{ENTITY_ICONS[otherEntity.type]}</span>
                           <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{otherEntity.name}</span>
                           <span style={{
                             fontSize: '0.75rem',
@@ -396,6 +532,46 @@ export default function KnowledgeGraphPage() {
             </div>
           )}
 
+          {/* 推荐关联 */}
+          {selectedEntity && recommendedEntities.length > 0 && (
+            <div className="card" style={{ marginTop: '24px' }}>
+              <h4 style={{ marginBottom: '12px' }}>💡 推荐关联</h4>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                {recommendedEntities.map(entity => (
+                  <div
+                    key={entity.id}
+                    onClick={() => setSelectedEntity(entity)}
+                    onMouseEnter={() => setHoveredEntity(entity.id)}
+                    onMouseLeave={() => setHoveredEntity(null)}
+                    style={{
+                      padding: '10px',
+                      borderRadius: '8px',
+                      border: `1px solid ${ENTITY_COLORS[entity.type]}30`,
+                      background: `${ENTITY_COLORS[entity.type]}08`,
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
+                      <span style={{ fontSize: '1rem' }}>{ENTITY_ICONS[entity.type]}</span>
+                      <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>{entity.name}</span>
+                    </div>
+                    <p style={{ 
+                      fontSize: '0.75rem', 
+                      color: '#666', 
+                      margin: 0,
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      whiteSpace: 'nowrap'
+                    }}>
+                      {entity.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* 实体类型图例 */}
           <div className="card" style={{ marginTop: '24px' }}>
             <h4 style={{ marginBottom: '12px' }}>📌 图例</h4>
@@ -405,7 +581,7 @@ export default function KnowledgeGraphPage() {
                   width: '16px', height: '16px', borderRadius: '50%',
                   background: ENTITY_COLORS[key], display: 'inline-block'
                 }} />
-                <span style={{ fontSize: '0.85rem' }}>{EntityIcon(key)} {label}</span>
+                <span style={{ fontSize: '0.85rem' }}>{ENTITY_ICONS[key]} {label}</span>
                 <span style={{ fontSize: '0.75rem', color: '#999', marginLeft: 'auto' }}>{typeCounts[key] || 0}</span>
               </div>
             ))}
