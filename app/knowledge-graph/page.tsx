@@ -133,7 +133,7 @@ export default function KnowledgeGraphPage() {
 
   const layout = useMemo(() => simulateLayout(entities, allRelations), [entities, allRelations])
 
-  // Search filter + highlight (side-effects moved to useEffect below)
+  // Search filter + highlight
   const searchFilteredEntities = useMemo(() => {
     if (!searchQuery.trim()) return entities
     const q = searchQuery.toLowerCase().trim()
@@ -236,83 +236,14 @@ export default function KnowledgeGraphPage() {
   }, [entities])
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
-      {/* Top bar: search + donut chart */}
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '20px',
-        padding: '12px 20px',
-        background: '#fff',
-        borderBottom: '1px solid #eee',
-        flexShrink: 0,
-      }}>
-        {/* Left: Search */}
-        <div style={{ flex: 1, maxWidth: '400px' }}>
-          <input
-            type="text"
-            placeholder="搜索实体..."
-            value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
-            style={{
-              width: '100%',
-              padding: '8px 14px',
-              borderRadius: '20px',
-              border: '1px solid #ddd',
-              fontSize: '0.9rem',
-              outline: 'none',
-              boxSizing: 'border-box',
-            }}
-          />
-        </div>
+    <div>
+      <header className="header">
+        <h1>🕸️ 知识图谱</h1>
+        <p>天线行业知识网络 — 实体关系可视化 · 数据来源：各板块结构化数据 + 小月技术解读笔记</p>
+        <p className="update-info">数据更新：{kgData.lastUpdate} · {kgData.entities.length} 个实体 · {relations.length + relationsData.length} 条关系</p>
+      </header>
 
-        {/* Center: Donut chart */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <svg width="60" height="60" viewBox="0 0 60 60">
-            {(() => {
-              const total = entities.length || 1
-              const types = Object.keys(ENTITY_LABELS)
-              let cumAngle = -Math.PI / 2
-              return types.map(type => {
-                const count = typeCounts[type] || 0
-                const angle = (count / total) * Math.PI * 2
-                const startAngle = cumAngle
-                const endAngle = cumAngle + angle
-                cumAngle = endAngle
-                
-                const r = 24
-                const cx = 30
-                const cy = 30
-                const x1 = cx + r * Math.cos(startAngle)
-                const y1 = cy + r * Math.sin(startAngle)
-                const x2 = cx + r * Math.cos(endAngle)
-                const y2 = cy + r * Math.sin(endAngle)
-                const largeArc = angle > Math.PI ? 1 : 0
-                
-                const d = `M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${largeArc} 1 ${x2} ${y2} Z`
-                
-                return <path key={type} d={d} fill={ENTITY_COLORS[type]} stroke="#fff" strokeWidth="1" />
-              })
-            })()}
-            <circle cx="30" cy="30" r="14" fill="#fff" />
-            <text x="30" y="28" textAnchor="middle" fontSize="8" fill="#999">{entities.length}</text>
-            <text x="30" y="36" textAnchor="middle" fontSize="6" fill="#bbb">实体</text>
-          </svg>
-          
-          {/* Legend */}
-          <div style={{ display: 'flex', gap: '12px', fontSize: '0.78rem', color: '#666' }}>
-            {Object.entries(ENTITY_LABELS).map(([key, label]) => (
-              <span key={key} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: ENTITY_COLORS[key], display: 'inline-block' }} />
-                {label}: {typeCounts[key] || 0}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Main area: graph + sidebar */}
-      <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
+      {/* 搜索框 */}
       <section className="card" style={{ marginBottom: '24px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <input
@@ -428,12 +359,15 @@ export default function KnowledgeGraphPage() {
         </div>
       </section>
 
-        {/* Graph area */}
-        <div style={{ flex: 1, position: 'relative', overflow: 'hidden', background: '#fafbfc' }}>
-          <svg
-            viewBox="0 0 1600 1000"
-            style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
-          >
+      <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+        {/* 图谱可视化 */}
+        <div className="card" style={{ flex: '1 1 600px', minWidth: '0' }}>
+          <h3 style={{ marginBottom: '16px' }}>📊 知识图谱关系图</h3>
+          <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+            <svg
+              viewBox="0 0 1060 740"
+              style={{ width: '100%', height: 'auto', background: '#fafbfc', borderRadius: '8px', border: '1px solid #eee' }}
+            >
               {/* 关系线 */}
               {filteredRelations.map((rel, i) => {
                 const src = layoutNode(rel.source)
@@ -715,141 +649,22 @@ export default function KnowledgeGraphPage() {
                 ))}
               </div>
             </div>
-                  </div>
-        
-        {/* Sidebar - Wiki panel */}
-        <div style={{
-          width: '320px',
-          flexShrink: 0,
-          overflowY: 'auto',
-          borderLeft: '1px solid #eee',
-          background: '#fff',
-          padding: '16px',
-          transition: 'width 0.3s ease',
-        }}>
-          {selectedEntity ? (
-            <div>
-              <div style={{
-                display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px',
-                padding: '12px', background: `${ENTITY_COLORS[selectedEntity.type]}15`, borderRadius: '8px'
-              }}>
-                <span style={{ fontSize: '1.8rem' }}>{ENTITY_ICONS[selectedEntity.type]}</span>
-                <div>
-                  <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#333' }}>{selectedEntity.name}</div>
-                  <span className="tag" style={{ background: ENTITY_COLORS[selectedEntity.type], color: 'white', fontSize: '0.7rem' }}>
-                    {ENTITY_LABELS[selectedEntity.type]}
-                  </span>
-                </div>
-              </div>
-
-              {/* 专业介绍 */}
-              <div style={{ marginBottom: '16px' }}>
-                <h4 style={{ fontSize: '0.7rem', color: '#999', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                  专业介绍
-                </h4>
-                <p style={{ color: '#444', lineHeight: 1.7, fontSize: '0.83rem', margin: 0 }}>
-                  {selectedEntity.summary || selectedEntity.description}
-                </p>
-              </div>
-
-              {/* 通俗解释 */}
-              {selectedEntity.summary_vernacular && (
-                <div style={{ marginBottom: '16px' }}>
-                  <h4 style={{ fontSize: '0.7rem', color: '#999', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                    通俗解释
-                  </h4>
-                  <p style={{ color: '#555', lineHeight: 1.7, fontSize: '0.83rem', margin: 0, fontStyle: 'italic' }}>
-                    {selectedEntity.summary_vernacular}
-                  </p>
-                </div>
-              )}
-
-              {selectedEntity.metadata && (
-                <div style={{ marginBottom: '16px' }}>
-                  <h4 style={{ fontSize: '0.75rem', color: '#999', marginBottom: '8px' }}>属性</h4>
-                  <table style={{ width: '100%', fontSize: '0.8rem' }}>
-                    <tbody>
-                      {Object.entries(selectedEntity.metadata).map(([key, val]) => (
-                        <tr key={key}>
-                          <td style={{ color: '#999', padding: '3px 0', width: '90px' }}>{key}</td>
-                          <td style={{ color: '#333', fontWeight: 500 }}>{String(val)}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
-
-              {/* 关联关系 */}
-              <div>
-                <h4 style={{ fontSize: '0.75rem', color: '#999', marginBottom: '8px' }}>
-                  关联关系
-                </h4>
-                {(() => {
-                  const allRelated = new Map()
-                  const entitiesList = kgData.entities
-                  relations
-                    .filter(r => r.source === selectedEntity.id || r.target === selectedEntity.id)
-                    .forEach(r => {
-                      const isSource = r.source === selectedEntity.id
-                      const otherId = isSource ? r.target : r.source
-                      const otherEntity = entitiesList.find(e => e.id === otherId)
-                      if (otherEntity && !allRelated.has(otherId)) {
-                        allRelated.set(otherId, { entity: otherEntity, predicate: r.relation, isSource, evidence: r.evidence })
-                      }
-                    })
-                  relationsData
-                    .filter(r => r.source === selectedEntity.id || r.target === selectedEntity.id)
-                    .forEach(r => {
-                      const isSource = r.source === selectedEntity.id
-                      const otherId = isSource ? r.target : r.source
-                      const otherEntity = entitiesList.find(e => e.id === otherId)
-                      if (otherEntity && !allRelated.has(otherId)) {
-                        allRelated.set(otherId, { entity: otherEntity, predicate: r.predicate, isSource })
-                      }
-                    })
-                  
-                  const predicateLabels = {
-                    applied_by: '应用于', depends_on: '依赖', competes_with: '竞争',
-                    related_to: '相关', referenced_in: '引用于', supplies_to: '供应给',
-                  }
-                  
-                  return Array.from(allRelated.entries()).map(([id, info]) => (
-                    <div
-                      key={id}
-                      onClick={() => { setSelectedEntity(info.entity); setFocusMode(info.entity.id) }}
-                      onMouseEnter={() => setHoveredEntity(info.entity.id)}
-                      onMouseLeave={() => setHoveredEntity(null)}
-                      style={{
-                        padding: '6px 10px',
-                        marginBottom: '4px',
-                        background: '#f8f9fa',
-                        borderRadius: '6px',
-                        cursor: 'pointer',
-                        border: `1px solid ${hoveredEntity === info.entity.id ? ENTITY_COLORS[info.entity.type] + '40' : '#eee'}`,
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        <span style={{ fontSize: '0.9rem' }}>{ENTITY_ICONS[info.entity.type]}</span>
-                        <span style={{ fontWeight: 600, fontSize: '0.82rem', flex: 1 }}>{info.entity.name}</span>
-                        <span style={{
-                          fontSize: '0.65rem', padding: '1px 5px', borderRadius: '8px',
-                          background: '#667eea', color: 'white',
-                        }}>
-                          {info.isSource ? '→' : '←'} {predicateLabels[info.predicate] || info.predicate || ''}
-                        </span>
-                      </div>
-                    </div>
-                  ))
-                })()}
-              </div>
-            </div>
-          ) : (
-            <div style={{ textAlign: 'center', padding: '40px 20px', color: '#999' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>🔍</div>
-              <p style={{ fontSize: '0.85rem' }}>点击图谱节点查看实体详情</p>
-            </div>
           )}
+
+          {/* 实体类型图例 */}
+          <div className="card" style={{ marginTop: '24px' }}>
+            <h4 style={{ marginBottom: '12px' }}>📌 图例</h4>
+            {Object.entries(ENTITY_LABELS).map(([key, label]) => (
+              <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                <span style={{
+                  width: '16px', height: '16px', borderRadius: '50%',
+                  background: ENTITY_COLORS[key], display: 'inline-block'
+                }} />
+                <span style={{ fontSize: '0.85rem' }}>{ENTITY_ICONS[key]} {label}</span>
+                <span style={{ fontSize: '0.75rem', color: '#999', marginLeft: 'auto' }}>{typeCounts[key] || 0}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
