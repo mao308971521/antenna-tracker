@@ -133,22 +133,27 @@ export default function KnowledgeGraphPage() {
 
   const layout = useMemo(() => simulateLayout(entities, allRelations), [entities, allRelations])
 
-  // Search filter + highlight
+  // Search filter + highlight (side-effects moved to useEffect below)
   const searchFilteredEntities = useMemo(() => {
     if (!searchQuery.trim()) return entities
-    setHighlightedNodeId(null)
     const q = searchQuery.toLowerCase().trim()
-    const matched = entities.filter(e => 
+    return entities.filter(e => 
       e.name.toLowerCase().includes(q) || 
       (e.description && e.description.toLowerCase().includes(q)) ||
       e.type.toLowerCase().includes(q)
     )
+  }, [entities, searchQuery])
+
+  // Highlight single-match entity on search
+  useEffect(() => {
+    const matched = searchFilteredEntities
     if (matched.length === 1) {
       setHighlightedNodeId(matched[0].id)
       setSelectedEntity(matched[0])
+    } else {
+      setHighlightedNodeId(null)
     }
-    return matched
-  }, [entities, searchQuery])
+  }, [searchFilteredEntities])
 
   // Type filter
   const filteredEntities = useMemo(() => {
