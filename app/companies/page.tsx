@@ -108,6 +108,12 @@ export default function CompaniesPage() {
     return [...companies].sort((a, b) => (a.rank || 99) - (b.rank || 99))
   }
 
+  // 全产业链公司总数（7 层加总）
+  const totalCompanies = TIER_CONFIG.reduce((sum, t) => {
+    const tierData = supplyChain[t.key]
+    return sum + (tierData?.companies?.length || 0)
+  }, 0)
+
   const openDetail = (company: Company) => setSelectedCompany(company)
   const closeDetail = () => setSelectedCompany(null)
 
@@ -211,31 +217,35 @@ export default function CompaniesPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 pb-12">
-      {/* 顶部标题 */}
-      <div className="bg-white border-b border-gray-200 ">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <h1 className="text-xl font-bold text-gray-900 mb-4">企业图谱</h1>
+      {/* 紫色 banner 版头（与其他页面统一） */}
+      <header className="header">
+        <h1>🏭 企业图谱</h1>
+        <p>天线行业 7 层供应链全景 — 运营商 · 设备商 · 整机厂 · 部件 · 射频 · 材料 · 原材料</p>
+        <p className="update-info">
+          数据更新：{(companiesData as any).lastUpdate} · {totalCompanies} 家重点企业 · {TIER_CONFIG.length} 层供应链
+        </p>
+      </header>
 
-          {/* 7层供应链Tab */}
-          <div className="flex gap-1 overflow-x-auto pb-1">
-            {TIER_CONFIG.map(tier => (
-              <button
-                key={tier.key}
-                onClick={() => { setActiveTier(tier.key); setSelectedSubkey('all') }}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors whitespace-nowrap flex items-center gap-1 ${
-                  activeTier === tier.key
-                    ? 'text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-                style={activeTier === tier.key ? { background: tier.color } : {}}
-              >
-                <span>{tier.icon}</span>
-                <span>{tier.shortLabel}</span>
-              </button>
-            ))}
-          </div>
+      {/* 7层供应链 Tab */}
+      <section className="card" style={{ marginBottom: '16px' }}>
+        <div className="flex gap-1 overflow-x-auto">
+          {TIER_CONFIG.map(tier => (
+            <button
+              key={tier.key}
+              onClick={() => { setActiveTier(tier.key); setSelectedSubkey('all') }}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors whitespace-nowrap flex items-center gap-1 ${
+                activeTier === tier.key
+                  ? 'text-white'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
+              style={activeTier === tier.key ? { background: tier.color } : {}}
+            >
+              <span>{tier.icon}</span>
+              <span>{tier.shortLabel}</span>
+            </button>
+          ))}
         </div>
-      </div>
+      </section>
 
       {/* 内容区 */}
       <div className="max-w-6xl mx-auto px-4 py-6">

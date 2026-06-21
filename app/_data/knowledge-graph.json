@@ -1,10 +1,19 @@
 {
+<<<<<<< HEAD
   "lastUpdate": "2026-06-19",
   "version": "2.0",
   "description": "天线行业知识图谱 - 自动从各板块数据抽取生成",
   "entities": [
     {
       "id": "company_op001",
+=======
+  "lastUpdate": "2026-06-21",
+  "version": "2.0",
+  "description": "天线产业知识图谱 - 实体关系数据（自动聚合）",
+  "entities": [
+    {
+      "id": "company_a8aohp",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "中国移动",
       "description": "全球最大移动运营商，用户超10亿，主营移动通信及宽带业务",
@@ -13,12 +22,22 @@
       ],
       "metadata": {
         "stock_code": "600941.SH / 0941.HK",
+<<<<<<< HEAD
         "location": "北京",
         "is_key": true
       }
     },
     {
       "id": "company_op002",
+=======
+        "exchange": "上交所A股 / 港交所",
+        "tier": "1_operators",
+        "role": "运营商"
+      }
+    },
+    {
+      "id": "company_a89upo",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "中国电信",
       "description": "综合性电信运营商，运营5G/宽带/天翼云业务",
@@ -27,12 +46,22 @@
       ],
       "metadata": {
         "stock_code": "601728.SH / 0728.HK",
+<<<<<<< HEAD
         "location": "北京",
         "is_key": true
       }
     },
     {
       "id": "company_op003",
+=======
+        "exchange": "上交所A股 / 港交所",
+        "tier": "1_operators",
+        "role": "运营商"
+      }
+    },
+    {
+      "id": "company_a8c3hy",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "中国联通",
       "description": "电信运营商，主营移动/固网/云计算及数字化服务",
@@ -41,12 +70,22 @@
       ],
       "metadata": {
         "stock_code": "600050.SH / 0762.HK",
+<<<<<<< HEAD
         "location": "北京",
         "is_key": true
       }
     },
     {
       "id": "company_op004",
+=======
+        "exchange": "上交所A股 / 港交所",
+        "tier": "1_operators",
+        "role": "运营商"
+      }
+    },
+    {
+      "id": "company_a8f9k3",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "中国铁塔",
       "description": "移动通信基础设施服务商，共建共享铁塔及站址资源",
@@ -55,12 +94,22 @@
       ],
       "metadata": {
         "stock_code": "0788.HK",
+<<<<<<< HEAD
         "location": "北京",
         "is_key": false
       }
     },
     {
       "id": "company_ev001",
+=======
+        "exchange": "港交所",
+        "tier": "1_operators",
+        "role": "基础设施服务商"
+      }
+    },
+    {
+      "id": "company_elkc",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "华为",
       "description": "全球最大通信设备商，2025年营收8809亿元，净利润680亿元，研发投入1923亿元；业务含ICT基础设施/终端/智能汽车/云等",
@@ -69,12 +118,22 @@
       ],
       "metadata": {
         "stock_code": "未上市",
+<<<<<<< HEAD
         "location": "深圳",
         "is_key": true
       }
     },
     {
       "id": "company_ev002",
+=======
+        "exchange": "—",
+        "tier": "2_equipment_vendors",
+        "role": "主设备商"
+      }
+    },
+    {
+      "id": "company_a7lkho",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "中兴通讯",
       "description": "全球第四大通信系统设备商，2024年营收1213亿元，含运营商网络/政企/消费业务",
@@ -83,12 +142,22 @@
       ],
       "metadata": {
         "stock_code": "000063.SZ",
+<<<<<<< HEAD
         "location": "深圳",
         "is_key": true
       }
     },
     {
       "id": "company_ev003",
+=======
+        "exchange": "深交所A股",
+        "tier": "2_equipment_vendors",
+        "role": "主设备商"
+      }
+    },
+    {
+      "id": "company_hbgbr",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "爱立信",
       "description": "瑞典通信设备巨头，2024年营收约259亿美元，全球5G设备商之一",
@@ -97,12 +166,22 @@
       ],
       "metadata": {
         "stock_code": "ERIC",
+<<<<<<< HEAD
         "location": "瑞典",
         "is_key": false
       }
     },
     {
       "id": "company_ev004",
+=======
+        "exchange": "NASDAQ（美股）",
+        "tier": "2_equipment_vendors",
+        "role": "主设备商"
+      }
+    },
+    {
+      "id": "company_kxhlm",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "诺基亚",
       "description": "芬兰通信设备商，2024年营收192.2亿欧元，净利润12.84亿欧元，专利授权收入贡献突出",
@@ -111,12 +190,22 @@
       ],
       "metadata": {
         "stock_code": "NOK",
+<<<<<<< HEAD
         "location": "芬兰",
         "is_key": false
       }
     },
     {
       "id": "company_ao012",
+=======
+        "exchange": "NYSE（美股）",
+        "tier": "2_equipment_vendors",
+        "role": "主设备商"
+      }
+    },
+    {
+      "id": "company_rmkh87",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "华为天线事业部",
       "description": "华为内部天线研发制造部门，不对外独立披露，历史上全球基站天线市场份额约30%（含AAU AAS），自研天线+滤波器+RRU一体化设计，深度整合进华为基站产品",
@@ -125,12 +214,22 @@
       ],
       "metadata": {
         "stock_code": "未上市（华为全资）",
+<<<<<<< HEAD
         "location": "深圳",
         "is_key": true
       }
     },
     {
       "id": "company_ao013",
+=======
+        "exchange": "—",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商（自研自用）"
+      }
+    },
+    {
+      "id": "company_2qdstu",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "中兴天线/A+天线",
       "description": "中兴通讯内部分支，历史上内部天线BU，近年推进A+天线战略，在中频段（700M/900M/1800M）颇有优势，国内集采份额约20%",
@@ -139,12 +238,22 @@
       ],
       "metadata": {
         "stock_code": "000063.SZ（并入中兴通讯）",
+<<<<<<< HEAD
         "location": "深圳",
         "is_key": true
       }
     },
     {
       "id": "company_ao009",
+=======
+        "exchange": "深交所A股",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商（自研自用）"
+      }
+    },
+    {
+      "id": "company_v6lfa4",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "康普（CommScope/Andrew）",
       "description": "全球最大天线及布线解决方案商之一，旗下有Andrew（天线）/CommScope（布线）双品牌，2024年营收约96亿美元，亏损4.4亿美元；曾以96亿美元收购Arris，债务沉重",
@@ -153,12 +262,22 @@
       ],
       "metadata": {
         "stock_code": "COMM（美股NASDAQ）",
+<<<<<<< HEAD
         "location": "美国北卡罗来纳",
         "is_key": true
       }
     },
     {
       "id": "company_ao003",
+=======
+        "exchange": "NASDAQ（美股）",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商（国际）"
+      }
+    },
+    {
+      "id": "company_a9m16k",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "京信通信",
       "description": "全球第二大基站天线厂商，2024年营收45.3亿港元，亏损5.64亿港元；业务含天馈系统/网络设备/服务",
@@ -167,12 +286,22 @@
       ],
       "metadata": {
         "stock_code": "02342.HK",
+<<<<<<< HEAD
         "location": "广州",
         "is_key": true
       }
     },
     {
       "id": "company_ao017",
+=======
+        "exchange": "港交所（新加坡上市）",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商"
+      }
+    },
+    {
+      "id": "company_n6a7i4",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "罗森博格（Prose/Rosenberger）",
       "description": "源自德国 Kathrein 的天线业务分拆，承接 Kathrein 核心团队及技术；是全球顶级基站天线品牌之一，主要服务欧洲/北美运营商及爱立信/诺基亚等主设备商；产品含5G Massive MIMO天线/AAU/AAS；在全球设有研发中心和工厂，技术积累深厚",
@@ -181,12 +310,22 @@
       ],
       "metadata": {
         "stock_code": "非上市（德国私企）",
+<<<<<<< HEAD
         "location": "德国慕尼黑",
         "is_key": true
       }
     },
     {
       "id": "company_ao001",
+=======
+        "exchange": "—",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商（国际）"
+      }
+    },
+    {
+      "id": "company_ikf2gy",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "通宇通讯",
       "description": "专注基站天线/射频器件/微波天线，2024年营收11.94亿元，净利润4139万元，卫星通信业务开始贡献收入",
@@ -195,12 +334,22 @@
       ],
       "metadata": {
         "stock_code": "002792.SZ",
+<<<<<<< HEAD
         "location": "中山",
         "is_key": true
       }
     },
     {
       "id": "company_ao002",
+=======
+        "exchange": "深交所A股",
+        "tier": "4_antenna_parts",
+        "role": "结构件"
+      }
+    },
+    {
+      "id": "company_d45pj5",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "摩比天线",
       "description": "港股上市天线及射频子系统制造商，产品涵盖宏基站天线/美化天线/滤波器/馈线等",
@@ -209,12 +358,22 @@
       ],
       "metadata": {
         "stock_code": "00947.HK",
+<<<<<<< HEAD
         "location": "深圳",
         "is_key": false
       }
     },
     {
       "id": "company_ao006",
+=======
+        "exchange": "港交所",
+        "tier": "5_rf_parts",
+        "role": "避雷器"
+      }
+    },
+    {
+      "id": "company_w4n16y",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "中信科移动",
       "description": "中国信科集团旗下移动通信设备商，2024年营收61.45亿元，亏损2.7亿元；聚焦5G/卫星互联网/6G",
@@ -223,12 +382,22 @@
       ],
       "metadata": {
         "stock_code": "688387.SH",
+<<<<<<< HEAD
         "location": "武汉",
         "is_key": false
       }
     },
     {
       "id": "company_ao005",
+=======
+        "exchange": "上交所科创板",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商"
+      }
+    },
+    {
+      "id": "company_ajh70y",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "亨鑫科技",
       "description": "无线通信天馈系统制造商，2025年收入约22.47亿港元，净亏损4240万港元",
@@ -237,12 +406,22 @@
       ],
       "metadata": {
         "stock_code": "01085.HK",
+<<<<<<< HEAD
         "location": "无锡",
         "is_key": false
       }
     },
     {
       "id": "company_ao007",
+=======
+        "exchange": "港交所",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商"
+      }
+    },
+    {
+      "id": "company_fl5qwr",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "盛路通信",
       "description": "国内中小基站天线/终端天线主流供应商，旗下有全资子公司南京盛远（专注射频 cable/跳线），2024年营收约12.8亿元，净利润约8500万元",
@@ -251,12 +430,22 @@
       ],
       "metadata": {
         "stock_code": "002446.SZ",
+<<<<<<< HEAD
         "location": "佛山",
         "is_key": true
       }
     },
     {
       "id": "company_ao004",
+=======
+        "exchange": "深交所A股",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商"
+      }
+    },
+    {
+      "id": "company_a8m6wb",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "中天科技",
       "description": "光纤通信/电力传输/海缆龙头，2024年营收480.55亿元，净利润28.38亿元；天线业务为通信板块组成部分",
@@ -265,12 +454,22 @@
       ],
       "metadata": {
         "stock_code": "600522.SH",
+<<<<<<< HEAD
         "location": "南通",
         "is_key": false
       }
     },
     {
       "id": "company_ao008",
+=======
+        "exchange": "上交所A股",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商"
+      }
+    },
+    {
+      "id": "company_digymo",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "晖速通信",
       "description": "专注基站天线/美化天线/OEM代工，在广东设有大型生产基地，主要给海外设备商及运营商提供OEM天线，年营收约8亿元",
@@ -279,12 +478,22 @@
       ],
       "metadata": {
         "stock_code": "非上市",
+<<<<<<< HEAD
         "location": "东莞",
         "is_key": false
       }
     },
     {
       "id": "company_ao010",
+=======
+        "exchange": "—",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商"
+      }
+    },
+    {
+      "id": "company_46cvzu",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "Kathrein（现属安弗施/AAC）",
       "description": "百年天线老牌，2019年被安弗施（AAX）收购；曾是全球最大基站天线品牌，历史上全球份额约20%，产品覆盖2G~5G全频段天线/AAS/RRU；受华为竞争及中国市场份额丢失影响，近年持续重组",
@@ -293,12 +502,22 @@
       ],
       "metadata": {
         "stock_code": "非独立上市（安弗施集团内）",
+<<<<<<< HEAD
         "location": "德国罗森海姆",
         "is_key": true
       }
     },
     {
       "id": "company_ao011",
+=======
+        "exchange": "—",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商（国际）"
+      }
+    },
+    {
+      "id": "company_tk04gh",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "RFS（射频系统）",
       "description": "全球性天线及射频无源器件公司，产品含基站天线/滤波器/射频电缆/微波天线；在全球20多个国家有工厂和研发中心，美国/欧洲/中国均有业务；年被营收约6亿美元",
@@ -307,12 +526,22 @@
       ],
       "metadata": {
         "stock_code": "非上市（私企）",
+<<<<<<< HEAD
         "location": "法国巴黎（全球总部）",
         "is_key": false
       }
     },
     {
       "id": "company_ao014",
+=======
+        "exchange": "—",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商（国际）"
+      }
+    },
+    {
+      "id": "company_2zy15i",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "佛山市粤海信通讯有限公司",
       "description": "龙勃透镜天线技术领导者，国内首家实现5G-A龙勃透镜天线万级规模出货；48端口多频多波束龙勃透镜天线已在中国移动/电信/联通规模应用，覆盖30省48地市；应用于高铁/大桥/校园/海域等场景",
@@ -321,12 +550,22 @@
       ],
       "metadata": {
         "stock_code": "未上市",
+<<<<<<< HEAD
         "location": "佛山",
         "is_key": true
       }
     },
     {
       "id": "company_ao015",
+=======
+        "exchange": "—",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商"
+      }
+    },
+    {
+      "id": "company_hapbbs",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "广东博纬通信科技有限公司",
       "description": "国家级专精特新小巨人企业，专注4G/5G移动通信天线研发生产；持有天线/射频领域2位IEEE Fellow及3位国家万人计划领军人才；多波束天线/Massive MIMO天线技术领先；已通过华为/中兴/诺基亚/凯瑟琳认证；产品应用于鸟巢/大兴机场/世界杯场馆等全球知名项目",
@@ -335,12 +574,22 @@
       ],
       "metadata": {
         "stock_code": "非上市（飞荣达曾控股，已出售部分股权）",
+<<<<<<< HEAD
         "location": "深圳",
         "is_key": true
       }
     },
     {
       "id": "company_ao016",
+=======
+        "exchange": "—",
+        "tier": "3_antenna_oems",
+        "role": "天线整机厂商"
+      }
+    },
+    {
+      "id": "company_b47vn6",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "type": "company",
       "name": "博迅通信",
       "description": "5G基站塑料天线振子专业制造商，POP（塑料金属化）工艺已成5G基站塑料振子主流方案；产品用于华为/中兴等主流5G Massive MIMO天线；PPS材料振子重量低、一致性好、良品率高；终端天线合作小米/OPPO等",
@@ -349,6 +598,7 @@
       ],
       "metadata": {
         "stock_code": "非上市",
+<<<<<<< HEAD
         "location": "深圳",
         "is_key": true
       }
@@ -358,10 +608,23 @@
       "type": "company",
       "name": "中国巨石",
       "description": "全球玻纤龙头，电子布用于覆铜板基材；E9超高模量玻纤已商用；淮安10万吨电子玻纤产线2026年3月点火",
+=======
+        "exchange": "—",
+        "tier": "3_antenna_oems",
+        "role": "塑料振子/OEM天线"
+      }
+    },
+    {
+      "id": "company_f1zvdt",
+      "type": "company",
+      "name": "瑞声科技",
+      "description": "全球领先的精密制造企业，天线振子/金属边框/声学/MEMS麦克风；2024年营收224亿元，为苹果/华为/三星供应商",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "enterprise"
       ],
       "metadata": {
+<<<<<<< HEAD
         "stock_code": "600176.SH",
         "location": "桐乡",
         "is_key": true
@@ -372,10 +635,24 @@
       "type": "company",
       "name": "泰山玻璃纤维",
       "description": "中材科技全资子公司，玻纤年产能170万吨全球第二；低介电超薄电子布用于高频覆铜板；是5G高频材料核心供应商",
+=======
+        "stock_code": "2018.HK",
+        "exchange": "港交所",
+        "tier": "4_antenna_parts",
+        "role": "天线振子/声学/MEMS"
+      }
+    },
+    {
+      "id": "company_a8t3kt",
+      "type": "company",
+      "name": "东山精密",
+      "description": "精密制造龙头，PCB/通信设备/精密金属结构件；2024年营收约340亿元，净利润17.7亿元；MFlex软板+天线业务",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "enterprise"
       ],
       "metadata": {
+<<<<<<< HEAD
         "stock_code": "未上市（中材科技002080.SZ）",
         "location": "泰安",
         "is_key": true
@@ -386,10 +663,24 @@
       "type": "company",
       "name": "重庆国际复合材料",
       "description": "云天化集团旗下，创业板上市；5G低介电玻璃纤维已批量供货华为旗舰手机；电子纱用于覆铜板；风电纱全球前三",
+=======
+        "stock_code": "002384.SZ",
+        "exchange": "深交所A股",
+        "tier": "4_antenna_parts",
+        "role": "精密制造/M天线部件"
+      }
+    },
+    {
+      "id": "company_kmltx5",
+      "type": "company",
+      "name": "鹏鼎控股",
+      "description": "全球PCB软板龙头，应用于手机/通信/汽车；软板用于终端天线模组；2024年营收约335亿元",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "enterprise"
       ],
       "metadata": {
+<<<<<<< HEAD
         "stock_code": "301301.SZ",
         "location": "重庆",
         "is_key": true
@@ -400,10 +691,24 @@
       "type": "company",
       "name": "诺德股份",
       "description": "国内首家锂电铜箔上市企业，A股上交所主板；5G通讯用高频高速标准铜箔已量产；覆铜板铜箔材料重要供应商；连续多年国内锂电铜箔市占率第一",
+=======
+        "stock_code": "002938.SZ",
+        "exchange": "深交所A股",
+        "tier": "4_antenna_parts",
+        "role": "PCB软板/载板"
+      }
+    },
+    {
+      "id": "company_e3ga2",
+      "type": "company",
+      "name": "安费诺",
+      "description": "全球高端连接器/天线部件龙头，2024年营收约95亿美元，净利润约12亿美元；产品用于通信/航空航天/汽车",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "enterprise"
       ],
       "metadata": {
+<<<<<<< HEAD
         "stock_code": "600110.SH",
         "location": "深圳",
         "is_key": true
@@ -414,10 +719,24 @@
       "type": "company",
       "name": "雅克科技",
       "description": "半导体材料平台型公司，含电子特气/前驱体/光刻胶/硅微粉四大板块；子公司科美特为国内最大六氟化硫生产商（年产能8500吨），四氟化碳已进入台积电；六氟化硫用于滤波器腔体清洗，电子特气是半导体工艺关键材料",
+=======
+        "stock_code": "APH",
+        "exchange": "NYSE（美股）",
+        "tier": "4_antenna_parts",
+        "role": "连接器/天线部件"
+      }
+    },
+    {
+      "id": "company_g2mado",
+      "type": "company",
+      "name": "立讯精密",
+      "description": "苹果核心代工商，精密制造/声学/摄像头模组/天线/汽车电子；2024年营收约2300亿元，净利润115亿元",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "enterprise"
       ],
       "metadata": {
+<<<<<<< HEAD
         "stock_code": "002409.SZ",
         "location": "无锡",
         "is_key": true
@@ -428,10 +747,24 @@
       "type": "company",
       "name": "太极实业",
       "description": "半导体封装和电子材料综合供应商；旗下有海太半导体（封装测试）和太极半导体；电子材料用于IC封装；存储芯片封装规模国内前列；是覆铜板/PCB上游电子材料重要参与者",
+=======
+        "stock_code": "002475.SZ",
+        "exchange": "深交所A股",
+        "tier": "4_antenna_parts",
+        "role": "精密制造/天线/MEMS"
+      }
+    },
+    {
+      "id": "company_agu094",
+      "type": "company",
+      "name": "亿纬锂能",
+      "description": "锂电池龙头，产品用于物联网/通信备电/消费电子；部分天线金属结构件OEM",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "enterprise"
       ],
       "metadata": {
+<<<<<<< HEAD
         "stock_code": "600667.SH",
         "location": "无锡",
         "is_key": false
@@ -442,10 +775,580 @@
       "type": "standard",
       "name": "3GPP Release 15",
       "description": "5G NR首个商用标准版本，定义NSA（非独立组网）和SA（独立组网）架构，支持6GHz以下频段（FR1）和毫米波频段（FR2），引入新型波形Numerology、LDPC信道编码、Polar码控制信道等关键技术",
+=======
+        "stock_code": "300014.SZ",
+        "exchange": "深交所创业板",
+        "tier": "4_antenna_parts",
+        "role": "电池/天线结构件"
+      }
+    },
+    {
+      "id": "company_jhlk3e",
+      "type": "company",
+      "name": "长飞光纤",
+      "description": "全球最大光纤预制棒/光纤光缆厂商之一，光缆用于基站天线馈电网络；2024年营收约175亿元",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "601869.SH / 6869.HK",
+        "exchange": "上交所A股 / 港交所",
+        "tier": "4_antenna_parts",
+        "role": "光纤/光缆/天线配套"
+      }
+    },
+    {
+      "id": "company_alzk3e",
+      "type": "company",
+      "name": "信维通信",
+      "description": "A股射频天线龙头，LCP天线/高频连接器/无线充电模组；2025年营收89亿元，净利润7.07亿元",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "300136.SZ",
+        "exchange": "深交所创业板",
+        "tier": "4_antenna_parts",
+        "role": "振子/PCB阵子"
+      }
+    },
+    {
+      "id": "company_fd5q8x",
+      "type": "company",
+      "name": "摩比天线（部件线）",
+      "description": "同时含天线整机及无源射频部件（功分器/耦合器/馈线等）",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "00947.HK",
+        "exchange": "港交所",
+        "tier": "4_antenna_parts",
+        "role": "无源射频部件"
+      }
+    },
+    {
+      "id": "company_yma03s",
+      "type": "company",
+      "name": "深圳鹏宇达微波",
+      "description": "专注射频环形器/隔离器研发生产，产品覆盖通信基站/雷达/军工应用；频率范围DC-40GHz；为国内基站天线厂商提供环形器配套",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "未上市",
+        "exchange": "—",
+        "tier": "4_antenna_parts",
+        "role": "环形器/隔离器"
+      }
+    },
+    {
+      "id": "company_d2q1yi",
+      "type": "company",
+      "name": "太阳鸟微波",
+      "description": "专注高端环形器/隔离器研发，产品用于军工/航空航天/卫星通信；铁氧体技术领先；高端射频无源器件专业厂商",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "未上市",
+        "exchange": "—",
+        "tier": "4_antenna_parts",
+        "role": "环形器/隔离器（军工级）"
+      }
+    },
+    {
+      "id": "company_v55iyp",
+      "type": "company",
+      "name": "博迅通信（振子线）",
+      "description": "5G Massive MIMO塑料振子核心供应商，POP工艺生产5G基站天线振子；PPS材料金属化；低PIM值；直接供货给华为/中兴等天线整机厂",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "非上市",
+        "exchange": "—",
+        "tier": "4_antenna_parts",
+        "role": "塑料振子/金属化天线部件"
+      }
+    },
+    {
+      "id": "company_j45zl8",
+      "type": "company",
+      "name": "中材科技（天线罩）",
+      "description": "风电叶片全球第一，玻璃钢复合材料技术积累深厚；玻璃钢天线罩用于基站天线保护；复合材料技术可用于天线振子支架/结构件",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002080.SZ",
+        "exchange": "深交所A股",
+        "tier": "4_antenna_parts",
+        "role": "玻璃钢天线罩/复合材料"
+      }
+    },
+    {
+      "id": "company_ejj7is",
+      "type": "company",
+      "name": "灿勤科技",
+      "description": "介质滤波器/陶瓷谐振器龙头，专注5G介质滤波器研发；2024年营收约5亿元，客户含华为/中兴/爱立信",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "688884.SH",
+        "exchange": "上交所科创板",
+        "tier": "5_rf_parts",
+        "role": "滤波器/陶瓷介质"
+      }
+    },
+    {
+      "id": "company_h021mg",
+      "type": "company",
+      "name": "艾肯通信",
+      "description": "专注滤波器/双工器研发生产的创业公司，拥有自主知识产权的5G介质滤波器技术，已通过华为认证",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "非上市",
+        "exchange": "—",
+        "tier": "5_rf_parts",
+        "role": "滤波器/双工器"
+      }
+    },
+    {
+      "id": "company_bmuck4",
+      "type": "company",
+      "name": "大富科技",
+      "description": "滤波器/通信设备/无人机/智能终端多主业；2024年营收约22亿元，滤波器/天线结构件为通信主业",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "300134.SZ",
+        "exchange": "深交所创业板",
+        "tier": "5_rf_parts",
+        "role": "滤波器/连接器/天线结构件"
+      }
+    },
+    {
+      "id": "company_d8c0eu",
+      "type": "company",
+      "name": "春兴精工",
+      "description": "精密制造/滤波器腔体/天线金属结构件；冲压+压铸+ CNC一站式加工；2024年营收约28亿元",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002547.SZ",
+        "exchange": "深交所A股",
+        "tier": "5_rf_parts",
+        "role": "精密制造/滤波器腔体/结构件"
+      }
+    },
+    {
+      "id": "company_fdquuw",
+      "type": "company",
+      "name": "电连技术",
+      "description": "微型连接器/射频连接器龙头，产品用于手机/通信/智能汽车；2024年营收约18亿元，净利润3亿元",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "300739.SZ",
+        "exchange": "深交所创业板",
+        "tier": "5_rf_parts",
+        "role": "连接器/射频连接器"
+      }
+    },
+    {
+      "id": "company_cliztn",
+      "type": "company",
+      "name": "意华股份",
+      "description": "连接器（通信/消费电子/汽车）/太阳能支架双主业；2024年营收约26亿元，净利润2.5亿元",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002897.SZ",
+        "exchange": "深交所A股",
+        "tier": "5_rf_parts",
+        "role": "连接器/太阳能支架"
+      }
+    },
+    {
+      "id": "company_b7xj9c",
+      "type": "company",
+      "name": "吴通控股",
+      "description": "射频连接器/通信设备/物联网模组；2024年营收约18亿元",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "300292.SZ",
+        "exchange": "深交所创业板",
+        "tier": "5_rf_parts",
+        "role": "射频连接器/通信设备"
+      }
+    },
+    {
+      "id": "company_a7r0zm",
+      "type": "company",
+      "name": "世嘉科技",
+      "description": "精密钣金/滤波器腔体/天线结构件；主要给主设备商/天线厂商提供金属结构件OEM",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002796.SZ",
+        "exchange": "深交所A股",
+        "tier": "5_rf_parts",
+        "role": "滤波器腔体/天线结构件/精密钣金"
+      }
+    },
+    {
+      "id": "company_bb3oq4",
+      "type": "company",
+      "name": "国人科技",
+      "description": "专注滤波器/双工器研发，客户含华为/中兴/诺基亚；拥有完整的射频无源器件产品线",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "非上市",
+        "exchange": "—",
+        "tier": "5_rf_parts",
+        "role": "滤波器/双工器/射频模组"
+      }
+    },
+    {
+      "id": "company_8evjyp",
+      "type": "company",
+      "name": "诺思微系统",
+      "description": "专注FBAR/BAW滤波器研发，拥有完全自主知识产权的体声波滤波器技术，填补国内空白；已获华为/中兴认证",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "非上市",
+        "exchange": "—",
+        "tier": "5_rf_parts",
+        "role": "滤波器/FBAR/BAW"
+      }
+    },
+    {
+      "id": "company_dzx9w9",
+      "type": "company",
+      "name": "武汉凡谷",
+      "description": "滤波器/双工器行业龙头，专注30余年，客户含华为/爱立信/诺基亚等；2025年营收13.52亿元，亏损1165万元",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002194.SZ",
+        "exchange": "深交所A股",
+        "tier": "5_rf_parts",
+        "role": "滤波器/双工器"
+      }
+    },
+    {
+      "id": "company_kk69rs",
+      "type": "company",
+      "name": "鸿远电子",
+      "description": "瓷介电容器/滤波器/微波模块供应商，自产业务+代理业务双轮驱动",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "603267.SH",
+        "exchange": "上交所主板",
+        "tier": "5_rf_parts",
+        "role": "滤波器/电容器"
+      }
+    },
+    {
+      "id": "company_aefm21",
+      "type": "company",
+      "name": "中航光电",
+      "description": "国内高端连接器龙头，军工+民品双主业；连接器用于通信基站/航空航天等领域",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002179.SZ",
+        "exchange": "深交所A股",
+        "tier": "5_rf_parts",
+        "role": "高端连接器"
+      }
+    },
+    {
+      "id": "company_knwjob",
+      "type": "company",
+      "name": "鼎通科技",
+      "description": "精密连接器及组件制造商，产品用于通信/汽车/工业等领域",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "837950.BJ",
+        "exchange": "北交所",
+        "tier": "5_rf_parts",
+        "role": "精密连接器"
+      }
+    },
+    {
+      "id": "company_aw2ink",
+      "type": "company",
+      "name": "博威合金",
+      "description": "高性能铜合金材料（含连接器用铜合金带材/型材），用于射频连接器及散热件",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "601137.SH",
+        "exchange": "上交所主板",
+        "tier": "5_rf_parts",
+        "role": "铜合金连接器材料"
+      }
+    },
+    {
+      "id": "company_rrvqpf",
+      "type": "company",
+      "name": "波发特（世嘉科技子公司）",
+      "description": "世嘉科技(002796)旗下子公司，主营金属滤波器/双工器；是中兴通讯/爱立信金属滤波器核心供应商；5G金属腔体滤波器技术领先",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002796.SZ（并入世嘉科技）",
+        "exchange": "深交所A股",
+        "tier": "5_rf_parts",
+        "role": "金属滤波器/双工器"
+      }
+    },
+    {
+      "id": "company_44o42a",
+      "type": "company",
+      "name": "科美特（雅克科技子公司）",
+      "description": "国内最大六氟化硫生产商，年产能8500吨；四氟化碳年产能1200吨，已进入台积电供应链；六氟化硫/四氟化碳用于滤波器腔体清洗工艺；是覆铜板/滤波器制造的关键工艺材料供应商",
+      "source_sectors": [
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002409.SZ（并入雅克科技）",
+        "exchange": "深交所A股",
+        "tier": "5_rf_parts",
+        "role": "电子特种气体（清洗用途）"
+      }
+    },
+    {
+      "id": "technology_i5qlwm",
+      "type": "technology",
+      "name": "Massive MIMO",
+      "description": "plateau阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "plateau",
+        "maturity_score": 0,
+        "tech_level": "commercial"
+      }
+    },
+    {
+      "id": "technology_75j4np",
+      "type": "technology",
+      "name": "AAU（有源天线单元）",
+      "description": "plateau阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "plateau",
+        "maturity_score": 0,
+        "tech_level": "commercial"
+      }
+    },
+    {
+      "id": "technology_gqcyav",
+      "type": "technology",
+      "name": "5G NR mmWave",
+      "description": "slope阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "slope",
+        "maturity_score": 0,
+        "tech_level": "growth"
+      }
+    },
+    {
+      "id": "technology_6a1z45",
+      "type": "technology",
+      "name": "Phased Array Antenna",
+      "description": "slope阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "slope",
+        "maturity_score": 0,
+        "tech_level": "growth"
+      }
+    },
+    {
+      "id": "technology_5bymko",
+      "type": "technology",
+      "name": "LCP/LDS Antenna",
+      "description": "plateau阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "plateau",
+        "maturity_score": 0,
+        "tech_level": "commercial"
+      }
+    },
+    {
+      "id": "technology_chgdo9",
+      "type": "technology",
+      "name": "Satcom Phased Array",
+      "description": "slope阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "slope",
+        "maturity_score": 0,
+        "tech_level": "growth"
+      }
+    },
+    {
+      "id": "technology_o7gt13",
+      "type": "technology",
+      "name": "AI Beamforming",
+      "description": "slope阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "slope",
+        "maturity_score": 0,
+        "tech_level": "growth"
+      }
+    },
+    {
+      "id": "technology_1qm4",
+      "type": "technology",
+      "name": "RIS",
+      "description": "trough阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "trough",
+        "maturity_score": 0,
+        "tech_level": "prototype"
+      }
+    },
+    {
+      "id": "technology_sotp8r",
+      "type": "technology",
+      "name": "Wearable Flexible Antenna",
+      "description": "slope阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "slope",
+        "maturity_score": 0,
+        "tech_level": "growth"
+      }
+    },
+    {
+      "id": "technology_1kwbxj",
+      "type": "technology",
+      "name": "Luneburg Lens Antenna",
+      "description": "peak阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "peak",
+        "maturity_score": 0,
+        "tech_level": "prototype"
+      }
+    },
+    {
+      "id": "technology_s2sa89",
+      "type": "technology",
+      "name": "THz Antenna",
+      "description": "trigger阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "trigger",
+        "maturity_score": 0,
+        "tech_level": "prototype"
+      }
+    },
+    {
+      "id": "technology_t1kgts",
+      "type": "technology",
+      "name": "Spectrum Sharing Antenna",
+      "description": "slope阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "slope",
+        "maturity_score": 0,
+        "tech_level": "growth"
+      }
+    },
+    {
+      "id": "technology_ghld2r",
+      "type": "technology",
+      "name": "Digital Twin Antenna",
+      "description": "trough阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "trough",
+        "maturity_score": 0,
+        "tech_level": "prototype"
+      }
+    },
+    {
+      "id": "technology_g1uzz3",
+      "type": "technology",
+      "name": "Lens Antenna",
+      "description": "slope阶段",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "slope",
+        "maturity_score": 0,
+        "tech_level": "growth"
+      }
+    },
+    {
+      "id": "standard_elzlm1",
+      "type": "standard",
+      "name": "3GPP Release 15",
+      "description": "5G NR Phase 1 (第一阶段5G标准)",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -455,10 +1358,24 @@
       "type": "standard",
       "name": "3GPP Release 16",
       "description": "增强URLLC（超可靠低时延通信）、V2X（车联网）、工业IoT、定位增强、终端节能、IAB（集成接入回传）等技术；引入NR Unlicensed（NR-U，免授权频段）；MIMO进一步增强",
+=======
+        "organization": "3GPP",
+        "status": "现行",
+        "publishDate": "2018年6月",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_elzlm2",
+      "type": "standard",
+      "name": "3GPP Release 16",
+      "description": "5G NR Phase 2 / 5G-Advanced起点",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -468,10 +1385,24 @@
       "type": "standard",
       "name": "3GPP Release 17",
       "description": "引入NR-Light（轻量化5G，替代eMTC/NB-IoT增强）、mmWave频段扩展（上行256QAM、更宽信道带宽）、MIMO OTA测试标准化（TS 38.551）、广播/多播增强、卫星接入NR（NTN）、IIoT（工业物联网）进一步增强",
+=======
+        "organization": "3GPP",
+        "status": "现行",
+        "publishDate": "2020年7月",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_elzlm3",
+      "type": "standard",
+      "name": "3GPP Release 17",
+      "description": "5G NR Phase 2 增强",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -481,10 +1412,24 @@
       "type": "standard",
       "name": "3GPP Release 18",
       "description": "AI驱动的空口（AI for NR）、XR（扩展现实）增强、上行增强（UL Tx切换、更多载波聚合）、覆盖增强、ELAA（超大孔径天线）概念引入、沉浸式通信（IC）、更高阶MIMO（256天线单元）、智能波束管理、RedCap进一步增强",
+=======
+        "organization": "3GPP",
+        "status": "现行",
+        "publishDate": "2022年3月",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_elzlm4",
+      "type": "standard",
+      "name": "3GPP Release 18",
+      "description": "5G-Advanced (5.5G)",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -494,10 +1439,24 @@
       "type": "standard",
       "name": "3GPP Release 19",
       "description": "通感融合（ISAC）、AI/ML原生空口、XR持续增强、XL-6G（更高频段研究）、非地面网络（NTN）增强、轻量化IoT进一步演进",
+=======
+        "organization": "3GPP",
+        "status": "现行",
+        "publishDate": "",
+        "category": "6g"
+      }
+    },
+    {
+      "id": "standard_elzlm5",
+      "type": "standard",
+      "name": "3GPP Release 19",
+      "description": "5G-Advanced 第二阶段",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -507,10 +1466,24 @@
       "type": "standard",
       "name": "3GPP Release 20",
       "description": "6G标准研究开始，预计引入智能通信、空天海地一体化、太赫兹（THz）通信等前沿技术",
+=======
+        "organization": "3GPP",
+        "status": "现行",
+        "publishDate": "",
+        "category": "6g"
+      }
+    },
+    {
+      "id": "standard_elzlmr",
+      "type": "standard",
+      "name": "3GPP Release 20",
+      "description": "6G标准化起点（规划中）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -520,10 +1493,24 @@
       "type": "standard",
       "name": "TS 38.101-1",
       "description": "定义5G NR UE射频发射和接收要求（FR1，6GHz以下频段），包括发射功率、接收灵敏度、邻道选择性等RF指标",
+=======
+        "organization": "3GPP",
+        "status": "现行",
+        "publishDate": "",
+        "category": "6g"
+      }
+    },
+    {
+      "id": "standard_cgljny",
+      "type": "standard",
+      "name": "TS 38.101-1",
+      "description": "NR; User Equipment (UE) radio transmission and reception; Part 1: Range 1 Standalone",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -533,10 +1520,24 @@
       "type": "standard",
       "name": "TS 38.101-2",
       "description": "定义5G NR UE射频发射和接收要求（FR2，毫米波频段），包括波束管理、射频功率、接收机性能等mmWave终端指标",
+=======
+        "organization": "3GPP / ETSI",
+        "status": "现行",
+        "publishDate": "V17.x (Release 17)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_cgljnz",
+      "type": "standard",
+      "name": "TS 38.101-2",
+      "description": "NR; User Equipment (UE) radio transmission and reception; Part 2: Range 2 Standalone",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -546,10 +1547,24 @@
       "type": "standard",
       "name": "TS 38.101-4",
       "description": "定义5G NR UE性能要求，包括MIMO吞吐量、往返时延、解调性能等",
+=======
+        "organization": "3GPP / ETSI",
+        "status": "现行",
+        "publishDate": "V17.x (Release 17)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_cgljo1",
+      "type": "standard",
+      "name": "TS 38.101-4",
+      "description": "NR; User Equipment (UE) radio transmission and reception; Part 4: Performance requirements",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -559,10 +1574,24 @@
       "type": "standard",
       "name": "TS 38.104",
       "description": "定义5G NR基站射频发射和接收要求，涵盖BS类型1-H（传导）、BS类型1-O（OTA）、BS类型2-O（毫米波OTA），包括发射功率、接收灵敏度、杂散发射等关键RF参数",
+=======
+        "organization": "3GPP / ETSI",
+        "status": "现行",
+        "publishDate": "V16.x (Release 16)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_kxhx9p",
+      "type": "standard",
+      "name": "TS 38.104",
+      "description": "NR; Base Station (BS) radio transmission and reception",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -572,10 +1601,24 @@
       "type": "standard",
       "name": "TS 38.141-1",
       "description": "5G NR基站传导一致性测试规范，涵盖发射机测试（功率、频谱模板、杂散）、接收机测试（灵敏度、邻道选择性）等",
+=======
+        "organization": "3GPP / ETSI",
+        "status": "现行",
+        "publishDate": "V17.2.0 (Release 17, 2021年6月)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_cgo3m2",
+      "type": "standard",
+      "name": "TS 38.141-1",
+      "description": "NR; Base Station (BS) conformance testing; Part 1: Conducted conformance testing",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -585,10 +1628,24 @@
       "type": "standard",
       "name": "TS 38.141-2",
       "description": "5G NR基站辐射一致性测试规范（OTA测试），涵盖Type 1-O和Type 2-O基站辐射发射和接收特性的测试方法、不确定度要求",
+=======
+        "organization": "3GPP / ETSI",
+        "status": "现行",
+        "publishDate": "V18.x (Release 18)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_cgo3m3",
+      "type": "standard",
+      "name": "TS 38.141-2",
+      "description": "NR; Base Station (BS) conformance testing; Part 2: Radiated conformance testing",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -598,10 +1655,24 @@
       "type": "standard",
       "name": "TS 38.151",
       "description": "定义5G NR UE MIMO OTA性能要求，包括总辐射功率（TRP）、总辐射灵敏度（TRS）、多天线总辐射灵敏度（TRMS）最低要求，适用于FR1和FR2",
+=======
+        "organization": "3GPP / ETSI",
+        "status": "现行",
+        "publishDate": "V18.12.0 (Release 18, 2026年2月)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_kxhxdx",
+      "type": "standard",
+      "name": "TS 38.151",
+      "description": "NR; User Equipment (UE) Multiple Input Multiple Output (MIMO) Over-the-Air (OTA) performance requirements",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -611,10 +1682,24 @@
       "type": "standard",
       "name": "TS 38.551",
       "description": "5G NR UE MIMO OTA一致性测试规范，定义FR1 MIMO OTA测试方法（TRMS）、测试配置、信道模型（UMi CDL-C、UMa CDL-C）、通过/失败判定规则",
+=======
+        "organization": "3GPP / ETSI",
+        "status": "现行",
+        "publishDate": "V17.x (Release 17)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_kxi0cp",
+      "type": "standard",
+      "name": "TS 38.551",
+      "description": "NR; User Equipment (UE) Multiple Input Multiple Output (MIMO) Over-the-Air (OTA) performance; Conformance testing",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -624,10 +1709,24 @@
       "type": "standard",
       "name": "TS 37.105",
       "description": "定义有源天线系统（AAS）基站传输和接收要求，涵盖混合AAS BS（传导+辐射接口）和纯OTA AAS BS的最低RF性能和OTA要求",
+=======
+        "organization": "3GPP / ETSI",
+        "status": "现行",
+        "publishDate": "V17.3.0 (Release 17, 2024年10月)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_kwy4od",
+      "type": "standard",
+      "name": "TS 37.105",
+      "description": "Active Antenna System (AAS) Base Station (BS) transmission and reception",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -637,10 +1736,24 @@
       "type": "standard",
       "name": "TS 37.145-2",
       "description": "AAS基站辐射一致性测试规范，涵盖混合AAS BS和OTA AAS BS的辐射发射/接收测试",
+=======
+        "organization": "3GPP / ETSI",
+        "status": "现行",
+        "publishDate": "V18.7.0 (Release 18, 2025年4月)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_27q3n6",
+      "type": "standard",
+      "name": "TS 37.145-2",
+      "description": "Active Antenna System (AAS) Base Station (BS) conformance testing; Part 2: Radiated conformance testing",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -650,10 +1763,24 @@
       "type": "standard",
       "name": "TS 37.544",
       "description": "LTE/UTRA UE OTA性能一致性测试规范，定义总辐射功率（TRP）、总辐射灵敏度（TRS）、多天线总辐射灵敏度（TRMS）测试方法，涵盖暗室法、混响室法、多探头暗室法（MPAC）",
+=======
+        "organization": "3GPP / ETSI",
+        "status": "现行",
+        "publishDate": "V18.x (Release 18)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_kwy7qk",
+      "type": "standard",
+      "name": "TS 37.544",
+      "description": "User Equipment (UE) Over The Air (OTA) performance; Conformance testing",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -663,10 +1790,24 @@
       "type": "standard",
       "name": "TS 37.977",
       "description": "UE多天线辐射接收性能验证技术报告，为MIMO OTA测试提供背景和验证方法",
+=======
+        "organization": "3GPP / ETSI",
+        "status": "现行",
+        "publishDate": "V16.5.0 (Release 16, 2024年10月)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_kwyas0",
+      "type": "standard",
+      "name": "TS 37.977",
+      "description": "Verification of radiated multi-antenna reception performance of User Equipment (UE)",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -676,10 +1817,24 @@
       "type": "standard",
       "name": "TR 37.941",
       "description": "辐射基站RF一致性测试背景技术报告，涵盖OTA测试方法背景、测量不确定性、测试容限值推导，为TS 37.145-2和TS 38.141-2提供理论支撑",
+=======
+        "organization": "3GPP / ETSI",
+        "status": "现行",
+        "publishDate": "V17.x (Release 17)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_7wo6cy",
+      "type": "standard",
+      "name": "TR 37.941",
+      "description": "Radio Frequency (RF) conformance testing background for radiated Base Station (BS) requirements",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -689,10 +1844,24 @@
       "type": "standard",
       "name": "TR 38.900",
       "description": "3GPP信道模型研究，为6GHz至100GHz频段的5G系统提供空间信道模型（SCM）扩展，覆盖UMa、UMi、InH等多种场景",
+=======
+        "organization": "3GPP / ETSI",
+        "status": "现行",
+        "publishDate": "V18.2.0 (Release 18, 2025年1月)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_7w4dv2",
+      "type": "standard",
+      "name": "TR 38.900",
+      "description": "Study on channel model for frequency range 0.5 to 100 GHz",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -702,10 +1871,24 @@
       "type": "standard",
       "name": "TR 38.901",
       "description": "3GPP统一信道模型（0.5~100GHz），基于TR 38.900的修正版，定义了3GPP 5G系统统一信道模型，被业界广泛引用用于系统仿真和测试",
+=======
+        "organization": "3GPP",
+        "status": "现行",
+        "publishDate": "V15.x (Release 15)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_7w4dv1",
+      "type": "standard",
+      "name": "TR 38.901",
+      "description": "Study on channel model for frequencies from 0.5 to 100 GHz",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -715,10 +1898,24 @@
       "type": "standard",
       "name": "IEEE 802.11ax-2021",
       "description": "Wi-Fi 6标准，引入OFDMA、上行MU-MIMO（8x8）、BSS Coloring、1024-QAM调制、TWT（目标唤醒时间）等技术，支持2.4GHz和5GHz频段，峰值速率9.6Gbps，显著提升多用户并发性能和能效",
+=======
+        "organization": "3GPP",
+        "status": "现行",
+        "publishDate": "V17.x (Release 17)",
+        "category": "intl_3gpp"
+      }
+    },
+    {
+      "id": "standard_hfkjtx",
+      "type": "standard",
+      "name": "IEEE 802.11ax-2021",
+      "description": "Wi-Fi 6 (High Efficiency WLAN)",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -728,10 +1925,24 @@
       "type": "standard",
       "name": "IEEE 802.11be",
       "description": "Wi-Fi 7标准，引入320MHz信道带宽、4096-QAM、Multi-Link Operation（MLO）、16x16 MIMO、增强MU-MIMO、多资源块（MRU）等技术，峰值速率可达30Gbps，延迟降至1ms以下",
+=======
+        "organization": "IEEE",
+        "status": "现行",
+        "publishDate": "2021年5月",
+        "category": "intl_ieee"
+      }
+    },
+    {
+      "id": "standard_tsr62t",
+      "type": "standard",
+      "name": "IEEE 802.11be",
+      "description": "Wi-Fi 7 (Extremely High Throughput, EHT)",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -741,10 +1952,24 @@
       "type": "standard",
       "name": "IEEE 802.11ay",
       "description": "毫米波WLAN增强标准，基于802.11ad（60GHz）演进，支持高达100Gbps速率，引入信道绑定（4x 2.16GHz）、多AP协同、波束成形增强等技术，主要用于密集场景高速回传",
+=======
+        "organization": "IEEE",
+        "status": "现行",
+        "publishDate": "草案阶段，预计2024年发布",
+        "category": "intl_ieee"
+      }
+    },
+    {
+      "id": "standard_tsr634",
+      "type": "standard",
+      "name": "IEEE 802.11ay",
+      "description": "Enhanced throughput for mmWave WLAN",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -754,10 +1979,24 @@
       "type": "standard",
       "name": "IEEE 802.15.3d",
       "description": "60GHz频段超高速无线通信标准，速率可达100+Gbps，用于短距离高速无线互联",
+=======
+        "organization": "IEEE",
+        "status": "现行",
+        "publishDate": "2021年",
+        "category": "intl_ieee"
+      }
+    },
+    {
+      "id": "standard_cw2gt",
+      "type": "standard",
+      "name": "IEEE 802.15.3d",
+      "description": "Very High Data Rate Wireless Communications in 60 GHz band",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -767,10 +2006,24 @@
       "type": "standard",
       "name": "IEEE 802.16",
       "description": "城域网无线宽带标准，涵盖固定和移动WiMAX，支持2-66GHz频段，OFDMA技术，用于宽带接入和回传",
+=======
+        "organization": "IEEE",
+        "status": "现行",
+        "publishDate": "2017年",
+        "category": "intl_ieee"
+      }
+    },
+    {
+      "id": "standard_idg08t",
+      "type": "standard",
+      "name": "IEEE 802.16",
+      "description": "WirelessMAN (全球微波接入互操作性)",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -780,10 +2033,24 @@
       "type": "standard",
       "name": "IEEE C95.1-2019",
       "description": "人体暴露于电磁场的安全水平标准，定义RF电磁场的人体安全暴露限值（100kHz至300GHz），取代C95.1-2005，是基站天线EMC安全评估的重要参考",
+=======
+        "organization": "IEEE",
+        "status": "现行",
+        "publishDate": "802.16-2017 ( Wimax)",
+        "category": "intl_ieee"
+      }
+    },
+    {
+      "id": "standard_gfq9d7",
+      "type": "standard",
+      "name": "IEEE C95.1-2019",
+      "description": "IEEE Standard for Safety Levels with Respect to Human Exposure to Electric, Magnetic, and Electromagnetic Fields",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -793,10 +2060,24 @@
       "type": "standard",
       "name": "IEEE 149-1979 (R2008)",
       "description": "天线测试标准程序，定义天线增益、方向图、效率、极化、阻抗等参数的测量方法和测试程序，被CTIA等组织引用为天线测量的基础方法",
+=======
+        "organization": "IEEE",
+        "status": "现行",
+        "publishDate": "",
+        "category": "emc_safety"
+      }
+    },
+    {
+      "id": "standard_6s6326",
+      "type": "standard",
+      "name": "IEEE 149-1979 (R2008)",
+      "description": "IEEE Standard Test Procedures for Antennas",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -806,10 +2087,24 @@
       "type": "standard",
       "name": "ITU-R M.2177",
       "description": "IMT-Advanced框架文件，开启4G（LTE-Advanced、WiMAX-Advanced）标准化进程",
+=======
+        "organization": "IEEE",
+        "status": "现行",
+        "publishDate": "1979年（2008年 reaffirmed）",
+        "category": "intl_ieee"
+      }
+    },
+    {
+      "id": "standard_q2kgtr",
+      "type": "standard",
+      "name": "ITU-R M.2177",
+      "description": "Framework and overall objectives of the future development of IMT",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -819,10 +2114,24 @@
       "type": "standard",
       "name": "ITU-R M.2083",
       "description": "IMT-2020（5G）愿景框架文件，定义5G三大应用场景（eMBB、uRLLC、mMTC）和关键能力指标（峰值速率20Gbps、用户面延迟1ms等）",
+=======
+        "organization": "ITU-R",
+        "status": "现行",
+        "publishDate": "2010年",
+        "category": "intl_itu"
+      }
+    },
+    {
+      "id": "standard_q2khjp",
+      "type": "standard",
+      "name": "ITU-R M.2083",
+      "description": "IMT-2020 (5G) Vision",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -832,10 +2141,24 @@
       "type": "standard",
       "name": "ITU-R M.2410",
       "description": "IMT-2020无线电接口最低技术性能要求，规定5G必须满足的13项关键性能指标",
+=======
+        "organization": "ITU-R",
+        "status": "现行",
+        "publishDate": "2015年",
+        "category": "intl_itu"
+      }
+    },
+    {
+      "id": "standard_q2ker1",
+      "type": "standard",
+      "name": "ITU-R M.2410",
+      "description": "Minimum requirements related to technical performance for IMT-2020 radio interface(s)",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -845,10 +2168,24 @@
       "type": "standard",
       "name": "ITU-R M.2160",
       "description": "IMT-2030（6G）框架建议，定义6G六大应用场景（沉浸式通信IC、超高可靠低时延通信HRLLC、大规模通信MC、泛在连接UC、AI与通信AIAC、通感融合ISAC）和核心设计原则（可持续性、安全性、连接未连接者、泛在智能）",
+=======
+        "organization": "ITU-R",
+        "status": "现行",
+        "publishDate": "2017年",
+        "category": "intl_itu"
+      }
+    },
+    {
+      "id": "standard_q2kgut",
+      "type": "standard",
+      "name": "ITU-R M.2160",
+      "description": "Framework and overall objectives of the future development of IMT-2030",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -858,10 +2195,24 @@
       "type": "standard",
       "name": "ITU-R M.[IMT-2030.EVAL]",
       "description": "IMT-2030评估标准和方法论，用于评估6G无线电接口技术提案（RIT/SRIT）",
+=======
+        "organization": "ITU-R",
+        "status": "现行",
+        "publishDate": "",
+        "category": "6g"
+      }
+    },
+    {
+      "id": "standard_n9e46k",
+      "type": "standard",
+      "name": "ITU-R M.[IMT-2030.EVAL]",
+      "description": "Evaluation criteria and methodology for IMT-2030",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -871,10 +2222,24 @@
       "type": "standard",
       "name": "ITU-R M.[IMT-2030.TPR]",
       "description": "IMT-2030最低技术性能要求，定义了20项技术性能要求（包括7项新增6G特有指标），涵盖峰值速率、频谱效率、时延、可靠性、连接密度、能效等",
+=======
+        "organization": "ITU-R WP 5D",
+        "status": "现行",
+        "publishDate": "",
+        "category": "intl_itu"
+      }
+    },
+    {
+      "id": "standard_m64ifo",
+      "type": "standard",
+      "name": "ITU-R M.[IMT-2030.TPR]",
+      "description": "Minimum requirements related to technical performance for IMT-2030 radio interface(s)",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -884,10 +2249,24 @@
       "type": "standard",
       "name": "ITU-R M.1768",
       "description": "IMT地面组件频谱需求计算方法论，用于评估5G/6G频谱需求，是ITU频谱规划的重要技术依据",
+=======
+        "organization": "ITU-R WP 5D",
+        "status": "现行",
+        "publishDate": "",
+        "category": "intl_itu"
+      }
+    },
+    {
+      "id": "standard_q2kzdy",
+      "type": "standard",
+      "name": "ITU-R M.1768",
+      "description": "Methodology for calculation of spectrum requirements for the terrestrial component of IMT",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -897,10 +2276,24 @@
       "type": "standard",
       "name": "ITU-R F.386",
       "description": "点对点固定业务系统特性标准，规定微波中继通信系统的射频特性，用于基站回传和城域传输",
+=======
+        "organization": "ITU-R",
+        "status": "现行",
+        "publishDate": "M.1768-1",
+        "category": "intl_itu"
+      }
+    },
+    {
+      "id": "standard_jo9gs8",
+      "type": "standard",
+      "name": "ITU-R F.386",
+      "description": "Characteristics of point-to-point systems operating in the bands allocated to fixed service",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -910,10 +2303,24 @@
       "type": "standard",
       "name": "ITU-R M.2101",
       "description": "IMT网络建模与仿真标准，用于评估射频干扰，是频谱共存和EMC分析的重要工具",
+=======
+        "organization": "ITU-R",
+        "status": "现行",
+        "publishDate": "",
+        "category": "intl_itu"
+      }
+    },
+    {
+      "id": "standard_q2kgzy",
+      "type": "standard",
+      "name": "ITU-R M.2101",
+      "description": "Modeling and simulation of IMT networks for assessment of RF interference",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -923,10 +2330,24 @@
       "type": "standard",
       "name": "ITU-R M.819",
       "description": "IMT-Advanced（4G）全球协调框架，推动LTE-Advanced和WiMAX-Advanced的全球频谱协调",
+=======
+        "organization": "ITU-R",
+        "status": "现行",
+        "publishDate": "",
+        "category": "intl_itu"
+      }
+    },
+    {
+      "id": "standard_js44ha",
+      "type": "standard",
+      "name": "ITU-R M.819",
+      "description": "Fourth generation (4G) of IMT, towards global harmonization",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -936,10 +2357,24 @@
       "type": "standard",
       "name": "ETSI EN 301 489",
       "description": "无线电设备EMC测试标准系列（parts 1~50），规定无线电设备的传导和辐射发射、抗扰度测试要求，适用于各种移动通信设备，包括基站和终端",
+=======
+        "organization": "ITU-R",
+        "status": "现行",
+        "publishDate": "",
+        "category": "intl_itu"
+      }
+    },
+    {
+      "id": "standard_o4ng0d",
+      "type": "standard",
+      "name": "ETSI EN 301 489",
+      "description": "ElectroMagnetic Compatibility (EMC) standard for radio equipment",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -949,10 +2384,24 @@
       "type": "standard",
       "name": "ETSI EN 302 217",
       "description": "点对点数字无线接力系统标准，规定微波回传设备的RF特性、调制方式、系统要求",
+=======
+        "organization": "ETSI",
+        "status": "现行",
+        "publishDate": "",
+        "category": "intl_etsi"
+      }
+    },
+    {
+      "id": "standard_o576y9",
+      "type": "standard",
+      "name": "ETSI EN 302 217",
+      "description": "Fixed radio systems Point-to-Point equipment; Characteristics of P-P SDH systems, 2 to 2 GHz",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -962,10 +2411,24 @@
       "type": "standard",
       "name": "ETSI TS 138 113",
       "description": "5G NR基站EMC评估标准，规定基站及其辅助设备的电磁兼容性要求和测量方法",
+=======
+        "organization": "ETSI",
+        "status": "现行",
+        "publishDate": "",
+        "category": "intl_etsi"
+      }
+    },
+    {
+      "id": "standard_b6msmb",
+      "type": "standard",
+      "name": "ETSI TS 138 113",
+      "description": "NR; Base Station (BS) EMC",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -975,10 +2438,24 @@
       "type": "standard",
       "name": "GB/T 9410-2008",
       "description": "移动通信天线通用技术要求，规定天线的电气性能、机械性能、环境适应性等技术条件，适用于各类基站天线，是5G Massive MIMO阵列天线产品标准的重要参考依据",
+=======
+        "organization": "ETSI / 3GPP",
+        "status": "现行",
+        "publishDate": "V15.7.0 (2019年10月)",
+        "category": "intl_etsi"
+      }
+    },
+    {
+      "id": "standard_z232yv",
+      "type": "standard",
+      "name": "GB/T 9410-2008",
+      "description": "移动通信天线通用技术规范",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -988,10 +2465,24 @@
       "type": "standard",
       "name": "GB/T 27700.1-2023",
       "description": "等同采用IEC 60862-1:2015，规定声表面波滤波器（SAW）的通用技术要求，包括电气性能、环境适应性、可靠性等，建立从设计到成品检验的全流程质量评定体系，工作频率范围10MHz～3.5GHz，相对带宽0.02%～50%",
+=======
+        "organization": "国家标准化管理委员会",
+        "status": "现行",
+        "publishDate": "2008年",
+        "category": "gb"
+      }
+    },
+    {
+      "id": "standard_35jtrr",
+      "type": "standard",
+      "name": "GB/T 27700.1-2023",
+      "description": "声表面波滤波器 第1部分：总规范",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1001,10 +2492,24 @@
       "type": "standard",
       "name": "GB/T 27700.2-2025",
       "description": "声表面波滤波器使用指南，对应IEC 60862-2，为滤波器选型、安装、维护提供技术依据，适用于5G基站、卫星导航终端、雷达系统等高频电子设备",
+=======
+        "organization": "国家标准化管理委员会",
+        "status": "现行",
+        "publishDate": "",
+        "category": "rf_components"
+      }
+    },
+    {
+      "id": "standard_3mlg60",
+      "type": "standard",
+      "name": "GB/T 27700.2-2025",
+      "description": "声表面波滤波器 第2部分：使用指南",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1014,10 +2519,24 @@
       "type": "standard",
       "name": "GB 50689-2011",
       "description": "通信局站防雷接地工程设计强制性国家标准，涵盖接地系统组成、接地线、移动通信基站防雷与接地、天馈线接地、GPS天馈线防雷、电源系统雷电过电压保护等，其中多条为强制性条文必须严格执行",
+=======
+        "organization": "国家标准化管理委员会",
+        "status": "现行",
+        "publishDate": "",
+        "category": "rf_components"
+      }
+    },
+    {
+      "id": "standard_feh1o",
+      "type": "standard",
+      "name": "GB 50689-2011",
+      "description": "通信局（站）防雷与接地工程设计规范",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1027,10 +2546,24 @@
       "type": "standard",
       "name": "GB 41847-2022",
       "description": "港口设施防雷接地技术标准，适用于通信基站等户外设施的防雷接地设计参考",
+=======
+        "organization": "住房和城乡建设部",
+        "status": "现行",
+        "publishDate": "2011年4月（强条），实施日期2012年5月1日",
+        "category": "gb"
+      }
+    },
+    {
+      "id": "standard_t2xyku",
+      "type": "standard",
+      "name": "GB 41847-2022",
+      "description": "港口防雷与接地技术要求",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1040,10 +2573,24 @@
       "type": "standard",
       "name": "GB/T 5584.4-2020",
       "description": "规定接地用铜带材料规格，用于通信基站接地系统",
+=======
+        "organization": "国家标准化管理委员会",
+        "status": "现行",
+        "publishDate": "2022年",
+        "category": "gb"
+      }
+    },
+    {
+      "id": "standard_f84gav",
+      "type": "standard",
+      "name": "GB/T 5584.4-2020",
+      "description": "电工用铜、铝及其合金扁线 第4部分：铜带",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1053,10 +2600,24 @@
       "type": "standard",
       "name": "GB 50057-2019",
       "description": "建筑物防雷设计标准，为通信基站铁塔、天线系统的直击雷防护提供设计依据",
+=======
+        "organization": "国家标准化管理委员会",
+        "status": "现行",
+        "publishDate": "2020年",
+        "category": "gb"
+      }
+    },
+    {
+      "id": "standard_5938xr",
+      "type": "standard",
+      "name": "GB 50057-2019",
+      "description": "建筑物防雷设计规范",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1066,10 +2627,24 @@
       "type": "standard",
       "name": "YD/T 3625-2019",
       "description": "规定5G数字蜂窝移动通信网中非AAU设备的无源天线阵列技术要求，适用于工作频段2515MHz～2675MHz、3400MHz～3600MHz和4800MHz～5000MHz",
+=======
+        "organization": "住房和城乡建设部",
+        "status": "现行",
+        "publishDate": "2019年",
+        "category": "gb"
+      }
+    },
+    {
+      "id": "standard_c8ypur",
+      "type": "standard",
+      "name": "YD/T 3625-2019",
+      "description": "5G数字蜂窝移动通信网 无源天线阵列技术要求（<6GHz）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1079,10 +2654,24 @@
       "type": "standard",
       "name": "YD/T 3626-2019",
       "description": "与YD/T 3625配套的测试方法标准，规定5G无源天线阵列的测试方法",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_brx3gk",
+      "type": "standard",
+      "name": "YD/T 3626-2019",
+      "description": "5G数字蜂窝移动通信网 无源天线阵列测试方法（<6GHz）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1092,10 +2681,24 @@
       "type": "standard",
       "name": "YD/T 3929-2021",
       "description": "5G NR基站设备（6GHz以下，第一阶段）技术要求，覆盖BBU、AAU、RRU等基站设备RF性能要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_52z4y5",
+      "type": "standard",
+      "name": "YD/T 3929-2021",
+      "description": "5G数字蜂窝移动通信网 6GHz以下频段基站设备技术要求（第一阶段）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1105,10 +2708,24 @@
       "type": "standard",
       "name": "YD/T 3929-2024",
       "description": "2021版的第一阶段修订版，更新基站设备技术要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_52z4y8",
+      "type": "standard",
+      "name": "YD/T 3929-2024",
+      "description": "5G数字蜂窝移动通信网 6GHz以下频段基站设备技术要求（第一阶段）（修订版）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1118,10 +2735,24 @@
       "type": "standard",
       "name": "YD/T 4719-2024",
       "description": "5G基站设备第二阶段技术要求，引入更多5G-Advanced特性",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_q3o27i",
+      "type": "standard",
+      "name": "YD/T 4719-2024",
+      "description": "5G数字蜂窝移动通信网 6GHz以下频段基站设备技术要求（第二阶段）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1131,10 +2762,24 @@
       "type": "standard",
       "name": "YD/T 6537-2025",
       "description": "5G基站设备第三阶段技术要求，进一步增强设备能力",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_qxsdp7",
+      "type": "standard",
+      "name": "YD/T 6537-2025",
+      "description": "5G数字蜂窝移动通信网 6GHz以下频段基站设备技术要求（第三阶段）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1144,10 +2789,24 @@
       "type": "standard",
       "name": "YD/T 3930-2021",
       "description": "5G基站设备第一阶段测试方法标准",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_fhytmf",
+      "type": "standard",
+      "name": "YD/T 3930-2021",
+      "description": "5G数字蜂窝移动通信网 6GHz以下频段基站设备测试方法（第一阶段）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1157,10 +2816,24 @@
       "type": "standard",
       "name": "YD/T 3930-2024",
       "description": "2021版测试方法修订版",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_fhytmi",
+      "type": "standard",
+      "name": "YD/T 3930-2024",
+      "description": "5G数字蜂窝移动通信网 6GHz以下频段基站设备测试方法（第一阶段）（修订版）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1170,10 +2843,24 @@
       "type": "standard",
       "name": "YD/T 4720-2024",
       "description": "5G基站设备第二阶段测试方法标准",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_foodj8",
+      "type": "standard",
+      "name": "YD/T 4720-2024",
+      "description": "5G数字蜂窝移动通信网 6GHz以下频段基站设备测试方法（第二阶段）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1183,10 +2870,24 @@
       "type": "standard",
       "name": "YD/T 6577-2025",
       "description": "规定5G基站紧缩场（CATR）OTA测试系统的技术要求，用于5G基站空中性能测试",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_em9gm7",
+      "type": "standard",
+      "name": "YD/T 6577-2025",
+      "description": "5G数字蜂窝移动通信网 6GHz以下频段基站设备基于紧缩场OTA测试系统技术要求",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1196,10 +2897,24 @@
       "type": "standard",
       "name": "YD/T 2869.1-2021",
       "description": "LTE无线终端MIMO天线性能要求及测量方法",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "ota"
+      }
+    },
+    {
+      "id": "standard_i3kkaa",
+      "type": "standard",
+      "name": "YD/T 2869.1-2021",
+      "description": "终端MIMO天线性能要求和测量方法 第1部分：LTE无线终端",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1209,10 +2924,24 @@
       "type": "standard",
       "name": "YD/T 2869.2-2024",
       "description": "5G NR终端（Sub-6GHz）MIMO天线性能要求及测量方法",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_hmixw0",
+      "type": "standard",
+      "name": "YD/T 2869.2-2024",
+      "description": "终端MIMO天线性能要求和测量方法 第2部分：5G终端（6GHz以下频段）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1222,10 +2951,24 @@
       "type": "standard",
       "name": "YD/T 2869.3-2025",
       "description": "5G NR毫米波终端MIMO天线空间射频接收机性能测量方法，规定特定信道场景下的吞吐量性能测量方法和性能要求，适用于支持毫米波的5G NR无线终端设备空口（OTA）测试",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_h5hbhs",
+      "type": "standard",
+      "name": "YD/T 2869.3-2025",
+      "description": "终端MIMO天线性能要求和测量方法 第3部分：5G NR无线终端（mmWave）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1235,10 +2978,24 @@
       "type": "standard",
       "name": "YD/T 1484.9-2023",
       "description": "5G NR无线终端（Sub-6GHz）空间射频辐射功率和接收机性能测量方法",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_xfh4cu",
+      "type": "standard",
+      "name": "YD/T 1484.9-2023",
+      "description": "无线终端空间射频辐射功率和接收机性能测量方法 第9部分：5G NR无线终端（Sub-6GHz）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1248,10 +3005,24 @@
       "type": "standard",
       "name": "YD/T 2867-2025",
       "description": "规定工作频段703MHz～803MHz、806MHz~880MHz、880MHz~960MHz、1710MHz~1880MHz、1850MHz~1990MHz、1920MHz~2170MHz、2300MHz~2500MHz、2500MHz~2700MHz、3400MHz~3600MHz的多频段基站无源天线分类、电性能、机械性能、环境条件、检验规则及测量方法；新增3400MHz~3600MHz频段电气性能要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_745h6x",
+      "type": "standard",
+      "name": "YD/T 2867-2025",
+      "description": "移动通信系统多频段基站无源天线",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1261,10 +3032,24 @@
       "type": "standard",
       "name": "YD/T 2866",
       "description": "室内分布系统用无源天线技术要求，与YD/T 2867、YD/T 2868、YD/T 3061共同构成移动通信系统无源天线标准体系",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "rf_components"
+      }
+    },
+    {
+      "id": "standard_tpgeom",
+      "type": "standard",
+      "name": "YD/T 2866",
+      "description": "移动通信系统室内分布无源天线",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1274,10 +3059,24 @@
       "type": "standard",
       "name": "YD/T 2868",
       "description": "移动通信系统无源天线测量方法标准",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_tpgeoo",
+      "type": "standard",
+      "name": "YD/T 2868",
+      "description": "移动通信系统无源天线测量方法",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1287,10 +3086,24 @@
       "type": "standard",
       "name": "YD/T 3061-2024",
       "description": "TD-LTE智能天线技术要求和测试方法，适用于LTE TDD系统智能天线",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_dox72d",
+      "type": "standard",
+      "name": "YD/T 3061-2024",
+      "description": "TD-LTE数字蜂窝移动通信网智能天线",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1300,10 +3113,24 @@
       "type": "standard",
       "name": "YD/T 1710.1-2015",
       "description": "TD-SCDMA系统智能天线阵列技术要求，是早期智能天线标准的延续",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_o1nsll",
+      "type": "standard",
+      "name": "YD/T 1710.1-2015",
+      "description": "2GHz TD-SCDMA数字蜂窝移动通信网智能天线 第1部分：天线阵列",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1313,10 +3140,24 @@
       "type": "standard",
       "name": "YD/T 3627-2024",
       "description": "5G eMBB终端设备技术要求（第一阶段），面向NSA和SA架构",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_bavh1n",
+      "type": "standard",
+      "name": "YD/T 3627-2024",
+      "description": "5G数字蜂窝移动通信网 增强移动宽带终端设备技术要求（第一阶段）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1326,10 +3167,24 @@
       "type": "standard",
       "name": "YD/T 4721-2024",
       "description": "5G eMBB终端设备第二阶段技术要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_f7mr51",
+      "type": "standard",
+      "name": "YD/T 4721-2024",
+      "description": "5G数字蜂窝移动通信网 增强移动宽带终端设备技术要求（第二阶段）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1339,10 +3194,24 @@
       "type": "standard",
       "name": "YD/T 6349-2025",
       "description": "5G支持TSN第二阶段技术要求，推动5G在工业互联网中的应用",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_f2z1es",
+      "type": "standard",
+      "name": "YD/T 6349-2025",
+      "description": "5G移动通信网支持时间敏感网络（TSN）技术要求（第二阶段）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1352,10 +3221,24 @@
       "type": "standard",
       "name": "YD/T 6350-2025",
       "description": "5G远程遥控操作技术要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_4nzcqi",
+      "type": "standard",
+      "name": "YD/T 6350-2025",
+      "description": "基于5G的远程遥控 操作技术要求",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1365,10 +3248,24 @@
       "type": "standard",
       "name": "YD/T 6548-2025",
       "description": "5G轻量化（RedCap）通用模组技术要求，适用于6GHz以下频段",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_sxvrnp",
+      "type": "standard",
+      "name": "YD/T 6548-2025",
+      "description": "5G轻量化通用模组技术要求（第一阶段）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1378,10 +3275,24 @@
       "type": "standard",
       "name": "YD/T 4722-2024",
       "description": "5G共享基站设备的功能要求、性能要求和接口要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_eql4qu",
+      "type": "standard",
+      "name": "YD/T 4722-2024",
+      "description": "5G数字蜂窝移动通信网共享基站设备技术要求",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1391,10 +3302,24 @@
       "type": "standard",
       "name": "YD/T 4723-2024",
       "description": "5G共享基站设备测试方法标准",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_e9jicn",
+      "type": "standard",
+      "name": "YD/T 4723-2024",
+      "description": "5G数字蜂窝移动通信网共享基站测试方法",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1404,10 +3329,24 @@
       "type": "standard",
       "name": "YD/T 4735-2024",
       "description": "5G定位系统基站设备技术要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_1cy0ns",
+      "type": "standard",
+      "name": "YD/T 4735-2024",
+      "description": "5G移动通信网定位系统 基站设备技术要求（第一阶段）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1417,10 +3356,24 @@
       "type": "standard",
       "name": "YD/T 4724-2024",
       "description": "5G FDD直放站技术要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_dshvyg",
+      "type": "standard",
+      "name": "YD/T 4724-2024",
+      "description": "5G数字蜂窝移动通信网 FDD直放站技术要求",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1430,10 +3383,24 @@
       "type": "standard",
       "name": "YD/T 6104-2024",
       "description": "5G eMBB终端设备第二阶段测试方法",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_896vjy",
+      "type": "standard",
+      "name": "YD/T 6104-2024",
+      "description": "5G数字蜂窝移动通信网 增强移动宽带终端设备测试方法（第二阶段）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1443,10 +3410,24 @@
       "type": "standard",
       "name": "YD/T 4002-2024",
       "description": "5G eMBB终端设备第一阶段测试方法（修订版）",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_wreuox",
+      "type": "standard",
+      "name": "YD/T 4002-2024",
+      "description": "5G数字蜂窝移动通信网 增强移动宽带终端设备测试方法（第一阶段）",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1456,10 +3437,24 @@
       "type": "standard",
       "name": "YD/T 2583.17-2025",
       "description": "5G基站及其辅助设备的EMC要求和测量方法，规定基站设备、辅助射频放大器、中继器及其辅助设备的电磁兼容性测试要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_aa9umw",
+      "type": "standard",
+      "name": "YD/T 2583.17-2025",
+      "description": "蜂窝式移动通信设备电磁兼容性要求和测量方法 第17部分：5G基站及其辅助设备",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1469,10 +3464,24 @@
       "type": "standard",
       "name": "YD/T 2324-2011",
       "description": "无线基站防雷技术要求和测试方法，规定基站防雷接地、浪涌保护器测试、冲击电流测试等要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "emc_safety"
+      }
+    },
+    {
+      "id": "standard_1qcbbs",
+      "type": "standard",
+      "name": "YD/T 2324-2011",
+      "description": "无线基站防雷技术要求和测试方法",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1482,10 +3491,24 @@
       "type": "standard",
       "name": "YD/T 3005-2016",
       "description": "基站供电变压器系统的防雷与接地技术要求，包括基站供电变压器与基站地网连接要求、变压器及高低压浪涌保护器连接结构、变压器直击雷保护等",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_1g5yqq",
+      "type": "standard",
+      "name": "YD/T 3005-2016",
+      "description": "基站供电变压器系统的防雷与接地技术要求",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1495,10 +3518,24 @@
       "type": "standard",
       "name": "YD/T 3007-2016",
       "description": "小型无线系统（如Small Cell、微基站等）的防雷与接地技术要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_i2pyc",
+      "type": "standard",
+      "name": "YD/T 3007-2016",
+      "description": "小型无线系统的防雷与接地技术要求",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1508,10 +3545,24 @@
       "type": "standard",
       "name": "YD/T 4203-2023",
       "description": "数据中心基础设施防雷与接地技术要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_pcvptn",
+      "type": "standard",
+      "name": "YD/T 4203-2023",
+      "description": "电信互联网数据中心基础设施的防雷与接地技术要求",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1521,10 +3572,24 @@
       "type": "standard",
       "name": "YD/T 1970.7-2015",
       "description": "通信局站电源系统防雷接地系统维护技术要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_61a1dh",
+      "type": "standard",
+      "name": "YD/T 1970.7-2015",
+      "description": "通信局（站）电源系统维护技术要求 第7部分：防雷接地系统",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1534,10 +3599,24 @@
       "type": "standard",
       "name": "YD/T 3568.2-2020",
       "description": "通信基站基础设施供电系统技术要求",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_4m3mup",
+      "type": "standard",
+      "name": "YD/T 3568.2-2020",
+      "description": "通信基站基础设施技术要求 第2部分：供电系统",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1547,10 +3626,24 @@
       "type": "standard",
       "name": "YD/T 1484.6-2021",
       "description": "LTE无线终端空间射频辐射功率和接收机性能测量方法",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_yulzjh",
+      "type": "standard",
+      "name": "YD/T 1484.6-2021",
+      "description": "无线终端空间射频辐射功率和接收机性能测量方法 第6部分：LTE无线终端",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1560,10 +3653,24 @@
       "type": "standard",
       "name": "YD/T 1484.10-2025",
       "description": "Cat1bis无线终端空间射频辐射功率和接收机性能测量方法",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_fwp0i8",
+      "type": "standard",
+      "name": "YD/T 1484.10-2025",
+      "description": "无线终端空间射频辐射功率和接收机性能测量方法 第10部分：Cat1bis无线终端",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1573,10 +3680,24 @@
       "type": "standard",
       "name": "YD/T 1059-2004",
       "description": "移动通信系统基站天线技术条件标准，被5G天线产品标准参照引用",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_8g04g4",
+      "type": "standard",
+      "name": "YD/T 1059-2004",
+      "description": "移动通信系统基站天线技术条件",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1586,10 +3707,24 @@
       "type": "standard",
       "name": "CTIA Test Plan v3.8.2",
       "description": "无线设备OTA性能测试标准，定义辐射RF功率（TRP）和接收机性能（灵敏度）的测量方法；第5.14节规定多发射天线设备OTA测试程序；涵盖SISO、MIMO OTA测试",
+=======
+        "organization": "工业和信息化部 / CCSA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "yd"
+      }
+    },
+    {
+      "id": "standard_jr7zjp",
+      "type": "standard",
+      "name": "CTIA Test Plan v3.8.2",
+      "description": "Test Plan for Wireless Device Over-the-Air Performance",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1599,10 +3734,24 @@
       "type": "standard",
       "name": "CTIA 01.40",
       "description": "MIMO OTA多探头暗室法测试方法标准，定义MPAC测试系统要求、SCME信道模型、波束赋形、SIR控制、MARSS指标等",
+=======
+        "organization": "CTIA（美国无线通信与互联网协会）",
+        "status": "现行",
+        "publishDate": "",
+        "category": "ota"
+      }
+    },
+    {
+      "id": "standard_9ssidq",
+      "type": "standard",
+      "name": "CTIA 01.40",
+      "description": "Test Methodology, MIMO, Static Channel Model, Multi-Probe Anechoic Chamber",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1612,10 +3761,24 @@
       "type": "standard",
       "name": "CTIA 01.01",
       "description": "CTIA OTA测试范围、要求和适用性定义文件",
+=======
+        "organization": "CTIA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "ota"
+      }
+    },
+    {
+      "id": "standard_9ssih5",
+      "type": "standard",
+      "name": "CTIA 01.01",
+      "description": "Test Scope, Requirements, and Applicability",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1625,10 +3788,24 @@
       "type": "standard",
       "name": "CTIA 01.20",
       "description": "SISO OTA暗室法测试方法标准",
+=======
+        "organization": "CTIA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "ota"
+      }
+    },
+    {
+      "id": "standard_9ssifg",
+      "type": "standard",
+      "name": "CTIA 01.20",
+      "description": "Test Methodology, SISO, Anechoic Chamber",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1638,10 +3815,24 @@
       "type": "standard",
       "name": "CTIA 01.70",
       "description": "OTA测量不确定性标准",
+=======
+        "organization": "CTIA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "ota"
+      }
+    },
+    {
+      "id": "standard_9ssib5",
+      "type": "standard",
+      "name": "CTIA 01.70",
+      "description": "Measurement Uncertainty",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1651,10 +3842,24 @@
       "type": "standard",
       "name": "CTIA 01.73",
       "description": "OTA支持程序标准，包括功率测量程序",
+=======
+        "organization": "CTIA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "ota"
+      }
+    },
+    {
+      "id": "standard_9ssib2",
+      "type": "standard",
+      "name": "CTIA 01.73",
+      "description": "Supporting Procedures",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1664,10 +3869,24 @@
       "type": "standard",
       "name": "NGMN 5G Devices OTA Performance v1.0",
       "description": "5G终端OTA性能要求指南，参考3GPP RAN4 NR OTA测试方法和性能要求、CTIA OTA工作组、CCSA TC9 WG1、GCF等组织的工作成果",
+=======
+        "organization": "CTIA",
+        "status": "现行",
+        "publishDate": "",
+        "category": "ota"
+      }
+    },
+    {
+      "id": "standard_8v8azo",
+      "type": "standard",
+      "name": "NGMN 5G Devices OTA Performance v1.0",
+      "description": "5G Devices Over the Air Performance",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1677,10 +3896,24 @@
       "type": "standard",
       "name": "R&S TS8991 OTA Test System",
       "description": "罗德与施瓦茨公司的OTA性能测试系统，符合CTIA和3GPP规范的基站和终端OTA测试解决方案",
+=======
+        "organization": "NGMN（下一代移动网络联盟）",
+        "status": "现行",
+        "publishDate": "",
+        "category": "ota"
+      }
+    },
+    {
+      "id": "standard_hvokfi",
+      "type": "standard",
+      "name": "R&S TS8991 OTA Test System",
+      "description": "OTA Performance Test System",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1703,10 +3936,24 @@
       "type": "standard",
       "name": "IEEE 149-1979",
       "description": "天线测试标准程序，定义天线增益、方向图、效率、极化、阻抗、驻波比等参数的测量方法，是天线行业最基础的测试标准",
+=======
+        "organization": "Rohde & Schwarz",
+        "status": "现行",
+        "publishDate": "",
+        "category": "ota"
+      }
+    },
+    {
+      "id": "standard_rhjjmj",
+      "type": "standard",
+      "name": "IEEE 149-1979",
+      "description": "IEEE Standard Test Procedures for Antennas",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1716,10 +3963,24 @@
       "type": "standard",
       "name": "IEC 61196",
       "description": "同轴通信电缆标准系列，包括电缆电气性能测试方法，用于天线馈线系统的性能评估",
+=======
+        "organization": "IEEE",
+        "status": "现行",
+        "publishDate": "R2008",
+        "category": "antenna_meas"
+      }
+    },
+    {
+      "id": "standard_oqanju",
+      "type": "standard",
+      "name": "IEC 61196",
+      "description": "Coaxial communication cables (同轴通信电缆系列标准)",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1729,10 +3990,24 @@
       "type": "standard",
       "name": "IEC 61169",
       "description": "射频连接器标准系列，定义射频连接器的电气、机械、环境测试要求，用于天线系统连接器的质量评估",
+=======
+        "organization": "IEC",
+        "status": "现行",
+        "publishDate": "",
+        "category": "antenna_meas"
+      }
+    },
+    {
+      "id": "standard_oqanhc",
+      "type": "standard",
+      "name": "IEC 61169",
+      "description": "Radio-frequency connectors (射频连接器系列标准)",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1742,10 +4017,24 @@
       "type": "standard",
       "name": "IEC 60966",
       "description": "射频和同轴电缆组件标准，规定电缆组件的电气性能和测试方法",
+=======
+        "organization": "IEC",
+        "status": "现行",
+        "publishDate": "",
+        "category": "antenna_meas"
+      }
+    },
+    {
+      "id": "standard_oqa6fa",
+      "type": "standard",
+      "name": "IEC 60966",
+      "description": "Radio frequency and coaxial cable assemblies (射频和同轴电缆组件)",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1755,10 +4044,24 @@
       "type": "standard",
       "name": "IEC CISPR 32",
       "description": "多媒体设备EMC发射要求标准，涵盖传导和辐射发射，适用于通信基站辅助设备",
+=======
+        "organization": "IEC",
+        "status": "现行",
+        "publishDate": "",
+        "category": "antenna_meas"
+      }
+    },
+    {
+      "id": "standard_puip6f",
+      "type": "standard",
+      "name": "IEC CISPR 32",
+      "description": "Electromagnetic compatibility of multimedia equipment - Emission requirements",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1768,10 +4071,24 @@
       "type": "standard",
       "name": "IEC CISPR 16-1-4",
       "description": "EMC测量用天线和测试场地标准，规定EMC测试中天线校准和测试场地要求",
+=======
+        "organization": "IEC CISPR",
+        "status": "现行",
+        "publishDate": "2015+A1:2019",
+        "category": "emc_safety"
+      }
+    },
+    {
+      "id": "standard_l6r2hy",
+      "type": "standard",
+      "name": "IEC CISPR 16-1-4",
+      "description": "Specification for radio disturbance and immunity measuring apparatus and methods - Part 1-4: Antennas and test sites for radiated disturbance measurements",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1781,10 +4098,24 @@
       "type": "standard",
       "name": "IEC CISPR 11",
       "description": "工业、科学、医疗设备EMC要求标准（ISM设备）",
+=======
+        "organization": "IEC CISPR",
+        "status": "现行",
+        "publishDate": "",
+        "category": "emc_safety"
+      }
+    },
+    {
+      "id": "standard_puip86",
+      "type": "standard",
+      "name": "IEC CISPR 11",
+      "description": "Industrial, scientific and medical equipment - EMC requirements",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1794,10 +4125,24 @@
       "type": "standard",
       "name": "ETSI EN 301 489-1",
       "description": "无线电设备EMC通用技术要求标准",
+=======
+        "organization": "IEC CISPR",
+        "status": "现行",
+        "publishDate": "",
+        "category": "emc_safety"
+      }
+    },
+    {
+      "id": "standard_w34isx",
+      "type": "standard",
+      "name": "ETSI EN 301 489-1",
+      "description": "EMC standard for radio equipment; Part 1: Common technical requirements",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1807,10 +4152,24 @@
       "type": "standard",
       "name": "ITU-T K.114",
       "description": "5G有源天线系统（AAS）基站特殊EMC测试方法技术报告，提供AAS基站电磁兼容测试的特殊方法指导",
+=======
+        "organization": "ETSI",
+        "status": "现行",
+        "publishDate": "",
+        "category": "emc_safety"
+      }
+    },
+    {
+      "id": "standard_lxb3fi",
+      "type": "standard",
+      "name": "ITU-T K.114",
+      "description": "Special EMC test methods for 5G active antenna system (AAS) base station",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1833,10 +4192,24 @@
       "type": "standard",
       "name": "ICNIRP Guidelines",
       "description": "时变电场、磁场和电磁场暴露限制指南，是全球公认的电磁场人体安全暴露准则，被多国法规采纳",
+=======
+        "organization": "ITU-T",
+        "status": "现行",
+        "publishDate": "",
+        "category": "emc_safety"
+      }
+    },
+    {
+      "id": "standard_jx4msw",
+      "type": "standard",
+      "name": "ICNIRP Guidelines",
+      "description": "Guidelines for limiting exposure to time-varying electric, magnetic and electromagnetic fields",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1859,10 +4232,24 @@
       "type": "standard",
       "name": "IEC 61337-1",
       "description": "波导型介质谐振器滤波器第1部分：总规范，规定介质谐振器滤波器通用技术要求，用于微波应用（移动基站、无线连接设备等）",
+=======
+        "organization": "ICNIRP（国际非电离辐射防护委员会）",
+        "status": "现行",
+        "publishDate": "1998年（修订中）",
+        "category": "emc_safety"
+      }
+    },
+    {
+      "id": "standard_tdbw61",
+      "type": "standard",
+      "name": "IEC 61337-1",
+      "description": "Filters using waveguide type dielectric resonators - Part 1: Generic specification",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1872,10 +4259,24 @@
       "type": "standard",
       "name": "IEC 61337-2",
       "description": "波导型介质谐振器滤波器第2部分：使用指南，为滤波器选型和应用提供指导",
+=======
+        "organization": "IEC",
+        "status": "现行",
+        "publishDate": "2018年",
+        "category": "rf_components"
+      }
+    },
+    {
+      "id": "standard_tdbw60",
+      "type": "standard",
+      "name": "IEC 61337-2",
+      "description": "Filters using waveguide type dielectric resonators - Part 2: Sectional specification - Guidance for use",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1911,10 +4312,24 @@
       "type": "standard",
       "name": "3GPP TS 38.101-1/2",
       "description": "5G NR终端射频收发要求，规定滤波器通带、阻带、插入损耗等RF前端指标，与终端射频前端滤波器设计直接相关",
+=======
+        "organization": "IEC",
+        "status": "现行",
+        "publishDate": "2018年",
+        "category": "rf_components"
+      }
+    },
+    {
+      "id": "standard_59cuij",
+      "type": "standard",
+      "name": "3GPP TS 38.101-1/2",
+      "description": "NR UE RF transmission and reception (FR1/FR2)",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1924,10 +4339,24 @@
       "type": "standard",
       "name": "3GPP TS 38.104",
       "description": "5G NR基站射频要求，包括发射机滤波器（杂散抑制、带外抑制）、接收机前端滤波器等要求",
+=======
+        "organization": "3GPP",
+        "status": "现行",
+        "publishDate": "",
+        "category": "rf_components"
+      }
+    },
+    {
+      "id": "standard_6cj5dr",
+      "type": "standard",
+      "name": "3GPP TS 38.104",
+      "description": "NR Base Station RF requirements",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1950,10 +4379,24 @@
       "type": "standard",
       "name": "3GPP TSG-RAN WG1/WG4 内部研究",
       "description": "3GPP RAN1（物理层）和RAN4（RF性能）工作组关于MIMO、AAS、OTA测试的内部研究和标准化输出，推动技术标准迭代更新",
+=======
+        "organization": "3GPP",
+        "status": "现行",
+        "publishDate": "",
+        "category": "rf_components"
+      }
+    },
+    {
+      "id": "standard_xv4iv5",
+      "type": "standard",
+      "name": "3GPP TSG-RAN WG1/WG4 内部研究",
+      "description": "3GPP RAN MIMO/AAS研究",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1976,10 +4419,24 @@
       "type": "standard",
       "name": "IMT-2030 TPR",
       "description": "IMT-2030最低技术性能要求，定义20项技术性能指标（包括7项6G新增指标），用于评估6G RIT/SRIT候选技术方案",
+=======
+        "organization": "3GPP",
+        "status": "现行",
+        "publishDate": "",
+        "category": "enterprise"
+      }
+    },
+    {
+      "id": "standard_hcrr1u",
+      "type": "standard",
+      "name": "IMT-2030 TPR",
+      "description": "Minimum requirements related to technical performance for IMT-2030 radio interface(s)",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -1989,10 +4446,24 @@
       "type": "standard",
       "name": "IMT-2030 EVAL",
       "description": "IMT-2030评估标准和方法论",
+=======
+        "organization": "ITU-R WP 5D",
+        "status": "现行",
+        "publishDate": "",
+        "category": "6g"
+      }
+    },
+    {
+      "id": "standard_u8qois",
+      "type": "standard",
+      "name": "IMT-2030 EVAL",
+      "description": "Evaluation criteria and methodology for IMT-2030",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -2002,10 +4473,24 @@
       "type": "standard",
       "name": "IMT-2030 SUBMISSION",
       "description": "IMT-2030提交和评估指南",
+=======
+        "organization": "ITU-R WP 5D",
+        "status": "现行",
+        "publishDate": "",
+        "category": "6g"
+      }
+    },
+    {
+      "id": "standard_pwkh8",
+      "type": "standard",
+      "name": "IMT-2030 SUBMISSION",
+      "description": "Submission guidelines for IMT-2030",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -2054,10 +4539,24 @@
       "type": "standard",
       "name": "3GPP Release 21",
       "description": "6G第二阶段标准化，预计2030年完成",
+=======
+        "organization": "ITU-R WP 5D",
+        "status": "现行",
+        "publishDate": "",
+        "category": "6g"
+      }
+    },
+    {
+      "id": "standard_elzlms",
+      "type": "standard",
+      "name": "3GPP Release 21",
+      "description": "6G Phase 2",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -2067,10 +4566,24 @@
       "type": "standard",
       "name": "6G频谱规划研究",
       "description": "WRC-23确定用于6G的频段范围：24.25-27.5 GHz、37-43.5 GHz、45.5-47 GHz、47.2-48.2 GHz、66-71 GHz，为6G频谱规划奠定基础",
+=======
+        "organization": "3GPP",
+        "status": "现行",
+        "publishDate": "",
+        "category": "6g"
+      }
+    },
+    {
+      "id": "standard_7jai9r",
+      "type": "standard",
+      "name": "6G频谱规划研究",
+      "description": "WRC-23 6G频谱决议",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "standards"
       ],
       "metadata": {
+<<<<<<< HEAD
         "level": "行业",
         "status": "现行"
       }
@@ -2388,10 +4901,264 @@
       "type": "event",
       "name": "柳州移动携手华为，5G-A显标点亮广西县超决赛，无线智能板护航万人同场畅联",
       "description": "C114 首页",
+=======
+        "organization": "ITU WRC-23",
+        "status": "现行",
+        "publishDate": "",
+        "category": "6g"
+      }
+    },
+    {
+      "id": "material_f9sihm",
+      "type": "material",
+      "name": "生益科技",
+      "description": "全球第二大刚性覆铜板厂商，2024年营收203.88亿元，净利润17.39亿元；产品用于5G天线/AI服务器/芯片封装等高频材料",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "600183.SH",
+        "exchange": "上交所主板",
+        "tier": "6_key_materials",
+        "tier_label": "tier6 key materials"
+      }
+    },
+    {
+      "id": "material_2k7bgb",
+      "type": "material",
+      "name": "南亚塑料（台股）",
+      "description": "台塑集团旗下覆铜板厂商，南亚PCB事业部；是天线高频材料重要供应商",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "1303.TW",
+        "exchange": "台湾证券交易所",
+        "tier": "6_key_materials",
+        "tier_label": "tier6 key materials"
+      }
+    },
+    {
+      "id": "material_ayha9h",
+      "type": "material",
+      "name": "华正新材",
+      "description": "覆铜板/绝缘材料厂商，高频材料已供货5G基站天线",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "603186.SH",
+        "exchange": "上交所主板",
+        "tier": "6_key_materials",
+        "tier_label": "tier6 key materials"
+      }
+    },
+    {
+      "id": "material_aajt7j",
+      "type": "material",
+      "name": "亚太科技",
+      "description": "铝挤压型材龙头，产品用于汽车/通信/工业；部分用于基站天线铝合金支架/外壳",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002540.SZ",
+        "exchange": "深交所A股",
+        "tier": "6_key_materials",
+        "tier_label": "tier6 key materials"
+      }
+    },
+    {
+      "id": "material_atuqyn",
+      "type": "material",
+      "name": "利源精制",
+      "description": "铝型材/深加工产品，含天线结构件用铝合金型材",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002501.SZ",
+        "exchange": "深交所A股",
+        "tier": "6_key_materials",
+        "tier_label": "tier6 key materials"
+      }
+    },
+    {
+      "id": "material_aw2ink",
+      "type": "material",
+      "name": "博威合金",
+      "description": "高性能铜合金带材/棒材，用于连接器/散热件；是天线散热铜管/铜带材料的供应商之一",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "601137.SH",
+        "exchange": "上交所主板",
+        "tier": "6_key_materials",
+        "tier_label": "tier6 key materials"
+      }
+    },
+    {
+      "id": "material_e56k7n",
+      "type": "material",
+      "name": "海亮股份",
+      "description": "铜管/铜棒生产龙头，产品用于空调/电力/通信散热；铜管是基站天线散热部件原材料",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002203.SZ",
+        "exchange": "深交所A股",
+        "tier": "6_key_materials",
+        "tier_label": "tier6 key materials"
+      }
+    },
+    {
+      "id": "material_aaotea",
+      "type": "material",
+      "name": "中材科技",
+      "description": "特种复合材料（含LDS材料/工程塑料），用于天线振子支架及绝缘结构件",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002080.SZ",
+        "exchange": "深交所A股",
+        "tier": "6_key_materials",
+        "tier_label": "tier6 key materials"
+      }
+    },
+    {
+      "id": "material_e63hw2",
+      "type": "material",
+      "name": "沃特股份",
+      "description": "特种工程塑料（PPA/PPS/LCP），LDS材料可应用于天线注塑端子",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002886.SZ",
+        "exchange": "深交所A股",
+        "tier": "6_key_materials",
+        "tier_label": "tier6 key materials"
+      }
+    },
+    {
+      "id": "material_a863y3",
+      "type": "material",
+      "name": "中国巨石",
+      "description": "全球玻纤龙头，电子布用于覆铜板基材；E9超高模量玻纤已商用；淮安10万吨电子玻纤产线2026年3月点火",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "600176.SH",
+        "exchange": "上交所主板",
+        "tier": "7_raw_materials",
+        "tier_label": "tier7 raw materials"
+      }
+    },
+    {
+      "id": "material_dv6ynt",
+      "type": "material",
+      "name": "泰山玻璃纤维",
+      "description": "中材科技全资子公司，玻纤年产能170万吨全球第二；低介电超薄电子布用于高频覆铜板；是5G高频材料核心供应商",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "未上市（中材科技002080.SZ）",
+        "exchange": "深交所A股",
+        "tier": "7_raw_materials",
+        "tier_label": "tier7 raw materials"
+      }
+    },
+    {
+      "id": "material_c96rtn",
+      "type": "material",
+      "name": "重庆国际复合材料",
+      "description": "云天化集团旗下，创业板上市；5G低介电玻璃纤维已批量供货华为旗舰手机；电子纱用于覆铜板；风电纱全球前三",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "301301.SZ",
+        "exchange": "深交所创业板",
+        "tier": "7_raw_materials",
+        "tier_label": "tier7 raw materials"
+      }
+    },
+    {
+      "id": "material_i27whl",
+      "type": "material",
+      "name": "诺德股份",
+      "description": "国内首家锂电铜箔上市企业，A股上交所主板；5G通讯用高频高速标准铜箔已量产；覆铜板铜箔材料重要供应商；连续多年国内锂电铜箔市占率第一",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "600110.SH",
+        "exchange": "上交所主板",
+        "tier": "7_raw_materials",
+        "tier_label": "tier7 raw materials"
+      }
+    },
+    {
+      "id": "material_jd31px",
+      "type": "material",
+      "name": "雅克科技",
+      "description": "半导体材料平台型公司，含电子特气/前驱体/光刻胶/硅微粉四大板块；子公司科美特为国内最大六氟化硫生产商（年产能8500吨），四氟化碳已进入台积电；六氟化硫用于滤波器腔体清洗，电子特气是半导体工艺关键材料",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "002409.SZ",
+        "exchange": "深交所A股",
+        "tier": "7_raw_materials",
+        "tier_label": "tier7 raw materials"
+      }
+    },
+    {
+      "id": "material_bogqvn",
+      "type": "material",
+      "name": "太极实业",
+      "description": "半导体封装和电子材料综合供应商；旗下有海太半导体（封装测试）和太极半导体；电子材料用于IC封装；存储芯片封装规模国内前列；是覆铜板/PCB上游电子材料重要参与者",
+      "source_sectors": [
+        "market",
+        "enterprise"
+      ],
+      "metadata": {
+        "stock_code": "600667.SH",
+        "exchange": "上交所主板",
+        "tier": "7_raw_materials",
+        "tier_label": "tier7 raw materials"
+      }
+    },
+    {
+      "id": "event_xdyhms",
+      "type": "event",
+      "name": "是德科技携手NTT DOCOMO与NTT推进面向6G的真实信道建模与无线仿真技术",
+      "description": "是德科技携手NTT DOCOMO与NTT推进面向6G的真实信道建模与无线仿真技术",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
+<<<<<<< HEAD
         "date": "2026-06-16",
         "source": "C114通信网"
       }
@@ -2401,10 +5168,26 @@
       "type": "event",
       "name": "Sparring Partners x 中国电信王越 | Physical AI驱动通信网络能力新时代",
       "description": "C114 首页",
+=======
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态",
+          "5G/6G"
+        ]
+      }
+    },
+    {
+      "id": "event_n09n3i",
+      "type": "event",
+      "name": "工信部：加快制造业中试建设 布局AI、量子科技等关键领域",
+      "description": "工信部：加快制造业中试建设 布局AI、量子科技等关键领域",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
+<<<<<<< HEAD
         "date": "2026-06-16",
         "source": "C114通信网"
       }
@@ -2414,10 +5197,26 @@
       "type": "event",
       "name": "TM Forum, Nik Willetts | AI+6G 重塑电信格局，中国优势将决定未来十年走向",
       "description": "C114 首页",
+=======
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态",
+          "AI/芯片"
+        ]
+      }
+    },
+    {
+      "id": "event_emi110",
+      "type": "event",
+      "name": "工信部筹建量子信息标准化技术委员会",
+      "description": "工信部筹建量子信息标准化技术委员会",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
+<<<<<<< HEAD
         "date": "2026-06-16",
         "source": "C114通信网"
       }
@@ -2427,10 +5226,25 @@
       "type": "event",
       "name": "中国移动袁弋非 | 有源方案成共识，RIS迎来产业化契机",
       "description": "C114 首页",
+=======
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态"
+        ]
+      }
+    },
+    {
+      "id": "event_3wmffc",
+      "type": "event",
+      "name": "工信部召开2026年信息通信业行风建设暨纠风工作会议",
+      "description": "工信部召开2026年信息通信业行风建设暨纠风工作会议",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
+<<<<<<< HEAD
         "date": "2026-06-16",
         "source": "C114通信网"
       }
@@ -2440,10 +5254,25 @@
       "type": "event",
       "name": "全国首家“5G-A移动申花联名厅”亮相申城！",
       "description": "C114 首页",
+=======
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态"
+        ]
+      }
+    },
+    {
+      "id": "event_v0ss7b",
+      "type": "event",
+      "name": "工信部批准5G消息互通标准",
+      "description": "工信部批准5G消息互通标准",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
+<<<<<<< HEAD
         "date": "2026-06-16",
         "source": "C114通信网"
       }
@@ -2453,10 +5282,26 @@
       "type": "event",
       "name": "6G标准“倒计时”！3GPP敲定Rel-21版本时间表",
       "description": "C114 首页",
+=======
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态",
+          "5G/6G"
+        ]
+      }
+    },
+    {
+      "id": "event_irwlkr",
+      "type": "event",
+      "name": "工信部部署2026年信息通信业安全生产与网络运行安全工作",
+      "description": "工信部部署2026年信息通信业安全生产与网络运行安全工作",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
+<<<<<<< HEAD
         "date": "2026-06-16",
         "source": "C114通信网"
       }
@@ -2466,10 +5311,25 @@
       "type": "event",
       "name": "瞄准家庭Token经营：中国电信启动3000万套FTTR设备集采",
       "description": "C114 首页",
+=======
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态"
+        ]
+      }
+    },
+    {
+      "id": "event_qi7rg",
+      "type": "event",
+      "name": "工信部向166家外资企业发放经营试点批复 覆盖全部增值电信业务",
+      "description": "工信部向166家外资企业发放经营试点批复 覆盖全部增值电信业务",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
+<<<<<<< HEAD
         "date": "2026-06-16",
         "source": "C114通信网"
       }
@@ -2479,10 +5339,25 @@
       "type": "event",
       "name": "邵新华出任中国电信集团总工程师",
       "description": "C114 首页",
+=======
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态"
+        ]
+      }
+    },
+    {
+      "id": "event_rkmlwp",
+      "type": "event",
+      "name": "工信部：开展6G创新发展部省协同试点专项行动",
+      "description": "工信部：开展6G创新发展部省协同试点专项行动",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
+<<<<<<< HEAD
         "date": "2026-06-16",
         "source": "C114通信网"
       }
@@ -2492,10 +5367,26 @@
       "type": "event",
       "name": "中国移动均衡型分布式块存储集采：规模为370套，最高限价3.5亿元",
       "description": "C114 首页",
+=======
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态",
+          "5G/6G"
+        ]
+      }
+    },
+    {
+      "id": "event_r2nkr0",
+      "type": "event",
+      "name": "VIAVI畅谈\"真相位DAS\"：融合边缘AI实现“实时智能感知”",
+      "description": "VIAVI畅谈\"真相位DAS\"：融合边缘AI实现“实时智能感知”",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
+<<<<<<< HEAD
         "date": "2026-06-17",
         "source": "C114通信网"
       }
@@ -2505,10 +5396,26 @@
       "type": "event",
       "name": "中国移动卫星背包站集采：博浩科技和中信科移动中标",
       "description": "C114 首页",
+=======
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态",
+          "AI/芯片"
+        ]
+      }
+    },
+    {
+      "id": "event_h496zo",
+      "type": "event",
+      "name": "VIAVI推出“ AI 专家”工具，简化并加速无线测试与验证",
+      "description": "VIAVI推出“ AI 专家”工具，简化并加速无线测试与验证",
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
+<<<<<<< HEAD
         "date": "2026-06-18",
         "source": "C114通信网"
       }
@@ -2895,11 +5802,170 @@
         "category": "无线通信",
         "is_key": true,
         "is_technical_entity": true
+=======
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态",
+          "AI/芯片"
+        ]
+      }
+    },
+    {
+      "id": "event_y23ui3",
+      "type": "event",
+      "name": "会后报道 | 聚焦AI核心测试赛道，信而泰圆满收官2026台北国际电脑展",
+      "description": "会后报道 | 聚焦AI核心测试赛道，信而泰圆满收官2026台北国际电脑展",
+      "source_sectors": [
+        "dynamics"
+      ],
+      "metadata": {
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态",
+          "AI/芯片"
+        ]
+      }
+    },
+    {
+      "id": "event_fq42kg",
+      "type": "event",
+      "name": "小米卫星通信软件著作权获批：独立APP要来了",
+      "description": "小米卫星通信软件著作权获批：独立APP要来了",
+      "source_sectors": [
+        "dynamics"
+      ],
+      "metadata": {
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态",
+          "卫星"
+        ]
+      }
+    },
+    {
+      "id": "event_tguboe",
+      "type": "event",
+      "name": "百度高管解读Q1财报：手头芯片能支持文心一言训练一两年",
+      "description": "百度高管解读Q1财报：手头芯片能支持文心一言训练一两年",
+      "source_sectors": [
+        "dynamics"
+      ],
+      "metadata": {
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态",
+          "AI/芯片"
+        ]
+      }
+    },
+    {
+      "id": "event_i74kik",
+      "type": "event",
+      "name": "盛邦安全创新战略升级 锚定卫星互联网安全新蓝海",
+      "description": "盛邦安全创新战略升级 锚定卫星互联网安全新蓝海",
+      "source_sectors": [
+        "dynamics"
+      ],
+      "metadata": {
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态",
+          "卫星"
+        ]
+      }
+    },
+    {
+      "id": "event_o49xmf",
+      "type": "event",
+      "name": "遥遥领先！中国去年买了全球1/3芯片制造设备：7nm及以下制程被封锁",
+      "description": "遥遥领先！中国去年买了全球1/3芯片制造设备：7nm及以下制程被封锁",
+      "source_sectors": [
+        "dynamics"
+      ],
+      "metadata": {
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态",
+          "AI/芯片"
+        ]
+      }
+    },
+    {
+      "id": "event_aqlzz6",
+      "type": "event",
+      "name": "两部门：开展“网络去NAT”专项工作，进一步深化IPv6部署应用",
+      "description": "两部门：开展“网络去NAT”专项工作，进一步深化IPv6部署应用",
+      "source_sectors": [
+        "dynamics"
+      ],
+      "metadata": {
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态"
+        ]
+      }
+    },
+    {
+      "id": "event_pi5z3f",
+      "type": "event",
+      "name": "我国工业互联网进入全面推进的快速增长期",
+      "description": "我国工业互联网进入全面推进的快速增长期",
+      "source_sectors": [
+        "dynamics"
+      ],
+      "metadata": {
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态"
+        ]
+      }
+    },
+    {
+      "id": "event_cfw9i3",
+      "type": "event",
+      "name": "百度Q2财报：百度核心利润增长23%超预期 AI驱动业务高质量增长",
+      "description": "百度Q2财报：百度核心利润增长23%超预期 AI驱动业务高质量增长",
+      "source_sectors": [
+        "dynamics"
+      ],
+      "metadata": {
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态",
+          "AI/芯片"
+        ]
+      }
+    },
+    {
+      "id": "event_g03qv9",
+      "type": "event",
+      "name": "31省IPTV联合了！",
+      "description": "31省IPTV联合了！",
+      "source_sectors": [
+        "dynamics"
+      ],
+      "metadata": {
+        "date": "2026-06-15",
+        "source": "C114通信网",
+        "tags": [
+          "行业动态"
+        ]
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
       }
     }
   ],
   "relations": [
     {
+<<<<<<< HEAD
       "source": "company_ev001",
       "target": "company_中国移动",
       "relation": "supplies_to",
@@ -3409,6 +6475,517 @@
       "relation": "supplies_to",
       "confidence": 0.7,
       "evidence": "太极实业 的客户关系：国内外芯片厂商"
+=======
+      "source": "technology_i5qlwm",
+      "target": "company_elkc",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Massive MIMO 由 华为 应用/研发"
+    },
+    {
+      "source": "technology_i5qlwm",
+      "target": "company_a7lkho",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Massive MIMO 由 中兴通讯 应用/研发"
+    },
+    {
+      "source": "technology_i5qlwm",
+      "target": "company_hbgbr",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Massive MIMO 由 爱立信 应用/研发"
+    },
+    {
+      "source": "technology_i5qlwm",
+      "target": "company_kxhlm",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Massive MIMO 由 诺基亚 应用/研发"
+    },
+    {
+      "source": "technology_1qm4",
+      "target": "company_elkc",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "RIS 由 华为 应用/研发"
+    },
+    {
+      "source": "technology_1qm4",
+      "target": "company_a7lkho",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "RIS 由 中兴通讯 应用/研发"
+    },
+    {
+      "source": "technology_gqcyav",
+      "target": "company_elkc",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "5G NR mmWave 由 华为 应用/研发"
+    },
+    {
+      "source": "technology_6a1z45",
+      "target": "company_elkc",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Phased Array Antenna 由 华为 应用/研发"
+    },
+    {
+      "source": "technology_6a1z45",
+      "target": "company_hbgbr",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Phased Array Antenna 由 爱立信 应用/研发"
+    },
+    {
+      "source": "technology_5bymko",
+      "target": "company_alzk3e",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "LCP/LDS Antenna 由 信维通信 应用/研发"
+    },
+    {
+      "source": "technology_o7gt13",
+      "target": "company_elkc",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "AI Beamforming 由 华为 应用/研发"
+    },
+    {
+      "source": "technology_o7gt13",
+      "target": "company_a7lkho",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "AI Beamforming 由 中兴通讯 应用/研发"
+    },
+    {
+      "source": "technology_o7gt13",
+      "target": "company_hbgbr",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "AI Beamforming 由 爱立信 应用/研发"
+    },
+    {
+      "source": "technology_1kwbxj",
+      "target": "company_elkc",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Luneburg Lens Antenna 由 华为 应用/研发"
+    },
+    {
+      "source": "technology_1kwbxj",
+      "target": "company_fl5qwr",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Luneburg Lens Antenna 由 盛路通信 应用/研发"
+    },
+    {
+      "source": "technology_1kwbxj",
+      "target": "company_46cvzu",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Luneburg Lens Antenna 由 Kathrein（现属安弗施/AAC） 应用/研发"
+    },
+    {
+      "source": "technology_chgdo9",
+      "target": "company_elkc",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Satcom Phased Array 由 华为 应用/研发"
+    },
+    {
+      "source": "technology_sotp8r",
+      "target": "company_alzk3e",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Wearable Flexible Antenna 由 信维通信 应用/研发"
+    },
+    {
+      "source": "technology_g1uzz3",
+      "target": "company_fl5qwr",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Lens Antenna 由 盛路通信 应用/研发"
+    },
+    {
+      "source": "technology_g1uzz3",
+      "target": "company_hbgbr",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Lens Antenna 由 爱立信 应用/研发"
+    },
+    {
+      "source": "technology_g1uzz3",
+      "target": "company_elkc",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Lens Antenna 由 华为 应用/研发"
+    },
+    {
+      "source": "technology_t1kgts",
+      "target": "company_elkc",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Spectrum Sharing Antenna 由 华为 应用/研发"
+    },
+    {
+      "source": "technology_t1kgts",
+      "target": "company_hbgbr",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Spectrum Sharing Antenna 由 爱立信 应用/研发"
+    },
+    {
+      "source": "technology_t1kgts",
+      "target": "company_a7lkho",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Spectrum Sharing Antenna 由 中兴通讯 应用/研发"
+    },
+    {
+      "source": "technology_t1kgts",
+      "target": "company_fl5qwr",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Spectrum Sharing Antenna 由 盛路通信 应用/研发"
+    },
+    {
+      "source": "technology_ghld2r",
+      "target": "company_elkc",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Digital Twin Antenna 由 华为 应用/研发"
+    },
+    {
+      "source": "technology_ghld2r",
+      "target": "company_a7lkho",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Digital Twin Antenna 由 中兴通讯 应用/研发"
+    },
+    {
+      "source": "technology_ghld2r",
+      "target": "company_a8c3hy",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "Digital Twin Antenna 由 中国联通 应用/研发"
+    },
+    {
+      "source": "technology_75j4np",
+      "target": "company_elkc",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "AAU（有源天线单元） 由 华为 应用/研发"
+    },
+    {
+      "source": "technology_75j4np",
+      "target": "company_a7lkho",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "AAU（有源天线单元） 由 中兴通讯 应用/研发"
+    },
+    {
+      "source": "technology_75j4np",
+      "target": "company_hbgbr",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "AAU（有源天线单元） 由 爱立信 应用/研发"
+    },
+    {
+      "source": "technology_75j4np",
+      "target": "company_kxhlm",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "AAU（有源天线单元） 由 诺基亚 应用/研发"
+    },
+    {
+      "source": "technology_s2sa89",
+      "target": "company_elkc",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "THz Antenna 由 华为 应用/研发"
+    },
+    {
+      "source": "technology_s2sa89",
+      "target": "company_a7lkho",
+      "relation": "applied_by",
+      "confidence": 0.8,
+      "evidence": "THz Antenna 由 中兴通讯 应用/研发"
+    },
+    {
+      "source": "company_elkc",
+      "target": "standard_elzlm1",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "华为 参与 3GPP Release 15 标准制定"
+    },
+    {
+      "source": "company_a7lkho",
+      "target": "standard_elzlm1",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "中兴通讯 参与 3GPP Release 15 标准制定"
+    },
+    {
+      "source": "company_hbgbr",
+      "target": "standard_elzlm1",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "爱立信 参与 3GPP Release 15 标准制定"
+    },
+    {
+      "source": "company_kxhlm",
+      "target": "standard_elzlm1",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "诺基亚 参与 3GPP Release 15 标准制定"
+    },
+    {
+      "source": "company_rmkh87",
+      "target": "standard_elzlm1",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "华为天线事业部 参与 3GPP Release 15 标准制定"
+    },
+    {
+      "source": "company_elkc",
+      "target": "standard_elzlm2",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "华为 参与 3GPP Release 16 标准制定"
+    },
+    {
+      "source": "company_a7lkho",
+      "target": "standard_elzlm2",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "中兴通讯 参与 3GPP Release 16 标准制定"
+    },
+    {
+      "source": "company_hbgbr",
+      "target": "standard_elzlm2",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "爱立信 参与 3GPP Release 16 标准制定"
+    },
+    {
+      "source": "company_kxhlm",
+      "target": "standard_elzlm2",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "诺基亚 参与 3GPP Release 16 标准制定"
+    },
+    {
+      "source": "company_rmkh87",
+      "target": "standard_elzlm2",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "华为天线事业部 参与 3GPP Release 16 标准制定"
+    },
+    {
+      "source": "company_elkc",
+      "target": "standard_elzlm3",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "华为 参与 3GPP Release 17 标准制定"
+    },
+    {
+      "source": "company_a7lkho",
+      "target": "standard_elzlm3",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "中兴通讯 参与 3GPP Release 17 标准制定"
+    },
+    {
+      "source": "company_hbgbr",
+      "target": "standard_elzlm3",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "爱立信 参与 3GPP Release 17 标准制定"
+    },
+    {
+      "source": "company_kxhlm",
+      "target": "standard_elzlm3",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "诺基亚 参与 3GPP Release 17 标准制定"
+    },
+    {
+      "source": "company_rmkh87",
+      "target": "standard_elzlm3",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "华为天线事业部 参与 3GPP Release 17 标准制定"
+    },
+    {
+      "source": "company_elkc",
+      "target": "standard_elzlm4",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "华为 参与 3GPP Release 18 标准制定"
+    },
+    {
+      "source": "company_a7lkho",
+      "target": "standard_elzlm4",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "中兴通讯 参与 3GPP Release 18 标准制定"
+    },
+    {
+      "source": "company_hbgbr",
+      "target": "standard_elzlm4",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "爱立信 参与 3GPP Release 18 标准制定"
+    },
+    {
+      "source": "company_kxhlm",
+      "target": "standard_elzlm4",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "诺基亚 参与 3GPP Release 18 标准制定"
+    },
+    {
+      "source": "company_rmkh87",
+      "target": "standard_elzlm4",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "华为天线事业部 参与 3GPP Release 18 标准制定"
+    },
+    {
+      "source": "company_elkc",
+      "target": "standard_elzlm5",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "华为 参与 3GPP Release 19 标准制定"
+    },
+    {
+      "source": "company_a7lkho",
+      "target": "standard_elzlm5",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "中兴通讯 参与 3GPP Release 19 标准制定"
+    },
+    {
+      "source": "company_hbgbr",
+      "target": "standard_elzlm5",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "爱立信 参与 3GPP Release 19 标准制定"
+    },
+    {
+      "source": "company_kxhlm",
+      "target": "standard_elzlm5",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "诺基亚 参与 3GPP Release 19 标准制定"
+    },
+    {
+      "source": "company_rmkh87",
+      "target": "standard_elzlm5",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "华为天线事业部 参与 3GPP Release 19 标准制定"
+    },
+    {
+      "source": "company_elkc",
+      "target": "standard_elzlmr",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "华为 参与 3GPP Release 20 标准制定"
+    },
+    {
+      "source": "company_a7lkho",
+      "target": "standard_elzlmr",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "中兴通讯 参与 3GPP Release 20 标准制定"
+    },
+    {
+      "source": "company_hbgbr",
+      "target": "standard_elzlmr",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "爱立信 参与 3GPP Release 20 标准制定"
+    },
+    {
+      "source": "company_kxhlm",
+      "target": "standard_elzlmr",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "诺基亚 参与 3GPP Release 20 标准制定"
+    },
+    {
+      "source": "company_rmkh87",
+      "target": "standard_elzlmr",
+      "relation": "complies_with",
+      "confidence": 0.85,
+      "evidence": "华为天线事业部 参与 3GPP Release 20 标准制定"
+    },
+    {
+      "source": "event_xdyhms",
+      "target": "technology_i5qlwm",
+      "relation": "related_to",
+      "confidence": 0.5,
+      "evidence": "是德科技携手NTT DOCOMO与NTT推进面向6G的真实信道建模与无线仿真技术"
+    },
+    {
+      "source": "event_n09n3i",
+      "target": "technology_i5qlwm",
+      "relation": "related_to",
+      "confidence": 0.5,
+      "evidence": "工信部：加快制造业中试建设 布局AI、量子科技等关键领域"
+    },
+    {
+      "source": "event_emi110",
+      "target": "technology_i5qlwm",
+      "relation": "related_to",
+      "confidence": 0.5,
+      "evidence": "工信部筹建量子信息标准化技术委员会"
+    },
+    {
+      "source": "event_3wmffc",
+      "target": "technology_i5qlwm",
+      "relation": "related_to",
+      "confidence": 0.5,
+      "evidence": "工信部召开2026年信息通信业行风建设暨纠风工作会议"
+    },
+    {
+      "source": "event_v0ss7b",
+      "target": "technology_i5qlwm",
+      "relation": "related_to",
+      "confidence": 0.5,
+      "evidence": "工信部批准5G消息互通标准"
+    },
+    {
+      "source": "event_irwlkr",
+      "target": "technology_i5qlwm",
+      "relation": "related_to",
+      "confidence": 0.5,
+      "evidence": "工信部部署2026年信息通信业安全生产与网络运行安全工作"
+    },
+    {
+      "source": "event_qi7rg",
+      "target": "technology_i5qlwm",
+      "relation": "related_to",
+      "confidence": 0.5,
+      "evidence": "工信部向166家外资企业发放经营试点批复 覆盖全部增值电信业务"
+    },
+    {
+      "source": "event_rkmlwp",
+      "target": "technology_i5qlwm",
+      "relation": "related_to",
+      "confidence": 0.5,
+      "evidence": "工信部：开展6G创新发展部省协同试点专项行动"
+    },
+    {
+      "source": "event_r2nkr0",
+      "target": "technology_i5qlwm",
+      "relation": "related_to",
+      "confidence": 0.5,
+      "evidence": "VIAVI畅谈\"真相位DAS\"：融合边缘AI实现“实时智能感知”"
+>>>>>>> 73bd71d (fix(knowledge-graph): 修页面崩溃 + 企业页面补版头)
     }
   ]
 }
