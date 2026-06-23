@@ -62,10 +62,18 @@ jobs:
           echo "Step 3: Check if analysis-output.json exists"
           test -f app/_data/analysis-output.json && echo "YES" || echo "NO"
           echo "Step 4: Run next build"
-          npx next build 2>&1 || echo "NEXT BUILD FAILED WITH EXIT CODE $?"
+          npx next build 2>&1
           echo "Step 5: Check if out directory exists"
           ls -la out/ 2>/dev/null || echo "out/ not found"
+          echo "Step 6: Check public directory"
+          ls -la public/data/ 2>/dev/null || echo "public/data/ not found"
 
+      - name: Upload artifact
+        run: |
+          echo "Checking out/ directory..."
+          ls -la out/ 2>/dev/null || echo "out/ NOT FOUND"
+          find out/ -type f | head -20
+        id: check-out
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
