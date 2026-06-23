@@ -54,10 +54,18 @@ jobs:
           AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
 
       - name: Build static site
-        run: |
-          npx next build || true
-          echo "Build done"
-          ls -la out/ || echo "out/ not found"
+        run: npx next build
+        continue-on-error: true
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: |
+            out/
+            *.log
+            package.json
+            next.config.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
