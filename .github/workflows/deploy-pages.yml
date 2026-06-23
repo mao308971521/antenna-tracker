@@ -54,7 +54,11 @@ jobs:
           AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
 
       - name: Build static site
-        run: npm run export 2>&1 || (echo "BUILD FAILED" && exit 1)
+        run: |
+          echo "Checking analysis-output.json..."
+          ls -la app/_data/analysis-output.json || echo "FILE NOT FOUND"
+          cat app/_data/analysis-output.json | head -5
+          npm run export
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
