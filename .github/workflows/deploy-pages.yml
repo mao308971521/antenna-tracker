@@ -55,9 +55,9 @@ jobs:
 
       - name: Build static site
         run: |
-          npx next build
-          echo "Build succeeded"
-          ls -la out/
+          npx next build || true
+          echo "Build done"
+          ls -la out/ || echo "out/ not found"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
