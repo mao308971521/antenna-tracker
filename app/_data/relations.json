@@ -2,441 +2,529 @@
   {
     "source": "tech_1001",
     "predicate": "depends_on",
-    "target": "tech_1002"
+    "target": "tech_1002",
+    "evidence": "MIMO 依赖于 Massive MIMO"
   },
   {
     "source": "tech_1001",
     "predicate": "depends_on",
-    "target": "tech_1003"
+    "target": "tech_1003",
+    "evidence": "MIMO 依赖于 波束赋形"
   },
   {
     "source": "tech_1001",
     "predicate": "related_to",
-    "target": "tech_1007"
+    "target": "tech_1007",
+    "evidence": "MIMO 关联 空间复用"
   },
   {
     "source": "tech_1001",
     "predicate": "related_to",
-    "target": "tech_1008"
+    "target": "tech_1008",
+    "evidence": "MIMO 关联 空间分集"
   },
   {
     "source": "tech_1001",
     "predicate": "related_to",
-    "target": "tech_1005"
+    "target": "tech_1005",
+    "evidence": "MIMO 关联 天线隔离度"
   },
   {
     "source": "tech_1002",
     "predicate": "depends_on",
-    "target": "tech_1001"
+    "target": "tech_1001",
+    "evidence": "Massive MIMO 依赖于 MIMO"
   },
   {
     "source": "tech_1002",
     "predicate": "depends_on",
-    "target": "tech_1003"
+    "target": "tech_1003",
+    "evidence": "Massive MIMO 依赖于 波束赋形"
   },
   {
     "source": "tech_1002",
     "predicate": "related_to",
-    "target": "tech_1005"
+    "target": "tech_1005",
+    "evidence": "Massive MIMO 关联 天线隔离度"
   },
   {
     "source": "tech_1002",
     "predicate": "depends_on",
-    "target": "tech_1010"
+    "target": "tech_1010",
+    "evidence": "Massive MIMO 依赖于 XL-MIMO"
   },
   {
     "source": "tech_1002",
     "predicate": "depends_on",
-    "target": "tech_1013"
+    "target": "tech_1013",
+    "evidence": "Massive MIMO 依赖于 CSI反馈"
   },
   {
     "source": "tech_1003",
     "predicate": "depends_on",
-    "target": "tech_1001"
+    "target": "tech_1001",
+    "evidence": "波束赋形 依赖于 MIMO"
   },
   {
     "source": "tech_1003",
     "predicate": "depends_on",
-    "target": "tech_1004"
+    "target": "tech_1004",
+    "evidence": "波束赋形 依赖于 相控阵"
   },
   {
     "source": "tech_1003",
     "predicate": "depends_on",
-    "target": "tech_1002"
+    "target": "tech_1002",
+    "evidence": "波束赋形 依赖于 Massive MIMO"
   },
   {
     "source": "tech_1003",
     "predicate": "depends_on",
-    "target": "tech_1010"
+    "target": "tech_1010",
+    "evidence": "波束赋形 依赖于 XL-MIMO"
   },
   {
     "source": "tech_1003",
     "predicate": "depends_on",
-    "target": "tech_1011"
+    "target": "tech_1011",
+    "evidence": "波束赋形 依赖于 RIS"
   },
   {
     "source": "tech_1003",
     "predicate": "depends_on",
-    "target": "tech_1012"
+    "target": "tech_1012",
+    "evidence": "波束赋形 依赖于 AIP"
   },
   {
     "source": "tech_1004",
     "predicate": "depends_on",
-    "target": "tech_1003"
+    "target": "tech_1003",
+    "evidence": "相控阵 依赖于 波束赋形"
   },
   {
     "source": "tech_1004",
     "predicate": "depends_on",
-    "target": "tech_1001"
+    "target": "tech_1001",
+    "evidence": "相控阵 依赖于 MIMO"
   },
   {
     "source": "tech_1004",
     "predicate": "depends_on",
-    "target": "tech_1012"
+    "target": "tech_1012",
+    "evidence": "相控阵 依赖于 AIP"
   },
   {
     "source": "tech_1004",
     "predicate": "related_to",
-    "target": "tech_1016"
+    "target": "tech_1016",
+    "evidence": "相控阵 关联 Ka波段"
   },
   {
     "source": "tech_1005",
     "predicate": "related_to",
-    "target": "tech_1001"
+    "target": "tech_1001",
+    "evidence": "天线隔离度 关联 MIMO"
   },
   {
     "source": "tech_1005",
     "predicate": "related_to",
-    "target": "tech_1002"
+    "target": "tech_1002",
+    "evidence": "天线隔离度 关联 Massive MIMO"
   },
   {
     "source": "tech_1005",
     "predicate": "related_to",
-    "target": "tech_1014"
+    "target": "tech_1014",
+    "evidence": "天线隔离度 关联 DGS"
   },
   {
     "source": "tech_1005",
     "predicate": "related_to",
-    "target": "tech_1015"
+    "target": "tech_1015",
+    "evidence": "天线隔离度 关联 EBG"
   },
   {
     "source": "tech_1006",
     "predicate": "related_to",
-    "target": "tech_1018"
+    "target": "tech_1018",
+    "evidence": "菲涅尔区 关联 E-band"
   },
   {
     "source": "tech_1006",
     "predicate": "related_to",
-    "target": "tech_1023"
+    "target": "tech_1023",
+    "evidence": "菲涅尔区 关联 视距传播"
   },
   {
     "source": "tech_1006",
     "predicate": "related_to",
-    "target": "tech_1024"
+    "target": "tech_1024",
+    "evidence": "菲涅尔区 关联 多径衰落"
   },
   {
     "source": "tech_1007",
     "predicate": "related_to",
-    "target": "tech_1001"
+    "target": "tech_1001",
+    "evidence": "空间复用 关联 MIMO"
   },
   {
     "source": "tech_1007",
     "predicate": "related_to",
-    "target": "tech_1002"
+    "target": "tech_1002",
+    "evidence": "空间复用 关联 Massive MIMO"
   },
   {
     "source": "tech_1007",
     "predicate": "related_to",
-    "target": "tech_1008"
+    "target": "tech_1008",
+    "evidence": "空间复用 关联 空间分集"
   },
   {
     "source": "tech_1007",
     "predicate": "related_to",
-    "target": "tech_1003"
+    "target": "tech_1003",
+    "evidence": "空间复用 关联 波束赋形"
   },
   {
     "source": "tech_1008",
     "predicate": "related_to",
-    "target": "tech_1001"
+    "target": "tech_1001",
+    "evidence": "空间分集 关联 MIMO"
   },
   {
     "source": "tech_1008",
     "predicate": "related_to",
-    "target": "tech_1007"
+    "target": "tech_1007",
+    "evidence": "空间分集 关联 空间复用"
   },
   {
     "source": "tech_1008",
     "predicate": "related_to",
-    "target": "tech_1009"
+    "target": "tech_1009",
+    "evidence": "空间分集 关联 多径传播"
   },
   {
     "source": "tech_1008",
     "predicate": "related_to",
-    "target": "tech_1002"
+    "target": "tech_1002",
+    "evidence": "空间分集 关联 Massive MIMO"
   },
   {
     "source": "tech_1009",
     "predicate": "related_to",
-    "target": "tech_1001"
+    "target": "tech_1001",
+    "evidence": "多径传播 关联 MIMO"
   },
   {
     "source": "tech_1009",
     "predicate": "related_to",
-    "target": "tech_1008"
+    "target": "tech_1008",
+    "evidence": "多径传播 关联 空间分集"
   },
   {
     "source": "tech_1009",
     "predicate": "related_to",
-    "target": "tech_1006"
+    "target": "tech_1006",
+    "evidence": "多径传播 关联 菲涅尔区"
   },
   {
     "source": "tech_1009",
     "predicate": "related_to",
-    "target": "tech_1024"
+    "target": "tech_1024",
+    "evidence": "多径传播 关联 多径衰落"
   },
   {
     "source": "tech_1010",
     "predicate": "depends_on",
-    "target": "tech_1002"
+    "target": "tech_1002",
+    "evidence": "XL-MIMO 依赖于 Massive MIMO"
   },
   {
     "source": "tech_1010",
     "predicate": "depends_on",
-    "target": "tech_1003"
+    "target": "tech_1003",
+    "evidence": "XL-MIMO 依赖于 波束赋形"
   },
   {
     "source": "tech_1010",
     "predicate": "depends_on",
-    "target": "tech_1001"
+    "target": "tech_1001",
+    "evidence": "XL-MIMO 依赖于 MIMO"
   },
   {
     "source": "tech_1010",
     "predicate": "depends_on",
-    "target": "tech_1021"
+    "target": "tech_1021",
+    "evidence": "XL-MIMO 依赖于 6G"
   },
   {
     "source": "tech_1011",
     "predicate": "depends_on",
-    "target": "tech_1003"
+    "target": "tech_1003",
+    "evidence": "RIS 依赖于 波束赋形"
   },
   {
     "source": "tech_1011",
     "predicate": "depends_on",
-    "target": "tech_1021"
+    "target": "tech_1021",
+    "evidence": "RIS 依赖于 6G"
   },
   {
     "source": "tech_1011",
     "predicate": "depends_on",
-    "target": "tech_1002"
+    "target": "tech_1002",
+    "evidence": "RIS 依赖于 Massive MIMO"
   },
   {
     "source": "tech_1012",
     "predicate": "depends_on",
-    "target": "tech_1004"
+    "target": "tech_1004",
+    "evidence": "AIP 依赖于 相控阵"
   },
   {
     "source": "tech_1012",
     "predicate": "depends_on",
-    "target": "tech_1003"
+    "target": "tech_1003",
+    "evidence": "AIP 依赖于 波束赋形"
   },
   {
     "source": "tech_1012",
     "predicate": "depends_on",
-    "target": "tech_1002"
+    "target": "tech_1002",
+    "evidence": "AIP 依赖于 Massive MIMO"
   },
   {
     "source": "tech_1013",
     "predicate": "depends_on",
-    "target": "tech_1002"
+    "target": "tech_1002",
+    "evidence": "CSI反馈 依赖于 Massive MIMO"
   },
   {
     "source": "tech_1013",
     "predicate": "depends_on",
-    "target": "tech_1003"
+    "target": "tech_1003",
+    "evidence": "CSI反馈 依赖于 波束赋形"
   },
   {
     "source": "tech_1013",
     "predicate": "depends_on",
-    "target": "tech_1010"
+    "target": "tech_1010",
+    "evidence": "CSI反馈 依赖于 XL-MIMO"
   },
   {
     "source": "tech_1013",
     "predicate": "depends_on",
-    "target": "tech_1021"
+    "target": "tech_1021",
+    "evidence": "CSI反馈 依赖于 6G"
   },
   {
     "source": "tech_1014",
     "predicate": "related_to",
-    "target": "tech_1005"
+    "target": "tech_1005",
+    "evidence": "DGS 关联 天线隔离度"
   },
   {
     "source": "tech_1014",
     "predicate": "related_to",
-    "target": "tech_1015"
+    "target": "tech_1015",
+    "evidence": "DGS 关联 EBG"
   },
   {
     "source": "tech_1014",
     "predicate": "related_to",
-    "target": "tech_1001"
+    "target": "tech_1001",
+    "evidence": "DGS 关联 MIMO"
   },
   {
     "source": "tech_1015",
     "predicate": "related_to",
-    "target": "tech_1005"
+    "target": "tech_1005",
+    "evidence": "EBG 关联 天线隔离度"
   },
   {
     "source": "tech_1015",
     "predicate": "related_to",
-    "target": "tech_1014"
+    "target": "tech_1014",
+    "evidence": "EBG 关联 DGS"
   },
   {
     "source": "tech_1015",
     "predicate": "related_to",
-    "target": "tech_1001"
+    "target": "tech_1001",
+    "evidence": "EBG 关联 MIMO"
   },
   {
     "source": "tech_1016",
     "predicate": "related_to",
-    "target": "tech_1017"
+    "target": "tech_1017",
+    "evidence": "Ka波段 关联 Ku波段"
   },
   {
     "source": "tech_1016",
     "predicate": "related_to",
-    "target": "tech_1004"
+    "target": "tech_1004",
+    "evidence": "Ka波段 关联 相控阵"
   },
   {
     "source": "tech_1016",
     "predicate": "related_to",
-    "target": "tech_1003"
+    "target": "tech_1003",
+    "evidence": "Ka波段 关联 波束赋形"
   },
   {
     "source": "tech_1017",
     "predicate": "related_to",
-    "target": "tech_1016"
+    "target": "tech_1016",
+    "evidence": "Ku波段 关联 Ka波段"
   },
   {
     "source": "tech_1017",
     "predicate": "related_to",
-    "target": "tech_1004"
+    "target": "tech_1004",
+    "evidence": "Ku波段 关联 相控阵"
   },
   {
     "source": "tech_1018",
     "predicate": "related_to",
-    "target": "tech_1006"
+    "target": "tech_1006",
+    "evidence": "E-band 关联 菲涅尔区"
   },
   {
     "source": "tech_1018",
     "predicate": "related_to",
-    "target": "tech_1023"
+    "target": "tech_1023",
+    "evidence": "E-band 关联 视距传播"
   },
   {
     "source": "tech_1019",
     "predicate": "related_to",
-    "target": "tech_1001"
+    "target": "tech_1001",
+    "evidence": "Wi-Fi 7 关联 MIMO"
   },
   {
     "source": "tech_1019",
     "predicate": "related_to",
-    "target": "tech_1003"
+    "target": "tech_1003",
+    "evidence": "Wi-Fi 7 关联 波束赋形"
   },
   {
     "source": "tech_1019",
     "predicate": "related_to",
-    "target": "tech_1002"
+    "target": "tech_1002",
+    "evidence": "Wi-Fi 7 关联 Massive MIMO"
   },
   {
     "source": "tech_1020",
     "predicate": "related_to",
-    "target": "tech_1004"
+    "target": "tech_1004",
+    "evidence": "Starlink 关联 相控阵"
   },
   {
     "source": "tech_1020",
     "predicate": "related_to",
-    "target": "tech_1003"
+    "target": "tech_1003",
+    "evidence": "Starlink 关联 波束赋形"
   },
   {
     "source": "tech_1020",
     "predicate": "related_to",
-    "target": "tech_1016"
+    "target": "tech_1016",
+    "evidence": "Starlink 关联 Ka波段"
   },
   {
     "source": "tech_1020",
     "predicate": "related_to",
-    "target": "tech_1017"
+    "target": "tech_1017",
+    "evidence": "Starlink 关联 Ku波段"
   },
   {
     "source": "tech_1021",
     "predicate": "depends_on",
-    "target": "tech_1010"
+    "target": "tech_1010",
+    "evidence": "6G 依赖于 XL-MIMO"
   },
   {
     "source": "tech_1021",
     "predicate": "depends_on",
-    "target": "tech_1011"
+    "target": "tech_1011",
+    "evidence": "6G 依赖于 RIS"
   },
   {
     "source": "tech_1021",
     "predicate": "depends_on",
-    "target": "tech_1003"
+    "target": "tech_1003",
+    "evidence": "6G 依赖于 波束赋形"
   },
   {
     "source": "tech_1021",
     "predicate": "depends_on",
-    "target": "tech_1002"
+    "target": "tech_1002",
+    "evidence": "6G 依赖于 Massive MIMO"
   },
   {
     "source": "tech_1021",
     "predicate": "depends_on",
-    "target": "tech_1022"
+    "target": "tech_1022",
+    "evidence": "6G 依赖于 近场通信"
   },
   {
     "source": "tech_1022",
     "predicate": "depends_on",
-    "target": "tech_1021"
+    "target": "tech_1021",
+    "evidence": "近场通信 依赖于 6G"
   },
   {
     "source": "tech_1022",
     "predicate": "depends_on",
-    "target": "tech_1010"
+    "target": "tech_1010",
+    "evidence": "近场通信 依赖于 XL-MIMO"
   },
   {
     "source": "tech_1022",
     "predicate": "depends_on",
-    "target": "tech_1003"
+    "target": "tech_1003",
+    "evidence": "近场通信 依赖于 波束赋形"
   },
   {
     "source": "tech_1023",
     "predicate": "related_to",
-    "target": "tech_1006"
+    "target": "tech_1006",
+    "evidence": "视距传播 关联 菲涅尔区"
   },
   {
     "source": "tech_1023",
     "predicate": "related_to",
-    "target": "tech_1018"
+    "target": "tech_1018",
+    "evidence": "视距传播 关联 E-band"
   },
   {
     "source": "tech_1023",
     "predicate": "related_to",
-    "target": "tech_1009"
+    "target": "tech_1009",
+    "evidence": "视距传播 关联 多径传播"
   },
   {
     "source": "tech_1024",
     "predicate": "related_to",
-    "target": "tech_1001"
+    "target": "tech_1001",
+    "evidence": "多径衰落 关联 MIMO"
   },
   {
     "source": "tech_1024",
     "predicate": "related_to",
-    "target": "tech_1009"
+    "target": "tech_1009",
+    "evidence": "多径衰落 关联 多径传播"
   },
   {
     "source": "tech_1024",
     "predicate": "related_to",
-    "target": "tech_1006"
+    "target": "tech_1006",
+    "evidence": "多径衰落 关联 菲涅尔区"
   },
   {
     "source": "tech_1024",
     "predicate": "related_to",
-    "target": "tech_1008"
+    "target": "tech_1008",
+    "evidence": "多径衰落 关联 空间分集"
   }
 ]
