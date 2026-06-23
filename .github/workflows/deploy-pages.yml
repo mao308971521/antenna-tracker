@@ -54,7 +54,17 @@ jobs:
           AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
 
       - name: Build static site
-        run: npx next build
+        run: |
+          echo "Step 1: Check Node version"
+          node --version
+          echo "Step 2: Check npm version"
+          npm --version
+          echo "Step 3: Check if analysis-output.json exists"
+          test -f app/_data/analysis-output.json && echo "YES" || echo "NO"
+          echo "Step 4: Run next build"
+          npx next build 2>&1 || echo "NEXT BUILD FAILED WITH EXIT CODE $?"
+          echo "Step 5: Check if out directory exists"
+          ls -la out/ 2>/dev/null || echo "out/ not found"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
