@@ -44,9 +44,12 @@ jobs:
 
       - name: Generate analysis
         run: |
-          echo "AGNES_API_KEY set: $([ -n "$AGNES_API_KEY" ] && echo YES || echo NO)"
-          echo "AGNES_API_KEY length: ${#AGNES_API_KEY}"
-          python scripts/generate-analysis.py
+          echo "DEBUG: AGNES_API_KEY exists: $([ -n \"$AGNES_API_KEY\" ] && echo YES || echo NO)"
+          echo "DEBUG: AGNES_API_KEY length: $(echo -n \"$AGNES_API_KEY\" | wc -c)"
+          echo "DEBUG: Python version: $(python --version 2>&1)"
+          echo "DEBUG: openai version: $(pip show openai 2>&1 | head -1)"
+          echo "DEBUG: Working directory: $(pwd)"
+          python scripts/generate-analysis.py 2>&1 || echo "EXIT CODE: $?"
         env:
           AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
 
