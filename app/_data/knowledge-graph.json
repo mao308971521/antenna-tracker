@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-06-19",
+  "lastUpdate": "2026-06-23",
   "version": "2.0",
   "description": "天线行业知识图谱 - 自动从各板块数据抽取生成",
   "entities": [
@@ -436,6 +436,390 @@
         "location": "无锡",
         "is_key": false
       }
+    },
+    {
+      "id": "tech_1001",
+      "type": "technology",
+      "name": "MIMO",
+      "description": "多输入多输出技术，多根天线同时收发，把空间变成新的高速公路。传统 SISO 是单车道，MIMO 是多车道并行传输。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "多输入多输出技术，多根天线同时收发，把空间变成新的高速公路。传统 SISO 是单车道，MIMO 是多车道并行传输。",
+      "summary_vernacular": "就像一条马路从单车道改成多车道，原来一辆车一辆车走，现在多辆车并行跑，速度翻 N 倍。"
+    },
+    {
+      "id": "tech_1002",
+      "type": "technology",
+      "name": "Massive MIMO",
+      "description": "Massive MIMO(大规模 MIMO, 典型配置 64T64R/32T32R)是 5G 基站的核心技术,通过大规模天线阵列实现波束精细化管理和空间复用, 显著提升频谱效率和覆盖能力。截至 2026 年 Q1, 全球 5G 基站累计部署超过 1200 万面, 其中超过 70% 采用 Massive MIMO 配置。国内运营商集采中, 64T64R 占比持续提升, 单基站天线价值量是 4G 的 3-5 倍。技术正向 128T128R 演进, 以支持更高频谱效率和更多并发用户。【2026-06 更新】中国移动 5G-A 三频融合天线集采 5 月落标, 128T128R 配置占比首次突破 30%,单 AAU 价值量同比上升 18%; 华为新一代 MetaAAU 在 128T128R + AI 波束赋形基础上,能耗较上一代下降 22%, 已在国内 5 个试点城市完成外场测试。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": "基站天线"
+      },
+      "summary": "大规模 MIMO，5G 基站天线的核心技术。64T64R、128T128R 甚至 192T192R 配置，在有限空间内集成数十至上百个天线单元。",
+      "summary_vernacular": "普通 MIMO 是几根天线并行，Massive MIMO 是把几十上百根天线塞进一块基站面板里，让网速和容量翻倍。"
+    },
+    {
+      "id": "tech_1003",
+      "type": "technology",
+      "name": "波束赋形",
+      "description": "通过控制多根天线的信号相位和幅度，让电磁波能量集中指向特定方向，从全向灯泡升级为手电筒。5G 基站、卫星通信、Wi-Fi 7 的核心技术。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "通过控制多根天线的信号相位和幅度，让电磁波能量集中指向特定方向，从全向灯泡升级为手电筒。5G 基站、卫星通信、Wi-Fi 7 的核心技术。",
+      "summary_vernacular": "以前基站信号像灯泡，360度乱照浪费能量；波束赋形就像手电筒，对准谁就往谁那打，省电又更快。"
+    },
+    {
+      "id": "tech_1004",
+      "type": "technology",
+      "name": "相控阵",
+      "description": "相控阵天线通过电子方式控制波束方向，无需机械转动，在卫星通信、5G毫米波、雷达等领域有广泛应用。天线行业涉及的相控阵主要有三类：①卫星通信平板相控阵（Starlink/OneWeb终端已商用，单价从800美元降至299美元，快速降本中），②微波传输相控阵（运营商数字微波替代传统抛物面天线），③雷达相控阵（气象/交通/军事应用）。技术成熟度参差不齐，卫星通信相控阵正处于快速降本期，微波传输相控阵已成熟。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": "微波天线"
+      },
+      "summary": "通过电子控制波束指向的阵列天线，无需机械转动即可改变辐射方向。广泛应用于 5G 基站、卫星通信（Starlink）、雷达系统。",
+      "summary_vernacular": "以前转天线要整个设备跟着转，相控阵是里面几百根小天线各自微调，电子方式就能改变方向，像大脑指挥手臂一样快。"
+    },
+    {
+      "id": "tech_1005",
+      "type": "technology",
+      "name": "天线隔离度",
+      "description": "衡量两个天线之间互相干扰程度的参数，用 S21 量化。隔离度越高，干扰越小。5G Massive MIMO 基站中数十至上百个天线单元的隔离设计是关键挑战。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "衡量两个天线之间互相干扰程度的参数，用 S21 量化。隔离度越高，干扰越小。5G Massive MIMO 基站中数十至上百个天线单元的隔离设计是关键挑战。",
+      "summary_vernacular": "就像办公室里每个人的隔音玻璃——玻璃越好，你的电话会议不会打扰别人，别人也不会干扰你。天线之间隔得越好，基站就能塞进越多天线。"
+    },
+    {
+      "id": "tech_1006",
+      "type": "technology",
+      "name": "菲涅尔区",
+      "description": "无线链路中包裹在直线视距周围的一个橄榄球形空间区域。第一菲涅尔区贡献约70%的接收功率，工程设计要求60%净空准则。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "无线链路中包裹在直线视距周围的一个橄榄球形空间区域。第一菲涅尔区贡献约70%的接收功率，工程设计要求60%净空准则。",
+      "summary_vernacular": "两条天线之间不只有一条直线通道，而是一个橄榄球形状的空间。即使中间直线没挡住，只要这个橄榄球空间被树叶或建筑占了30%，信号就会变差。"
+    },
+    {
+      "id": "tech_1007",
+      "type": "technology",
+      "name": "空间复用",
+      "description": "MIMO 的三大关键技术之一。把一份高速数据拆成多份低速数据通过不同天线同时发送，接收端再重组。4x4 MIMO 理论上速率是 SISO 的 4 倍。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "MIMO 的三大关键技术之一。把一份高速数据拆成多份低速数据通过不同天线同时发送，接收端再重组。4x4 MIMO 理论上速率是 SISO 的 4 倍。",
+      "summary_vernacular": "就像一个快递把一个大包裹拆成几个小箱子同时寄出，到目的地再重新组装，速度直接翻 N 倍。"
+    },
+    {
+      "id": "tech_1008",
+      "type": "technology",
+      "name": "空间分集",
+      "description": "MIMO 的三大关键技术之一。同一份数据通过多根天线发送或利用多径传播的不同路径，确保至少有一条路径信号质量好，降低误码率。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "MIMO 的三大关键技术之一。同一份数据通过多根天线发送或利用多径传播的不同路径，确保至少有一条路径信号质量好，降低误码率。",
+      "summary_vernacular": "就像多条路送同一封信，只要有一条路没堵车，信就到了。提高的是稳定性而不是速度。"
+    },
+    {
+      "id": "tech_1009",
+      "type": "technology",
+      "name": "多径传播",
+      "description": "信号通过反射、折射产生多条传播路径的现象。在传统通信中是干扰源，但在 MIMO 中被转化为资源——不同路径=不同空间信道=可并行传输。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "信号通过反射、折射产生多条传播路径的现象。在传统通信中是干扰源，但在 MIMO 中被转化为资源——不同路径=不同空间信道=可并行传输。",
+      "summary_vernacular": "以前信号碰到墙壁反弹回来叫多径，被认为是噪音。MIMO 反其道而行：多一条路径就多一个传送数据的通道。"
+    },
+    {
+      "id": "tech_1010",
+      "type": "technology",
+      "name": "XL-MIMO",
+      "description": "超大规模 MIMO，6G 候选关键技术。阵列规模从 64 演进到 256 再到 1024，波束越来越窄，频谱效率向香农极限逼近。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "超大规模 MIMO，6G 候选关键技术。阵列规模从 64 演进到 256 再到 1024，波束越来越窄，频谱效率向香农极限逼近。",
+      "summary_vernacular": "Massive MIMO 的升级版，天线数量从几十个到上千个，波束像激光一样精准，网速和容量继续大幅提升。"
+    },
+    {
+      "id": "tech_1011",
+      "type": "technology",
+      "name": "RIS",
+      "description": "RIS（Reconfigurable Intelligent Surface，可重构智能表面）通过在基站和终端之间的无线传播环境中部署可编程的电磁表面，智能调控电磁波的幅度、相位、极化，实现信号增强、干扰抑制和覆盖补盲。学术圈在2020年前后掀起研究热潮，但商业落地进程明显慢于预期。核心原因：一是调控IC成本居高不下（每个单元需配置变容二极管或PIN二极管），大规模面板成本达数千元/平方米；二是实际部署中维护困难，缺乏有效的测试和维护手段；三是运营商对这一技术仍处于观望态度。华为联合东南大学在杭州地铁站已完成外场测试，覆盖提升40%，是目前最接近商用的验证结果。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": "基站天线"
+      },
+      "summary": "可重构智能表面，把墙面或玻璃变成反射波束的镜子。无源器件，成本低，用于解决覆盖盲区如电梯、地下车库。",
+      "summary_vernacular": "以前信号进不了电梯或地下室只能靠加基站，RIS 就是在墙上贴一层智能反射膜，把信号反射进去，省钱又省事。"
+    },
+    {
+      "id": "tech_1012",
+      "type": "technology",
+      "name": "AIP",
+      "description": "一体化有源阵列，芯片和天线集成在一起。毫米波手机和 AirDrop 设备的核心技术，成本和体积大幅下降。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "一体化有源阵列，芯片和天线集成在一起。毫米波手机和 AirDrop 设备的核心技术，成本和体积大幅下降。",
+      "summary_vernacular": "以前天线是外接的一根棍子或贴片，AIP 直接把天线做进芯片里，手机越来越薄还能用毫米波。"
+    },
+    {
+      "id": "tech_1013",
+      "type": "technology",
+      "name": "CSI反馈",
+      "description": "信道状态信息反馈，Massive MIMO 波束赋形的关键前提。基站需要知道用户的信道状态才能精准赋形，反馈开销大是核心难点之一。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "信道状态信息反馈，Massive MIMO 波束赋形的关键前提。基站需要知道用户的信道状态才能精准赋形，反馈开销大是核心难点之一。",
+      "summary_vernacular": "基站要精准对准用户发信号，得先知道信号传过来的路是什么样的。CSI 反馈就是用户告诉基站'路怎么样'的过程。"
+    },
+    {
+      "id": "tech_1014",
+      "type": "technology",
+      "name": "DGS",
+      "description": "缺陷地结构，在天线接地板上蚀刻特定缺口图案，阻断表面电流传播路径，提升天线单元之间的隔离度，典型效果 10-20dB。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "缺陷地结构，在天线接地板上蚀刻特定缺口图案，阻断表面电流传播路径，提升天线单元之间的隔离度，典型效果 10-20dB。",
+      "summary_vernacular": "就像在电路板上挖沟渠，让电流过不去，防止一个天线的信号通过电路板传到另一个天线里。"
+    },
+    {
+      "id": "tech_1015",
+      "type": "technology",
+      "name": "EBG",
+      "description": "电磁带隙结构，人工设计的周期性金属结构，作为频率陷阱抑制表面波传播，提升天线隔离度，典型效果 20-30dB 宽频。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "电磁带隙结构，人工设计的周期性金属结构，作为频率陷阱抑制表面波传播，提升天线隔离度，典型效果 20-30dB 宽频。",
+      "summary_vernacular": "像给电路板装了一个只放行特定频率的'安检门'，其他频率的信号过不去，从而减少天线之间的干扰。"
+    },
+    {
+      "id": "tech_1016",
+      "type": "technology",
+      "name": "Ka波段",
+      "description": "卫星通信常用频段之一，频率范围 26-40GHz。Starlink 等低轨卫星系统使用 Ka 波段实现高通量数据传输。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "卫星通信常用频段之一，频率范围 26-40GHz。Starlink 等低轨卫星系统使用 Ka 波段实现高通量数据传输。",
+      "summary_vernacular": "卫星上网用的一个高频段，就像高速公路的快车道，带宽大但怕下雨（雨衰严重）。"
+    },
+    {
+      "id": "tech_1017",
+      "type": "technology",
+      "name": "Ku波段",
+      "description": "卫星通信常用频段，频率范围 12-18GHz。比 Ka 波段频率低，穿透力更强，受雨衰影响较小。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "卫星通信常用频段，频率范围 12-18GHz。比 Ka 波段频率低，穿透力更强，受雨衰影响较小。",
+      "summary_vernacular": "卫星上网用的另一个频段，就像高速公路的慢车道，带宽不如 Ka 波段但更稳定，不容易被天气影响。"
+    },
+    {
+      "id": "tech_1018",
+      "type": "technology",
+      "name": "E-band",
+      "description": "5G 基站回传主力频段，频率 70/80GHz，波长毫米级。提供超大带宽但雨衰严重，波束极窄，对视距要求严格。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "5G 基站回传主力频段，频率 70/80GHz，波长毫米级。提供超大带宽但雨衰严重，波束极窄，对视距要求严格。",
+      "summary_vernacular": "基站之间传数据用的超高频段，带宽巨大但像激光一样细，稍微有点遮挡或下雨就断了。"
+    },
+    {
+      "id": "tech_1019",
+      "type": "technology",
+      "name": "Wi-Fi 7",
+      "description": "IEEE 802.11be 标准，支持 320MHz 信道带宽、4096-QAM、16x16 MU-MIMO 和多链路操作（MLO）。家用路由器 4-8 根天线。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "IEEE 802.11be 标准，支持 320MHz 信道带宽、4096-QAM、16x16 MU-MIMO 和多链路操作（MLO）。家用路由器 4-8 根天线。",
+      "summary_vernacular": "最新一代 WiFi，速度比 WiFi 6 快好几倍，能同时服务更多设备不掉线，家里设备再多也不卡。"
+    },
+    {
+      "id": "tech_1020",
+      "type": "technology",
+      "name": "Starlink",
+      "description": "SpaceX 的低轨卫星互联网项目，单颗卫星可生成上千个独立波束，地面用户终端使用相控阵天线，Ku/Ka 频段，单星吞吐量约 20 Gbps。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "SpaceX 的低轨卫星互联网项目，单颗卫星可生成上千个独立波束，地面用户终端使用相控阵天线，Ku/Ka 频段，单星吞吐量约 20 Gbps。",
+      "summary_vernacular": "马斯克用卫星在天上铺了一张网，你家屋顶装个小天线就能上网，不用拉光纤。"
+    },
+    {
+      "id": "tech_1021",
+      "type": "technology",
+      "name": "6G",
+      "description": "第六代移动通信技术，候选关键技术包括 XL-MIMO、RIS、AI驱动波束管理、近场通信等。波束越来越窄，频谱效率逼近香农极限。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "第六代移动通信技术，候选关键技术包括 XL-MIMO、RIS、AI驱动波束管理、近场通信等。波束越来越窄，频谱效率逼近香农极限。",
+      "summary_vernacular": "5G 之后的下一代通信，网速会比 5G 快 10-100 倍，信号能精准到像激光一样对准你的设备。"
+    },
+    {
+      "id": "tech_1022",
+      "type": "technology",
+      "name": "近场通信",
+      "description": "6G 关注的通信新特性，波束不再只跟角度走，还带距离维度。球面波模型替代平面波，适用于超大规模天线阵列场景。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "6G 关注的通信新特性，波束不再只跟角度走，还带距离维度。球面波模型替代平面波，适用于超大规模天线阵列场景。",
+      "summary_vernacular": "以前信号发射只考虑方向，不考虑距离。近场通信把距离也算进去，就像手电筒不仅对准谁，还知道谁离得多远。"
+    },
+    {
+      "id": "tech_1023",
+      "type": "technology",
+      "name": "视距传播",
+      "description": "无线信号在发射端和接收端之间直线无障碍的传播方式。是微波通信和 5G 毫米波通信的基础，但菲涅尔区净空比 LOS 更重要。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "无线信号在发射端和接收端之间直线无障碍的传播方式。是微波通信和 5G 毫米波通信的基础，但菲涅尔区净空比 LOS 更重要。",
+      "summary_vernacular": "两根天线之间拉一根直线，线上没东西挡就叫视距。但光有视距还不够，还得保证视距周围的橄榄球空间也清空。"
+    },
+    {
+      "id": "tech_1024",
+      "type": "technology",
+      "name": "多径衰落",
+      "description": "信号通过不同路径到达接收端，各路径信号叠加导致信号强度随机波动。是无线通信中的经典问题，MIMO 将其转化为资源。",
+      "source_sectors": [
+        "technology"
+      ],
+      "metadata": {
+        "phase": "",
+        "maturity": "中",
+        "category": ""
+      },
+      "summary": "信号通过不同路径到达接收端，各路径信号叠加导致信号强度随机波动。是无线通信中的经典问题，MIMO 将其转化为资源。",
+      "summary_vernacular": "信号走多条路到达手机，有的路快有的路慢，到了手机那里有的叠加增强、有的抵消减弱，信号忽强忽弱。"
     },
     {
       "id": "std_3gpp_release_15",
@@ -2384,517 +2768,133 @@
       }
     },
     {
-      "id": "event_10001",
+      "id": "event_10012",
       "type": "event",
-      "name": "柳州移动携手华为，5G-A显标点亮广西县超决赛，无线智能板护航万人同场畅联",
-      "description": "C114 首页",
+      "name": "中国联通发布全球最长距离大模型异构混训成果",
+      "description": "C114 无线频道",
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
-        "date": "2026-06-16",
+        "date": "2026-06-19",
         "source": "C114通信网"
       }
     },
     {
-      "id": "event_10002",
+      "id": "event_10013",
       "type": "event",
-      "name": "Sparring Partners x 中国电信王越 | Physical AI驱动通信网络能力新时代",
-      "description": "C114 首页",
+      "name": "极速苏超：5G-A让精彩每一秒都在线",
+      "description": "C114 无线频道",
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
-        "date": "2026-06-16",
+        "date": "2026-06-19",
         "source": "C114通信网"
       }
     },
     {
-      "id": "event_10003",
+      "id": "event_10014",
       "type": "event",
-      "name": "TM Forum, Nik Willetts | AI+6G 重塑电信格局，中国优势将决定未来十年走向",
-      "description": "C114 首页",
+      "name": "东北首个！丹东联通联合华为推出B60解决方案，一站式护航企业网络和安防",
+      "description": "C114 无线频道",
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
-        "date": "2026-06-16",
+        "date": "2026-06-19",
         "source": "C114通信网"
       }
     },
     {
-      "id": "event_10004",
+      "id": "event_10015",
       "type": "event",
-      "name": "中国移动袁弋非 | 有源方案成共识，RIS迎来产业化契机",
-      "description": "C114 首页",
+      "name": "中国电信发布全光网3.0白皮书：定义“全光智联”，2030年能力基本达成",
+      "description": "C114 无线频道",
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
-        "date": "2026-06-16",
+        "date": "2026-06-19",
         "source": "C114通信网"
       }
     },
     {
-      "id": "event_10005",
+      "id": "event_10016",
       "type": "event",
-      "name": "全国首家“5G-A移动申花联名厅”亮相申城！",
-      "description": "C114 首页",
+      "name": "工信部谢存：截至6月底，5G基站达455万个 5G用户达11.18亿户",
+      "description": "C114 无线频道",
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
-        "date": "2026-06-16",
+        "date": "2026-06-19",
         "source": "C114通信网"
       }
     },
     {
-      "id": "event_10006",
+      "id": "event_10017",
       "type": "event",
-      "name": "6G标准“倒计时”！3GPP敲定Rel-21版本时间表",
-      "description": "C114 首页",
+      "name": "中国电信启动插入式微型智能机顶盒集采：规模300万台",
+      "description": "C114 无线频道",
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
-        "date": "2026-06-16",
+        "date": "2026-06-19",
         "source": "C114通信网"
       }
     },
     {
-      "id": "event_10007",
+      "id": "event_10018",
       "type": "event",
-      "name": "瞄准家庭Token经营：中国电信启动3000万套FTTR设备集采",
-      "description": "C114 首页",
+      "name": "工信部、国资委启动2026年度人形机器人与具身智能实景实训专项行动",
+      "description": "C114 5G频道",
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
-        "date": "2026-06-16",
+        "date": "2026-06-19",
         "source": "C114通信网"
       }
     },
     {
-      "id": "event_10008",
+      "id": "event_10019",
       "type": "event",
-      "name": "邵新华出任中国电信集团总工程师",
-      "description": "C114 首页",
+      "name": "四部门：推动科技保险高质量发展 在人工智能、集成电路、量子科技等领域开发专属产品",
+      "description": "C114 5G频道",
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
-        "date": "2026-06-16",
+        "date": "2026-06-19",
         "source": "C114通信网"
       }
     },
     {
-      "id": "event_10009",
+      "id": "event_10020",
       "type": "event",
-      "name": "中国移动均衡型分布式块存储集采：规模为370套，最高限价3.5亿元",
-      "description": "C114 首页",
+      "name": "工信部全面开展算力态势感知自动化监测工作",
+      "description": "C114 5G频道",
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
-        "date": "2026-06-17",
+        "date": "2026-06-19",
         "source": "C114通信网"
       }
     },
     {
-      "id": "event_10010",
+      "id": "event_10021",
       "type": "event",
-      "name": "中国移动卫星背包站集采：博浩科技和中信科移动中标",
-      "description": "C114 首页",
+      "name": "工信部许可两款L3级自动驾驶车型产品",
+      "description": "C114 5G频道",
       "source_sectors": [
         "dynamics"
       ],
       "metadata": {
-        "date": "2026-06-18",
+        "date": "2026-06-19",
         "source": "C114通信网"
-      }
-    },
-    {
-      "id": "tech_1001",
-      "type": "technology",
-      "name": "MIMO",
-      "description": "多输入多输出技术，多根天线同时收发，把空间变成新的高速公路。传统 SISO 是单车道，MIMO 是多车道并行传输。",
-      "summary": "多输入多输出技术，多根天线同时收发，把空间变成新的高速公路。传统 SISO 是单车道，MIMO 是多车道并行传输。",
-      "summary_vernacular": "就像一条马路从单车道改成多车道，原来一辆车一辆车走，现在多辆车并行跑，速度翻 N 倍。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "天线技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1002",
-      "type": "technology",
-      "name": "Massive MIMO",
-      "description": "大规模 MIMO，5G 基站天线的核心技术。64T64R、128T128R 甚至 192T192R 配置，在有限空间内集成数十至上百个天线单元。",
-      "summary": "大规模 MIMO，5G 基站天线的核心技术。64T64R、128T128R 甚至 192T192R 配置，在有限空间内集成数十至上百个天线单元。",
-      "summary_vernacular": "普通 MIMO 是几根天线并行，Massive MIMO 是把几十上百根天线塞进一块基站面板里，让网速和容量翻倍。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "天线技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1003",
-      "type": "technology",
-      "name": "波束赋形",
-      "description": "通过控制多根天线的信号相位和幅度，让电磁波能量集中指向特定方向，从全向灯泡升级为手电筒。5G 基站、卫星通信、Wi-Fi 7 的核心技术。",
-      "summary": "通过控制多根天线的信号相位和幅度，让电磁波能量集中指向特定方向，从全向灯泡升级为手电筒。5G 基站、卫星通信、Wi-Fi 7 的核心技术。",
-      "summary_vernacular": "以前基站信号像灯泡，360度乱照浪费能量；波束赋形就像手电筒，对准谁就往谁那打，省电又更快。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "天线技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1004",
-      "type": "technology",
-      "name": "相控阵",
-      "description": "通过电子控制波束指向的阵列天线，无需机械转动即可改变辐射方向。广泛应用于 5G 基站、卫星通信（Starlink）、雷达系统。",
-      "summary": "通过电子控制波束指向的阵列天线，无需机械转动即可改变辐射方向。广泛应用于 5G 基站、卫星通信（Starlink）、雷达系统。",
-      "summary_vernacular": "以前转天线要整个设备跟着转，相控阵是里面几百根小天线各自微调，电子方式就能改变方向，像大脑指挥手臂一样快。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "天线技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1005",
-      "type": "technology",
-      "name": "天线隔离度",
-      "description": "衡量两个天线之间互相干扰程度的参数，用 S21 量化。隔离度越高，干扰越小。5G Massive MIMO 基站中数十至上百个天线单元的隔离设计是关键挑战。",
-      "summary": "衡量两个天线之间互相干扰程度的参数，用 S21 量化。隔离度越高，干扰越小。5G Massive MIMO 基站中数十至上百个天线单元的隔离设计是关键挑战。",
-      "summary_vernacular": "就像办公室里每个人的隔音玻璃——玻璃越好，你的电话会议不会打扰别人，别人也不会干扰你。天线之间隔得越好，基站就能塞进越多天线。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "射频参数",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1006",
-      "type": "technology",
-      "name": "菲涅尔区",
-      "description": "无线链路中包裹在直线视距周围的一个橄榄球形空间区域。第一菲涅尔区贡献约70%的接收功率，工程设计要求60%净空准则。",
-      "summary": "无线链路中包裹在直线视距周围的一个橄榄球形空间区域。第一菲涅尔区贡献约70%的接收功率，工程设计要求60%净空准则。",
-      "summary_vernacular": "两条天线之间不只有一条直线通道，而是一个橄榄球形状的空间。即使中间直线没挡住，只要这个橄榄球空间被树叶或建筑占了30%，信号就会变差。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "微波通信",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1007",
-      "type": "technology",
-      "name": "空间复用",
-      "description": "MIMO 的三大关键技术之一。把一份高速数据拆成多份低速数据通过不同天线同时发送，接收端再重组。4x4 MIMO 理论上速率是 SISO 的 4 倍。",
-      "summary": "MIMO 的三大关键技术之一。把一份高速数据拆成多份低速数据通过不同天线同时发送，接收端再重组。4x4 MIMO 理论上速率是 SISO 的 4 倍。",
-      "summary_vernacular": "就像一个快递把一个大包裹拆成几个小箱子同时寄出，到目的地再重新组装，速度直接翻 N 倍。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "MIMO技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1008",
-      "type": "technology",
-      "name": "空间分集",
-      "description": "MIMO 的三大关键技术之一。同一份数据通过多根天线发送或利用多径传播的不同路径，确保至少有一条路径信号质量好，降低误码率。",
-      "summary": "MIMO 的三大关键技术之一。同一份数据通过多根天线发送或利用多径传播的不同路径，确保至少有一条路径信号质量好，降低误码率。",
-      "summary_vernacular": "就像多条路送同一封信，只要有一条路没堵车，信就到了。提高的是稳定性而不是速度。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "MIMO技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1009",
-      "type": "technology",
-      "name": "多径传播",
-      "description": "信号通过反射、折射产生多条传播路径的现象。在传统通信中是干扰源，但在 MIMO 中被转化为资源——不同路径=不同空间信道=可并行传输。",
-      "summary": "信号通过反射、折射产生多条传播路径的现象。在传统通信中是干扰源，但在 MIMO 中被转化为资源——不同路径=不同空间信道=可并行传输。",
-      "summary_vernacular": "以前信号碰到墙壁反弹回来叫多径，被认为是噪音。MIMO 反其道而行：多一条路径就多一个传送数据的通道。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "无线通信",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1010",
-      "type": "technology",
-      "name": "XL-MIMO",
-      "description": "超大规模 MIMO，6G 候选关键技术。阵列规模从 64 演进到 256 再到 1024，波束越来越窄，频谱效率向香农极限逼近。",
-      "summary": "超大规模 MIMO，6G 候选关键技术。阵列规模从 64 演进到 256 再到 1024，波束越来越窄，频谱效率向香农极限逼近。",
-      "summary_vernacular": "Massive MIMO 的升级版，天线数量从几十个到上千个，波束像激光一样精准，网速和容量继续大幅提升。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "6G技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1011",
-      "type": "technology",
-      "name": "RIS",
-      "description": "可重构智能表面，把墙面或玻璃变成反射波束的镜子。无源器件，成本低，用于解决覆盖盲区如电梯、地下车库。",
-      "summary": "可重构智能表面，把墙面或玻璃变成反射波束的镜子。无源器件，成本低，用于解决覆盖盲区如电梯、地下车库。",
-      "summary_vernacular": "以前信号进不了电梯或地下室只能靠加基站，RIS 就是在墙上贴一层智能反射膜，把信号反射进去，省钱又省事。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "6G技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1012",
-      "type": "technology",
-      "name": "AIP",
-      "description": "一体化有源阵列，芯片和天线集成在一起。毫米波手机和 AirDrop 设备的核心技术，成本和体积大幅下降。",
-      "summary": "一体化有源阵列，芯片和天线集成在一起。毫米波手机和 AirDrop 设备的核心技术，成本和体积大幅下降。",
-      "summary_vernacular": "以前天线是外接的一根棍子或贴片，AIP 直接把天线做进芯片里，手机越来越薄还能用毫米波。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "天线技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1013",
-      "type": "technology",
-      "name": "CSI反馈",
-      "description": "信道状态信息反馈，Massive MIMO 波束赋形的关键前提。基站需要知道用户的信道状态才能精准赋形，反馈开销大是核心难点之一。",
-      "summary": "信道状态信息反馈，Massive MIMO 波束赋形的关键前提。基站需要知道用户的信道状态才能精准赋形，反馈开销大是核心难点之一。",
-      "summary_vernacular": "基站要精准对准用户发信号，得先知道信号传过来的路是什么样的。CSI 反馈就是用户告诉基站'路怎么样'的过程。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "5G技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1014",
-      "type": "technology",
-      "name": "DGS",
-      "description": "缺陷地结构，在天线接地板上蚀刻特定缺口图案，阻断表面电流传播路径，提升天线单元之间的隔离度，典型效果 10-20dB。",
-      "summary": "缺陷地结构，在天线接地板上蚀刻特定缺口图案，阻断表面电流传播路径，提升天线单元之间的隔离度，典型效果 10-20dB。",
-      "summary_vernacular": "就像在电路板上挖沟渠，让电流过不去，防止一个天线的信号通过电路板传到另一个天线里。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "射频技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1015",
-      "type": "technology",
-      "name": "EBG",
-      "description": "电磁带隙结构，人工设计的周期性金属结构，作为频率陷阱抑制表面波传播，提升天线隔离度，典型效果 20-30dB 宽频。",
-      "summary": "电磁带隙结构，人工设计的周期性金属结构，作为频率陷阱抑制表面波传播，提升天线隔离度，典型效果 20-30dB 宽频。",
-      "summary_vernacular": "像给电路板装了一个只放行特定频率的'安检门'，其他频率的信号过不去，从而减少天线之间的干扰。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "射频技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1016",
-      "type": "technology",
-      "name": "Ka波段",
-      "description": "卫星通信常用频段之一，频率范围 26-40GHz。Starlink 等低轨卫星系统使用 Ka 波段实现高通量数据传输。",
-      "summary": "卫星通信常用频段之一，频率范围 26-40GHz。Starlink 等低轨卫星系统使用 Ka 波段实现高通量数据传输。",
-      "summary_vernacular": "卫星上网用的一个高频段，就像高速公路的快车道，带宽大但怕下雨（雨衰严重）。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "卫星通信",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1017",
-      "type": "technology",
-      "name": "Ku波段",
-      "description": "卫星通信常用频段，频率范围 12-18GHz。比 Ka 波段频率低，穿透力更强，受雨衰影响较小。",
-      "summary": "卫星通信常用频段，频率范围 12-18GHz。比 Ka 波段频率低，穿透力更强，受雨衰影响较小。",
-      "summary_vernacular": "卫星上网用的另一个频段，就像高速公路的慢车道，带宽不如 Ka 波段但更稳定，不容易被天气影响。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "卫星通信",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1018",
-      "type": "technology",
-      "name": "E-band",
-      "description": "5G 基站回传主力频段，频率 70/80GHz，波长毫米级。提供超大带宽但雨衰严重，波束极窄，对视距要求严格。",
-      "summary": "5G 基站回传主力频段，频率 70/80GHz，波长毫米级。提供超大带宽但雨衰严重，波束极窄，对视距要求严格。",
-      "summary_vernacular": "基站之间传数据用的超高频段，带宽巨大但像激光一样细，稍微有点遮挡或下雨就断了。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "微波通信",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1019",
-      "type": "technology",
-      "name": "Wi-Fi 7",
-      "description": "IEEE 802.11be 标准，支持 320MHz 信道带宽、4096-QAM、16x16 MU-MIMO 和多链路操作（MLO）。家用路由器 4-8 根天线。",
-      "summary": "IEEE 802.11be 标准，支持 320MHz 信道带宽、4096-QAM、16x16 MU-MIMO 和多链路操作（MLO）。家用路由器 4-8 根天线。",
-      "summary_vernacular": "最新一代 WiFi，速度比 WiFi 6 快好几倍，能同时服务更多设备不掉线，家里设备再多也不卡。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "无线通信",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1020",
-      "type": "company",
-      "name": "Starlink",
-      "description": "SpaceX 的低轨卫星互联网项目，单颗卫星可生成上千个独立波束，地面用户终端使用相控阵天线，Ku/Ka 频段，单星吞吐量约 20 Gbps。",
-      "summary": "SpaceX 的低轨卫星互联网项目，单颗卫星可生成上千个独立波束，地面用户终端使用相控阵天线，Ku/Ka 频段，单星吞吐量约 20 Gbps。",
-      "summary_vernacular": "马斯克用卫星在天上铺了一张网，你家屋顶装个小天线就能上网，不用拉光纤。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "卫星通信",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1021",
-      "type": "technology",
-      "name": "6G",
-      "description": "第六代移动通信技术，候选关键技术包括 XL-MIMO、RIS、AI驱动波束管理、近场通信等。波束越来越窄，频谱效率逼近香农极限。",
-      "summary": "第六代移动通信技术，候选关键技术包括 XL-MIMO、RIS、AI驱动波束管理、近场通信等。波束越来越窄，频谱效率逼近香农极限。",
-      "summary_vernacular": "5G 之后的下一代通信，网速会比 5G 快 10-100 倍，信号能精准到像激光一样对准你的设备。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "通信技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1022",
-      "type": "technology",
-      "name": "近场通信",
-      "description": "6G 关注的通信新特性，波束不再只跟角度走，还带距离维度。球面波模型替代平面波，适用于超大规模天线阵列场景。",
-      "summary": "6G 关注的通信新特性，波束不再只跟角度走，还带距离维度。球面波模型替代平面波，适用于超大规模天线阵列场景。",
-      "summary_vernacular": "以前信号发射只考虑方向，不考虑距离。近场通信把距离也算进去，就像手电筒不仅对准谁，还知道谁离得多远。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "6G技术",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1023",
-      "type": "technology",
-      "name": "视距传播",
-      "description": "无线信号在发射端和接收端之间直线无障碍的传播方式。是微波通信和 5G 毫米波通信的基础，但菲涅尔区净空比 LOS 更重要。",
-      "summary": "无线信号在发射端和接收端之间直线无障碍的传播方式。是微波通信和 5G 毫米波通信的基础，但菲涅尔区净空比 LOS 更重要。",
-      "summary_vernacular": "两根天线之间拉一根直线，线上没东西挡就叫视距。但光有视距还不够，还得保证视距周围的橄榄球空间也清空。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "无线通信",
-        "is_key": true,
-        "is_technical_entity": true
-      }
-    },
-    {
-      "id": "tech_1024",
-      "type": "technology",
-      "name": "多径衰落",
-      "description": "信号通过不同路径到达接收端，各路径信号叠加导致信号强度随机波动。是无线通信中的经典问题，MIMO 将其转化为资源。",
-      "summary": "信号通过不同路径到达接收端，各路径信号叠加导致信号强度随机波动。是无线通信中的经典问题，MIMO 将其转化为资源。",
-      "summary_vernacular": "信号走多条路到达手机，有的路快有的路慢，到了手机那里有的叠加增强、有的抵消减弱，信号忽强忽弱。",
-      "source_sectors": [
-        "technology"
-      ],
-      "metadata": {
-        "category": "无线通信",
-        "is_key": true,
-        "is_technical_entity": true
       }
     }
   ],
@@ -3409,6 +3409,1039 @@
       "relation": "supplies_to",
       "confidence": 0.7,
       "evidence": "太极实业 的客户关系：国内外芯片厂商"
+    },
+    {
+      "source": "tech_1001",
+      "target": "tech_1002",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "MIMO 依赖于 Massive MIMO"
+    },
+    {
+      "source": "tech_1001",
+      "target": "tech_1003",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "MIMO 依赖于 波束赋形"
+    },
+    {
+      "source": "tech_1001",
+      "target": "tech_1007",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "MIMO 关联 空间复用"
+    },
+    {
+      "source": "tech_1001",
+      "target": "tech_1008",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "MIMO 关联 空间分集"
+    },
+    {
+      "source": "tech_1001",
+      "target": "tech_1005",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "MIMO 关联 天线隔离度"
+    },
+    {
+      "source": "tech_1002",
+      "target": "tech_1001",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "Massive MIMO 依赖于 MIMO"
+    },
+    {
+      "source": "tech_1002",
+      "target": "tech_1003",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "Massive MIMO 依赖于 波束赋形"
+    },
+    {
+      "source": "tech_1002",
+      "target": "tech_1005",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "Massive MIMO 关联 天线隔离度"
+    },
+    {
+      "source": "tech_1002",
+      "target": "tech_1010",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "Massive MIMO 依赖于 XL-MIMO"
+    },
+    {
+      "source": "tech_1002",
+      "target": "tech_1013",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "Massive MIMO 依赖于 CSI反馈"
+    },
+    {
+      "source": "tech_1003",
+      "target": "tech_1001",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "波束赋形 依赖于 MIMO"
+    },
+    {
+      "source": "tech_1003",
+      "target": "tech_1004",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "波束赋形 依赖于 相控阵"
+    },
+    {
+      "source": "tech_1003",
+      "target": "tech_1002",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "波束赋形 依赖于 Massive MIMO"
+    },
+    {
+      "source": "tech_1003",
+      "target": "tech_1010",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "波束赋形 依赖于 XL-MIMO"
+    },
+    {
+      "source": "tech_1003",
+      "target": "tech_1011",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "波束赋形 依赖于 RIS"
+    },
+    {
+      "source": "tech_1003",
+      "target": "tech_1012",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "波束赋形 依赖于 AIP"
+    },
+    {
+      "source": "tech_1004",
+      "target": "tech_1003",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "相控阵 依赖于 波束赋形"
+    },
+    {
+      "source": "tech_1004",
+      "target": "tech_1001",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "相控阵 依赖于 MIMO"
+    },
+    {
+      "source": "tech_1004",
+      "target": "tech_1012",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "相控阵 依赖于 AIP"
+    },
+    {
+      "source": "tech_1004",
+      "target": "tech_1016",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "相控阵 关联 Ka波段"
+    },
+    {
+      "source": "tech_1005",
+      "target": "tech_1001",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "天线隔离度 关联 MIMO"
+    },
+    {
+      "source": "tech_1005",
+      "target": "tech_1002",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "天线隔离度 关联 Massive MIMO"
+    },
+    {
+      "source": "tech_1005",
+      "target": "tech_1014",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "天线隔离度 关联 DGS"
+    },
+    {
+      "source": "tech_1005",
+      "target": "tech_1015",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "天线隔离度 关联 EBG"
+    },
+    {
+      "source": "tech_1006",
+      "target": "tech_1018",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "菲涅尔区 关联 E-band"
+    },
+    {
+      "source": "tech_1006",
+      "target": "tech_1023",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "菲涅尔区 关联 视距传播"
+    },
+    {
+      "source": "tech_1006",
+      "target": "tech_1024",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "菲涅尔区 关联 多径衰落"
+    },
+    {
+      "source": "tech_1007",
+      "target": "tech_1001",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "空间复用 关联 MIMO"
+    },
+    {
+      "source": "tech_1007",
+      "target": "tech_1002",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "空间复用 关联 Massive MIMO"
+    },
+    {
+      "source": "tech_1007",
+      "target": "tech_1008",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "空间复用 关联 空间分集"
+    },
+    {
+      "source": "tech_1007",
+      "target": "tech_1003",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "空间复用 关联 波束赋形"
+    },
+    {
+      "source": "tech_1008",
+      "target": "tech_1001",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "空间分集 关联 MIMO"
+    },
+    {
+      "source": "tech_1008",
+      "target": "tech_1007",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "空间分集 关联 空间复用"
+    },
+    {
+      "source": "tech_1008",
+      "target": "tech_1009",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "空间分集 关联 多径传播"
+    },
+    {
+      "source": "tech_1008",
+      "target": "tech_1002",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "空间分集 关联 Massive MIMO"
+    },
+    {
+      "source": "tech_1009",
+      "target": "tech_1001",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "多径传播 关联 MIMO"
+    },
+    {
+      "source": "tech_1009",
+      "target": "tech_1008",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "多径传播 关联 空间分集"
+    },
+    {
+      "source": "tech_1009",
+      "target": "tech_1006",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "多径传播 关联 菲涅尔区"
+    },
+    {
+      "source": "tech_1009",
+      "target": "tech_1024",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "多径传播 关联 多径衰落"
+    },
+    {
+      "source": "tech_1010",
+      "target": "tech_1002",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "XL-MIMO 依赖于 Massive MIMO"
+    },
+    {
+      "source": "tech_1010",
+      "target": "tech_1003",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "XL-MIMO 依赖于 波束赋形"
+    },
+    {
+      "source": "tech_1010",
+      "target": "tech_1001",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "XL-MIMO 依赖于 MIMO"
+    },
+    {
+      "source": "tech_1010",
+      "target": "tech_1021",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "XL-MIMO 依赖于 6G"
+    },
+    {
+      "source": "tech_1011",
+      "target": "tech_1003",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "RIS 依赖于 波束赋形"
+    },
+    {
+      "source": "tech_1011",
+      "target": "tech_1021",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "RIS 依赖于 6G"
+    },
+    {
+      "source": "tech_1011",
+      "target": "tech_1002",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "RIS 依赖于 Massive MIMO"
+    },
+    {
+      "source": "tech_1012",
+      "target": "tech_1004",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "AIP 依赖于 相控阵"
+    },
+    {
+      "source": "tech_1012",
+      "target": "tech_1003",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "AIP 依赖于 波束赋形"
+    },
+    {
+      "source": "tech_1012",
+      "target": "tech_1002",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "AIP 依赖于 Massive MIMO"
+    },
+    {
+      "source": "tech_1013",
+      "target": "tech_1002",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "CSI反馈 依赖于 Massive MIMO"
+    },
+    {
+      "source": "tech_1013",
+      "target": "tech_1003",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "CSI反馈 依赖于 波束赋形"
+    },
+    {
+      "source": "tech_1013",
+      "target": "tech_1010",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "CSI反馈 依赖于 XL-MIMO"
+    },
+    {
+      "source": "tech_1013",
+      "target": "tech_1021",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "CSI反馈 依赖于 6G"
+    },
+    {
+      "source": "tech_1014",
+      "target": "tech_1005",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "DGS 关联 天线隔离度"
+    },
+    {
+      "source": "tech_1014",
+      "target": "tech_1015",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "DGS 关联 EBG"
+    },
+    {
+      "source": "tech_1014",
+      "target": "tech_1001",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "DGS 关联 MIMO"
+    },
+    {
+      "source": "tech_1015",
+      "target": "tech_1005",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "EBG 关联 天线隔离度"
+    },
+    {
+      "source": "tech_1015",
+      "target": "tech_1014",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "EBG 关联 DGS"
+    },
+    {
+      "source": "tech_1015",
+      "target": "tech_1001",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "EBG 关联 MIMO"
+    },
+    {
+      "source": "tech_1016",
+      "target": "tech_1017",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "Ka波段 关联 Ku波段"
+    },
+    {
+      "source": "tech_1016",
+      "target": "tech_1004",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "Ka波段 关联 相控阵"
+    },
+    {
+      "source": "tech_1016",
+      "target": "tech_1003",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "Ka波段 关联 波束赋形"
+    },
+    {
+      "source": "tech_1017",
+      "target": "tech_1016",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "Ku波段 关联 Ka波段"
+    },
+    {
+      "source": "tech_1017",
+      "target": "tech_1004",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "Ku波段 关联 相控阵"
+    },
+    {
+      "source": "tech_1018",
+      "target": "tech_1006",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "E-band 关联 菲涅尔区"
+    },
+    {
+      "source": "tech_1018",
+      "target": "tech_1023",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "E-band 关联 视距传播"
+    },
+    {
+      "source": "tech_1019",
+      "target": "tech_1001",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "Wi-Fi 7 关联 MIMO"
+    },
+    {
+      "source": "tech_1019",
+      "target": "tech_1003",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "Wi-Fi 7 关联 波束赋形"
+    },
+    {
+      "source": "tech_1019",
+      "target": "tech_1002",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "Wi-Fi 7 关联 Massive MIMO"
+    },
+    {
+      "source": "tech_1020",
+      "target": "tech_1004",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "Starlink 关联 相控阵"
+    },
+    {
+      "source": "tech_1020",
+      "target": "tech_1003",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "Starlink 关联 波束赋形"
+    },
+    {
+      "source": "tech_1020",
+      "target": "tech_1016",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "Starlink 关联 Ka波段"
+    },
+    {
+      "source": "tech_1020",
+      "target": "tech_1017",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "Starlink 关联 Ku波段"
+    },
+    {
+      "source": "tech_1021",
+      "target": "tech_1010",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "6G 依赖于 XL-MIMO"
+    },
+    {
+      "source": "tech_1021",
+      "target": "tech_1011",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "6G 依赖于 RIS"
+    },
+    {
+      "source": "tech_1021",
+      "target": "tech_1003",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "6G 依赖于 波束赋形"
+    },
+    {
+      "source": "tech_1021",
+      "target": "tech_1002",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "6G 依赖于 Massive MIMO"
+    },
+    {
+      "source": "tech_1021",
+      "target": "tech_1022",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "6G 依赖于 近场通信"
+    },
+    {
+      "source": "tech_1022",
+      "target": "tech_1021",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "近场通信 依赖于 6G"
+    },
+    {
+      "source": "tech_1022",
+      "target": "tech_1010",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "近场通信 依赖于 XL-MIMO"
+    },
+    {
+      "source": "tech_1022",
+      "target": "tech_1003",
+      "relation": "depends_on",
+      "predicate": "depends_on",
+      "confidence": 0.7,
+      "evidence": "近场通信 依赖于 波束赋形"
+    },
+    {
+      "source": "tech_1023",
+      "target": "tech_1006",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "视距传播 关联 菲涅尔区"
+    },
+    {
+      "source": "tech_1023",
+      "target": "tech_1018",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "视距传播 关联 E-band"
+    },
+    {
+      "source": "tech_1023",
+      "target": "tech_1009",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "视距传播 关联 多径传播"
+    },
+    {
+      "source": "tech_1024",
+      "target": "tech_1001",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "多径衰落 关联 MIMO"
+    },
+    {
+      "source": "tech_1024",
+      "target": "tech_1009",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "多径衰落 关联 多径传播"
+    },
+    {
+      "source": "tech_1024",
+      "target": "tech_1006",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "多径衰落 关联 菲涅尔区"
+    },
+    {
+      "source": "tech_1024",
+      "target": "tech_1008",
+      "relation": "related_to",
+      "predicate": "related_to",
+      "confidence": 0.7,
+      "evidence": "多径衰落 关联 空间分集"
+    },
+    {
+      "source": "tech_1002",
+      "target": "company_ev001",
+      "relation": "adopted_by",
+      "confidence": 0.8,
+      "evidence": "Massive MIMO 被 华为 采用 — 自研天线+海思芯片垂直整合，AAU全球出货量第一，64T64R/128T128R全系列覆盖，AI波束"
+    },
+    {
+      "source": "tech_1002",
+      "target": "company_ev002",
+      "relation": "adopted_by",
+      "confidence": 0.8,
+      "evidence": "Massive MIMO 被 中兴通讯 采用 — AAU商用规模国内第二，自研中频段BBU+AAU协同方案，在TDD频段有优势"
+    },
+    {
+      "source": "tech_1002",
+      "target": "company_ev003",
+      "relation": "adopted_by",
+      "confidence": 0.8,
+      "evidence": "Massive MIMO 被 爱立信 采用 — 采用外采天线策略，与Kathrein/Comba等天线厂合作，AAU强调紧凑设计"
+    },
+    {
+      "source": "tech_1002",
+      "target": "company_ev004",
+      "relation": "adopted_by",
+      "confidence": 0.8,
+      "evidence": "Massive MIMO 被 诺基亚 采用 — AAU偏重小尺寸方案，强调与诺基亚AirScale平台协同"
+    },
+    {
+      "source": "tech_1011",
+      "target": "company_ev001",
+      "relation": "adopted_by",
+      "confidence": 0.8,
+      "evidence": "RIS 被 华为 采用 — 发布RIS测试结果，联合东南大学进行外场验证，但产品化时间表不明确"
+    },
+    {
+      "source": "tech_1011",
+      "target": "company_ev002",
+      "relation": "adopted_by",
+      "confidence": 0.8,
+      "evidence": "RIS 被 中兴通讯 采用 — 在MWC展示RIS原型，与东南大学合作研究，但尚未商用"
+    },
+    {
+      "source": "tech_1004",
+      "target": "company_ev001",
+      "relation": "adopted_by",
+      "confidence": 0.8,
+      "evidence": "相控阵 被 华为 采用 — 卫星通信相控阵终端在研，与长四维等卫星运营商合作"
+    },
+    {
+      "source": "tech_1004",
+      "target": "company_ev003",
+      "relation": "adopted_by",
+      "confidence": 0.8,
+      "evidence": "相控阵 被 爱立信 采用 — 微波传输数字相控阵（Digital FDD）已商用，用于运营商回传链路升级"
+    },
+    {
+      "source": "std_3gpp_release_15",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 3GPP Release 15 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_3gpp_release_16",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 3GPP Release 16 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_3gpp_release_17",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 3GPP Release 17 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_3gpp_release_18",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 3GPP Release 18 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_3gpp_release_19",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 3GPP Release 19 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_3gpp_release_20",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 3GPP Release 20 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_ts_38.101-1",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 TS 38.101-1 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_ts_38.101-4",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 TS 38.101-4 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_ts_38.151",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 TS 38.151 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_ts_38.551",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 TS 38.551 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_ts_37.977",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 TS 37.977 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_tr_38.900",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 TR 38.900 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_ieee_802.11ax-2021",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 IEEE 802.11ax-2021 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_ieee_802.11ax-2021",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 IEEE 802.11ax-2021 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_ieee_802.11be",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 IEEE 802.11be 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_ieee_802.11be",
+      "target": "tech_1019",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 IEEE 802.11be 涉及 Wi-Fi 7 技术要求"
+    },
+    {
+      "source": "std_ieee_802.11ay",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 IEEE 802.11ay 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_ieee_802.16",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 IEEE 802.16 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_itu-r_m.2160",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 ITU-R M.2160 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_itu-r_m.[imt-2030.eval]",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 ITU-R M.[IMT-2030.EVAL] 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_itu-r_m.[imt-2030.tpr]",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 ITU-R M.[IMT-2030.TPR] 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_itu-r_m.1768",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 ITU-R M.1768 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_gb/t_9410-2008",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 GB/T 9410-2008 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_gb/t_9410-2008",
+      "target": "tech_1002",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 GB/T 9410-2008 涉及 Massive MIMO 技术要求"
+    },
+    {
+      "source": "std_yd/t_3929-2021",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 YD/T 3929-2021 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_yd/t_2869.1-2021",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 YD/T 2869.1-2021 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_yd/t_2869.2-2024",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 YD/T 2869.2-2024 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_yd/t_2869.2-2024",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 YD/T 2869.2-2024 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_yd/t_2869.3-2025",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 YD/T 2869.3-2025 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_yd/t_1484.9-2023",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 YD/T 1484.9-2023 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_yd/t_6548-2025",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 YD/T 6548-2025 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_ctia_test_plan_v3.8.2",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 CTIA Test Plan v3.8.2 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_ctia_01.40",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 CTIA 01.40 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_ctia_01.40",
+      "target": "tech_1003",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 CTIA 01.40 涉及 波束赋形 技术要求"
+    },
+    {
+      "source": "std_3gpp_tsg-ran_wg1/wg4_内部研究",
+      "target": "tech_1001",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 3GPP TSG-RAN WG1/WG4 内部研究 涉及 MIMO 技术要求"
+    },
+    {
+      "source": "std_imt-2030_tpr",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 IMT-2030 TPR 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_3gpp_release_18",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 3GPP Release 18 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_3gpp_release_21",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 3GPP Release 21 涉及 6G 技术要求"
+    },
+    {
+      "source": "std_6g频谱规划研究",
+      "target": "tech_1021",
+      "relation": "specifies",
+      "confidence": 0.5,
+      "evidence": "标准 6G频谱规划研究 涉及 6G 技术要求"
     }
   ]
 }
