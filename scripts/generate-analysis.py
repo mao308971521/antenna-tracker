@@ -552,7 +552,7 @@ def main():
 
         # Step 2: 初始化 LLM 客户端
         print("[2/4] Initializing Agnes client...", file=sys.stderr)
-        from scripts.lib.minimax_client import AgnesClient
+        from scripts.lib.agnes_client import AgnesClient
         client = AgnesClient(api_key=api_key)
 
         # Step 3: 运行分析
