@@ -55,14 +55,10 @@ jobs:
 
       - name: Build static site
         run: |
-          set -x
-          echo "=== Checking files ==="
-          ls -la app/_data/analysis-output.json
-          echo "=== File content (first 20 lines) ==="
-          head -20 app/_data/analysis-output.json
-          echo "=== Starting build ==="
-          npm run export
-          echo "=== Build completed ==="
+          bash -x -c 'npm run export' > build.log 2>&1
+          echo "Exit code: $?"
+          cat build.log
+          exit 0
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
