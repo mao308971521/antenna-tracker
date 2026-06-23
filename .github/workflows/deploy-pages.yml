@@ -44,25 +44,14 @@ jobs:
 
       - name: Generate analysis
         run: |
-          echo "DEBUG: AGNES_API_KEY exists: $([ -n \"$AGNES_API_KEY\" ] && echo YES || echo NO)"
-          echo "DEBUG: AGNES_API_KEY length: $(echo -n \"$AGNES_API_KEY\" | wc -c)"
-          echo "DEBUG: Python version: $(python --version 2>&1)"
-          echo "DEBUG: openai version: $(pip show openai 2>&1 | head -1)"
-          echo "DEBUG: Working directory: $(pwd)"
-          python scripts/generate-analysis.py 2>&1 || echo "EXIT CODE: $?"
+          python scripts/generate-analysis.py
         env:
           AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
+      - name: Verify analysis output
+        run: test -f app/_data/analysis-output.json && echo "analysis-output.json exists" || (echo "MISSING!" && ls -la app/_data/ && exit 1)
 
       - name: Build static site
         run: npx next build
-      - name: Debug out directory
-        run: |
-          echo "=== Out directory contents ==="
-          find out/ -type f 2>/dev/null | head -30
-          echo "=== File count ==="
-          find out/ -type f 2>/dev/null | wc -l
-          echo "=== Total size ==="
-          du -sh out/ 2>/dev/null || echo "out/ not found"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
