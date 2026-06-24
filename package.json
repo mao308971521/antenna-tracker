@@ -6,7 +6,7 @@
     "dev": "next dev -p 3050",
     "build": "next build",
     "start": "next start",
-    "export": "next build",
+    "export": "next build --experimental-output=export",
     "update-data": "node scripts/fetch-data.js",
     "analyze": "python scripts/generate-analysis.py",
     "build:full": "python scripts/generate-analysis.py && next build"
