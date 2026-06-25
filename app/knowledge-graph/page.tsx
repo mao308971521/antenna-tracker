@@ -1,4 +1,3 @@
-// @ts-nocheck
 'use client'
 import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
 import * as d3 from 'd3'
@@ -16,7 +15,7 @@ interface D3Node extends d3.SimulationNodeDatum {
   description?: string
   summary?: string
   summary_vernacular?: string
-  metadata?: Record<string, string>
+  metadata?: Record<string, any>
   radius: number
   icon: string
 }
@@ -121,6 +120,7 @@ export default function KnowledgeGraphPage() {
   const [expandedNodeId, setExpandedNodeId] = useState<string | null>(null)
   const [focusMode, setFocusMode] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
+  const [graphError, setGraphError] = useState<string | null>(null)
   const svgRef = useRef<SVGSVGElement | null>(null)
   const simulationRef = useRef<d3.Simulation<D3Node, D3Link> | null>(null)
 
@@ -207,19 +207,25 @@ export default function KnowledgeGraphPage() {
   useEffect(() => {
     if (!svgRef.current) return
 
-    const width = svgRef.current.clientWidth || 1000
-    const height = 600
+    try {
+      const width = svgRef.current.clientWidth || 1000
+      const height = 600
 
-    // Destroy previous simulation
-    if (simulationRef.current) {
-      simulationRef.current.stop()
-    }
+      // Destroy previous simulation
+      if (simulationRef.current) {
+        simulationRef.current.stop()
+      }
 
-    // Build D3 nodes and links
-    const nodeMap = new Map<string, Entity>()
-    entities.forEach(e => nodeMap.set(e.id, e))
+      // Build D3 nodes and links
+      const nodeMap = new Map<string, Entity>()
+      entities.forEach(e => nodeMap.set(e.id, e))
 
-    const d3Nodes: D3Node[] = filteredEntities.map(e => {
+      if (filteredEntities.length === 0) {
+        setGraphError('没有可显示的实体')
+        return
+      }
+
+      const d3Nodes: D3Node[] = filteredEntities.map(e => {
       const hasSummary = !!(e.summary || e.summary_vernacular)
       const baseRadius = hasSummary ? 24 : 18
       return {
@@ -231,20 +237,20 @@ export default function KnowledgeGraphPage() {
 
     const d3Links: D3Link[] = filteredRelations
       .map(r => ({
-        source: r.source,
-        target: r.target,
+        source: r.source as string,
+        target: r.target as string,
         relation: (r as any).relation,
         predicate: (r as any).predicate,
       }))
-      .filter(l => d3Nodes.some(n => n.id === (typeof l.source === 'string' ? l.source : l.source.id))
-        && d3Nodes.some(n => n.id === (typeof l.target === 'string' ? l.target : l.target.id)))
+      .filter(l => d3Nodes.some(n => n.id === l.source)
+        && d3Nodes.some(n => n.id === l.target))
 
     // Create simulation
     const simulation = d3.forceSimulation<D3Node>(d3Nodes)
-      .force('link', d3.forceLink<D3Link, D3Node>(d3Links).id(d => typeof d === 'string' ? d : d.id).distance(120))
+      .force('link', d3.forceLink<D3Node, D3Link>(d3Links).id((d: any) => typeof d === 'string' ? d : d.id).distance(120) as any)
       .force('charge', d3.forceManyBody().strength(-300))
       .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collision', d3.forceCollide().radius(d => d.radius + 8))
+      .force('collision', d3.forceCollide<D3Node>().radius((d: any) => (d.radius || 18) + 8) as any)
       .force('x', d3.forceX(width / 2).strength(0.06))
       .force('y', d3.forceY(height / 2).strength(0.06))
       .alphaDecay(0.02)
@@ -311,21 +317,21 @@ export default function KnowledgeGraphPage() {
       .data(d3Nodes)
       .join('g')
       .attr('cursor', 'grab')
-      .call(d3.drag<D3Node, unknown>()
-        .on('start', (event, d) => {
+      .call(d3.drag<SVGGElement, D3Node>()
+        .on('start', (event: any, d: D3Node) => {
           if (!event.active) simulation.alphaTarget(0.3).restart()
           d.fx = d.x
           d.fy = d.y
         })
-        .on('drag', (event, d) => {
+        .on('drag', (event: any, d: D3Node) => {
           d.fx = event.x
           d.fy = event.y
         })
-        .on('end', (event, d) => {
+        .on('end', (event: any, d: D3Node) => {
           if (!event.active) simulation.alphaTarget(0)
           d.fx = null
           d.fy = null
-        }))
+        }) as any)
 
     // Node circles
     node.each(function(d) {
@@ -415,6 +421,10 @@ export default function KnowledgeGraphPage() {
     return () => {
       simulation.stop()
     }
+    } catch (err: any) {
+      console.error('Knowledge graph error:', err)
+      setGraphError(err.message || '图谱渲染出错')
+    }
   }, [filteredEntities, filteredRelations, selectedEntity, hoveredEntity, expandedNodeId, focusMode, connectedEntityIds, expandedNodeIds])
 
   // Update node visual state when selection/hover changes
@@ -423,7 +433,7 @@ export default function KnowledgeGraphPage() {
     const svg = d3.select(svgRef.current)
     const nodes = svg.selectAll('.graph-group g')
 
-    nodes.each(function(d: D3Node) {
+    nodes.each(function(d: any) {
       const g = d3.select(this)
       const circles = g.selectAll('circle')
       const isSelected = selectedEntity?.id === d.id
@@ -554,7 +564,21 @@ export default function KnowledgeGraphPage() {
             <DonutChart typeCounts={typeCounts} />
           </div>
           <div style={{ position: 'relative', width: '100%', overflow: 'hidden', borderRadius: '8px', border: '1px solid #eee' }}>
-            <svg ref={svgRef} style={{ width: '100%', height: '600px', background: '#fafbfc' }} />
+            {graphError ? (
+              <div style={{ width: '100%', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', background: '#fafbfc', color: '#999' }}>
+                <div style={{ fontSize: '2rem', marginBottom: '12px' }}>⚠️</div>
+                <div style={{ marginBottom: '8px' }}>图谱加载失败</div>
+                <div style={{ fontSize: '0.82rem', maxWidth: '400px', textAlign: 'center' }}>{graphError}</div>
+                <button
+                  onClick={() => setGraphError(null)}
+                  style={{ marginTop: '16px', padding: '6px 20px', borderRadius: '6px', border: '1px solid #667eea', background: '#667eea', color: 'white', cursor: 'pointer', fontSize: '0.85rem' }}
+                >
+                  重试
+                </button>
+              </div>
+            ) : (
+              <svg ref={svgRef} style={{ width: '100%', height: '600px', background: '#fafbfc' }} />
+            )}
           </div>
           <p style={{ fontSize: '0.75rem', color: '#aaa', marginTop: '8px' }}>
             💡 单击节点选中并查看详情，双击节点展开关联子图，再次双击收起
@@ -651,7 +675,7 @@ export default function KnowledgeGraphPage() {
                             {isSource ? rel.relation + '→' : '←' + rel.relation}
                           </span>
                         </div>
-                        <div style={{ fontSize: '0.78rem', color: '#999' }}>{rel.evidence}</div>
+                        <div style={{ fontSize: '0.78rem', color: '#999' }}>{(rel as any).evidence || ''}</div>
                       </div>
                     )
                   })

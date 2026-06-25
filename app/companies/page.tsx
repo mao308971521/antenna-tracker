@@ -210,13 +210,16 @@ export default function CompaniesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-12">
-      {/* 顶部标题 */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <h1 className="text-xl font-bold text-gray-900 mb-4">企业图谱</h1>
+    <div>
+      <header className="header">
+        <h1>🏢 企业图谱</h1>
+        <p>天线产业链 7 层结构 — 从运营商到原材料，全链条企业追踪与供应链关系分析</p>
+        <p className="update-info">数据更新：{(companiesData as any).lastUpdate}</p>
+      </header>
 
-          {/* 7层供应链Tab */}
+      {/* 7层供应链Tab */}
+      <div style={{ background: '#fff', borderBottom: '1px solid #e0e0e0', marginBottom: '20px', borderRadius: '8px', overflow: 'hidden' }}>
+        <div style={{ padding: '12px 16px' }}>
           <div className="flex gap-1 overflow-x-auto pb-1">
             {TIER_CONFIG.map(tier => (
               <button
