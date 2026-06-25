@@ -334,18 +334,27 @@ export default function KnowledgeGraphPage() {
           d.fy = null
         }) as any)
 
-    // Node circles
+    // Node circles + halo for hover/select/expand feedback
     node.each(function(d) {
       const g = d3.select(this)
       const color = ENTITY_COLORS[d.type] || '#999'
       const r = d.radius
 
       g.append('circle')
+        .attr('class', 'node-base')
         .attr('r', r)
         .attr('fill', color)
         .attr('fill-opacity', 0.85)
         .attr('stroke', 'white')
         .attr('stroke-width', 2)
+
+      g.append('circle')
+        .attr('class', 'node-halo')
+        .attr('r', 0)
+        .attr('fill', 'none')
+        .attr('stroke', color)
+        .attr('stroke-width', 2)
+        .attr('opacity', 0)
 
       g.append('text')
         .attr('text-anchor', 'middle')
@@ -436,20 +445,24 @@ export default function KnowledgeGraphPage() {
       nodes.each(function(d: any) {
         if (!d) return
         const g = d3.select(this)
-        const circles = g.selectAll('circle')
         const isSelected = selectedEntity?.id === d.id
         const isHovered = hoveredEntity === d.id
         const isExpanded = expandedNodeId === d.id
         const isConnected = expandedNodeId ? expandedNodeIds.has(d.id) : focusMode ? connectedEntityIds.has(d.id) : selectedEntity ? connectedEntityIds.has(d.id) : true
         const color = ENTITY_COLORS[d.type] || '#999'
-        const r = d.radius + (isExpanded ? 8 : isSelected ? 4 : isHovered ? 2 : 0)
+        const baseR = d.radius
+        const haloR = isExpanded ? baseR + 8 : isSelected ? baseR + 4 : isHovered ? baseR + 2 : 0
 
-        circles
-          .attr('r', r)
+        g.select('.node-base')
           .attr('fill', color)
           .attr('fill-opacity', isConnected ? 0.85 : 0.15)
           .attr('stroke', isExpanded || isSelected ? '#333' : 'white')
           .attr('stroke-width', isExpanded || isSelected ? 3 : 2)
+
+        g.select('.node-halo')
+          .attr('r', haloR)
+          .attr('stroke', isExpanded ? '#333' : color)
+          .attr('opacity', haloR > 0 ? 0.6 : 0)
 
         const labels = g.selectAll('text').filter((_: any, __: number, node: any) => {
           const textEl = node[0]?.textContent
