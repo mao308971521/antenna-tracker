@@ -653,7 +653,7 @@ export default function KnowledgeGraphPage() {
         </div>
 
         {/* 详情面板 */}
-        <div style={{ flex: '0 0 320px', minWidth: '280px' }}>
+        <div style={{ flex: '0 0 320px', minWidth: '280px', maxHeight: 'calc(100vh - 180px)', overflowY: 'auto', position: 'sticky', top: '20px', paddingRight: '4px', scrollbarWidth: 'thin', scrollbarColor: '#c0c0c0 transparent' } as any}>
           {selectedEntity ? (
             <div className="card">
               <h3 style={{ marginBottom: '16px' }}>📋 实体详情</h3>
