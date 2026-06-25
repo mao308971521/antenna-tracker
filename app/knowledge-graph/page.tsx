@@ -246,14 +246,14 @@ export default function KnowledgeGraphPage() {
 
     // Create simulation
     const simulation = d3.forceSimulation<D3Node>(d3Nodes)
-      .force('link', d3.forceLink<D3Node, D3Link>(d3Links).id((d: any) => typeof d === 'string' ? d : d.id).distance(120) as any)
-      .force('charge', d3.forceManyBody().strength(-300))
+      .force('link', d3.forceLink<D3Node, D3Link>(d3Links).id((d: any) => typeof d === 'string' ? d : d.id).distance(80) as any)
+      .force('charge', d3.forceManyBody().strength(-180).distanceMax(250).theta(0.9))
       .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collision', d3.forceCollide<D3Node>().radius((d: any) => (d.radius || 18) + 8) as any)
-      .force('x', d3.forceX(width / 2).strength(0.06))
-      .force('y', d3.forceY(height / 2).strength(0.06))
-      .alphaDecay(0.02)
-      .velocityDecay(0.4)
+      .force('collision', d3.forceCollide<D3Node>().radius((d: any) => (d.radius || 18) + 4).iterations(1) as any)
+      .force('x', d3.forceX(width / 2).strength(0.04))
+      .force('y', d3.forceY(height / 2).strength(0.04))
+      .alphaDecay(0.03)
+      .velocityDecay(0.35)
 
     simulationRef.current = simulation
 
@@ -447,32 +447,77 @@ export default function KnowledgeGraphPage() {
         const isConnected = expandedNodeId ? expandedNodeIds.has(d.id) : focusMode ? connectedEntityIds.has(d.id) : selectedEntity ? connectedEntityIds.has(d.id) : true
         const color = ENTITY_COLORS[d.type] || '#999'
         const baseR = d.radius
-        const haloR = isExpanded ? baseR + 8 : isSelected ? baseR + 4 : 0
+        const renderedR = isSelected ? baseR * 1.15 : isConnected ? baseR : baseR * 0.85
+        const haloR = isSelected ? baseR * 1.4 : isConnected ? baseR * 1.15 : 0
 
         g.select('.node-base')
+          .transition().duration(250)
+          .attr('r', renderedR)
           .attr('fill', color)
-          .attr('fill-opacity', isConnected ? 0.85 : 0.15)
-          .attr('stroke', isExpanded || isSelected ? '#333' : 'white')
-          .attr('stroke-width', isExpanded || isSelected ? 3 : 2)
+          .attr('fill-opacity', isSelected ? 1 : isConnected ? 0.9 : 0.45)
+          .attr('stroke', isSelected ? '#333' : isExpanded ? '#333' : 'white')
+          .attr('stroke-width', isSelected ? 4 : isExpanded ? 3 : 2)
+          .style('filter', isConnected ? 'none' : 'grayscale(50%)')
 
         g.select('.node-halo')
+          .transition().duration(250)
           .attr('r', haloR)
-          .attr('stroke', isExpanded ? '#333' : color)
-          .attr('opacity', haloR > 0 ? 0.6 : 0)
+          .attr('stroke', isSelected ? '#333' : color)
+          .attr('opacity', haloR > 0 ? (isSelected ? 0.8 : 0.4) : 0)
 
         const labels = g.selectAll('text').filter((_: any, __: number, node: any) => {
           const textEl = node[0]?.textContent
           return textEl && textEl.length <= 10 && !['🔬','🏢','📜','🧪','⚡'].includes(textEl)
         })
         labels
-          .attr('fill', isConnected ? '#333' : '#ccc')
-          .attr('font-weight', isExpanded || isSelected ? 700 : 400)
+          .transition().duration(250)
+          .attr('fill', isConnected ? '#333' : '#999')
+          .attr('font-weight', isSelected || isExpanded ? 700 : 400)
       })
     } catch (err: any) {
       console.error('Knowledge graph update error:', err)
       setGraphError(err.message || '图谱更新出错')
     }
   }, [selectedEntity, expandedNodeId, focusMode, connectedEntityIds, expandedNodeIds])
+
+  // Focus radial layout: pull selected/expanded node to center, neighbors around it, unrelated to periphery
+  useEffect(() => {
+    if (!svgRef.current || !simulationRef.current) return
+    try {
+      const simulation = simulationRef.current
+      const width = svgRef.current.clientWidth || 1000
+      const height = 600
+      const focusId = expandedNodeId || selectedEntity?.id || focusMode
+      const connectedIds = expandedNodeId
+        ? expandedNodeIds
+        : (focusMode || selectedEntity ? connectedEntityIds : new Set<string>())
+
+      const linkForce = simulation.force('link') as any
+      if (focusId) {
+        simulation.force('radial', d3.forceRadial(
+          (d: any) => d.id === focusId ? 0 : connectedIds.has(d.id) ? 150 : 340,
+          width / 2,
+          height / 2
+        ).strength((d: any) => d.id === focusId ? 0.9 : connectedIds.has(d.id) ? 0.5 : 0.15))
+        if (linkForce) {
+          linkForce.distance((d: any) => {
+            const s = typeof d.source === 'string' ? d.source : d.source.id
+            const t = typeof d.target === 'string' ? d.target : d.target.id
+            if (s === focusId || t === focusId) return 100
+            if (connectedIds.has(s) && connectedIds.has(t)) return 60
+            return 220
+          })
+        }
+      } else {
+        simulation.force('radial', null)
+        if (linkForce) linkForce.distance(80)
+      }
+
+      simulation.alpha(0.7).restart()
+    } catch (err: any) {
+      console.error('Knowledge graph focus layout error:', err)
+    }
+  }, [focusMode, expandedNodeId, selectedEntity, connectedEntityIds, expandedNodeIds])
 
   const layoutNode = (id: string) => {
     const node = filteredEntities.find(e => e.id === id)
