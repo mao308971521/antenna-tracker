@@ -699,44 +699,52 @@ export default function KnowledgeGraphPage() {
                 <h4 style={{ fontSize: '0.85rem', color: '#999', marginBottom: '8px' }}>
                   🔗 关联关系 ({connectedEntityIds.size - 1} 条)
                 </h4>
-                {allRelations
-                  .filter(r => r.source === selectedEntity.id || r.target === selectedEntity.id)
-                  .map((rel, i) => {
-                    const isSource = rel.source === selectedEntity.id
-                    const otherId = isSource ? rel.target : rel.source
-                    const otherEntity = entities.find(e => e.id === otherId)
-                    if (!otherEntity) return null
-                    return (
-                      <div
-                        key={i}
-                        style={{
-                          padding: '8px 12px',
-                          marginBottom: '8px',
-                          background: '#f8f9fa',
-                          borderRadius: '8px',
-                          cursor: 'pointer',
-                          border: `1px solid #eee`,
-                        }}
-                        onClick={() => setSelectedEntity(otherEntity)}
-                      >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                          <span>{ENTITY_ICONS[otherEntity.type]}</span>
-                          <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{otherEntity.name}</span>
-                          <span style={{
-                            fontSize: '0.75rem',
-                            padding: '2px 8px',
-                            borderRadius: '10px',
-                            background: '#667eea',
-                            color: 'white',
-                          }}>
-                            {isSource ? rel.relation + '→' : '←' + rel.relation}
-                          </span>
+                <div style={{
+                  maxHeight: '280px',
+                  overflowY: 'auto',
+                  paddingRight: '6px',
+                  scrollbarWidth: 'thin',
+                  scrollbarColor: '#c0c0c0 transparent',
+                } as any}>
+                  {allRelations
+                    .filter(r => r.source === selectedEntity.id || r.target === selectedEntity.id)
+                    .map((rel, i) => {
+                      const isSource = rel.source === selectedEntity.id
+                      const otherId = isSource ? rel.target : rel.source
+                      const otherEntity = entities.find(e => e.id === otherId)
+                      if (!otherEntity) return null
+                      return (
+                        <div
+                          key={i}
+                          style={{
+                            padding: '8px 12px',
+                            marginBottom: '8px',
+                            background: '#f8f9fa',
+                            borderRadius: '8px',
+                            cursor: 'pointer',
+                            border: `1px solid #eee`,
+                          }}
+                          onClick={() => setSelectedEntity(otherEntity)}
+                        >
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                            <span>{ENTITY_ICONS[otherEntity.type]}</span>
+                            <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{otherEntity.name}</span>
+                            <span style={{
+                              fontSize: '0.75rem',
+                              padding: '2px 8px',
+                              borderRadius: '10px',
+                              background: '#667eea',
+                              color: 'white',
+                            }}>
+                              {isSource ? rel.relation + '→' : '←' + rel.relation}
+                            </span>
+                          </div>
+                          <div style={{ fontSize: '0.78rem', color: '#999' }}>{(rel as any).evidence || ''}</div>
                         </div>
-                        <div style={{ fontSize: '0.78rem', color: '#999' }}>{(rel as any).evidence || ''}</div>
-                      </div>
-                    )
-                  })
-                }
+                      )
+                    })
+                  }
+                </div>
               </div>
               {/* 通俗解读 */}
               {selectedEntity.summary_vernacular && (
