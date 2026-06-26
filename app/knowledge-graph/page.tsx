@@ -1,195 +1,200 @@
 'use client'
-import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
-import * as d3 from 'd3'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import kgData from '@/app/_data/knowledge-graph.json'
-import relationsData from '@/app/_data/relations.json'
 
 type Entity = typeof kgData.entities[0]
 type Relation = typeof kgData.relations[0]
-type TechRelation = typeof relationsData[0]
-
-interface D3Node extends d3.SimulationNodeDatum {
-  id: string
-  name: string
-  type: string
-  description?: string
-  summary?: string
-  summary_vernacular?: string
-  metadata?: Record<string, any>
-  radius: number
-  icon: string
-}
-
-interface D3Link extends d3.SimulationLinkDatum<D3Node> {
-  source: string | D3Node
-  target: string | D3Node
-  relation?: string
-  predicate?: string
-}
 
 const ENTITY_COLORS: Record<string, string> = {
   technology: '#667eea',
   company: '#f093fb',
+  standard: '#4facfe',
   material: '#43e97b',
+  event: '#fa709a',
 }
 
 const ENTITY_LABELS: Record<string, string> = {
   technology: '技术',
   company: '企业',
+  standard: '标准',
   material: '材料',
+  event: '事件',
 }
 
-const ENTITY_ICONS: Record<string, string> = {
-  technology: '🔬',
-  company: '🏢',
-  material: '🧪',
+function EntityIcon(type: string): string {
+  switch (type) {
+    case 'technology': return '🔬'
+    case 'company': return '🏢'
+    case 'standard': return '📜'
+    case 'material': return '🧪'
+    case 'event': return '⚡'
+    default: return '📌'
+  }
 }
 
-// SVG Donut Chart for entity type distribution
-function DonutChart({ typeCounts }: { typeCounts: Record<string, number> }) {
-  const total = typeCounts.all || 1
-  const entries = Object.entries(ENTITY_LABELS).map(([key, label]) => ({
-    key,
-    label,
-    count: typeCounts[key] || 0,
-    color: ENTITY_COLORS[key],
-    icon: ENTITY_ICONS[key],
-  })).filter(e => e.count > 0)
+// Hub 抽样：实体太多时保留度数最高的节点，避免 O(N²) 算法卡死浏览器
+function sampleHubEntities(
+  entities: Entity[],
+  relations: Relation[],
+  maxN: number = 100
+): { entities: Entity[]; relations: Relation[] } {
+  if (entities.length <= maxN) {
+    return { entities, relations }
+  }
+  // 计算每个实体的度数（被多少关系引用）
+  const degree = new Map<string, number>()
+  entities.forEach(e => degree.set(e.id, 0))
+  relations.forEach(r => {
+    degree.set(r.source, (degree.get(r.source) || 0) + 1)
+    degree.set(r.target, (degree.get(r.target) || 0) + 1)
+  })
+  // 按度数降序，取 top maxN
+  const sorted = [...entities].sort((a, b) => (degree.get(b.id) || 0) - (degree.get(a.id) || 0))
+  const kept = new Set(sorted.slice(0, maxN).map(e => e.id))
+  const keptEnts = entities.filter(e => kept.has(e.id))
+  const keptRels = relations.filter(r => kept.has(r.source) && kept.has(r.target))
+  return { entities: keptEnts, relations: keptRels }
+}
 
-  let startAngle = -Math.PI / 2
-  const radius = 80
-  const innerRadius = 50
-  const arcs = entries.map(entry => {
-    const fraction = entry.count / total
-    const angle = fraction * Math.PI * 2
-    const endAngle = startAngle + angle
-    const largeArc = angle > Math.PI ? 1 : 0
+// Force-directed layout simulation (simple)
+function simulateLayout(
+  entities: Entity[],
+  relations: Relation[],
+  iterations: number = 80
+): { id: string; x: number; y: number }[] {
+  const W = 1400
+  const H = 1000
+  const nodeMap = new Map<string, { id: string; x: number; y: number; vx: number; vy: number }>()
 
-    const x1Outer = Math.cos(startAngle) * radius
-    const y1Outer = Math.sin(startAngle) * radius
-    const x2Outer = Math.cos(endAngle) * radius
-    const y2Outer = Math.sin(endAngle) * radius
-    const x1Inner = Math.cos(endAngle) * innerRadius
-    const y1Inner = Math.sin(endAngle) * innerRadius
-    const x2Inner = Math.cos(startAngle) * innerRadius
-    const y2Inner = Math.sin(startAngle) * innerRadius
-
-    const d = [
-      `M ${x1Outer} ${y1Outer}`,
-      `A ${radius} ${radius} 0 ${largeArc} 1 ${x2Outer} ${y2Outer}`,
-      `L ${x1Inner} ${y1Inner}`,
-      `A ${innerRadius} ${innerRadius} 0 ${largeArc} 0 ${x2Inner} ${y2Inner}`,
-      'Z',
-    ].join(' ')
-
-    const midAngle = startAngle + angle / 2
-    const labelR = (radius + innerRadius) / 2
-    const lx = Math.cos(midAngle) * labelR
-    const ly = Math.sin(midAngle) * labelR
-
-    startAngle = endAngle
-    return { ...entry, d, lx, ly }
+  entities.forEach((e, i) => {
+    const angle = (i / entities.length) * Math.PI * 2
+    const r = Math.min(W, H) * 0.3
+    nodeMap.set(e.id, {
+      id: e.id,
+      x: W / 2 + Math.cos(angle) * r,
+      y: H / 2 + Math.sin(angle) * r,
+      vx: 0,
+      vy: 0,
+    })
   })
 
-  return (
-    <svg width="160" height="160" viewBox="-80 -80 160 160">
-      {arcs.map((arc, i) => (
-        <path key={i} d={arc.d} fill={arc.color} opacity="0.85" />
-      ))}
-      <text x="0" y="-6" textAnchor="middle" fontSize="14" fontWeight="700" fill="#333">{total}</text>
-      <text x="0" y="10" textAnchor="middle" fontSize="8" fill="#999">总计</text>
-      {arcs.map((arc, i) => (
-        <text key={i} x={arc.lx} y={arc.ly} textAnchor="middle" dominantBaseline="middle" fontSize="7" fill="white" fontWeight="600" pointerEvents="none">
-          {arc.icon} {arc.count}
-        </text>
-      ))}
-    </svg>
-  )
+  const nodeArr = Array.from(nodeMap.values())
+  const links = relations
+    .map(r => ({ source: r.source, target: r.target }))
+    .filter(l => nodeMap.has(l.source) && nodeMap.has(l.target))
+
+  for (let iter = 0; iter < iterations; iter++) {
+    const alpha = 1 - iter / iterations
+
+    // Repulsion between all pairs
+    for (let i = 0; i < nodeArr.length; i++) {
+      for (let j = i + 1; j < nodeArr.length; j++) {
+        const a = nodeArr[i]
+        const b = nodeArr[j]
+        let dx = b.x - a.x
+        let dy = b.y - a.y
+        let dist = Math.sqrt(dx * dx + dy * dy) || 1
+        let force = 8000 / (dist * dist)
+        let fx = (dx / dist) * force * alpha
+        let fy = (dy / dist) * force * alpha
+        a.vx -= fx
+        a.vy -= fy
+        b.vx += fx
+        b.vy += fy
+      }
+    }
+
+    // Attraction along links
+    for (const link of links) {
+      const source = nodeMap.get(link.source)
+      const target = nodeMap.get(link.target)
+      if (!source || !target) continue
+      let dx = target.x - source.x
+      let dy = target.y - source.y
+      let dist = Math.sqrt(dx * dx + dy * dy) || 1
+      let force = (dist - 150) * 0.01 * alpha
+      let fx = (dx / dist) * force
+      let fy = (dy / dist) * force
+      source.vx += fx
+      source.vy += fy
+      target.vx -= fx
+      target.vy -= fy
+    }
+
+    // Center gravity
+    for (const node of nodeArr) {
+      node.vx += (W / 2 - node.x) * 0.002 * alpha
+      node.vy += (H / 2 - node.y) * 0.002 * alpha
+    }
+
+    // Apply velocity
+    for (const node of nodeArr) {
+      node.vx *= 0.6
+      node.vy *= 0.6
+      node.x += node.vx
+      node.y += node.vy
+      // Boundary
+      node.x = Math.max(80, Math.min(W - 80, node.x))
+      node.y = Math.max(60, Math.min(H - 20, node.y))
+    }
+  }
+
+  return nodeArr.map(n => ({ id: n.id, x: n.x, y: n.y }))
 }
 
 export default function KnowledgeGraphPage() {
   const [selectedEntity, setSelectedEntity] = useState<Entity | null>(null)
+  const [hoveredEntity, setHoveredEntity] = useState<string | null>(null)
   const [filterType, setFilterType] = useState<string>('all')
-  const [expandedNodeId, setExpandedNodeId] = useState<string | null>(null)
-  const [focusMode, setFocusMode] = useState<string | null>(null)
-  const [searchQuery, setSearchQuery] = useState('')
-  const [graphError, setGraphError] = useState<string | null>(null)
-  const svgRef = useRef<SVGSVGElement | null>(null)
-  const simulationRef = useRef<d3.Simulation<D3Node, D3Link> | null>(null)
-  const zoomRef = useRef<d3.ZoomBehavior<SVGSVGElement, unknown> | null>(null)
+  const [layout, setLayout] = useState<{ id: string; x: number; y: number }[]>([])
+  const [layoutReady, setLayoutReady] = useState(false)
+  const layoutRef = useRef<{ id: string; x: number; y: number }[]>([])
 
-  const entities = useMemo(() => kgData.entities.filter(e => e.type !== 'event' && e.type !== 'standard'), [])
+  const entities = kgData.entities
   const relations = kgData.relations
 
-  // Merge both relation sources
-  const allRelations = useMemo(() => [
-    ...relations,
-    ...relationsData.map(r => ({ source: r.source, target: r.target, predicate: r.predicate, relation: r.predicate }))
-  ], [relations, relationsData])
+  // Hub 抽样 + 异步计算 layout，避免 O(N²) 卡死主线程
+  useEffect(() => {
+    const sampled = sampleHubEntities(entities, relations, 100)
+    // 用 setTimeout 让浏览器先 paint 骨架，再算 layout
+    const handle = setTimeout(() => {
+      const result = simulateLayout(sampled.entities, sampled.relations, 80)
+      layoutRef.current = result
+      setLayout(result)
+      setLayoutReady(true)
+    }, 30)
+    return () => clearTimeout(handle)
+  }, [entities, relations])
 
-  // Search filter
-  const searchFilteredEntities = useMemo(() => {
-    if (!searchQuery.trim()) return entities
-    const q = searchQuery.toLowerCase().trim()
-    return entities.filter(e =>
-      e.name.toLowerCase().includes(q) ||
-      (e.description && e.description.toLowerCase().includes(q)) ||
-      e.type.toLowerCase().includes(q)
-    )
-  }, [entities, searchQuery])
-
-  // Type filter
+  // Filter by type
   const filteredEntities = useMemo(() => {
-    if (filterType === 'all') return searchFilteredEntities
-    return searchFilteredEntities.filter(e => e.type === filterType)
-  }, [searchFilteredEntities, filterType])
+    if (filterType === 'all') return entities
+    return entities.filter(e => e.type === filterType)
+  }, [entities, filterType])
 
   const filteredEntityIds = new Set(filteredEntities.map(e => e.id))
+  // layoutNodeIds = 当前实际有 layout 坐标的节点集合（抽样后可能少于全集）
+  const layoutNodeIds = useMemo(() => new Set(layout.map(n => n.id)), [layout])
   const filteredRelations = useMemo(() => {
-    return allRelations.filter(r => filteredEntityIds.has(r.source) && filteredEntityIds.has(r.target))
-  }, [allRelations, filteredEntityIds])
+    return relations.filter(r =>
+      filteredEntityIds.has(r.source) && filteredEntityIds.has(r.target)
+      && layoutNodeIds.has(r.source) && layoutNodeIds.has(r.target)
+    )
+  }, [relations, filteredEntityIds, layoutNodeIds])
 
-  // Connected entities
+  // Get connected entities for selected entity
   const connectedEntityIds = useMemo(() => {
-    const focusId = focusMode || (selectedEntity ? selectedEntity.id : null)
-    if (!focusId) return new Set<string>()
+    if (!selectedEntity) return new Set<string>()
     const ids = new Set<string>()
-    ids.add(focusId)
-    allRelations.forEach(r => {
-      if (r.source === focusId) ids.add(r.target)
-      if (r.target === focusId) ids.add(r.source)
+    ids.add(selectedEntity.id)
+    relations.forEach(r => {
+      if (r.source === selectedEntity.id) ids.add(r.target)
+      if (r.target === selectedEntity.id) ids.add(r.source)
     })
     return ids
-  }, [focusMode, selectedEntity, allRelations])
+  }, [selectedEntity, relations])
 
-  // Expanded subgraph
-  const expandedNodeIds = useMemo(() => {
-    if (!expandedNodeId) return new Set<string>()
-    const ids = new Set<string>()
-    ids.add(expandedNodeId)
-    allRelations.forEach(r => {
-      if (r.source === expandedNodeId) ids.add(r.target)
-      if (r.target === expandedNodeId) ids.add(r.source)
-    })
-    return ids
-  }, [expandedNodeId, allRelations])
-
-  // Recommended entities
-  const recommendedEntities = useMemo(() => {
-    if (!selectedEntity) return []
-    const recs: Entity[] = []
-    allRelations.forEach(r => {
-      if (r.source === selectedEntity.id) {
-        const target = entities.find(e => e.id === r.target)
-        if (target && !recs.find(x => x.id === target!.id)) recs.push(target)
-      }
-      if (r.target === selectedEntity.id) {
-        const source = entities.find(e => e.id === r.source)
-        if (source && !recs.find(x => x.id === source!.id)) recs.push(source)
-      }
-    })
-    return recs.slice(0, 6)
-  }, [selectedEntity, allRelations, entities])
+  const layoutNode = (id: string) => layout.find(n => n.id === id) || { x: 0, y: 0 }
 
   const typeCounts = useMemo(() => {
     const counts: Record<string, number> = { all: entities.length }
@@ -197,422 +202,12 @@ export default function KnowledgeGraphPage() {
     return counts
   }, [entities])
 
-  // D3 force simulation
-  useEffect(() => {
-    if (!svgRef.current) return
-
-    try {
-      const width = svgRef.current.clientWidth || 1000
-      const height = 600
-
-      // Destroy previous simulation
-      if (simulationRef.current) {
-        simulationRef.current.stop()
-      }
-
-      // Build D3 nodes and links
-      const nodeMap = new Map<string, Entity>()
-      entities.forEach(e => nodeMap.set(e.id, e))
-
-      if (filteredEntities.length === 0) {
-        setGraphError('没有可显示的实体')
-        return
-      }
-
-      const d3Nodes: D3Node[] = filteredEntities.map(e => {
-      const hasSummary = !!(e.summary || e.summary_vernacular)
-      const baseRadius = hasSummary ? 24 : 18
-      return {
-        ...e,
-        radius: baseRadius,
-        icon: ENTITY_ICONS[e.type] || '🔹',
-      }
-    })
-
-    const d3Links: D3Link[] = filteredRelations
-      .map(r => ({
-        source: r.source as string,
-        target: r.target as string,
-        relation: (r as any).relation,
-        predicate: (r as any).predicate,
-      }))
-      .filter(l => d3Nodes.some(n => n.id === l.source)
-        && d3Nodes.some(n => n.id === l.target))
-
-    // Create simulation
-    const simulation = d3.forceSimulation<D3Node>(d3Nodes)
-      .force('link', d3.forceLink<D3Node, D3Link>(d3Links).id((d: any) => typeof d === 'string' ? d : d.id).distance(80) as any)
-      .force('charge', d3.forceManyBody().strength(-180).distanceMax(250).theta(0.9))
-      .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collision', d3.forceCollide<D3Node>().radius((d: any) => (d.radius || 18) + 4).iterations(1) as any)
-      .force('x', d3.forceX(width / 2).strength(0.04))
-      .force('y', d3.forceY(height / 2).strength(0.04))
-      .alphaDecay(0.03)
-      .velocityDecay(0.35)
-
-    simulationRef.current = simulation
-
-    const svg = d3.select(svgRef.current)
-      .attr('viewBox', `0 0 ${width} ${height}`)
-      .style('width', '100%')
-      .style('height', 'auto')
-
-    // Clear previous content
-    svg.selectAll('*').remove()
-
-    // Zoom behavior
-    const zoom = d3.zoom<SVGSVGElement, unknown>()
-      .scaleExtent([0.3, 4])
-      .on('zoom', (event) => {
-        svgGroup.attr('transform', event.transform)
-      })
-
-    zoomRef.current = zoom
-    svg.call(zoom)
-
-    const svgGroup = svg.append('g').attr('class', 'graph-group')
-
-    // Arrow marker
-    svg.append('defs').append('marker')
-      .attr('id', 'arrowhead')
-      .attr('viewBox', '0 -5 10 10')
-      .attr('refX', 28)
-      .attr('refY', 0)
-      .attr('markerWidth', 6)
-      .attr('markerHeight', 6)
-      .attr('orient', 'auto')
-      .append('path')
-      .attr('d', 'M0,-5L10,0L0,5')
-      .attr('fill', '#667eea')
-      .attr('opacity', 0.6)
-
-    // Links
-    const link = svgGroup.append('g')
-      .selectAll('line')
-      .data(d3Links)
-      .join('line')
-      .attr('class', 'link-line')
-      .attr('stroke', '#ccc')
-      .attr('stroke-opacity', 0.3)
-      .attr('stroke-width', 1)
-
-    // Link labels
-    const linkLabel = svgGroup.append('g')
-      .selectAll('text')
-      .data(d3Links.filter(d => d.predicate || d.relation))
-      .join('text')
-      .attr('class', 'link-label')
-      .attr('font-size', '7px')
-      .attr('fill', '#bbb')
-      .attr('text-anchor', 'middle')
-      .attr('pointer-events', 'none')
-      .text(d => d.predicate || d.relation || '')
-
-    // Nodes group
-    const node = svgGroup.append('g').attr('class', 'nodes-group')
-      .selectAll('g')
-      .data(d3Nodes)
-      .join('g')
-      .attr('class', 'node-item')
-      .attr('cursor', 'grab')
-      .call(d3.drag<SVGGElement, D3Node>()
-        .on('start', (event: any, d: D3Node) => {
-          if (!event.active) simulation.alphaTarget(0.3).restart()
-          d.fx = d.x
-          d.fy = d.y
-        })
-        .on('drag', (event: any, d: D3Node) => {
-          d.fx = event.x
-          d.fy = event.y
-        })
-        .on('end', (event: any, d: D3Node) => {
-          if (!event.active) simulation.alphaTarget(0)
-          d.fx = null
-          d.fy = null
-        }) as any)
-
-    // Node circles + halo for hover/select/expand feedback
-    node.each(function(d) {
-      const g = d3.select(this)
-      const color = ENTITY_COLORS[d.type] || '#999'
-      const r = d.radius
-
-      g.append('circle')
-        .attr('class', 'node-base')
-        .attr('r', r)
-        .attr('fill', color)
-        .attr('fill-opacity', 0.85)
-        .attr('stroke', 'white')
-        .attr('stroke-width', 2)
-
-      g.append('circle')
-        .attr('class', 'node-halo')
-        .attr('r', 0)
-        .attr('fill', 'none')
-        .attr('stroke', color)
-        .attr('stroke-width', 2)
-        .attr('opacity', 0)
-
-      g.append('text')
-        .attr('text-anchor', 'middle')
-        .attr('dominant-baseline', 'central')
-        .attr('font-size', '14px')
-        .attr('pointer-events', 'none')
-        .text(d.icon)
-
-      g.append('text')
-        .attr('y', r + 14)
-        .attr('text-anchor', 'middle')
-        .attr('font-size', '10px')
-        .attr('fill', '#333')
-        .attr('font-weight', 400)
-        .attr('pointer-events', 'none')
-        .text(d.name.length > 8 ? d.name.slice(0, 8) + '…' : d.name)
-    })
-
-    // Node interactions
-    node.on('click', (event, d) => {
-      event.stopPropagation()
-      const entity = nodeMap.get(d.id)
-      if (!entity) return
-      if (expandedNodeId === d.id) {
-        setExpandedNodeId(null)
-      } else {
-        setExpandedNodeId(d.id)
-      }
-      if (selectedEntity?.id === d.id) {
-        setSelectedEntity(null)
-        setFocusMode(null)
-      } else {
-        setSelectedEntity(entity)
-        setFocusMode(d.id)
-      }
-    })
-    .on('dblclick', (event, d) => {
-      event.stopPropagation()
-      if (expandedNodeId === d.id) {
-        setExpandedNodeId(null)
-      } else {
-        setExpandedNodeId(d.id)
-      }
-    })
-
-    // Tick
-    simulation.on('tick', () => {
-      link
-        .attr('x1', d => (d.source as D3Node).x!)
-        .attr('y1', d => (d.source as D3Node).y!)
-        .attr('x2', d => (d.target as D3Node).x!)
-        .attr('y2', d => (d.target as D3Node).y!)
-
-      linkLabel
-        .attr('x', d => ((d.source as D3Node).x! + (d.target as D3Node).x!) / 2)
-        .attr('y', d => ((d.source as D3Node).y! + (d.target as D3Node).y!) / 2 - 4)
-
-      node.attr('transform', d => `translate(${d.x!},${d.y!})`)
-    })
-
-    // Auto-fit all nodes into view once simulation cools (only on initial load)
-    let initialFitDone = false
-    simulation.on('end', () => {
-      if (initialFitDone || !svgRef.current) return
-      const bounds = svgGroup.node()?.getBBox()
-      if (!bounds || bounds.width === 0 || bounds.height === 0) return
-      initialFitDone = true
-      const fullWidth = svgRef.current.clientWidth || 1000
-      const fullHeight = 600
-      const padding = 40
-      const scale = Math.min(
-        fullWidth / (bounds.width + padding),
-        fullHeight / (bounds.height + padding),
-        1
-      )
-      const midX = bounds.x + bounds.width / 2
-      const midY = bounds.y + bounds.height / 2
-      const tx = fullWidth / 2 - scale * midX
-      const ty = fullHeight / 2 - scale * midY
-      svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale))
-    })
-
-    // Click on background to deselect
-    svg.on('click', () => {
-      setSelectedEntity(null)
-      setFocusMode(null)
-      setExpandedNodeId(null)
-    })
-
-    return () => {
-      simulation.stop()
-    }
-    } catch (err: any) {
-      console.error('Knowledge graph error:', err)
-      setGraphError(err.message || '图谱渲染出错')
-    }
-  }, [filteredEntities, filteredRelations])
-
-  // Update node + link visual state when selection/expand changes (no hover updates)
-  useEffect(() => {
-    if (!svgRef.current) return
-    try {
-      const svg = d3.select(svgRef.current)
-      const nodes = svg.selectAll('.node-item')
-
-      if (nodes.empty()) return
-
-      const focusId = expandedNodeId || selectedEntity?.id || focusMode
-      const connectedIds = expandedNodeId
-        ? expandedNodeIds
-        : (focusMode || selectedEntity ? connectedEntityIds : new Set<string>())
-      const hasFocus = !!focusId
-
-      // Update links
-      svg.selectAll('.link-line')
-        .transition().duration(250)
-        .attr('stroke', (d: any) => {
-          if (!hasFocus) return '#ccc'
-          const s = typeof d.source === 'string' ? d.source : d.source.id
-          const t = typeof d.target === 'string' ? d.target : d.target.id
-          return connectedIds.has(s) && connectedIds.has(t) ? '#667eea' : '#ccc'
-        })
-        .attr('stroke-opacity', (d: any) => {
-          if (!hasFocus) return 0.3
-          const s = typeof d.source === 'string' ? d.source : d.source.id
-          const t = typeof d.target === 'string' ? d.target : d.target.id
-          return connectedIds.has(s) && connectedIds.has(t) ? 0.8 : 0.15
-        })
-        .attr('stroke-width', (d: any) => {
-          if (!hasFocus) return 1
-          const s = typeof d.source === 'string' ? d.source : d.source.id
-          const t = typeof d.target === 'string' ? d.target : d.target.id
-          return connectedIds.has(s) && connectedIds.has(t) ? 2 : 1
-        })
-
-      // Update link labels
-      svg.selectAll('.link-label')
-        .transition().duration(250)
-        .attr('fill', (d: any) => {
-          if (!hasFocus) return '#bbb'
-          const s = typeof d.source === 'string' ? d.source : d.source.id
-          const t = typeof d.target === 'string' ? d.target : d.target.id
-          return connectedIds.has(s) && connectedIds.has(t) ? '#667eea' : '#ddd'
-        })
-        .attr('opacity', (d: any) => {
-          if (!hasFocus) return 1
-          const s = typeof d.source === 'string' ? d.source : d.source.id
-          const t = typeof d.target === 'string' ? d.target : d.target.id
-          return connectedIds.has(s) && connectedIds.has(t) ? 1 : 0.35
-        })
-
-      nodes.each(function(d: any) {
-        if (!d) return
-        const g = d3.select(this)
-        const isSelected = selectedEntity?.id === d.id
-        const isExpanded = expandedNodeId === d.id
-        const isConnected = expandedNodeId ? expandedNodeIds.has(d.id) : focusMode ? connectedEntityIds.has(d.id) : selectedEntity ? connectedEntityIds.has(d.id) : true
-        const color = ENTITY_COLORS[d.type] || '#999'
-        const baseR = d.radius
-        const renderedR = isSelected ? baseR * 1.15 : isConnected ? baseR : baseR * 0.85
-        const haloR = isSelected ? baseR * 1.4 : isConnected ? baseR * 1.15 : 0
-
-        g.select('.node-base')
-          .transition().duration(250)
-          .attr('r', renderedR)
-          .attr('fill', color)
-          .attr('fill-opacity', isSelected ? 1 : isConnected ? 0.9 : 0.45)
-          .attr('stroke', isSelected ? '#333' : isExpanded ? '#333' : 'white')
-          .attr('stroke-width', isSelected ? 4 : isExpanded ? 3 : 2)
-          .style('filter', isConnected ? 'none' : 'grayscale(50%)')
-
-        g.select('.node-halo')
-          .transition().duration(250)
-          .attr('r', haloR)
-          .attr('stroke', isSelected ? '#333' : color)
-          .attr('opacity', haloR > 0 ? (isSelected ? 0.8 : 0.4) : 0)
-
-        const labels = g.selectAll('text').filter((_: any, __: number, node: any) => {
-          const textEl = node[0]?.textContent
-          return textEl && textEl.length <= 10 && !['🔬','🏢','📜','🧪','⚡'].includes(textEl)
-        })
-        labels
-          .transition().duration(250)
-          .attr('fill', isConnected ? '#333' : '#999')
-          .attr('font-weight', isSelected || isExpanded ? 700 : 400)
-      })
-    } catch (err: any) {
-      console.error('Knowledge graph update error:', err)
-      setGraphError(err.message || '图谱更新出错')
-    }
-  }, [selectedEntity, expandedNodeId, focusMode, connectedEntityIds, expandedNodeIds])
-
-  // Focus radial layout: pull selected/expanded node to center, neighbors around it, unrelated to periphery
-  useEffect(() => {
-    if (!svgRef.current || !simulationRef.current) return
-    try {
-      const simulation = simulationRef.current
-      const width = svgRef.current.clientWidth || 1000
-      const height = 600
-      const focusId = expandedNodeId || selectedEntity?.id || focusMode
-      const connectedIds = expandedNodeId
-        ? expandedNodeIds
-        : (focusMode || selectedEntity ? connectedEntityIds : new Set<string>())
-
-      const linkForce = simulation.force('link') as any
-      if (focusId) {
-        simulation.force('radial', d3.forceRadial(
-          (d: any) => d.id === focusId ? 0 : connectedIds.has(d.id) ? 150 : 340,
-          width / 2,
-          height / 2
-        ).strength((d: any) => d.id === focusId ? 0.9 : connectedIds.has(d.id) ? 0.5 : 0.15))
-        if (linkForce) {
-          linkForce.distance((d: any) => {
-            const s = typeof d.source === 'string' ? d.source : d.source.id
-            const t = typeof d.target === 'string' ? d.target : d.target.id
-            if (s === focusId || t === focusId) return 100
-            if (connectedIds.has(s) && connectedIds.has(t)) return 60
-            return 220
-          })
-        }
-      } else {
-        simulation.force('radial', null)
-        if (linkForce) linkForce.distance(80)
-      }
-
-      simulation.alpha(0.7).restart()
-    } catch (err: any) {
-      console.error('Knowledge graph focus layout error:', err)
-    }
-  }, [focusMode, expandedNodeId, selectedEntity, connectedEntityIds, expandedNodeIds])
-
-  const layoutNode = (id: string) => {
-    const node = filteredEntities.find(e => e.id === id)
-    return node
-  }
-
-  // Node size helper
-  const getNodeRadius = (entity: Entity, isExpanded: boolean, isSelected: boolean, isHovered: boolean) => {
-    const hasSummary = entity.summary || entity.summary_vernacular
-    const baseSize = hasSummary ? 24 : 18
-    if (isExpanded) return baseSize + 8
-    if (isSelected) return baseSize + 4
-    if (isHovered) return baseSize + 2
-    return baseSize
-  }
-
-  const groupedEntities = useMemo(() => {
-    const groups: Record<string, Entity[]> = {}
-    entities.forEach(e => {
-      if (!groups[e.type]) groups[e.type] = []
-      groups[e.type].push(e)
-    })
-    return groups
-  }, [entities])
-
   return (
     <div>
       <header className="header">
         <h1>🕸️ 知识图谱</h1>
         <p>天线行业知识网络 — 实体关系可视化 · 数据来源：各板块结构化数据 + 小月技术解读笔记</p>
-        <p className="update-info">数据更新：{kgData.lastUpdate} · {entities.length} 个实体 · {allRelations.filter(r => filteredEntityIds.has(r.source) && filteredEntityIds.has(r.target)).length} 条关系</p>
+        <p className="update-info">数据更新：{kgData.lastUpdate} · {entities.length} 个实体 · {relations.length} 条关系</p>
       </header>
 
       {/* 类型筛选 */}
@@ -623,7 +218,7 @@ export default function KnowledgeGraphPage() {
             style={{
               padding: '8px 18px',
               borderRadius: '20px',
-              border: filterType === 'all' ? '2px solid #667eea' : '2px solid #e0e0e0',
+              border: filterType === 'all' ? '2px solid #667eea' : '2px solid #e0e00e0',
               background: filterType === 'all' ? '#667eea' : 'white',
               color: filterType === 'all' ? 'white' : '#333',
               cursor: 'pointer',
@@ -648,7 +243,7 @@ export default function KnowledgeGraphPage() {
                 fontWeight: 600,
               }}
             >
-              {ENTITY_ICONS[key]} {label} ({typeCounts[key] || 0})
+              {EntityIcon(key)} {label} ({typeCounts[key] || 0})
             </button>
           ))}
         </div>
@@ -658,76 +253,117 @@ export default function KnowledgeGraphPage() {
         {/* 图谱可视化 */}
         <div className="card" style={{ flex: '1 1 600px', minWidth: '0' }}>
           <h3 style={{ marginBottom: '16px' }}>📊 知识图谱关系图</h3>
+          <div style={{ position: 'relative', width: '100%', overflow: 'hidden', minHeight: '500px' }}>
+            {layoutReady ? (
+            <svg
+              viewBox="0 0 1400 1000"
+              style={{ width: '100%', height: 'auto', background: '#fafbfc', borderRadius: '8px', border: '1px solid #eee' }}
+            >
+              {/* 关系线 */}
+              {filteredRelations.map((rel, i) => {
+                const src = layoutNode(rel.source)
+                const tgt = layoutNode(rel.target)
+                const isHighlighted = hoveredEntity
+                  ? (rel.source === hoveredEntity || rel.target === hoveredEntity)
+                  : (!selectedEntity || connectedEntityIds.has(rel.source) && connectedEntityIds.has(rel.target))
+                const opacity = hoveredEntity || selectedEntity ? (isHighlighted ? 0.8 : 0.1) : 0.3
+                return (
+                  <line
+                    key={i}
+                    x1={src.x}
+                    y1={src.y + 20}
+                    x2={tgt.x}
+                    y2={tgt.y + 20}
+                    stroke={isHighlighted ? '#667eea' : '#ccc'}
+                    strokeWidth={isHighlighted ? 2 : 1}
+                    opacity={opacity}
+                    markerEnd="url(#arrowhead)"
+                  />
+                )
+              })}
 
-          {/* 环形图 + 图例 */}
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '32px', marginBottom: '16px', flexWrap: 'wrap' }}>
-            <DonutChart typeCounts={typeCounts} />
-            <div style={{ minWidth: '140px' }}>
-              <h4 style={{ marginBottom: '10px', fontSize: '0.85rem' }}>📌 图例</h4>
-              {Object.entries(ENTITY_LABELS).map(([key, label]) => (
-                <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                  <span style={{ width: '16px', height: '16px', borderRadius: '50%', background: ENTITY_COLORS[key], display: 'inline-block' }} />
-                  <span style={{ fontSize: '0.85rem' }}>{ENTITY_ICONS[key]} {label}</span>
-                  <span style={{ fontSize: '0.75rem', color: '#999', marginLeft: 'auto' }}>{typeCounts[key] || 0}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div style={{ position: 'relative', width: '100%', overflow: 'hidden', borderRadius: '8px', border: '1px solid #eee' }}>
-            {graphError ? (
-              <div style={{ width: '100%', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', background: '#fafbfc', color: '#999' }}>
-                <div style={{ fontSize: '2rem', marginBottom: '12px' }}>⚠️</div>
-                <div style={{ marginBottom: '8px' }}>图谱加载失败</div>
-                <div style={{ fontSize: '0.82rem', maxWidth: '400px', textAlign: 'center' }}>{graphError}</div>
-                <button
-                  onClick={() => setGraphError(null)}
-                  style={{ marginTop: '16px', padding: '6px 20px', borderRadius: '6px', border: '1px solid #667eea', background: '#667eea', color: 'white', cursor: 'pointer', fontSize: '0.85rem' }}
-                >
-                  重试
-                </button>
-              </div>
+              {/* 箭头 */}
+              <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                  <polygon points="0 0, 10 3.5, 0 7" fill="#667eea" opacity="0.8" />
+                </marker>
+              </defs>
+
+              {/* 实体节点 */}
+              {filteredEntities.map((entity, i) => {
+                const pos = layoutNode(entity.id)
+                const isSelected = selectedEntity?.id === entity.id
+                const isHovered = hoveredEntity === entity.id
+                const isConnected = selectedEntity ? connectedEntityIds.has(entity.id) : true
+                const color = ENTITY_COLORS[entity.type] || '#999'
+                const radius = isSelected ? 32 : (isHovered ? 30 : Math.max(16, Math.min(24, 300 / Math.sqrt(entities.length))))
+                return (
+                  <g
+                    key={entity.id}
+                    onClick={() => setSelectedEntity(isSelected ? null : entity)}
+                    onMouseEnter={() => setHoveredEntity(entity.id)}
+                    onMouseLeave={() => setHoveredEntity(null)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <circle
+                      cx={pos.x}
+                      cy={pos.y}
+                      r={radius}
+                      fill={color}
+                      fillOpacity={isConnected ? 0.85 : 0.15}
+                      stroke={isSelected ? '#333' : 'white'}
+                      strokeWidth={isSelected ? 3 : 2}
+                      style={{ transition: 'all 0.3s ease' }}
+                    />
+                    <text
+                      x={pos.x}
+                      y={pos.y + 4}
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                      fontSize="14"
+                      pointerEvents="none"
+                    >
+                      {EntityIcon(entity.type)}
+                    </text>
+                    <text
+                      x={pos.x}
+                      y={pos.y + radius + 14}
+                      textAnchor="middle"
+                      fontSize="11"
+                      fill={isConnected ? '#333' : '#ccc'}
+                      fontWeight={isSelected ? 700 : 400}
+                      pointerEvents="none"
+                    >
+                      {entity.name.length > 8 ? entity.name.slice(0, 8) + '…' : entity.name}
+                    </text>
+                  </g>
+                )
+              })}
+            </svg>
             ) : (
-              <svg ref={svgRef} style={{ width: '100%', height: '600px', background: '#fafbfc' }} />
+              <div style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                height: '500px', background: '#fafbfc', borderRadius: '8px',
+                border: '1px solid #eee', color: '#999', fontSize: '0.95rem',
+                flexDirection: 'column', gap: '12px'
+              }}>
+                <div style={{
+                  width: '40px', height: '40px', border: '3px solid #e0e0e0',
+                  borderTopColor: '#667eea', borderRadius: '50%',
+                  animation: 'kg-spin 1s linear infinite'
+                }} />
+                <span>正在计算 {entities.length} 个实体的布局…</span>
+                <style>{`@keyframes kg-spin { to { transform: rotate(360deg) } }`}</style>
+              </div>
             )}
           </div>
           <p style={{ fontSize: '0.75rem', color: '#aaa', marginTop: '8px' }}>
-            💡 单击节点选中并查看详情，双击节点展开关联子图，再次双击收起
-            {' '}滚轮缩放 / 拖拽画布 / 拖拽节点调整位置
-            {focusMode && (
-              <span style={{ marginLeft: '12px', color: '#667eea', cursor: 'pointer', fontWeight: 600 }}
-                onClick={() => { setFocusMode(null); setSelectedEntity(null); }}
-              >
-                [退出聚焦]
-              </span>
-            )}
+            💡 点击节点查看详情，悬浮高亮关联关系，使用上方筛选器按类型过滤
           </p>
         </div>
 
         {/* 详情面板 */}
-        <div style={{ flex: '0 0 320px', minWidth: '280px' }}>
-          {/* 搜索框 */}
-          <div className="card" style={{ marginBottom: '24px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <input
-                type="text"
-                placeholder="搜索实体名称、描述或类型..."
-                value={searchQuery}
-                onChange={e => setSearchQuery(e.target.value)}
-                style={{
-                  flex: 1,
-                  padding: '10px 16px',
-                  borderRadius: '8px',
-                  border: '1px solid #e0e0e0',
-                  fontSize: '0.95rem',
-                  outline: 'none',
-                }}
-              />
-              <span style={{ fontSize: '0.85rem', color: '#999' }}>
-                {searchFilteredEntities.length}
-              </span>
-            </div>
-          </div>
-
+        <div style={{ flex: '0 0 340px', minWidth: '280px' }}>
           {selectedEntity ? (
             <div className="card">
               <h3 style={{ marginBottom: '16px' }}>📋 实体详情</h3>
@@ -735,7 +371,7 @@ export default function KnowledgeGraphPage() {
                 display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px',
                 padding: '12px', background: `${ENTITY_COLORS[selectedEntity.type]}15`, borderRadius: '8px'
               }}>
-                <span style={{ fontSize: '2rem' }}>{ENTITY_ICONS[selectedEntity.type]}</span>
+                <span style={{ fontSize: '2rem' }}>{EntityIcon(selectedEntity.type)}</span>
                 <div>
                   <div style={{ fontSize: '1.2rem', fontWeight: 700, color: '#333' }}>{selectedEntity.name}</div>
                   <span className="tag" style={{ background: ENTITY_COLORS[selectedEntity.type], color: 'white' }}>
@@ -743,16 +379,9 @@ export default function KnowledgeGraphPage() {
                   </span>
                 </div>
               </div>
-              {/* 专业介绍 */}
-              <div style={{ marginBottom: '16px' }}>
-                <h4 style={{ fontSize: '0.75rem', color: '#999', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                  专业介绍
-                </h4>
-                <p style={{ color: '#444', lineHeight: 1.7, fontSize: '0.85rem', margin: 0 }}>
-                  {selectedEntity.summary || selectedEntity.description}
-                </p>
-              </div>
-
+              <p style={{ color: '#666', lineHeight: 1.6, marginBottom: '16px' }}>
+                {selectedEntity.description}
+              </p>
               {selectedEntity.metadata && (
                 <div style={{ marginBottom: '16px' }}>
                   <h4 style={{ fontSize: '0.85rem', color: '#999', marginBottom: '8px' }}>属性</h4>
@@ -768,68 +397,51 @@ export default function KnowledgeGraphPage() {
                   </table>
                 </div>
               )}
-              {/* 通俗解读 */}
-              {selectedEntity.summary_vernacular && (
-                <div style={{ marginBottom: '16px' }}>
-                  <h4 style={{ fontSize: '0.75rem', color: '#999', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                    📝 通俗解读
-                  </h4>
-                  <p style={{ color: '#555', lineHeight: 1.7, fontSize: '0.85rem', margin: 0, fontStyle: 'italic' }}>
-                    {selectedEntity.summary_vernacular}
-                  </p>
-                </div>
-              )}
               {/* 关联关系 */}
               <div>
                 <h4 style={{ fontSize: '0.85rem', color: '#999', marginBottom: '8px' }}>
                   🔗 关联关系 ({connectedEntityIds.size - 1} 条)
                 </h4>
-                <div style={{
-                  maxHeight: '280px',
-                  overflowY: 'auto',
-                  paddingRight: '6px',
-                  scrollbarWidth: 'thin',
-                  scrollbarColor: '#c0c0c0 transparent',
-                } as any}>
-                  {allRelations
-                    .filter(r => r.source === selectedEntity.id || r.target === selectedEntity.id)
-                    .map((rel, i) => {
-                      const isSource = rel.source === selectedEntity.id
-                      const otherId = isSource ? rel.target : rel.source
-                      const otherEntity = entities.find(e => e.id === otherId)
-                      if (!otherEntity) return null
-                      return (
-                        <div
-                          key={i}
-                          style={{
-                            padding: '8px 12px',
-                            marginBottom: '8px',
-                            background: '#f8f9fa',
-                            borderRadius: '8px',
-                            cursor: 'pointer',
-                            border: `1px solid #eee`,
-                          }}
-                          onClick={() => setSelectedEntity(otherEntity)}
-                        >
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                            <span>{ENTITY_ICONS[otherEntity.type]}</span>
-                            <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{otherEntity.name}</span>
-                            <span style={{
-                              fontSize: '0.75rem',
-                              padding: '2px 8px',
-                              borderRadius: '10px',
-                              background: '#667eea',
-                              color: 'white',
-                            }}>
-                              {isSource ? rel.relation + '→' : '←' + rel.relation}
-                            </span>
-                          </div>
-                          <div style={{ fontSize: '0.78rem', color: '#999' }}>{(rel as any).evidence || ''}</div>
+                {relations
+                  .filter(r => r.source === selectedEntity.id || r.target === selectedEntity.id)
+                  .map((rel, i) => {
+                    const isSource = rel.source === selectedEntity.id
+                    const otherId = isSource ? rel.target : rel.source
+                    const otherEntity = entities.find(e => e.id === otherId)
+                    if (!otherEntity) return null
+                    return (
+                      <div
+                        key={i}
+                        style={{
+                          padding: '8px 12px',
+                          marginBottom: '8px',
+                          background: '#f8f9fa',
+                          borderRadius: '8px',
+                          cursor: 'pointer',
+                          border: `1px solid ${hoveredEntity === otherEntity.id ? ENTITY_COLORS[otherEntity.type] + '40' : '#eee'}`,
+                        }}
+                        onClick={() => setSelectedEntity(otherEntity)}
+                        onMouseEnter={() => setHoveredEntity(otherEntity.id)}
+                        onMouseLeave={() => setHoveredEntity(null)}
+                      >
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                          <span>{EntityIcon(otherEntity.type)}</span>
+                          <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>{otherEntity.name}</span>
+                          <span style={{
+                            fontSize: '0.75rem',
+                            padding: '2px 8px',
+                            borderRadius: '10px',
+                            background: '#667eea',
+                            color: 'white',
+                          }}>
+                            {isSource ? rel.relation + '→' : '←' + rel.relation}
+                          </span>
                         </div>
-                      )
-                    })
-                  }
-                </div>
+                        <div style={{ fontSize: '0.78rem', color: '#999' }}>{rel.evidence}</div>
+                      </div>
+                    )
+                  })
+                }
               </div>
             </div>
           ) : (
@@ -837,51 +449,25 @@ export default function KnowledgeGraphPage() {
               <div style={{ fontSize: '3rem', marginBottom: '16px' }}>🔍</div>
               <p>点击图谱中的节点查看实体详情</p>
               <p style={{ fontSize: '0.85rem', marginTop: '8px' }}>
-                共 {entities.length} 个实体，{allRelations.filter(r => filteredEntityIds.has(r.source) && filteredEntityIds.has(r.target)).length} 条关系
+                共 {entities.length} 个实体，{relations.length} 条关系
               </p>
             </div>
           )}
 
-          {/* 推荐关联 */}
-          {selectedEntity && recommendedEntities.length > 0 && (
-            <div className="card" style={{ marginTop: '24px' }}>
-              <h4 style={{ marginBottom: '12px' }}>💡 推荐关联</h4>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                {recommendedEntities.map(entity => (
-                  <div
-                    key={entity.id}
-                    onClick={() => setSelectedEntity(entity)}
-                    style={{
-                      padding: '10px',
-                      borderRadius: '8px',
-                      border: `1px solid ${ENTITY_COLORS[entity.type]}30`,
-                      background: `${ENTITY_COLORS[entity.type]}08`,
-                      cursor: 'pointer',
-                      transition: 'all 0.2s ease',
-                      overflow: 'hidden',
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
-                      <span style={{ fontSize: '1rem' }}>{ENTITY_ICONS[entity.type]}</span>
-                      <span style={{ fontWeight: 600, fontSize: '0.85rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{entity.name}</span>
-                    </div>
-                    <p style={{
-                      fontSize: '0.75rem',
-                      color: '#666',
-                      margin: 0,
-                      lineHeight: 1.4,
-                      display: '-webkit-box',
-                      WebkitLineClamp: 2,
-                      WebkitBoxOrient: 'vertical',
-                      overflow: 'hidden',
-                    } as any}>
-                      {entity.description}
-                    </p>
-                  </div>
-                ))}
+          {/* 实体类型图例 */}
+          <div className="card" style={{ marginTop: '24px' }}>
+            <h4 style={{ marginBottom: '12px' }}>📌 图例</h4>
+            {Object.entries(ENTITY_LABELS).map(([key, label]) => (
+              <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                <span style={{
+                  width: '16px', height: '16px', borderRadius: '50%',
+                  background: ENTITY_COLORS[key], display: 'inline-block'
+                }} />
+                <span style={{ fontSize: '0.85rem' }}>{EntityIcon(key)} {label}</span>
+                <span style={{ fontSize: '0.75rem', color: '#999', marginLeft: 'auto' }}>{typeCounts[key] || 0}</span>
               </div>
-            </div>
-          )}
+            ))}
+          </div>
         </div>
       </div>
     </div>
