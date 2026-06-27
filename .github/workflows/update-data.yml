@@ -50,6 +50,10 @@ jobs:
         run: timeout ${{ env.FETCH_TIMEOUT }} python scripts/fetch-real-data.py || echo "fetch-real-data failed, continue"
         shell: bash
 
+      - name: Run fill_summaries.py (补全缺失摘要)
+        run: python scripts/fill_summaries.py || echo "fill_summaries failed, continue"
+        shell: bash
+
       - name: Run bump_technology.py
         run: python scripts/bump_technology.py || echo "bump_technology failed, continue"
         shell: bash
@@ -71,7 +75,7 @@ jobs:
           git add -A
           TIMESTAMP=$(date +'%Y-%m-%d %H:%M')
           git commit -m "data: auto update $TIMESTAMP"
-          # 同步 main 后再 rebase，避免 push 失败（非 fast-forward）
+          # Sync main then rebase to avoid non-fast-forward push
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
