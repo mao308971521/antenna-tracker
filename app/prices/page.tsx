@@ -13,7 +13,9 @@ export default function PricesPage() {
   // 只显示近6个月数据（避免旧数据干扰），并兜底过滤掉超过 lastUpdate 的未来月份
   const chartData = useMemo(() => {
     const hist = currentMat.historical || []
-    const cutoff = pricesData.lastUpdate // 例如 "2026-06-14"
+    // lastUpdate 可能是 "2026-06-28 09:44"，而 historical[].month 是 "YYYY-MM"
+    // 截断到 "YYYY-MM" 再做字符串比较，避免 2026-07 被误判为小于 "2026-06-28..."
+    const cutoff = String(pricesData.lastUpdate).slice(0, 7)
     const filtered = hist.filter(h => h.month <= cutoff)
     return filtered.slice(-6).map(h => ({
       month: h.month,
