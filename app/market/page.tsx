@@ -17,6 +17,29 @@ export default function MarketPage() {
         <p className="update-info">数据更新：{marketData.lastUpdate}</p>
       </header>
 
+      {/* 周报 banner（由 generate_banner_report.py 自动维护） */}
+      {marketData.weekly_banner && (
+        <section className="card weekly-banner">
+          <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
+            <h2 className="text-lg sm:text-xl font-semibold">📅 本周市场周报（{marketData.weekly_banner.period_label}）</h2>
+            <span className="text-xs text-gray-500">
+              生成时间：{marketData.weekly_banner.generated_at}
+            </span>
+          </div>
+          <p className="text-base sm:text-lg leading-relaxed text-gray-700">
+            {marketData.weekly_banner.highlight}
+          </p>
+          {marketData.weekly_banner.top_segment && (
+            <p className="mt-2 text-sm text-gray-600">
+              领跑细分：<strong>{marketData.weekly_banner.top_segment}</strong>
+              {marketData.weekly_banner.top_segment_cagr && (
+                <span>（CAGR {marketData.weekly_banner.top_segment_cagr}）</span>
+              )}
+            </p>
+          )}
+        </section>
+      )}
+
       {/* 市场总览卡片 */}
       <section className="card">
         <h2 className="text-lg sm:text-xl font-semibold mb-4">🌐 市场总览</h2>
