@@ -313,5 +313,51 @@
       "value": 15.2,
       "color": "#8884D8"
     }
-  ]
+  ],
+  "weekly_banner": {
+    "period_label": "2026-W27",
+    "generated_at": "2026-06-29T19:35:24",
+    "last_data_update": "2026-06-29",
+    "highlight": "全球天线市场规模 320.53亿元，年复合增长率 7.12%，2030 年预计达 484.26亿元。",
+    "top_segment": "5G天线",
+    "top_segment_cagr": "15.6%",
+    "growth_segments": [
+      {
+        "name": "定向天线",
+        "value": 320.5
+      },
+      {
+        "name": "5G天线",
+        "value": 285.4
+      },
+      {
+        "name": "网通天线",
+        "value": 150
+      }
+    ],
+    "drivers": [
+      {
+        "name": "5G网络建设加速",
+        "rank": 1
+      },
+      {
+        "name": "物联网应用普及",
+        "rank": 2
+      },
+      {
+        "name": "汽车智能化趋势",
+        "rank": 3
+      },
+      {
+        "name": "卫星通信发展",
+        "rank": 4
+      },
+      {
+        "name": "军工通信需求",
+        "rank": 5
+      }
+    ],
+    "driver_count": 5,
+    "trend_points": 11
+  }
 }
