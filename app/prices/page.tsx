@@ -441,6 +441,20 @@ function MaterialCard({ mat, fmtYAxis }: { mat: any; fmtYAxis: (v: number, u?: s
         <span style={{ fontSize: 11, color: '#888' }}>{mat.unit}</span>
       </div>
 
+      {/* 价格类型标签 */}
+      {mat.priceType && (
+        <div style={{ marginBottom: 6 }}>
+          <span style={{
+            display: 'inline-block',
+            padding: '1px 6px',
+            background: '#e3f2fd',
+            color: '#1976d2',
+            fontSize: 10,
+            borderRadius: 3,
+          }}>{mat.priceType}</span>
+        </div>
+      )}
+
       <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 8, flexWrap: 'wrap' }}>
         <span style={{ fontSize: 22, fontWeight: 700, color: '#333' }}>
           {mat.currentPrice.toLocaleString()}
@@ -490,7 +504,7 @@ function MaterialCard({ mat, fmtYAxis }: { mat: any; fmtYAxis: (v: number, u?: s
 
       {mat.dataSource && (
         <div style={{ fontSize: 10, color: '#aaa', marginTop: 4, textAlign: 'right' }}>
-          来源：{mat.dataSource}
+          数据范围：{mat.dataSpan || `${hist.length}月数据`} · 来源：{mat.dataSource}
         </div>
       )}
     </div>
