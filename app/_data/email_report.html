@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>原材料价格周报 | 2026年7月第1周</title>
+<style>
+body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; margin: 0; padding: 0; background: #f5f7fa; color: #333; }
+.container { max-width: 720px; margin: 0 auto; background: #fff; }
+.header { background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%); color: white; padding: 32px 40px; }
+.header h1 { margin: 0; font-size: 24px; font-weight: 700; }
+.header .subtitle { margin-top: 8px; font-size: 14px; opacity: 0.85; }
+.header .date { margin-top: 4px; font-size: 13px; opacity: 0.7; }
+.summary-bar { display: flex; gap: 12px; padding: 20px 40px; background: #e8eaf6; border-bottom: 1px solid #c5cae9; flex-wrap: wrap; }
+.summary-item { flex: 1; min-width: 140px; text-align: center; padding: 12px; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.summary-item .label { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+.summary-item .value { font-size: 22px; font-weight: 700; margin-top: 4px; }
+.summary-item .up { color: #c62828; }
+.summary-item .down { color: #2e7d32; }
+.summary-item .flat { color: #666; }
+.section { padding: 24px 40px; border-bottom: 1px solid #eee; }
+.section:last-child { border-bottom: none; }
+.section-title { font-size: 18px; font-weight: 700; margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px; }
+.section-desc { font-size: 13px; color: #666; margin: -12px 0 16px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+thead th { background: #f5f5f5; padding: 10px 12px; text-align: left; font-weight: 600; color: #555; border-bottom: 2px solid #ddd; font-size: 12px; }
+tbody td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
+tbody tr:hover { background: #fafafa; }
+.price { font-weight: 600; font-family: "SF Mono", "Consolas", monospace; }
+.change-up { color: #c62828; font-weight: 600; }
+.change-down { color: #2e7d32; font-weight: 600; }
+.change-flat { color: #666; font-weight: 600; }
+.trend-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+.trend-up { background: #ffebee; color: #c62828; }
+.trend-down { background: #e8f5e9; color: #2e7d32; }
+.trend-flat { background: #f5f5f5; color: #666; }
+.impact { font-size: 12px; color: #777; max-width: 280px; }
+.highlight-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.highlight-box h4 { margin: 0 0 8px 0; font-size: 14px; color: #e65100; }
+.highlight-box p { margin: 0; font-size: 13px; color: #555; line-height: 1.6; }
+.key-point { display: flex; align-items: flex-start; gap: 8px; margin: 8px 0; font-size: 13px; }
+.key-point .icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.footer { padding: 24px 40px; background: #f5f5f5; text-align: center; font-size: 12px; color: #999; }
+.footer a { color: #5c6bc0; text-decoration: none; }
+.chart-bar { display: inline-block; height: 8px; border-radius: 4px; background: #3949ab; margin-right: 4px; }
+.two-col { display: flex; gap: 24px; }
+.two-col .col { flex: 1; }
+@media (max-width: 600px) {
+  .section { padding: 16px 20px; }
+  .header { padding: 24px 20px; }
+  .summary-bar { padding: 16px 20px; }
+  .two-col { flex-direction: column; }
+  table { font-size: 12px; }
+  tbody td { padding: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>📊 原材料价格周报</h1>
+  <div class="subtitle">Antenna Tracker — 天线产业原材料价格追踪</div>
+  <div class="date">📅 2026年7月1日 | 第27周 | 数据来源: 长江有色/SMM/隆众/卓创</div>
+</div>
+
+<!-- Summary Bar -->
+<div class="summary-bar">
+  <div class="summary-item">
+    <div class="label">追踪材料</div>
+    <div class="value">27</div>
+  </div>
+  <div class="summary-item">
+    <div class="label">上涨</div>
+    <div class="value up">8</div>
+  </div>
+  <div class="summary-item">
+    <div class="label">下跌</div>
+    <div class="value down">10</div>
+  </div>
+  <div class="summary-item">
+    <div class="label">平稳</div>
+    <div class="value flat">9</div>
+  </div>
+  <div class="summary-item">
+    <div class="label">最大跌幅</div>
+    <div class="value down">-25.9%</div>
+  </div>
+  <div class="summary-item">
+    <div class="label">最大涨幅</div>
+    <div class="value up">+5.4%</div>
+  </div>
+</div>
+
+<!-- Executive Summary -->
+<div class="section">
+  <h2 class="section-title">🔑 本期要点</h2>
+  
+  <div class="highlight-box">
+    <h4>⚠️ 白银价格暴跌25.9% — 光伏银浆成本压力缓解</h4>
+    <p>沪银期货从6月19元/克骤降至14.09元/克，创年内新低。导电银浆价格同步大幅下调至13,440元/公斤。这对光伏组件和天线LDS工艺都是重大利好，银浆占组件成本已从20%回落。</p>
+  </div>
+
+  <div class="highlight-box">
+    <h4>📉 铜价回调5.9%至101,530元/吨</h4>
+    <p>沪铜从5月高点108,170元/吨回落，主要受下游需求淡季和宏观预期修正影响。天线导体成本压力有所减轻，但仍在历史高位区间运行。</p>
+  </div>
+
+  <div class="key-point"><span class="icon">🔺</span><span><strong>锡价飙升</strong>至398,090元/吨 (+2.2%)，AI服务器焊料需求强劲，缅甸供应受限继续支撑价格。</span></p>
+  <div class="key-point"><span class="icon">🔻</span><span><strong>铝价下跌</strong>至23,115元/吨 (-5.1%)，结构件成本下降，天线支架利润空间改善。</span></p>
+  <div class="key-point"><span class="icon">🔺</span><span><strong>电子布7628大涨</strong>至7.8元/米 (+5.4%)，AI服务器需求推动年内涨超100%，覆铜板成本承压。</span></p>
+  <div class="key-point"><span class="icon">🔻</span><span><strong>环氧树脂下跌</strong>至13,855元/吨 (-6.1%)，PCB板材成本有望降低。</span></p>
+  <div class="key-point"><span class="icon">➡️</span><span><strong>金价回落</strong>至881.39元/克 (-12.0%)，连接器镀金成本下降。</span></p>
+</div>
+
+<!-- Category 1: Metals -->
+<div class="section">
+  <h2 class="section-title">🔩 一、金属原材料</h2>
+  <p class="section-desc">铜、铝、不锈钢、贵金属、螺纹钢等天线导体/结构件主材</p>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>材料</th>
+        <th>价格</th>
+        <th>涨跌</th>
+        <th>趋势</th>
+        <th>天线影响</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>电解铜</strong></td>
+        <td class="price">101,530元/吨</td>
+        <td class="change-down">-5.9%</td>
+        <td><span class="trend-badge trend-down">下跌</span></td>
+        <td class="impact">天线导体主材，铜价回落缓解成本压力</td>
+      </tr>
+      <tr>
+        <td><strong>铝锭</strong></td>
+        <td class="price">23,115元/吨</td>
+        <td class="change-down">-5.1%</td>
+        <td><span class="trend-badge trend-down">下跌</span></td>
+        <td class="impact">天线支架/外壳/紧固件，结构件利润改善</td>
+      </tr>
+      <tr>
+        <td><strong>不锈钢304/2B</strong></td>
+        <td class="price">15,050元/吨</td>
+        <td class="change-down">-0.7%</td>
+        <td><span class="trend-badge trend-flat">平稳</span></td>
+        <td class="impact">滤波器腔体/天线外壳，成本基本稳定</td>
+      </tr>
+      <tr>
+        <td><strong>金</strong></td>
+        <td class="price">881.39元/克</td>
+        <td class="change-down">-12.0%</td>
+        <td><span class="trend-badge trend-down">下跌</span></td>
+        <td class="impact">高频连接器镀金层，镀金成本大幅下降</td>
+      </tr>
+      <tr>
+        <td><strong>银</strong></td>
+        <td class="price">14.09元/克</td>
+        <td class="change-down">-25.9%</td>
+        <td><span class="trend-badge trend-down">下跌</span></td>
+        <td class="impact">天线PCB导电镀层，银浆成本骤降</td>
+      </tr>
+      <tr>
+        <td><strong>螺纹钢</strong></td>
+        <td class="price">3,190元/吨</td>
+        <td class="change-down">-6.6%</td>
+        <td><span class="trend-badge trend-down">下跌</span></td>
+        <td class="impact">天线铁塔/抱杆/底座，成本小幅下降</td>
+      </tr>
+      <tr>
+        <td><strong>锌</strong></td>
+        <td class="price">24,400元/吨</td>
+        <td class="change-down">-3.2%</td>
+        <td><span class="trend-badge trend-down">下跌</span></td>
+        <td class="impact">天线结构件镀锌层，防腐成本降低</td>
+      </tr>
+      <tr>
+        <td><strong>镍</strong></td>
+        <td class="price">125,600元/吨</td>
+        <td class="change-down">-2.3%</td>
+        <td><span class="trend-badge trend-down">下跌</span></td>
+        <td class="impact">不锈钢及镀层，镍价回落降低不锈钢成本</td>
+      </tr>
+      <tr>
+        <td><strong>锡</strong></td>
+        <td class="price">398,090元/吨</td>
+        <td class="change-up">+2.2%</td>
+        <td><span class="trend-badge trend-up">上涨</span></td>
+        <td class="impact">焊料主材，AI服务器需求强劲支撑价格</td>
+      </tr>
+      <tr>
+        <td><strong>铅</strong></td>
+        <td class="price">16,400元/吨</td>
+        <td class="change-flat">-0.6%</td>
+        <td><span class="trend-badge trend-flat">平稳</span></td>
+        <td class="impact">基站备用铅酸电池，价格稳定</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Category 2: Engineering Plastics -->
+<div class="section">
+  <h2 class="section-title">🧪 二、工程塑料</h2>
+  <p class="section-desc">LCP/PTFE/PPS/环氧/PA66/PBT等高性能树脂，天线射频部件和PCB主材</p>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>材料</th>
+        <th>价格</th>
+        <th>涨跌</th>
+        <th>趋势</th>
+        <th>天线影响</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>LCP树脂</strong></td>
+        <td class="price">57,735元/吨</td>
+        <td class="change-down">-1.4%</td>
+        <td><span class="trend-badge trend-flat">平稳</span></td>
+        <td class="impact">5G天线振子/LDS天线主材，价格小幅回落</td>
+      </tr>
+      <tr>
+        <td><strong>PTFE树脂</strong></td>
+        <td class="price">49,739元/吨</td>
+        <td class="change-down">-0.7%</td>
+        <td><span class="trend-badge trend-flat">平稳</span></td>
+        <td class="impact">高频覆铜板填充材料，5G材料降本关键</td>
+      </tr>
+      <tr>
+        <td><strong>PPS树脂</strong></td>
+        <td class="price">47,841元/吨</td>
+        <td class="change-up">+1.4%</td>
+        <td><span class="trend-badge trend-up">上涨</span></td>
+        <td class="impact">滤波器腔体支架/耐高温连接器外壳</td>
+      </tr>
+      <tr>
+        <td><strong>环氧树脂</strong></td>
+        <td class="price">13,855元/吨</td>
+        <td class="change-down">-6.1%</td>
+        <td><span class="trend-badge trend-down">下跌</span></td>
+        <td class="impact">PCB板材粘接/三防漆，有助PCB成本降低</td>
+      </tr>
+      <tr>
+        <td><strong>PA66工程塑料</strong></td>
+        <td class="price">28,614元/吨</td>
+        <td class="change-flat">+0.1%</td>
+        <td><span class="trend-badge trend-flat">平稳</span></td>
+        <td class="impact">天线外罩/连接器外壳/射频连接器结构件</td>
+      </tr>
+      <tr>
+        <td><strong>PBT工程塑料</strong></td>
+        <td class="price">16,808元/吨</td>
+        <td class="change-flat">+0.9%</td>
+        <td><span class="trend-badge trend-flat">平稳</span></td>
+        <td class="impact">5G基站天线振子/滤波器绝缘骨架</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Category 3: PCB/CCL -->
+<div class="section">
+  <h2 class="section-title">🔲 三、PCB/覆铜板</h2>
+  <p class="section-desc">高频覆铜板、碳氢树脂覆铜板，天线射频PCB核心材料</p>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>材料</th>
+        <th>价格</th>
+        <th>涨跌</th>
+        <th>趋势</th>
+        <th>天线影响</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>FR4覆铜板</strong></td>
+        <td class="price">123元/㎡</td>
+        <td class="change-up">+1.7%</td>
+        <td><span class="trend-badge trend-up">上涨</span></td>
+        <td class="impact">基站天线PCB底层基材，占PCB成本约30%</td>
+      </tr>
+      <tr>
+        <td><strong>LCP薄膜</strong></td>
+        <td class="price">2,814元/㎡</td>
+        <td class="change-up">+0.9%</td>
+        <td><span class="trend-badge trend-up">上涨</span></td>
+        <td class="impact">5G毫米波天线LDS工艺基材，日美厂商垄断</td>
+      </tr>
+      <tr>
+        <td><strong>碳氢树脂覆铜板</strong></td>
+        <td class="price">865元/㎡</td>
+        <td class="change-up">+0.8%</td>
+        <td><span class="trend-badge trend-up">上涨</span></td>
+        <td class="impact">5G基站AAU射频PCB主材，国产替代加速</td>
+      </tr>
+      <tr>
+        <td><strong>PTFE高频覆铜板</strong></td>
+        <td class="price">1,196元/㎡</td>
+        <td class="change-flat">+0.3%</td>
+        <td><span class="trend-badge trend-flat">平稳</span></td>
+        <td class="impact">毫米波天线核心材料，生益科技为主供应商</td>
+      </tr>
+      <tr>
+        <td><strong>电子布7628</strong></td>
+        <td class="price">7.8元/米</td>
+        <td class="change-up">+5.4%</td>
+        <td><span class="trend-badge trend-up">上涨</span></td>
+        <td class="impact">覆铜板增强基材，AI需求推动年内涨超100%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Category 4: Chemical Materials -->
+<div class="section">
+  <h2 class="section-title">⚗️ 四、化工类原材料</h2>
+  <p class="section-desc">银浆、氟聚合物、导热材料、偶联剂等天线电镀/镀膜/防护工艺关键材料</p>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>材料</th>
+        <th>价格</th>
+        <th>涨跌</th>
+        <th>趋势</th>
+        <th>天线影响</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>导电银浆</strong></td>
+        <td class="price">13,440元/公斤</td>
+        <td class="change-up">+2.3%</td>
+        <td><span class="trend-badge trend-up">上涨</span></td>
+        <td class="impact">天线振子LDS金属化镀膜主材，银价暴跌后成本压力缓解</td>
+      </tr>
+      <tr>
+        <td><strong>PVDF氟膜</strong></td>
+        <td class="price">84元/㎡</td>
+        <td class="change-down">-1.2%</td>
+        <td><span class="trend-badge trend-flat">平稳</span></td>
+        <td class="impact">天线外罩表面防护膜，耐候性极佳</td>
+      </tr>
+      <tr>
+        <td><strong>导热硅脂</strong></td>
+        <td class="price">320元/公斤</td>
+        <td class="change-flat">-0.3%</td>
+        <td><span class="trend-badge trend-flat">平稳</span></td>
+        <td class="impact">AAU功放模块与散热器界面导热材料</td>
+      </tr>
+      <tr>
+        <td><strong>硅烷偶联剂</strong></td>
+        <td class="price">18,303元/吨</td>
+        <td class="change-flat">+1.3%</td>
+        <td><span class="trend-badge trend-flat">平稳</span></td>
+        <td class="impact">玻璃纤维表面处理剂，提升覆铜板剥离强度</td>
+      </tr>
+      <tr>
+        <td><strong>三防漆</strong></td>
+        <td class="price">278元/公斤</td>
+        <td class="change-flat">+0.4%</td>
+        <td><span class="trend-badge trend-flat">平稳</span></td>
+        <td class="impact">基站天线PCB防护涂层，防湿热盐雾</td>
+      </tr>
+      <tr>
+        <td><strong>电子级环氧树脂</strong></td>
+        <td class="price">28,667元/吨</td>
+        <td class="change-up">+1.3%</td>
+        <td><span class="trend-badge trend-up">上涨</span></td>
+        <td class="impact">覆铜板及PCB板粘接核心材料，5G低介电需求</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Price Trend Analysis -->
+<div class="section">
+  <h2 class="section-title">📈 价格走势分析</h2>
+  
+  <div class="two-col">
+    <div class="col">
+      <h4 style="margin:0 0 12px 0; font-size:14px;">🔴 上涨材料 (8项)</h4>
+      <div class="key-point"><span class="icon">🔺</span><span>电子布7628: +5.4% (7.8元/米)</span></div>
+      <div class="key-point"><span class="icon">🔺</span><span>导电银浆: +2.3% (13,440元/kg)</span></div>
+      <div class="key-point"><span class="icon">🔺</span><span>锡: +2.2% (398,090元/吨)</span></div>
+      <div class="key-point"><span class="icon">🔺</span><span>FR4覆铜板: +1.7% (123元/㎡)</span></div>
+      <div class="key-point"><span class="icon">🔺</span><span>PPS树脂: +1.4% (47,841元/吨)</span></div>
+      <div class="key-point"><span class="icon">🔺</span><span>硅烷偶联剂: +1.3% (18,303元/吨)</span></div>
+      <div class="key-point"><span class="icon">🔺</span><span>电子级环氧树脂: +1.3% (28,667元/吨)</span></div>
+      <div class="key-point"><span class="icon">🔺</span><span>LCP薄膜: +0.9% (2,814元/㎡)</span></div>
+    </div>
+    <div class="col">
+      <h4 style="margin:0 0 12px 0; font-size:14px;">🟢 下跌材料 (10项)</h4>
+      <div class="key-point"><span class="icon">🔻</span><span>银: -25.9% (14.09元/克) ⭐ 最大跌幅</span></div>
+      <div class="key-point"><span class="icon">🔻</span><span>金: -12.0% (881.39元/克)</span></div>
+      <div class="key-point"><span class="icon">🔻</span><span>环氧树脂: -6.1% (13,855元/吨)</span></div>
+      <div class="key-point"><span class="icon">🔻</span><span>螺纹钢: -6.6% (3,190元/吨)</span></div>
+      <div class="key-point"><span class="icon">🔻</span><span>铝锭: -5.1% (23,115元/吨)</span></div>
+      <div class="key-point"><span class="icon">🔻</span><span>电解铜: -5.9% (101,530元/吨)</span></div>
+      <div class="key-point"><span class="icon">🔻</span><span>锌: -3.2% (24,400元/吨)</span></div>
+      <div class="key-point"><span class="icon">🔻</span><span>镍: -2.3% (125,600元/吨)</span></div>
+      <div class="key-point"><span class="icon">🔻</span><span>PVDF氟膜: -1.2% (84元/㎡)</span></div>
+      <div class="key-point"><span class="icon">🔻</span><span>LCP树脂: -1.4% (57,735元/吨)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Monthly Historical Data -->
+<div class="section">
+  <h2 class="section-title">📊 月度价格汇总 (2026年7月)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>材料</th>
+        <th>6月价格</th>
+        <th>7月价格</th>
+        <th>环比</th>
+        <th>12月基准</th>
+        <th>6月累计</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>电解铜</td>
+        <td>107,837</td>
+        <td>101,530</td>
+        <td class="change-down">-5.9%</td>
+        <td>93,100</td>
+        <td>+9.1%</td>
+      </tr>
+      <tr>
+        <td>铝锭</td>
+        <td>24,370</td>
+        <td>23,115</td>
+        <td class="change-down">-5.1%</td>
+        <td>21,933</td>
+        <td>+5.4%</td>
+      </tr>
+      <tr>
+        <td>不锈钢304</td>
+        <td>15,155</td>
+        <td>15,050</td>
+        <td class="change-down">-0.7%</td>
+        <td>—</td>
+        <td>+3.3%</td>
+      </tr>
+      <tr>
+        <td>金</td>
+        <td>1,002</td>
+        <td>881</td>
+        <td class="change-down">-12.0%</td>
+        <td>892</td>
+        <td>-1.2%</td>
+      </tr>
+      <tr>
+        <td>银</td>
+        <td>19.00</td>
+        <td>14.09</td>
+        <td class="change-down">-25.9%</td>
+        <td>17.80</td>
+        <td>-20.8%</td>
+      </tr>
+      <tr>
+        <td>螺纹钢</td>
+        <td>3,417</td>
+        <td>3,190</td>
+        <td class="change-down">-6.6%</td>
+        <td>3,520</td>
+        <td>-9.3%</td>
+      </tr>
+      <tr>
+        <td>锌</td>
+        <td>25,200</td>
+        <td>24,400</td>
+        <td class="change-down">-3.2%</td>
+        <td>27,500</td>
+        <td>-11.3%</td>
+      </tr>
+      <tr>
+        <td>镍</td>
+        <td>128,550</td>
+        <td>125,600</td>
+        <td class="change-down">-2.3%</td>
+        <td>135,000</td>
+        <td>-7.0%</td>
+      </tr>
+      <tr>
+        <td>锡</td>
+        <td>389,300</td>
+        <td>398,090</td>
+        <td class="change-up">+2.2%</td>
+        <td>250,000</td>
+        <td>+59.2%</td>
+      </tr>
+      <tr>
+        <td>铅</td>
+        <td>16,500</td>
+        <td>16,400</td>
+        <td class="change-flat">-0.6%</td>
+        <td>17,500</td>
+        <td>-6.3%</td>
+      </tr>
+      <tr>
+        <td>LCP树脂</td>
+        <td>58,532</td>
+        <td>57,735</td>
+        <td class="change-down">-1.4%</td>
+        <td>57,000</td>
+        <td>+1.3%</td>
+      </tr>
+      <tr>
+        <td>PTFE树脂</td>
+        <td>50,076</td>
+        <td>49,739</td>
+        <td class="change-down">-0.7%</td>
+        <td>48,500</td>
+        <td>+2.6%</td>
+      </tr>
+      <tr>
+        <td>PPS树脂</td>
+        <td>47,181</td>
+        <td>47,841</td>
+        <td class="change-up">+1.4%</td>
+        <td>45,500</td>
+        <td>+5.1%</td>
+      </tr>
+      <tr>
+        <td>环氧树脂</td>
+        <td>14,761</td>
+        <td>13,855</td>
+        <td class="change-down">-6.1%</td>
+        <td>15,200</td>
+        <td>-8.9%</td>
+      </tr>
+      <tr>
+        <td>PA66</td>
+        <td>28,599</td>
+        <td>28,614</td>
+        <td class="change-flat">+0.1%</td>
+        <td>28,000</td>
+        <td>+2.2%</td>
+      </tr>
+      <tr>
+        <td>PBT</td>
+        <td>16,652</td>
+        <td>16,808</td>
+        <td class="change-flat">+0.9%</td>
+        <td>16,600</td>
+        <td>+1.2%</td>
+      </tr>
+      <tr>
+        <td>FR4覆铜板</td>
+        <td>121</td>
+        <td>123</td>
+        <td class="change-up">+1.7%</td>
+        <td>118</td>
+        <td>+4.2%</td>
+      </tr>
+      <tr>
+        <td>LCP薄膜</td>
+        <td>2,789</td>
+        <td>2,814</td>
+        <td class="change-up">+0.9%</td>
+        <td>2,650</td>
+        <td>+6.2%</td>
+      </tr>
+      <tr>
+        <td>碳氢CCL</td>
+        <td>858</td>
+        <td>865</td>
+        <td class="change-up">+0.8%</td>
+        <td>800</td>
+        <td>+8.1%</td>
+      </tr>
+      <tr>
+        <td>PTFE CCL</td>
+        <td>1,193</td>
+        <td>1,196</td>
+        <td class="change-flat">+0.3%</td>
+        <td>1,150</td>
+        <td>+4.0%</td>
+      </tr>
+      <tr>
+        <td>电子布7628</td>
+        <td>7.4</td>
+        <td>7.8</td>
+        <td class="change-up">+5.4%</td>
+        <td>4.5</td>
+        <td>+73.3%</td>
+      </tr>
+      <tr>
+        <td>导电银浆</td>
+        <td>5,220</td>
+        <td>13,440</td>
+        <td class="change-up">+2.3%</td>
+        <td>4,800</td>
+        <td>+180.0%</td>
+      </tr>
+      <tr>
+        <td>PVDF氟膜</td>
+        <td>85</td>
+        <td>84</td>
+        <td class="change-down">-1.2%</td>
+        <td>88</td>
+        <td>-4.5%</td>
+      </tr>
+      <tr>
+        <td>导热硅脂</td>
+        <td>321</td>
+        <td>320</td>
+        <td class="change-flat">-0.3%</td>
+        <td>315</td>
+        <td>+1.6%</td>
+      </tr>
+      <tr>
+        <td>硅烷偶联剂</td>
+        <td>18,063</td>
+        <td>18,303</td>
+        <td class="change-flat">+1.3%</td>
+        <td>17,800</td>
+        <td>+2.8%</td>
+      </tr>
+      <tr>
+        <td>三防漆</td>
+        <td>277</td>
+        <td>278</td>
+        <td class="change-flat">+0.4%</td>
+        <td>288</td>
+        <td>-3.5%</td>
+      </tr>
+      <tr>
+        <td>电子级环氧树脂</td>
+        <td>28,309</td>
+        <td>28,667</td>
+        <td class="change-up">+1.3%</td>
+        <td>27,500</td>
+        <td>+4.2%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Risk Assessment -->
+<div class="section">
+  <h2 class="section-title">⚡ 供应链风险评估</h2>
+  
+  <div class="highlight-box">
+    <h4>🟢 低风险 — 价格回落类 (10项)</h4>
+    <p>铜、铝、金、银、锌、镍、螺纹钢、LCP树脂、PTFE树脂、环氧树脂、PVDF氟膜、导热硅脂等12项材料价格环比下跌，天线制造成本压力整体减轻。特别是银价暴跌25.9%和金价回落12%，对镀层和导电材料成本改善显著。</p>
+  </div>
+
+  <div class="highlight-box" style="background:#fce4ec; border-left-color:#e91e63;">
+    <h4 style="color:#c62828;">🔴 高风险 — 价格飙升类 (2项)</h4>
+    <p><strong>电子布7628</strong>年内暴涨73.3%（从4.5→7.8元/米），AI服务器需求导致覆铜板上游供需极度紧张。<strong>导电银浆</strong>口径调整至13,440元/公斤（含银包铜高端产品），绝对成本仍处高位。建议关注锡价持续上涨（+59.2%自2025年12月）对焊料成本的影响。</p>
+  </div>
+
+  <div class="highlight-box" style="background:#e8f5e9; border-left-color:#4caf50;">
+    <h4 style="color:#2e7d32;">🟡 中性 — 价格稳定类 (15项)</h4>
+    <p>PPS、PA66、PBT、FR4、LCP薄膜、碳氢CCL、PTFE CCL、硅烷偶联剂、三防漆、电子级环氧树脂等10项材料价格波动在±2%以内，供应稳定，无需特别关注。</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p><strong>Antenna Tracker</strong> — 天线产业原材料价格追踪系统</p>
+  <p>数据来源: 长江有色金属网 | 上海有色网 SMM | 金投网 | 我的钢铁网 | 隆众资讯 | 卓创资讯</p>
+  <p>下次更新: 2026年7月8日 | 报告自动生成于 2026-07-02</p>
+  <p style="margin-top:12px;"><a href="https://github.com/Heaplore/antenna-tracker">🔗 GitHub 仓库</a> · <a href="#">🌐 在线查看</a></p>
+</div>
+
+</div>
+</body>
+</html>
